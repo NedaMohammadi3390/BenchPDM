@@ -1,0 +1,21 @@
+package microservice.consolidation.demo.API;
+@RequestMapping("api/v1/Head1")
+@RestController
+public class MicroserviceController  {
+public MicroserviceController() {
+connections = new ArrayList<String>();
+
+}
+
+private int id;
+private ArrayList<String> connections;
+@Autowired
+RestTemplate restTemplate = new RestTemplate();
+ResponseEntity<String> response1 = restTemplate.exchange(http://localhost:9017/api/Worker5)
+ResponseEntity<String> response2 = restTemplate.exchange(http://localhost:9018/api/Worker6)
+ResponseEntity<String> response3 = restTemplate.exchange(http://localhost:9019/api/Worker7)
+ResponseEntity<String> response4 = restTemplate.exchange(http://localhost:9020/api/Worker8)
+ResponseEntity<String> response5 = restTemplate.exchange(http://localhost:9021/api/Worker9)
+
+}
+
