@@ -12,4 +12,4 @@ dependencyGraph
 **BenchPDM : Benchmarking Pattern Detection Methods 
 in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Testbeds**
 
-You can find the detailed analysis in the following Jupyter Notebook: [PatternFormalDescription.ipynb](./_otebooks/PatternFormalDescription.ipynb)
+You can find the detailed analysis in the following Jupyter Notebook: [PatternFormalDescription.ipynb](./_notebooks/PatternFormalDescriptiontebooks/PatternFormalDescription.ipynb)
