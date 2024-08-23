@@ -12,3 +12,7 @@ You can find the detailed analysis in the following Jupyter Notebook:
 ```math
 SE = \frac{\sigma}{\sqrt{n}}
 ```
+
+\begin{itemize}
+    \item The Load Balancer Microservice \( l \in L \) retrieves addresses of Worker Microservices \( w \in W \) from the Service Registry Management Microservice \( r \in R \). Formally, \( \forall l \in L, \exists r \in R \) such that \( (r, w) \in R_{SR} \).
+\end{itemize}
