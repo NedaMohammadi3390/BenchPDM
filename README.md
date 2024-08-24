@@ -113,7 +113,7 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 
 
 + Users can select from a predefined set of 13 microservice design patterns defined within
-  the BenchPDM. A comprehensive description of the behaviors of the 13 patterns can be seen in the [Pattern_Description] (#Pattern_Description) folder.
+  the BenchPDM. A comprehensive description of the behaviors of the 13 patterns can be seen in the [Pattern_Description] (./Pattern_Description/MSdesignpatterns.pdf) folder.
 
 
 ## Contact Information
