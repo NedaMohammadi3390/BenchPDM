@@ -43,5 +43,5 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 + After executing the above command, the PBMC module will be displayed as follows.
 
 <p align="center">
-<img src="Bench_preview/pbmc.PNG" width=400>
+<img src="Bench_preview/pbmc.PNG" width=700>
 </p>
