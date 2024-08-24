@@ -83,7 +83,7 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 + A part of the generated service dependency graph is shown below.
 
 <p align="center">
-<img src="Bench_preview/dependencyGraph.jpg" width=500>
+<img src="Bench_preview/dependencyGraph.jpg" width=700>
 </p>
 
 ## Installation of the PDM-ES Module
