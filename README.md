@@ -40,10 +40,14 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
   ```
 
 + Ensure you replace /path/to/javafx-sdk/lib with the correct path to the JavaFX SDK on your machine.
++ After executing the above command, the PBMC module will be displayed as follows.
 
- ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
++ - در Markdown می‌توانید از کد HTML برای تعبیه محتوای ویدئویی و صوتی استفاده کنید.
+```markdown
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  مرورگر شما از این ویدئو پشتیبانی نمی‌کند.
+</video>
+  
+
+
