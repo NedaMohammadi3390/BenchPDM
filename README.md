@@ -46,3 +46,6 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 <p align="center">
 <img src="Bench_preview/pbmc.PNG" width=700>
 </p>
+
++ 1- If the pattern detection method is capable of identifying any of the thirteen predefined patterns within BenchPDM, you can select any of these patterns from Section 1, in any quantity, for inclusion in PAMBS.
++ 2- If the pattern detection method is to be evaluated using new patterns beyond the predefined list in Section 1, a new pattern can be defined through Section 2. Each row in the table of Section 2 specifies the details of each microservice within the new pattern.
