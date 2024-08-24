@@ -33,4 +33,9 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
   
 
 ## Installation_of_the_PBMC_Module
-+  you might need to specify the JavaFX module path when running the application. Use the following command (replacing paths and modules as necessary):
++  ِYou need to specify the JavaFX module path when running the application. Use the following command (replacing paths and modules as necessary):
+
++  ```bash
+java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -jar PBMC.jar
+   '''
++ Ensure you replace /path/to/javafx-sdk/lib with the correct path to the JavaFX SDK on your machine.
