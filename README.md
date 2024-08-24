@@ -57,3 +57,11 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
   - Through the "Click to Set Target Directory for Contents Generated" button, you need to select a directory to save the generated PAMBS.
 
   - By pressing the "Generate" button, based on the configured settings, the desired patterns will be created within the PAMBS and saved in the selected folder.
+ 
++ First case: For example, the figure below illustrates a scenario where the PAMBS system contains 15 instances of 6 predefined patterns from BenchPDM.
+
+<p align="center">
+<img src="Bench_preview/PAMS.png" width=700>
+</p>
+
++ Second case: The image below shows that the user has defined a new pattern by entering the details of the microservices within it.
