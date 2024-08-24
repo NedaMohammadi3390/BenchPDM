@@ -113,19 +113,19 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 
 <p align="center">
   <a href="mailto:nmohammadi.um@gmail.com">
-    <img src="path/to/gmail-icon.png" alt="Email" width="40"/>
+    <img src="icons/gmail-icon.png" alt="Email" width="40"/>
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/NedaMohammadi3390">
-    <img src="path/to/github-icon.png" alt="GitHub" width="40"/>
+    <img src="icons/github-icon.png" alt="GitHub" width="40"/>
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/neda-mohammadi-9486971a1/">
-    <img src="path/to/linkedin-icon.png" alt="LinkedIn" width="40"/>
+    <img src="icons/linkedin-icon.png" alt="LinkedIn" width="40"/>
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.orcid.org/my-orcid?orcid=0000-0002-4949-3390">
-    <img src="path/to/orcid.png" alt="ORCID" width="40"/>
+    <img src="icons/orcid.png" alt="ORCID" width="40"/>
   </a>
 </p>
 
