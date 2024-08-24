@@ -42,6 +42,10 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 + Ensure you replace `/path/to/javafx-sdk/lib` with the correct path to the JavaFX SDK on your machine.
 + After executing the above command, the PBMC module will be displayed as follows.
 
++ <p align="center">
+<img src="Bench_preview/pbmc.PNG" width=700>
+</p>
+
 <p align="center">
 <img src="Bench_preview/pbmc.PNG" width=700>
 </p>
