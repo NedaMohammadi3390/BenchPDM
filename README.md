@@ -122,7 +122,7 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 
 <p align="center">
   <a href="mailto:nmohammadi.um@gmail.com">
-    <img src="icons/gmail-icon.png" alt="Email" width="42"/>
+    <img src="icons/gmail-icon.png" alt="Email" width="50"/>
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/neda-mohammadi-9486971a1/">
