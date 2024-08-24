@@ -32,7 +32,7 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
   The PDM Evaluation System **(PDM-ES)** module, is responsible for evaluating pattern detection methods based on common evaluation metrics in the field of design pattern detection. This part allows for the evaluation and comparison of different PDMs at different levels of complexity.
   
 
-## Installation_of_the_PBMC_Module
+## Installation of the PBMC Module
 +  ِYou need to specify the JavaFX module path when running the application on your local system. Use the following command:
 
   ```bash
