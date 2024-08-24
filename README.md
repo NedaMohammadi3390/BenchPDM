@@ -37,9 +37,9 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 
   ```bash
     java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -jar PBMC.jar
-  
+  ```
 
-+ Ensure you replace /path/to/javafx-sdk/lib with the correct path to the JavaFX SDK on your machine.
++ Ensure you replace ==/path/to/javafx-sdk/lib== with the correct path to the JavaFX SDK on your machine.
 + After executing the above command, the PBMC module will be displayed as follows.
 
 
