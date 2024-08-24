@@ -41,7 +41,7 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 
 + Ensure you replace /path/to/javafx-sdk/lib with the correct path to the JavaFX SDK on your machine.
 
-+ ```mermaid
+ ```mermaid
 graph TD;
     A-->B;
     A-->C;
