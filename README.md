@@ -115,8 +115,6 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
   <a href="mailto:nmohammadi.um@gmail.com">
     <img src="icons/gmail-icon.png" alt="Email" width="40"/>
   </a>
-
-
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/neda-mohammadi-9486971a1/">
     <img src="icons/linkedin-icon.png" alt="LinkedIn" width="40"/>
