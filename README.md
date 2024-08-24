@@ -122,7 +122,7 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 
 <p align="center">
   <a href="mailto:nmohammadi.um@gmail.com">
-    <img src="icons/gmail-icon.png" alt="Email" width="40"/>
+    <img src="icons/gmail-icon.png" alt="Email" width="42"/>
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/neda-mohammadi-9486971a1/">
@@ -130,7 +130,7 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.orcid.org/my-orcid?orcid=0000-0002-4949-3390">
-    <img src="icons/orcid.png" alt="ORCID" width="40"/>
+    <img src="icons/orcid.png" alt="ORCID" width="42"/>
   </a>
 </p>
 
