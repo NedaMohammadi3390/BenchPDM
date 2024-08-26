@@ -129,7 +129,7 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
     <img src="icons/linkedin-icon.png" alt="LinkedIn" width="40"/>
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://www.orcid.org/my-orcid?orcid=0000-0002-4949-3390">
+  <a href="https://orcid.org/0000-0002-4949-3390">
     <img src="icons/orcid.png" alt="ORCID" width="42"/>
   </a>
 </p>
