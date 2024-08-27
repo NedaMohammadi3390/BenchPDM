@@ -11,7 +11,7 @@ in Microservice-Based Systems Using Automatically Generated Pattern-Assisted Tes
 - [Application of BenchPDM](#Application-of-BenchPDM)
    - [PBMC Module](#PBMC-Module)
    - [PDM-ES Module](#PDM-ES-Module)
-- [Installation of the PDM-ES Module](#Installation-of-the-PBMC-Module)
+- [Installation of the PBMC Module](#Installation-of-the-PBMC-Module)
 - [Steps for Implementing PBMC](#Steps-for-Implementing-PBMC)
 - [Installation of the PDM-ES Module](#Installation-of-the-PDM-ES-Module)
 - [Steps for Implementing PDM-ES](#Steps-for-Implementing-PDM-ES)
