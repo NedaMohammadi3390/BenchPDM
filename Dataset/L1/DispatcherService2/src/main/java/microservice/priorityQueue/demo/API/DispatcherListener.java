@@ -17,12 +17,10 @@ public class DispatcherService2Listener {
         String data = new String(message.getBody());
         System.out.println("Dispatching: " + data);
 
-        restTemplate.postForObject("http://localhost:9031/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9032/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9033/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9038/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9039/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9046/external/process?data=" + data, null, String.class);
+        restTemplate.postForObject("http://localhost:9029/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9036/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9037/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9042/external/process?data=" + data, null, String.class);
 		
     }
 }

@@ -1,6 +1,7 @@
-{serviveId:0,serviceName:ApiGateway0,serviceRole:ApiGateway_ApiGateway,serviceCreationTime:0,Time,1759173378255,usageMemory:,13,
-{serviveId:0,serviceName:ApiGateway0,serviceRole:ApiGateway_ApiGateway,serviceCreationTime:0,Time,1759173378255,usageMemory:,13,
-{serviveId:1,serviceName:Client0,serviceRole:ApiGateway_Client,serviceCreationTime:1,Time,1759173378254,usageMemory:,13,
-{serviveId:2,serviceName:Client1,serviceRole:ApiGateway_Client,serviceCreationTime:2,Time,1759173378255,usageMemory:,13,
-{serviveId:3,serviceName:Client2,serviceRole:ApiGateway_Client,serviceCreationTime:3,Time,1759173378255,usageMemory:,13,
+{serviveId:0,serviceName:ApiGateway0,serviceRole:ApiGateway_ApiGateway,serviceCreationTime:0,Time,1759226496833,usageMemory:,15,
+{serviveId:0,serviceName:ApiGateway0,serviceRole:ApiGateway_ApiGateway,serviceCreationTime:0,Time,1759226496833,usageMemory:,15,
+{serviveId:1,serviceName:Client0,serviceRole:ApiGateway_Client,serviceCreationTime:1,Time,1759226496833,usageMemory:,15,
+{serviveId:2,serviceName:Client1,serviceRole:ApiGateway_Client,serviceCreationTime:2,Time,1759226496833,usageMemory:,15,
+{serviveId:3,serviceName:Client2,serviceRole:ApiGateway_Client,serviceCreationTime:3,Time,1759226496833,usageMemory:,15,
+{serviveId:4,serviceName:Client3,serviceRole:ApiGateway_Client,serviceCreationTime:4,Time,1759226496833,usageMemory:,15,
 

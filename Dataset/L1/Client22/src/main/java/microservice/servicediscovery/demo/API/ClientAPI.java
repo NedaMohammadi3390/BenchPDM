@@ -19,7 +19,7 @@ private String connection;
 @Autowired
 RestTemplate restTemplate = new RestTemplate();
 ResponseEntity<String> response1= restTemplate.exchangehttp://localhost:9094/api/ServiceRegistry0)
-ResponseEntity<String> response2= restTemplate.exchangehttp://localhost:9096/api/Worker9)
+ResponseEntity<String> response2= restTemplate.exchangehttp://localhost:9098/api/Worker11)
 
 }
 

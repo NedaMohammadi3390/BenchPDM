@@ -18,32 +18,28 @@ private ArrayList<String> connections;
 private ArrayList<String> database;
 @PostMapping(path = "/creating_request")
 public int int creating-request(PathVariable(sid) String info) {
-ResponseEntity<String> response1= (restTemplate.exchange(http://localhost:9407/api/Worker29/post,HTTP.POST,entity,String.class)
-ResponseEntity<String> response2= (restTemplate.exchange(http://localhost:9408/api/Worker30/post,HTTP.POST,entity,String.class)
+ResponseEntity<String> response1= (restTemplate.exchange(http://localhost:9385/api/Worker27/post,HTTP.POST,entity,String.class)
 return null ;
 
 }
 
 @GetMapping(path = "/receiving-info")
 public int int receiving-data() {
-ResponseEntity<String> response3= (restTemplate.exchange(http://localhost:9407/api/Worker29/get,HTTP.GET,entity,String.class)
-ResponseEntity<String> response4= (restTemplate.exchange(http://localhost:9408/api/Worker30/get,HTTP.GET,entity,String.class)
+ResponseEntity<String> response3= (restTemplate.exchange(http://localhost:9385/api/Worker27/get,HTTP.GET,entity,String.class)
 return false ;
 
 }
 
 @PutMapping(path = "/updating-info")
 public int int updating-data(PathVariable(sid) String id) {
-ResponseEntity<String> response5= (restTemplate.exchange(http://localhost:9407/api/Worker29/put,HTTP.PUT,entity,String.class)
-ResponseEntity<String> response6= (restTemplate.exchange(http://localhost:9408/api/Worker30/put,HTTP.PUT,entity,String.class)
+ResponseEntity<String> response2= (restTemplate.exchange(http://localhost:9385/api/Worker27/put,HTTP.PUT,entity,String.class)
 return null ;
 
 }
 
 @DeleteMapping(path = "/deleting-info")
 public int int deleting-data(PathVariable(sid) String id) {
-ResponseEntity<String> response7= (restTemplate.exchange(http://localhost:9407/api/Worker29/delete,HTTP.DELETE,entity,String.class)
-ResponseEntity<String> response8= (restTemplate.exchange(http://localhost:9408/api/Worker30/delete,HTTP.DELETE,entity,String.class)
+ResponseEntity<String> response4= (restTemplate.exchange(http://localhost:9385/api/Worker27/delete,HTTP.DELETE,entity,String.class)
 return null ;
 
 }

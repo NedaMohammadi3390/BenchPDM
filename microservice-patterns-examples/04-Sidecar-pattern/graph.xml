@@ -8,7 +8,7 @@
 <CreationTime>0</CreationTime>
 <Pattern>Sidecar</Pattern>
 <Role>Sidecar</Role>
-<ConnectedURIs>POST http://localhost:9011/api/ExternalService0 PUT http://localhost:9011/api/ExternalService0 GET http://localhost:9011/api/ExternalService0 DELETE http://localhost:9011/api/ExternalService0 POST http://localhost:9012/api/ExternalService1 PUT http://localhost:9012/api/ExternalService1 GET http://localhost:9012/api/ExternalService1 DELETE http://localhost:9012/api/ExternalService1 POST http://localhost:9013/api/ExternalService2 PUT http://localhost:9013/api/ExternalService2 GET http://localhost:9013/api/ExternalService2 DELETE http://localhost:9013/api/ExternalService2 POST http://localhost:9014/api/MainService0 PUT http://localhost:9014/api/MainService0 GET http://localhost:9014/api/MainService0 DELETE http://localhost:9014/api/MainService0 POST http://localhost:9015/api/MainService1 PUT http://localhost:9015/api/MainService1 GET http://localhost:9015/api/MainService1 DELETE http://localhost:9015/api/MainService1 POST http://localhost:9016/api/MainService2 PUT http://localhost:9016/api/MainService2 GET http://localhost:9016/api/MainService2 DELETE http://localhost:9016/api/MainService2 </ConnectedURIs>
+<ConnectedURIs>POST http://localhost:9011/api/ExternalService0 PUT http://localhost:9011/api/ExternalService0 GET http://localhost:9011/api/ExternalService0 DELETE http://localhost:9011/api/ExternalService0 POST http://localhost:9012/api/ExternalService1 PUT http://localhost:9012/api/ExternalService1 GET http://localhost:9012/api/ExternalService1 DELETE http://localhost:9012/api/ExternalService1 POST http://localhost:9013/api/MainService0 PUT http://localhost:9013/api/MainService0 GET http://localhost:9013/api/MainService0 DELETE http://localhost:9013/api/MainService0 </ConnectedURIs>
 </row>
 <row index="1">
 <MicroserviceName>ExternalService0</MicroserviceName>
@@ -31,61 +31,31 @@
 <ConnectedURIs>POST http://localhost:9010/api/Sidecar0 PUT http://localhost:9010/api/Sidecar0 GET http://localhost:9010/api/Sidecar0 DELETE http://localhost:9010/api/Sidecar0 </ConnectedURIs>
 </row>
 <row index="3">
-<MicroserviceName>ExternalService2</MicroserviceName>
-<URI>http://localhost:9013/api/ExternalService2</URI>
+<MicroserviceName>MainService0</MicroserviceName>
+<URI>http://localhost:9013/api/MainService0</URI>
 <ConnectionType>POST GET PUT DELETE </ConnectionType>
 <Duplicate>false</Duplicate>
 <CreationTime>3</CreationTime>
 <Pattern>Sidecar</Pattern>
-<Role>ExternalService</Role>
+<Role>MainService</Role>
 <ConnectedURIs>POST http://localhost:9010/api/Sidecar0 PUT http://localhost:9010/api/Sidecar0 GET http://localhost:9010/api/Sidecar0 DELETE http://localhost:9010/api/Sidecar0 </ConnectedURIs>
 </row>
 <row index="4">
-<MicroserviceName>MainService0</MicroserviceName>
-<URI>http://localhost:9014/api/MainService0</URI>
+<MicroserviceName>ApiGateway0</MicroserviceName>
+<URI>http://localhost:9014/api/ApiGateway0</URI>
 <ConnectionType>POST GET PUT DELETE </ConnectionType>
 <Duplicate>false</Duplicate>
 <CreationTime>4</CreationTime>
 <Pattern>Sidecar</Pattern>
-<Role>MainService</Role>
-<ConnectedURIs>POST http://localhost:9010/api/Sidecar0 PUT http://localhost:9010/api/Sidecar0 GET http://localhost:9010/api/Sidecar0 DELETE http://localhost:9010/api/Sidecar0 </ConnectedURIs>
-</row>
-<row index="5">
-<MicroserviceName>MainService1</MicroserviceName>
-<URI>http://localhost:9015/api/MainService1</URI>
-<ConnectionType>POST GET PUT DELETE </ConnectionType>
-<Duplicate>false</Duplicate>
-<CreationTime>5</CreationTime>
-<Pattern>Sidecar</Pattern>
-<Role>MainService</Role>
-<ConnectedURIs>POST http://localhost:9010/api/Sidecar0 PUT http://localhost:9010/api/Sidecar0 GET http://localhost:9010/api/Sidecar0 DELETE http://localhost:9010/api/Sidecar0 </ConnectedURIs>
-</row>
-<row index="6">
-<MicroserviceName>MainService2</MicroserviceName>
-<URI>http://localhost:9016/api/MainService2</URI>
-<ConnectionType>POST GET PUT DELETE </ConnectionType>
-<Duplicate>false</Duplicate>
-<CreationTime>6</CreationTime>
-<Pattern>Sidecar</Pattern>
-<Role>MainService</Role>
-<ConnectedURIs>POST http://localhost:9010/api/Sidecar0 PUT http://localhost:9010/api/Sidecar0 GET http://localhost:9010/api/Sidecar0 DELETE http://localhost:9010/api/Sidecar0 </ConnectedURIs>
-</row>
-<row index="7">
-<MicroserviceName>ApiGateway0</MicroserviceName>
-<URI>http://localhost:9017/api/ApiGateway0</URI>
-<ConnectionType>POST GET PUT DELETE </ConnectionType>
-<Duplicate>false</Duplicate>
-<CreationTime>7</CreationTime>
-<Pattern>Sidecar</Pattern>
 <Role>ApiGateway</Role>
 <ConnectedURIs/>
 </row>
-<row index="8">
+<row index="5">
 <MicroserviceName>ServiceRegistry0</MicroserviceName>
-<URI>http://localhost:9018/api/ServiceRegistry0</URI>
+<URI>http://localhost:9015/api/ServiceRegistry0</URI>
 <ConnectionType/>
 <Duplicate>false</Duplicate>
-<CreationTime>8</CreationTime>
+<CreationTime>5</CreationTime>
 <Pattern>Sidecar</Pattern>
 <Role>ServiceRegistry</Role>
 <ConnectedURIs/>

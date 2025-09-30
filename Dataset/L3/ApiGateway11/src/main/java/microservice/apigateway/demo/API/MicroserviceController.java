@@ -18,32 +18,32 @@ private ArrayList<String> connections;
 private ArrayList<String> database;
 @PostMapping(path = "/creating_request")
 public int int creating-request(PathVariable(sid) String info) {
-ResponseEntity<String> response1= (restTemplate.exchange(http://localhost:9393/api/Worker25/post,HTTP.POST,entity,String.class)
-ResponseEntity<String> response2= (restTemplate.exchange(http://localhost:9394/api/Worker26/post,HTTP.POST,entity,String.class)
+ResponseEntity<String> response1= (restTemplate.exchange(http://localhost:9372/api/Worker23/post,HTTP.POST,entity,String.class)
+ResponseEntity<String> response2= (restTemplate.exchange(http://localhost:9373/api/Worker24/post,HTTP.POST,entity,String.class)
 return null ;
 
 }
 
 @GetMapping(path = "/receiving-info")
 public int int receiving-data() {
-ResponseEntity<String> response3= (restTemplate.exchange(http://localhost:9393/api/Worker25/get,HTTP.GET,entity,String.class)
-ResponseEntity<String> response4= (restTemplate.exchange(http://localhost:9394/api/Worker26/get,HTTP.GET,entity,String.class)
+ResponseEntity<String> response5= (restTemplate.exchange(http://localhost:9372/api/Worker23/get,HTTP.GET,entity,String.class)
+ResponseEntity<String> response6= (restTemplate.exchange(http://localhost:9373/api/Worker24/get,HTTP.GET,entity,String.class)
 return false ;
 
 }
 
 @PutMapping(path = "/updating-info")
 public int int updating-data(PathVariable(sid) String id) {
-ResponseEntity<String> response5= (restTemplate.exchange(http://localhost:9393/api/Worker25/put,HTTP.PUT,entity,String.class)
-ResponseEntity<String> response6= (restTemplate.exchange(http://localhost:9394/api/Worker26/put,HTTP.PUT,entity,String.class)
+ResponseEntity<String> response3= (restTemplate.exchange(http://localhost:9372/api/Worker23/put,HTTP.PUT,entity,String.class)
+ResponseEntity<String> response4= (restTemplate.exchange(http://localhost:9373/api/Worker24/put,HTTP.PUT,entity,String.class)
 return null ;
 
 }
 
 @DeleteMapping(path = "/deleting-info")
 public int int deleting-data(PathVariable(sid) String id) {
-ResponseEntity<String> response7= (restTemplate.exchange(http://localhost:9393/api/Worker25/delete,HTTP.DELETE,entity,String.class)
-ResponseEntity<String> response8= (restTemplate.exchange(http://localhost:9394/api/Worker26/delete,HTTP.DELETE,entity,String.class)
+ResponseEntity<String> response7= (restTemplate.exchange(http://localhost:9372/api/Worker23/delete,HTTP.DELETE,entity,String.class)
+ResponseEntity<String> response8= (restTemplate.exchange(http://localhost:9373/api/Worker24/delete,HTTP.DELETE,entity,String.class)
 return null ;
 
 }

@@ -23,7 +23,7 @@ return null ;
 
 @PostMapping(path = "/inserting-info")
 public int int inserting-data(PathVariable(sid) String info) {
-ResponseEntity<String> response1= restTemplate.exchange(http://localhost:9094/api/ServiceRegistry0/post,HTTP.POST,entity,String.class)
+ResponseEntity<String> response3= restTemplate.exchange(http://localhost:9094/api/ServiceRegistry0/post,HTTP.POST,entity,String.class)
 return null ;
 
 }
@@ -37,7 +37,7 @@ return null ;
 
 @PutMapping(path = "/updating-info")
 public int int updating-data(PathVariable(sid) String info) {
-ResponseEntity<String> response3= restTemplate.exchange(http://localhost:9094/api/ServiceRegistry0/put,HTTP.PUT,entity,String.class)
+ResponseEntity<String> response1= restTemplate.exchange(http://localhost:9094/api/ServiceRegistry0/put,HTTP.PUT,entity,String.class)
 return null ;
 
 }

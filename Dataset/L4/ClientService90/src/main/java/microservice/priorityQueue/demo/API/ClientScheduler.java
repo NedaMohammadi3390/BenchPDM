@@ -18,7 +18,13 @@ public class ClientService90Scheduler {
 
     @Scheduled(fixedRate = 5000)
     public void sendTasks() {
-    sendTask("Task9",3);
+    sendTask("Task4",9);
+	sendTask("Task5",3);
+	sendTask("Task1",4);
+	sendTask("Task8",7);
+	sendTask("Task7",10);
+	sendTask("Task9",2);
+	sendTask("Task10",6);
 	
     }
 

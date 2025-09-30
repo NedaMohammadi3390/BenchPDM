@@ -25,13 +25,13 @@ return new ServiceInstanceListSupplier() {
         return Flux.just(Arrays.asList(
                         new DefaultServiceInstance("provider1", "provider-service", "localhost", 9012, false),
                         new DefaultServiceInstance("provider2", "provider-service", "localhost", 9013, false),
-                        new DefaultServiceInstance("provider3", "provider-service", "localhost", 9014, false),
-                        new DefaultServiceInstance("provider4", "provider-service", "localhost", 9015, false),
-                        new DefaultServiceInstance("provider5", "provider-service", "localhost", 9016, false),
-                        new DefaultServiceInstance("provider6", "provider-service", "localhost", 9017, false),
+                        new DefaultServiceInstance("provider3", "provider-service", "localhost", 9015, false),
+                        new DefaultServiceInstance("provider4", "provider-service", "localhost", 9016, false),
+                        new DefaultServiceInstance("provider5", "provider-service", "localhost", 9017, false),
+                        new DefaultServiceInstance("provider6", "provider-service", "localhost", 9018, false),
                         new DefaultServiceInstance("provider7", "provider-service", "localhost", 9019, false),
-                        new DefaultServiceInstance("provider8", "provider-service", "localhost", 9020, false),
-                        new DefaultServiceInstance("provider9", "provider-service", "localhost", 9021, false),
+                        new DefaultServiceInstance("provider8", "provider-service", "localhost", 9021, false),
+                        new DefaultServiceInstance("provider9", "provider-service", "localhost", 9022, false),
                         new DefaultServiceInstance("provider10", "provider-service", "localhost", 9023, false),
                         new DefaultServiceInstance("provider11", "provider-service", "localhost", 9024, false)
         ));

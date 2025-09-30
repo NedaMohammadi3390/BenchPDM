@@ -18,15 +18,12 @@ public class ClientService14Scheduler {
 
     @Scheduled(fixedRate = 5000)
     public void sendTasks() {
-    sendTask("Task3",10);
-	sendTask("Task7",9);
-	sendTask("Task8",4);
-	sendTask("Task5",1);
-	sendTask("Task9",3);
-	sendTask("Task4",8);
-	sendTask("Task10",5);
-	sendTask("Task1",6);
-	sendTask("Task2",2);
+    sendTask("Task3",9);
+	sendTask("Task5",5);
+	sendTask("Task2",7);
+	sendTask("Task7",3);
+	sendTask("Task6",10);
+	sendTask("Task9",8);
 	
     }
 

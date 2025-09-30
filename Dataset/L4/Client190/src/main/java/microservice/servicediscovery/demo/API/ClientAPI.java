@@ -18,8 +18,8 @@ private static final int hostId = -1;
 private String connection;
 @Autowired
 RestTemplate restTemplate = new RestTemplate();
-ResponseEntity<String> response1= restTemplate.exchangehttp://localhost:9764/api/ServiceRegistry5)
-ResponseEntity<String> response2= restTemplate.exchangehttp://localhost:9768/api/Worker80)
+ResponseEntity<String> response1= restTemplate.exchangehttp://localhost:9741/api/ServiceRegistry4)
+ResponseEntity<String> response2= restTemplate.exchangehttp://localhost:9742/api/Worker60)
 
 }
 

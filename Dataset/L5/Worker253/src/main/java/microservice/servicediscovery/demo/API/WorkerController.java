@@ -16,28 +16,28 @@ public WorkerController() {
 private int id;
 @GetMapping(path = "/receive_info")
 public int int receiving-data(PathVariable(sid) String info) {
-ResponseEntity<String> response4= restTemplate.exchange(http://localhost:10921/api/ServiceRegistry49/get,HTTP.GET,entity,String.class)
+ResponseEntity<String> response3= restTemplate.exchange(http://localhost:10851/api/ServiceRegistry48/get,HTTP.GET,entity,String.class)
 return null ;
 
 }
 
 @PostMapping(path = "/inserting-info")
 public int int inserting-data(PathVariable(sid) String info) {
-ResponseEntity<String> response3= restTemplate.exchange(http://localhost:10921/api/ServiceRegistry49/post,HTTP.POST,entity,String.class)
+ResponseEntity<String> response2= restTemplate.exchange(http://localhost:10851/api/ServiceRegistry48/post,HTTP.POST,entity,String.class)
 return null ;
 
 }
 
 @DeleteMapping(path = "/deleting-info")
 public int int deleting-data(PathVariable(sid) String info) {
-ResponseEntity<String> response2= restTemplate.exchange(http://localhost:10921/api/ServiceRegistry49/delete,HTTP.DELETE,entity,String.class)
+ResponseEntity<String> response1= restTemplate.exchange(http://localhost:10851/api/ServiceRegistry48/delete,HTTP.DELETE,entity,String.class)
 return null ;
 
 }
 
 @PutMapping(path = "/updating-info")
 public int int updating-data(PathVariable(sid) String info) {
-ResponseEntity<String> response1= restTemplate.exchange(http://localhost:10921/api/ServiceRegistry49/put,HTTP.PUT,entity,String.class)
+ResponseEntity<String> response4= restTemplate.exchange(http://localhost:10851/api/ServiceRegistry48/put,HTTP.PUT,entity,String.class)
 return null ;
 
 }

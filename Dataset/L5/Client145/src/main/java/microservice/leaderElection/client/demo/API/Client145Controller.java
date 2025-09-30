@@ -13,7 +13,7 @@ public class Client145ControllerController {
 
     @PutMapping
     public String sendTask() {
-        String dispatcherUrl = "http://localhost:10115/Leader49";
+        String dispatcherUrl = "http://localhost:10070/Leader49";
         ResponseEntity<String> response = restTemplate.postForEntity(dispatcherUrl, null, String.class);
         return "Task sent to LeaderElection -> " + response.getBody();
     }
@@ -21,7 +21,7 @@ public class Client145ControllerController {
 
     @GetMapping
     public String triggerDispatch() {
-        String dispatcherUrl = "http://localhost:10115/Leader49";
+        String dispatcherUrl = "http://localhost:10070/Leader49";
         ResponseEntity<String> response = restTemplate.postForEntity(dispatcherUrl, null, String.class);
         return "LeaderElection response -> " + response.getBody();
     }

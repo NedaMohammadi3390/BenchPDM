@@ -18,11 +18,11 @@ private static final int hostId = 0;
 private String connection;
 @Autowired
 RestTemplate restTemplate = new RestTemplate();
-ResponseEntity<String> response1= restTemplate.exchange(http://localhost:10154/api/ApiGateway5)
-ResponseEntity<String> response1= (restTemplate.exchange(http://localhost:10154/api/ApiGateway5/post,HTTP.Post,entity,String.class)
-ResponseEntity<String> response2= (restTemplate.exchange(http://localhost:10154/api/ApiGateway5/put,HTTP.Put,entity,String.class)
-ResponseEntity<String> response3= (restTemplate.exchange(http://localhost:10154/api/ApiGateway5/get,HTTP.Get,entity,String.class)
-ResponseEntity<String> response4= (restTemplate.exchange(http://localhost:10154/api/ApiGateway5/delete,HTTP.Delete,entity,String.class)
+ResponseEntity<String> response1= restTemplate.exchange(http://localhost:10162/api/ApiGateway13)
+ResponseEntity<String> response1= (restTemplate.exchange(http://localhost:10162/api/ApiGateway13/post,HTTP.Post,entity,String.class)
+ResponseEntity<String> response2= (restTemplate.exchange(http://localhost:10162/api/ApiGateway13/put,HTTP.Put,entity,String.class)
+ResponseEntity<String> response3= (restTemplate.exchange(http://localhost:10162/api/ApiGateway13/get,HTTP.Get,entity,String.class)
+ResponseEntity<String> response4= (restTemplate.exchange(http://localhost:10162/api/ApiGateway13/delete,HTTP.Delete,entity,String.class)
 
 }
 

@@ -13,7 +13,7 @@ public class ClientController {
 
     @PostMapping("/send")
     public String sendTask(@RequestParam String data, @RequestParam int priority) {
-        String dispatcherUrl = "http://localhost:9318/dispatcher/add?data=" + data + "&priority=" + priority;
+        String dispatcherUrl = "http://localhost:9315/dispatcher/add?data=" + data + "&priority=" + priority;
         ResponseEntity<String> response = restTemplate.postForEntity(dispatcherUrl, null, String.class);
         return "Task sent to Dispatcher -> " + response.getBody();
     }
@@ -21,7 +21,7 @@ public class ClientController {
 
     @PostMapping("/dispatch")
     public String triggerDispatch() {
-        String dispatcherUrl = "http://localhost:9318/dispatcher/dispatch";
+        String dispatcherUrl = "http://localhost:9315/dispatcher/dispatch";
         ResponseEntity<String> response = restTemplate.postForEntity(dispatcherUrl, null, String.class);
         return "Dispatcher response -> " + response.getBody();
     }

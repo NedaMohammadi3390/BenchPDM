@@ -17,18 +17,24 @@ public class DispatcherService2Listener {
         String data = new String(message.getBody());
         System.out.println("Dispatching: " + data);
 
-        restTemplate.postForObject("http://localhost:9045/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9049/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9050/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9056/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9057/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9058/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9063/external/process?data=" + data, null, String.class);
+        restTemplate.postForObject("http://localhost:9048/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9053/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9054/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9055/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9060/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9061/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9062/external/process?data=" + data, null, String.class);
 		restTemplate.postForObject("http://localhost:9068/external/process?data=" + data, null, String.class);
 		restTemplate.postForObject("http://localhost:9069/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9074/external/process?data=" + data, null, String.class);
 		restTemplate.postForObject("http://localhost:9075/external/process?data=" + data, null, String.class);
-		restTemplate.postForObject("http://localhost:9080/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9076/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9077/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9085/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9086/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9087/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9094/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9095/external/process?data=" + data, null, String.class);
+		restTemplate.postForObject("http://localhost:9096/external/process?data=" + data, null, String.class);
 		
     }
 }

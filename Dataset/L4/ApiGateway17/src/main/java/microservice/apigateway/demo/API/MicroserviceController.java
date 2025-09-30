@@ -18,36 +18,36 @@ private ArrayList<String> connections;
 private ArrayList<String> database;
 @PostMapping(path = "/creating_request")
 public int int creating-request(PathVariable(sid) String info) {
-ResponseEntity<String> response1= (restTemplate.exchange(http://localhost:9665/api/Worker45/post,HTTP.POST,entity,String.class)
-ResponseEntity<String> response2= (restTemplate.exchange(http://localhost:9666/api/Worker46/post,HTTP.POST,entity,String.class)
-ResponseEntity<String> response3= (restTemplate.exchange(http://localhost:9667/api/Worker47/post,HTTP.POST,entity,String.class)
+ResponseEntity<String> response1= (restTemplate.exchange(http://localhost:9656/api/Worker32/post,HTTP.POST,entity,String.class)
+ResponseEntity<String> response2= (restTemplate.exchange(http://localhost:9657/api/Worker33/post,HTTP.POST,entity,String.class)
+ResponseEntity<String> response3= (restTemplate.exchange(http://localhost:9658/api/Worker34/post,HTTP.POST,entity,String.class)
 return null ;
 
 }
 
 @GetMapping(path = "/receiving-info")
 public int int receiving-data() {
-ResponseEntity<String> response4= (restTemplate.exchange(http://localhost:9665/api/Worker45/get,HTTP.GET,entity,String.class)
-ResponseEntity<String> response5= (restTemplate.exchange(http://localhost:9666/api/Worker46/get,HTTP.GET,entity,String.class)
-ResponseEntity<String> response6= (restTemplate.exchange(http://localhost:9667/api/Worker47/get,HTTP.GET,entity,String.class)
+ResponseEntity<String> response7= (restTemplate.exchange(http://localhost:9656/api/Worker32/get,HTTP.GET,entity,String.class)
+ResponseEntity<String> response8= (restTemplate.exchange(http://localhost:9657/api/Worker33/get,HTTP.GET,entity,String.class)
+ResponseEntity<String> response9= (restTemplate.exchange(http://localhost:9658/api/Worker34/get,HTTP.GET,entity,String.class)
 return false ;
 
 }
 
 @PutMapping(path = "/updating-info")
 public int int updating-data(PathVariable(sid) String id) {
-ResponseEntity<String> response10= (restTemplate.exchange(http://localhost:9665/api/Worker45/put,HTTP.PUT,entity,String.class)
-ResponseEntity<String> response11= (restTemplate.exchange(http://localhost:9666/api/Worker46/put,HTTP.PUT,entity,String.class)
-ResponseEntity<String> response12= (restTemplate.exchange(http://localhost:9667/api/Worker47/put,HTTP.PUT,entity,String.class)
+ResponseEntity<String> response4= (restTemplate.exchange(http://localhost:9656/api/Worker32/put,HTTP.PUT,entity,String.class)
+ResponseEntity<String> response5= (restTemplate.exchange(http://localhost:9657/api/Worker33/put,HTTP.PUT,entity,String.class)
+ResponseEntity<String> response6= (restTemplate.exchange(http://localhost:9658/api/Worker34/put,HTTP.PUT,entity,String.class)
 return null ;
 
 }
 
 @DeleteMapping(path = "/deleting-info")
 public int int deleting-data(PathVariable(sid) String id) {
-ResponseEntity<String> response7= (restTemplate.exchange(http://localhost:9665/api/Worker45/delete,HTTP.DELETE,entity,String.class)
-ResponseEntity<String> response8= (restTemplate.exchange(http://localhost:9666/api/Worker46/delete,HTTP.DELETE,entity,String.class)
-ResponseEntity<String> response9= (restTemplate.exchange(http://localhost:9667/api/Worker47/delete,HTTP.DELETE,entity,String.class)
+ResponseEntity<String> response10= (restTemplate.exchange(http://localhost:9656/api/Worker32/delete,HTTP.DELETE,entity,String.class)
+ResponseEntity<String> response11= (restTemplate.exchange(http://localhost:9657/api/Worker33/delete,HTTP.DELETE,entity,String.class)
+ResponseEntity<String> response12= (restTemplate.exchange(http://localhost:9658/api/Worker34/delete,HTTP.DELETE,entity,String.class)
 return null ;
 
 }
