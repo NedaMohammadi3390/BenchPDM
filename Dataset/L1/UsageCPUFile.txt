@@ -1,0 +1,13 @@
+{serviveId:14,serviceName:DispatcherService0,serviceRole:PriorityQueue_DispatcherService,serviceCreationTime:14,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:14,serviceName:DispatcherService0,serviceRole:PriorityQueue_DispatcherService,serviceCreationTime:14,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:14,serviceName:DispatcherService0,serviceRole:PriorityQueue_DispatcherService,serviceCreationTime:14,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:23,serviceName:DispatcherService1,serviceRole:PriorityQueue_DispatcherService,serviceCreationTime:23,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:23,serviceName:DispatcherService1,serviceRole:PriorityQueue_DispatcherService,serviceCreationTime:23,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:29,serviceName:DispatcherService2,serviceRole:PriorityQueue_DispatcherService,serviceCreationTime:29,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:48,serviceName:Leader0,serviceRole:LeaderElection_Leader,serviceCreationTime:48,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:52,serviceName:Leader1,serviceRole:LeaderElection_Leader,serviceCreationTime:52,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:58,serviceName:Leader2,serviceRole:LeaderElection_Leader,serviceCreationTime:58,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:91,serviceName:Client22,serviceRole:ServiceDiscovery_Client,serviceCreationTime:91,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:99,serviceName:Client28,serviceRole:ServiceDiscovery_Client,serviceCreationTime:99,cpu load:,0.0,Process CPU load:,4.497044758043162,
+{serviveId:104,serviceName:Client31,serviceRole:ServiceDiscovery_Client,serviceCreationTime:104,cpu load:,0.0,Process CPU load:,4.497044758043162,
+

@@ -1,0 +1,5 @@
+{traceId:1,{serviveId:1,serviceName:Client0,serviceRole:LeaderElection_Client,serviceuri:http://localhost:9011/api/Client0,serviceCreationTime:1,duplicate:false,annotations:[{endpoint:{destinationServiceURI:http://localhost:9010/api/Leader0,timeStamp:1640465164351900,typeRequest:GET,},]},
+{traceId:2,{serviveId:1,serviceName:Client0,serviceRole:LeaderElection_Client,serviceuri:http://localhost:9011/api/Client0,serviceCreationTime:1,duplicate:false,annotations:[{endpoint:{destinationServiceURI:http://localhost:9010/api/Leader0,timeStamp:1640465164360300,typeRequest:PUT,},]},
+{traceId:3,{serviveId:2,serviceName:Client1,serviceRole:LeaderElection_Client,serviceuri:http://localhost:9012/api/Client1,serviceCreationTime:2,duplicate:false,annotations:[{endpoint:{destinationServiceURI:http://localhost:9010/api/Leader0,timeStamp:1640465164385400,typeRequest:GET,},]},
+{traceId:4,{serviveId:2,serviceName:Client1,serviceRole:LeaderElection_Client,serviceuri:http://localhost:9012/api/Client1,serviceCreationTime:2,duplicate:false,annotations:[{endpoint:{destinationServiceURI:http://localhost:9010/api/Leader0,timeStamp:1640465164388200,typeRequest:PUT,},]},
+

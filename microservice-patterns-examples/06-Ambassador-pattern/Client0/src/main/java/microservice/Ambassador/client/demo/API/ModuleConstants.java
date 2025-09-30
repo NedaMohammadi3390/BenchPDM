@@ -1,0 +1,7 @@
+microservice.Ambassador.client.demo.API
+
+public class ModuleConstants
+{
+    public static final String PROXY_API_URI = "/proxy/data";
+
+}

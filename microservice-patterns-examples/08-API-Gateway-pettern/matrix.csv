@@ -1,0 +1,7 @@
+id,microserviceName,URI,connectionTypes,duplicate,creationTime,pattern,role,connections
+0,ApiGateway0,http://localhost:9010/api/ApiGateway0,POST PUT GET DELETE ,false,0,ApiGateway,ApiGateway,POST http://localhost:9014/api/Worker0 GET http://localhost:9014/api/Worker0 PUT http://localhost:9014/api/Worker0 DELETE http://localhost:9014/api/Worker0 POST http://localhost:9015/api/Worker1 GET http://localhost:9015/api/Worker1 PUT http://localhost:9015/api/Worker1 DELETE http://localhost:9015/api/Worker1 
+1,Client0,http://localhost:9011/api/Client0,,false,1,ApiGateway,Client,POST http://localhost:9010/api/ApiGateway0 GET http://localhost:9010/api/ApiGateway0 PUT http://localhost:9010/api/ApiGateway0 DELETE http://localhost:9010/api/ApiGateway0 
+2,Client1,http://localhost:9012/api/Client1,,false,2,ApiGateway,Client,POST http://localhost:9010/api/ApiGateway0 GET http://localhost:9010/api/ApiGateway0 PUT http://localhost:9010/api/ApiGateway0 DELETE http://localhost:9010/api/ApiGateway0 
+3,Client2,http://localhost:9013/api/Client2,,false,3,ApiGateway,Client,POST http://localhost:9010/api/ApiGateway0 GET http://localhost:9010/api/ApiGateway0 PUT http://localhost:9010/api/ApiGateway0 DELETE http://localhost:9010/api/ApiGateway0 
+4,Worker0,http://localhost:9014/api/Worker0,POST GET PUT DELETE ,false,4,ApiGateway,Worker,
+5,Worker1,http://localhost:9015/api/Worker1,POST GET PUT DELETE ,false,5,ApiGateway,Worker,

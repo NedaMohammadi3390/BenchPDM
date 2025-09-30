@@ -1,0 +1,7 @@
+id,microserviceName,URI,connectionTypes,duplicate,creationTime,pattern,role,connections
+0,LoadBalancingService0,http://localhost:9010/api/LoadBalancingService0,GET ,false,0,LoadBalanceing,LoadBalancingService,POST http://localhost:9011/api/ProviderService0 PUT http://localhost:9011/api/ProviderService0 GET http://localhost:9011/api/ProviderService0 POST http://localhost:9012/api/ProviderService1 PUT http://localhost:9012/api/ProviderService1 GET http://localhost:9012/api/ProviderService1 POST http://localhost:9013/api/ProviderService2 PUT http://localhost:9013/api/ProviderService2 GET http://localhost:9013/api/ProviderService2 POST http://localhost:9014/api/ProviderService3 PUT http://localhost:9014/api/ProviderService3 GET http://localhost:9014/api/ProviderService3 POST http://localhost:9015/api/ProviderService4 PUT http://localhost:9015/api/ProviderService4 GET http://localhost:9015/api/ProviderService4 
+1,ProviderService0,http://localhost:9011/api/ProviderService0,POST PUT GET ,false,1,LoadBalanceing,ProviderService,
+2,ProviderService1,http://localhost:9012/api/ProviderService1,POST PUT GET ,false,2,LoadBalanceing,ProviderService,
+3,ProviderService2,http://localhost:9013/api/ProviderService2,POST PUT GET ,false,3,LoadBalanceing,ProviderService,
+4,ProviderService3,http://localhost:9014/api/ProviderService3,POST PUT GET ,false,4,LoadBalanceing,ProviderService,
+5,ProviderService4,http://localhost:9015/api/ProviderService4,POST PUT GET ,false,5,LoadBalanceing,ProviderService,

@@ -1,0 +1,3 @@
+id,microserviceName,URI,connectionTypes,duplicate,creationTime,pattern,role,connections
+0,OrderService0,http://localhost:9010/api/OrderService0,POST DELETE POST GET ,false,0,EventSourcing,EventOrderService,
+1,ShippingService0,http://localhost:9011/api/ShippingService0,POST GET ,false,1,EventSourcing,EventShippingService,

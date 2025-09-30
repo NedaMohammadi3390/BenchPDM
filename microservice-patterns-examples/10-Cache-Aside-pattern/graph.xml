@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>Cache0</MicroserviceName>
+<URI>http://localhost:9010/api/Cache0</URI>
+<ConnectionType>POST GET PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>CacheASide</Pattern>
+<Role>Cache</Role>
+<ConnectedURIs/>
+</row>
+<row index="1">
+<MicroserviceName>Client0</MicroserviceName>
+<URI>http://localhost:9011/api/Client0</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>CacheASide</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9010/api/Cache0 GET http://localhost:9010/api/Cache0 PUT http://localhost:9010/api/Cache0 DELETE http://localhost:9010/api/Cache0 </ConnectedURIs>
+</row>
+<row index="2">
+<MicroserviceName>Client1</MicroserviceName>
+<URI>http://localhost:9012/api/Client1</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>CacheASide</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9010/api/Cache0 GET http://localhost:9010/api/Cache0 PUT http://localhost:9010/api/Cache0 DELETE http://localhost:9010/api/Cache0 </ConnectedURIs>
+</row>
+<row index="3">
+<MicroserviceName>Client2</MicroserviceName>
+<URI>http://localhost:9013/api/Client2</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>3</CreationTime>
+<Pattern>CacheASide</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9010/api/Cache0 GET http://localhost:9010/api/Cache0 PUT http://localhost:9010/api/Cache0 DELETE http://localhost:9010/api/Cache0 </ConnectedURIs>
+</row>
+</graph>

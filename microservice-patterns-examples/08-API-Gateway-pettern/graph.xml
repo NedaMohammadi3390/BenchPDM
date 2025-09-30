@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>ApiGateway0</MicroserviceName>
+<URI>http://localhost:9010/api/ApiGateway0</URI>
+<ConnectionType>POST PUT GET DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>ApiGateway</Pattern>
+<Role>ApiGateway</Role>
+<ConnectedURIs>POST http://localhost:9014/api/Worker0 GET http://localhost:9014/api/Worker0 PUT http://localhost:9014/api/Worker0 DELETE http://localhost:9014/api/Worker0 POST http://localhost:9015/api/Worker1 GET http://localhost:9015/api/Worker1 PUT http://localhost:9015/api/Worker1 DELETE http://localhost:9015/api/Worker1 </ConnectedURIs>
+</row>
+<row index="1">
+<MicroserviceName>Client0</MicroserviceName>
+<URI>http://localhost:9011/api/Client0</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>ApiGateway</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9010/api/ApiGateway0 GET http://localhost:9010/api/ApiGateway0 PUT http://localhost:9010/api/ApiGateway0 DELETE http://localhost:9010/api/ApiGateway0 </ConnectedURIs>
+</row>
+<row index="2">
+<MicroserviceName>Client1</MicroserviceName>
+<URI>http://localhost:9012/api/Client1</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>ApiGateway</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9010/api/ApiGateway0 GET http://localhost:9010/api/ApiGateway0 PUT http://localhost:9010/api/ApiGateway0 DELETE http://localhost:9010/api/ApiGateway0 </ConnectedURIs>
+</row>
+<row index="3">
+<MicroserviceName>Client2</MicroserviceName>
+<URI>http://localhost:9013/api/Client2</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>3</CreationTime>
+<Pattern>ApiGateway</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9010/api/ApiGateway0 GET http://localhost:9010/api/ApiGateway0 PUT http://localhost:9010/api/ApiGateway0 DELETE http://localhost:9010/api/ApiGateway0 </ConnectedURIs>
+</row>
+<row index="4">
+<MicroserviceName>Worker0</MicroserviceName>
+<URI>http://localhost:9014/api/Worker0</URI>
+<ConnectionType>POST GET PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>4</CreationTime>
+<Pattern>ApiGateway</Pattern>
+<Role>Worker</Role>
+<ConnectedURIs/>
+</row>
+<row index="5">
+<MicroserviceName>Worker1</MicroserviceName>
+<URI>http://localhost:9015/api/Worker1</URI>
+<ConnectionType>POST GET PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>5</CreationTime>
+<Pattern>ApiGateway</Pattern>
+<Role>Worker</Role>
+<ConnectedURIs/>
+</row>
+</graph>

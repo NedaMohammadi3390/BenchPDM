@@ -1,0 +1,4 @@
+id,microserviceName,URI,connectionTypes,duplicate,creationTime,pattern,role,connections
+0,Leader0,http://localhost:9010/api/Leader0,GET PUT ,false,0,LeaderElection,Leader,
+1,Client0,http://localhost:9011/api/Client0,GET PUT ,false,1,LeaderElection,Client,GET http://localhost:9010/api/Leader0 PUT http://localhost:9010/api/Leader0 
+2,Client1,http://localhost:9012/api/Client1,GET PUT ,false,2,LeaderElection,Client,GET http://localhost:9010/api/Leader0 PUT http://localhost:9010/api/Leader0 

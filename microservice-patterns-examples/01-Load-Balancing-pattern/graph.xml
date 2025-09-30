@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>LoadBalancingService0</MicroserviceName>
+<URI>http://localhost:9010/api/LoadBalancingService0</URI>
+<ConnectionType>GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>LoadBalanceing</Pattern>
+<Role>LoadBalancingService</Role>
+<ConnectedURIs>POST http://localhost:9011/api/ProviderService0 PUT http://localhost:9011/api/ProviderService0 GET http://localhost:9011/api/ProviderService0 POST http://localhost:9012/api/ProviderService1 PUT http://localhost:9012/api/ProviderService1 GET http://localhost:9012/api/ProviderService1 POST http://localhost:9013/api/ProviderService2 PUT http://localhost:9013/api/ProviderService2 GET http://localhost:9013/api/ProviderService2 POST http://localhost:9014/api/ProviderService3 PUT http://localhost:9014/api/ProviderService3 GET http://localhost:9014/api/ProviderService3 POST http://localhost:9015/api/ProviderService4 PUT http://localhost:9015/api/ProviderService4 GET http://localhost:9015/api/ProviderService4 </ConnectedURIs>
+</row>
+<row index="1">
+<MicroserviceName>ProviderService0</MicroserviceName>
+<URI>http://localhost:9011/api/ProviderService0</URI>
+<ConnectionType>POST PUT GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>LoadBalanceing</Pattern>
+<Role>ProviderService</Role>
+<ConnectedURIs/>
+</row>
+<row index="2">
+<MicroserviceName>ProviderService1</MicroserviceName>
+<URI>http://localhost:9012/api/ProviderService1</URI>
+<ConnectionType>POST PUT GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>LoadBalanceing</Pattern>
+<Role>ProviderService</Role>
+<ConnectedURIs/>
+</row>
+<row index="3">
+<MicroserviceName>ProviderService2</MicroserviceName>
+<URI>http://localhost:9013/api/ProviderService2</URI>
+<ConnectionType>POST PUT GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>3</CreationTime>
+<Pattern>LoadBalanceing</Pattern>
+<Role>ProviderService</Role>
+<ConnectedURIs/>
+</row>
+<row index="4">
+<MicroserviceName>ProviderService3</MicroserviceName>
+<URI>http://localhost:9014/api/ProviderService3</URI>
+<ConnectionType>POST PUT GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>4</CreationTime>
+<Pattern>LoadBalanceing</Pattern>
+<Role>ProviderService</Role>
+<ConnectedURIs/>
+</row>
+<row index="5">
+<MicroserviceName>ProviderService4</MicroserviceName>
+<URI>http://localhost:9015/api/ProviderService4</URI>
+<ConnectionType>POST PUT GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>5</CreationTime>
+<Pattern>LoadBalanceing</Pattern>
+<Role>ProviderService</Role>
+<ConnectedURIs/>
+</row>
+</graph>

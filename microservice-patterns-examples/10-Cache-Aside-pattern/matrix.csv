@@ -1,0 +1,5 @@
+id,microserviceName,URI,connectionTypes,duplicate,creationTime,pattern,role,connections
+0,Cache0,http://localhost:9010/api/Cache0,POST GET PUT DELETE ,false,0,CacheASide,Cache,
+1,Client0,http://localhost:9011/api/Client0,,false,1,CacheASide,Client,POST http://localhost:9010/api/Cache0 GET http://localhost:9010/api/Cache0 PUT http://localhost:9010/api/Cache0 DELETE http://localhost:9010/api/Cache0 
+2,Client1,http://localhost:9012/api/Client1,,false,2,CacheASide,Client,POST http://localhost:9010/api/Cache0 GET http://localhost:9010/api/Cache0 PUT http://localhost:9010/api/Cache0 DELETE http://localhost:9010/api/Cache0 
+3,Client2,http://localhost:9013/api/Client2,,false,3,CacheASide,Client,POST http://localhost:9010/api/Cache0 GET http://localhost:9010/api/Cache0 PUT http://localhost:9010/api/Cache0 DELETE http://localhost:9010/api/Cache0 

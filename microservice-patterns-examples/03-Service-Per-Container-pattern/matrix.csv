@@ -1,0 +1,22 @@
+id,microserviceName,URI,connectionTypes,duplicate,creationTime,pattern,role,connections
+0,Storage0,http://localhost:9010/api/Storage0,POST GET ,false,0,StaticContentHost,Storage,
+1,Admin0,http://localhost:9011/api/Admin0,,false,1,StaticContentHost,Client,POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9018/api/Storage2 POST http://localhost:9025/api/Storage3 
+2,Client0,http://localhost:9012/api/Client0,,false,2,StaticContentHost,Client,GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 GET http://localhost:9025/api/Storage3 
+3,Client1,http://localhost:9013/api/Client1,,false,3,StaticContentHost,Client,GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 GET http://localhost:9025/api/Storage3 
+4,Client2,http://localhost:9014/api/Client2,,false,4,StaticContentHost,Client,GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 GET http://localhost:9025/api/Storage3 
+5,Storage1,http://localhost:9015/api/Storage1,POST GET ,false,5,StaticContentHost,Storage,
+6,Admin1,http://localhost:9016/api/Admin1,,false,6,StaticContentHost,Client,POST http://localhost:9015/api/Storage1 POST http://localhost:9010/api/Storage0 POST http://localhost:9018/api/Storage2 POST http://localhost:9025/api/Storage3 
+7,Client3,http://localhost:9017/api/Client3,,false,7,StaticContentHost,Client,GET http://localhost:9015/api/Storage1 GET http://localhost:9010/api/Storage0 GET http://localhost:9018/api/Storage2 GET http://localhost:9025/api/Storage3 
+8,Storage2,http://localhost:9018/api/Storage2,POST GET ,false,8,StaticContentHost,Storage,
+9,Admin2,http://localhost:9019/api/Admin2,,false,9,StaticContentHost,Client,POST http://localhost:9018/api/Storage2 POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9025/api/Storage3 
+10,Admin3,http://localhost:9020/api/Admin3,,false,10,StaticContentHost,Client,POST http://localhost:9018/api/Storage2 POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9025/api/Storage3 
+11,Admin4,http://localhost:9021/api/Admin4,,false,11,StaticContentHost,Client,POST http://localhost:9018/api/Storage2 POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9025/api/Storage3 
+12,Client4,http://localhost:9022/api/Client4,,false,12,StaticContentHost,Client,GET http://localhost:9018/api/Storage2 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9025/api/Storage3 
+13,Client5,http://localhost:9023/api/Client5,,false,13,StaticContentHost,Client,GET http://localhost:9018/api/Storage2 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9025/api/Storage3 
+14,Client6,http://localhost:9024/api/Client6,,false,14,StaticContentHost,Client,GET http://localhost:9018/api/Storage2 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9025/api/Storage3 
+15,Storage3,http://localhost:9025/api/Storage3,POST GET ,false,15,StaticContentHost,Storage,
+16,Admin5,http://localhost:9026/api/Admin5,,false,16,StaticContentHost,Client,POST http://localhost:9025/api/Storage3 POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9018/api/Storage2 
+17,Admin6,http://localhost:9027/api/Admin6,,false,17,StaticContentHost,Client,POST http://localhost:9025/api/Storage3 POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9018/api/Storage2 
+18,Client7,http://localhost:9028/api/Client7,,false,18,StaticContentHost,Client,GET http://localhost:9025/api/Storage3 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 
+19,Client8,http://localhost:9029/api/Client8,,false,19,StaticContentHost,Client,GET http://localhost:9025/api/Storage3 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 
+20,Client9,http://localhost:9030/api/Client9,,false,20,StaticContentHost,Client,GET http://localhost:9025/api/Storage3 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 

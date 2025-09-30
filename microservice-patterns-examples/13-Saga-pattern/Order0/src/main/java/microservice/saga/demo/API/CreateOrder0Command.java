@@ -1,0 +1,27 @@
+microservice.saga.demo.API
+
+import org.axonframework.modelling.command.TargetAggregateIdentifier;
+
+import java.math.BigDecimal;
+
+public class CreateCreateOrder0CommandCommand {
+
+    @TargetAggregateIdentifier
+    public final String orderId;
+
+    public final String itemType;
+
+    public final BigDecimal price;
+
+    public final String currency;
+
+    public final String orderStatus;
+
+    public CreateCreateOrder0CommandCommand(String orderId, String itemType, BigDecimal price, String currency, String orderStatus) {
+        this.orderId = orderId;
+        this.itemType = itemType;
+        this.price = price;
+        this.currency = currency;
+        this.orderStatus = orderStatus;
+    }
+}

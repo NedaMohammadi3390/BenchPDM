@@ -1,0 +1,3 @@
+0 | Payment0 | http://localhost:9010/api/Payment0 | POST | false | 0 | Saga: Payment | POST http://localhost:9011/api/Order0 
+1 | Order0 | http://localhost:9011/api/Order0 | POST | false | 1 | Saga: Order | POST http://localhost:9010/api/Payment0 POST http://localhost:9012/api/Shipping0 
+2 | Shipping0 | http://localhost:9012/api/Shipping0 | POST | false | 2 | Saga: Shipping | POST http://localhost:9011/api/Order0 

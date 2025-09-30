@@ -1,0 +1,5 @@
+0 | ApiGateway0 | http://localhost:9010/api/ApiGateway0 | GET POST PUT DELETE | false | 0 | PipesAndFilters: ApiGateway | TO http://localhost:9013/api/Filter0 TO http://localhost:9014/api/Filter1 
+1 | Client0 | http://localhost:9011/api/Client0 | | false | 1 | PipesAndFilters: Client | GET http://localhost:9010/api/ApiGateway0 POST http://localhost:9010/api/ApiGateway0 PUT http://localhost:9010/api/ApiGateway0 DELETE http://localhost:9010/api/ApiGateway0 
+2 | Client1 | http://localhost:9012/api/Client1 | | false | 2 | PipesAndFilters: Client | GET http://localhost:9010/api/ApiGateway0 POST http://localhost:9010/api/ApiGateway0 PUT http://localhost:9010/api/ApiGateway0 DELETE http://localhost:9010/api/ApiGateway0 
+3 | Filter0 | http://localhost:9013/api/Filter0 | GET POST PUT DELETE | false | 3 | PipesAndFilters: Filter | 
+4 | Filter1 | http://localhost:9014/api/Filter1 | GET POST PUT DELETE | false | 4 | PipesAndFilters: Filter | 

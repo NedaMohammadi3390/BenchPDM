@@ -1,0 +1,11 @@
+{serviveId:2,serviceName:Client0,serviceRole:StaticContentHost_Client,serviceCreationTime:2,Time,1759173220160,usageMemory:,15,
+{serviveId:3,serviceName:Client1,serviceRole:StaticContentHost_Client,serviceCreationTime:3,Time,1759173220160,usageMemory:,15,
+{serviveId:4,serviceName:Client2,serviceRole:StaticContentHost_Client,serviceCreationTime:4,Time,1759173220160,usageMemory:,15,
+{serviveId:7,serviceName:Client3,serviceRole:StaticContentHost_Client,serviceCreationTime:7,Time,1759173220160,usageMemory:,15,
+{serviveId:12,serviceName:Client4,serviceRole:StaticContentHost_Client,serviceCreationTime:12,Time,1759173220160,usageMemory:,15,
+{serviveId:13,serviceName:Client5,serviceRole:StaticContentHost_Client,serviceCreationTime:13,Time,1759173220160,usageMemory:,15,
+{serviveId:14,serviceName:Client6,serviceRole:StaticContentHost_Client,serviceCreationTime:14,Time,1759173220160,usageMemory:,15,
+{serviveId:18,serviceName:Client7,serviceRole:StaticContentHost_Client,serviceCreationTime:18,Time,1759173220160,usageMemory:,15,
+{serviveId:19,serviceName:Client8,serviceRole:StaticContentHost_Client,serviceCreationTime:19,Time,1759173220160,usageMemory:,15,
+{serviveId:20,serviceName:Client9,serviceRole:StaticContentHost_Client,serviceCreationTime:20,Time,1759173220160,usageMemory:,15,
+

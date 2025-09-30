@@ -1,0 +1,4 @@
+{serviveId:1,serviceName:Client0,serviceRole:CacheASide_Client,serviceCreationTime:1,Time,1759173439186,usageMemory:,13,
+{serviveId:2,serviceName:Client1,serviceRole:CacheASide_Client,serviceCreationTime:2,Time,1759173439186,usageMemory:,13,
+{serviveId:3,serviceName:Client2,serviceRole:CacheASide_Client,serviceCreationTime:3,Time,1759173439186,usageMemory:,13,
+

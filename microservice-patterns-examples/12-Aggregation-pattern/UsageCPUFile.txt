@@ -1,0 +1,2 @@
+{serviveId:0,serviceName:Aggregator0,serviceRole:Aggregator_Aggregator,serviceCreationTime:0,cpu load:,0.0,Process CPU load:,4.340379053289021,
+

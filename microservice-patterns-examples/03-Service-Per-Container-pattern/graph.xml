@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>Storage0</MicroserviceName>
+<URI>http://localhost:9010/api/Storage0</URI>
+<ConnectionType>POST GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Storage</Role>
+<ConnectedURIs/>
+</row>
+<row index="1">
+<MicroserviceName>Admin0</MicroserviceName>
+<URI>http://localhost:9011/api/Admin0</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9018/api/Storage2 POST http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="2">
+<MicroserviceName>Client0</MicroserviceName>
+<URI>http://localhost:9012/api/Client0</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 GET http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="3">
+<MicroserviceName>Client1</MicroserviceName>
+<URI>http://localhost:9013/api/Client1</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>3</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 GET http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="4">
+<MicroserviceName>Client2</MicroserviceName>
+<URI>http://localhost:9014/api/Client2</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>4</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 GET http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="5">
+<MicroserviceName>Storage1</MicroserviceName>
+<URI>http://localhost:9015/api/Storage1</URI>
+<ConnectionType>POST GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>5</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Storage</Role>
+<ConnectedURIs/>
+</row>
+<row index="6">
+<MicroserviceName>Admin1</MicroserviceName>
+<URI>http://localhost:9016/api/Admin1</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>6</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9015/api/Storage1 POST http://localhost:9010/api/Storage0 POST http://localhost:9018/api/Storage2 POST http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="7">
+<MicroserviceName>Client3</MicroserviceName>
+<URI>http://localhost:9017/api/Client3</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>7</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9015/api/Storage1 GET http://localhost:9010/api/Storage0 GET http://localhost:9018/api/Storage2 GET http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="8">
+<MicroserviceName>Storage2</MicroserviceName>
+<URI>http://localhost:9018/api/Storage2</URI>
+<ConnectionType>POST GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>8</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Storage</Role>
+<ConnectedURIs/>
+</row>
+<row index="9">
+<MicroserviceName>Admin2</MicroserviceName>
+<URI>http://localhost:9019/api/Admin2</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>9</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9018/api/Storage2 POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="10">
+<MicroserviceName>Admin3</MicroserviceName>
+<URI>http://localhost:9020/api/Admin3</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>10</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9018/api/Storage2 POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="11">
+<MicroserviceName>Admin4</MicroserviceName>
+<URI>http://localhost:9021/api/Admin4</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>11</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9018/api/Storage2 POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="12">
+<MicroserviceName>Client4</MicroserviceName>
+<URI>http://localhost:9022/api/Client4</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>12</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9018/api/Storage2 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="13">
+<MicroserviceName>Client5</MicroserviceName>
+<URI>http://localhost:9023/api/Client5</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>13</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9018/api/Storage2 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="14">
+<MicroserviceName>Client6</MicroserviceName>
+<URI>http://localhost:9024/api/Client6</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>14</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9018/api/Storage2 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9025/api/Storage3 </ConnectedURIs>
+</row>
+<row index="15">
+<MicroserviceName>Storage3</MicroserviceName>
+<URI>http://localhost:9025/api/Storage3</URI>
+<ConnectionType>POST GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>15</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Storage</Role>
+<ConnectedURIs/>
+</row>
+<row index="16">
+<MicroserviceName>Admin5</MicroserviceName>
+<URI>http://localhost:9026/api/Admin5</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>16</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9025/api/Storage3 POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9018/api/Storage2 </ConnectedURIs>
+</row>
+<row index="17">
+<MicroserviceName>Admin6</MicroserviceName>
+<URI>http://localhost:9027/api/Admin6</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>17</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9025/api/Storage3 POST http://localhost:9010/api/Storage0 POST http://localhost:9015/api/Storage1 POST http://localhost:9018/api/Storage2 </ConnectedURIs>
+</row>
+<row index="18">
+<MicroserviceName>Client7</MicroserviceName>
+<URI>http://localhost:9028/api/Client7</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>18</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9025/api/Storage3 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 </ConnectedURIs>
+</row>
+<row index="19">
+<MicroserviceName>Client8</MicroserviceName>
+<URI>http://localhost:9029/api/Client8</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>19</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9025/api/Storage3 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 </ConnectedURIs>
+</row>
+<row index="20">
+<MicroserviceName>Client9</MicroserviceName>
+<URI>http://localhost:9030/api/Client9</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>20</CreationTime>
+<Pattern>StaticContentHost</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9025/api/Storage3 GET http://localhost:9010/api/Storage0 GET http://localhost:9015/api/Storage1 GET http://localhost:9018/api/Storage2 </ConnectedURIs>
+</row>
+</graph>

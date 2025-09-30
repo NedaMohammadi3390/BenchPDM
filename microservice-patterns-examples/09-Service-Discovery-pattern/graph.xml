@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>ServiceRegistry0</MicroserviceName>
+<URI>http://localhost:9010/api/ServiceRegistry0</URI>
+<ConnectionType>POST PUT GET DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>ServiceRegistry</Role>
+<ConnectedURIs/>
+</row>
+<row index="1">
+<MicroserviceName>Worker0</MicroserviceName>
+<URI>http://localhost:9011/api/Worker0</URI>
+<ConnectionType>POST PUT GET DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Worker</Role>
+<ConnectedURIs>POST http://localhost:9010/api/ServiceRegistry0 PUT http://localhost:9010/api/ServiceRegistry0 DELETE http://localhost:9010/api/ServiceRegistry0 </ConnectedURIs>
+</row>
+<row index="2">
+<MicroserviceName>Worker1</MicroserviceName>
+<URI>http://localhost:9012/api/Worker1</URI>
+<ConnectionType>POST PUT GET DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Worker</Role>
+<ConnectedURIs>POST http://localhost:9010/api/ServiceRegistry0 PUT http://localhost:9010/api/ServiceRegistry0 DELETE http://localhost:9010/api/ServiceRegistry0 </ConnectedURIs>
+</row>
+<row index="3">
+<MicroserviceName>Worker2</MicroserviceName>
+<URI>http://localhost:9013/api/Worker2</URI>
+<ConnectionType>POST PUT GET DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>3</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Worker</Role>
+<ConnectedURIs>POST http://localhost:9010/api/ServiceRegistry0 PUT http://localhost:9010/api/ServiceRegistry0 DELETE http://localhost:9010/api/ServiceRegistry0 </ConnectedURIs>
+</row>
+<row index="4">
+<MicroserviceName>Worker3</MicroserviceName>
+<URI>http://localhost:9014/api/Worker3</URI>
+<ConnectionType>POST PUT GET DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>4</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Worker</Role>
+<ConnectedURIs>POST http://localhost:9010/api/ServiceRegistry0 PUT http://localhost:9010/api/ServiceRegistry0 DELETE http://localhost:9010/api/ServiceRegistry0 </ConnectedURIs>
+</row>
+<row index="5">
+<MicroserviceName>Worker4</MicroserviceName>
+<URI>http://localhost:9015/api/Worker4</URI>
+<ConnectionType>POST PUT GET DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>5</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Worker</Role>
+<ConnectedURIs>POST http://localhost:9010/api/ServiceRegistry0 PUT http://localhost:9010/api/ServiceRegistry0 DELETE http://localhost:9010/api/ServiceRegistry0 </ConnectedURIs>
+</row>
+<row index="6">
+<MicroserviceName>Client0</MicroserviceName>
+<URI>http://localhost:9016/api/Client0</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>6</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/ServiceRegistry0 GET http://localhost:9015/api/Worker4 PUT http://localhost:9015/api/Worker4 POST http://localhost:9015/api/Worker4 DELETE http://localhost:9015/api/Worker4 </ConnectedURIs>
+</row>
+<row index="7">
+<MicroserviceName>Client1</MicroserviceName>
+<URI>http://localhost:9017/api/Client1</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>7</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/ServiceRegistry0 GET http://localhost:9015/api/Worker4 PUT http://localhost:9015/api/Worker4 POST http://localhost:9015/api/Worker4 DELETE http://localhost:9015/api/Worker4 </ConnectedURIs>
+</row>
+<row index="8">
+<MicroserviceName>Client2</MicroserviceName>
+<URI>http://localhost:9018/api/Client2</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>8</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/ServiceRegistry0 GET http://localhost:9015/api/Worker4 PUT http://localhost:9015/api/Worker4 POST http://localhost:9015/api/Worker4 DELETE http://localhost:9015/api/Worker4 </ConnectedURIs>
+</row>
+<row index="9">
+<MicroserviceName>Client3</MicroserviceName>
+<URI>http://localhost:9019/api/Client3</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>9</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/ServiceRegistry0 GET http://localhost:9015/api/Worker4 PUT http://localhost:9015/api/Worker4 POST http://localhost:9015/api/Worker4 DELETE http://localhost:9015/api/Worker4 </ConnectedURIs>
+</row>
+<row index="10">
+<MicroserviceName>Client4</MicroserviceName>
+<URI>http://localhost:9020/api/Client4</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>10</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/ServiceRegistry0 GET http://localhost:9015/api/Worker4 PUT http://localhost:9015/api/Worker4 POST http://localhost:9015/api/Worker4 DELETE http://localhost:9015/api/Worker4 </ConnectedURIs>
+</row>
+<row index="11">
+<MicroserviceName>Client5</MicroserviceName>
+<URI>http://localhost:9021/api/Client5</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>11</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/ServiceRegistry0 GET http://localhost:9015/api/Worker4 PUT http://localhost:9015/api/Worker4 POST http://localhost:9015/api/Worker4 DELETE http://localhost:9015/api/Worker4 </ConnectedURIs>
+</row>
+<row index="12">
+<MicroserviceName>Client6</MicroserviceName>
+<URI>http://localhost:9022/api/Client6</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>12</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/ServiceRegistry0 GET http://localhost:9015/api/Worker4 PUT http://localhost:9015/api/Worker4 POST http://localhost:9015/api/Worker4 DELETE http://localhost:9015/api/Worker4 </ConnectedURIs>
+</row>
+<row index="13">
+<MicroserviceName>Client7</MicroserviceName>
+<URI>http://localhost:9023/api/Client7</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>13</CreationTime>
+<Pattern>ServiceDiscovery</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/ServiceRegistry0 GET http://localhost:9015/api/Worker4 PUT http://localhost:9015/api/Worker4 POST http://localhost:9015/api/Worker4 DELETE http://localhost:9015/api/Worker4 </ConnectedURIs>
+</row>
+</graph>

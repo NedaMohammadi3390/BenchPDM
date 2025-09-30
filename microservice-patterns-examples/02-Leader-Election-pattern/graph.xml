@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>Leader0</MicroserviceName>
+<URI>http://localhost:9010/api/Leader0</URI>
+<ConnectionType>GET PUT </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>LeaderElection</Pattern>
+<Role>Leader</Role>
+<ConnectedURIs/>
+</row>
+<row index="1">
+<MicroserviceName>Client0</MicroserviceName>
+<URI>http://localhost:9011/api/Client0</URI>
+<ConnectionType>GET PUT </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>LeaderElection</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/Leader0 PUT http://localhost:9010/api/Leader0 </ConnectedURIs>
+</row>
+<row index="2">
+<MicroserviceName>Client1</MicroserviceName>
+<URI>http://localhost:9012/api/Client1</URI>
+<ConnectionType>GET PUT </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>LeaderElection</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/Leader0 PUT http://localhost:9010/api/Leader0 </ConnectedURIs>
+</row>
+</graph>

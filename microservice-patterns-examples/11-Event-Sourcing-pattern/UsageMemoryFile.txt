@@ -1,0 +1,2 @@
+{serviveId:0,serviceName:OrderService0,serviceRole:EventSourcing_EventOrderService,serviceCreationTime:0,Time,1759173464370,usageMemory:,13,
+

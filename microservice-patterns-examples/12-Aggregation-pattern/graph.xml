@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>Aggregator0</MicroserviceName>
+<URI>http://localhost:9010/api/Aggregator0</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>Aggregator</Pattern>
+<Role>Aggregator</Role>
+<ConnectedURIs>GET http://localhost:9011/api/Worker0 POST http://localhost:9011/api/Worker0 PUT http://localhost:9011/api/Worker0 DELETE http://localhost:9011/api/Worker0 GET http://localhost:9012/api/Worker1 POST http://localhost:9012/api/Worker1 PUT http://localhost:9012/api/Worker1 DELETE http://localhost:9012/api/Worker1 </ConnectedURIs>
+</row>
+<row index="1">
+<MicroserviceName>Worker0</MicroserviceName>
+<URI>http://localhost:9011/api/Worker0</URI>
+<ConnectionType>GET POST PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>Aggregator</Pattern>
+<Role>Worker</Role>
+<ConnectedURIs/>
+</row>
+<row index="2">
+<MicroserviceName>Worker1</MicroserviceName>
+<URI>http://localhost:9012/api/Worker1</URI>
+<ConnectionType>GET POST PUT DELETE GET POST PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>Aggregator</Pattern>
+<Role>Worker</Role>
+<ConnectedURIs/>
+</row>
+</graph>

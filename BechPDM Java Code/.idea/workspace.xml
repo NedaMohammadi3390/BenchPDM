@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="microservice-generator:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e85c3c90-8f91-4dc3-8696-4e14ca0793de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../BenchPDM latex code/BenchPDM.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../BenchPDM latex code/BenchPDM.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../conducted papers/Developing Microservice-Based Applications Using the Silvera.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../conducted papers/Developing Microservice-Based Applications Using the Silvera.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../figure/metamodel1.vsdx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../figure/metamodel1.vsdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../figure/phase1.vsdx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../figure/phase1.vsdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../figure/phase2.vsdx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../figure/phase2.vsdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../figure/useCase.vsdx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../figure/useCase.vsdx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="209" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Kotlin Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="1REXL2n9cpZwTnxzP65csjbIDVQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "F:/Thesis/investigated papers/20241224/RecommendationLatexCode-master/BenchPDM Java Code/BechPDM Java Code",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5275862",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="contentgenerate" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Moham\Desktop\MicroBench_TimeIncremental-master\MicroBench_TimeIncremental-master\src\UMLs" />
+      <recent name="C:\Users\Moham\Desktop\microservice-generator\microservice-generator\src\UMLs" />
+      <recent name="D:\admins\ms\SideProjects\Microservice Stuffs\microservice-generator\src\strategy" />
+      <recent name="D:\admins\ms\SideProjects\Microservice Stuffs\microservice-generator\src\main" />
+      <recent name="D:\admins\ms\SideProjects\Microservice Stuffs\microservice-generator\src\graphics\codes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Moham\Desktop\microservice-generator\microservice-generator\src\UMLs" />
+      <recent name="D:\JavaPro\Generator\src\resources" />
+      <recent name="D:\JavaPro\Generator\src\graphics\codes" />
+      <recent name="D:\JavaPro\Generator\src\main" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="strategy" />
+      <recent name="utils" />
+      <recent name="data_structure" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="microservice-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e85c3c90-8f91-4dc3-8696-4e14ca0793de" name="Default Changelist" comment="" />
+      <created>1569233169926</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569233169926</updated>
+      <workItem from="1569233175763" duration="5339000" />
+      <workItem from="1569328454355" duration="4637000" />
+      <workItem from="1569401856109" duration="14407000" />
+      <workItem from="1569498864348" duration="2699000" />
+      <workItem from="1569502205998" duration="603000" />
+      <workItem from="1569664606669" duration="2004000" />
+      <workItem from="1569746474026" duration="10092000" />
+      <workItem from="1569934345828" duration="3179000" />
+      <workItem from="1570004025329" duration="9206000" />
+      <workItem from="1570018452893" duration="5257000" />
+      <workItem from="1570023967304" duration="3472000" />
+      <workItem from="1570444453228" duration="6251000" />
+      <workItem from="1570453803306" duration="320000" />
+      <workItem from="1570532576061" duration="2059000" />
+      <workItem from="1570621569669" duration="5036000" />
+      <workItem from="1570652598316" duration="1003000" />
+      <workItem from="1570807750163" duration="4867000" />
+      <workItem from="1570821349491" duration="7275000" />
+      <workItem from="1570884323840" duration="5778000" />
+      <workItem from="1571043736180" duration="10468000" />
+      <workItem from="1571125558497" duration="2358000" />
+      <workItem from="1571225132413" duration="1329000" />
+      <workItem from="1571709927367" duration="2273000" />
+      <workItem from="1571740926627" duration="591000" />
+      <workItem from="1571745255157" duration="177000" />
+      <workItem from="1571754404808" duration="987000" />
+      <workItem from="1571824698932" duration="581000" />
+      <workItem from="1571942264732" duration="7816000" />
+      <workItem from="1571995729840" duration="1761000" />
+      <workItem from="1572188860845" duration="595000" />
+      <workItem from="1572278204671" duration="4606000" />
+      <workItem from="1572292496380" duration="4810000" />
+      <workItem from="1572352164910" duration="3584000" />
+      <workItem from="1572367864965" duration="263000" />
+      <workItem from="1572368327556" duration="7062000" />
+      <workItem from="1572384823038" duration="2509000" />
+      <workItem from="1572425110617" duration="2849000" />
+      <workItem from="1572946576981" duration="11636000" />
+      <workItem from="1573042060397" duration="595000" />
+      <workItem from="1573152107371" duration="227000" />
+      <workItem from="1573378890381" duration="4396000" />
+      <workItem from="1573581649297" duration="122000" />
+      <workItem from="1575426997775" duration="6887000" />
+      <workItem from="1575448118150" duration="3390000" />
+      <workItem from="1575537313883" duration="1351000" />
+      <workItem from="1575543366922" duration="605000" />
+      <workItem from="1575632817068" duration="2167000" />
+      <workItem from="1575653620868" duration="2017000" />
+      <workItem from="1575658247139" duration="7157000" />
+      <workItem from="1575706878352" duration="5681000" />
+      <workItem from="1575962603554" duration="6541000" />
+      <workItem from="1577175625817" duration="5668000" />
+      <workItem from="1577393587180" duration="9098000" />
+      <workItem from="1577433571666" duration="3250000" />
+      <workItem from="1577536123969" duration="3100000" />
+      <workItem from="1577547119645" duration="1982000" />
+      <workItem from="1577569273598" duration="6222000" />
+      <workItem from="1577609668481" duration="8542000" />
+      <workItem from="1577652256290" duration="1947000" />
+      <workItem from="1577704394046" duration="2879000" />
+      <workItem from="1577724650657" duration="1136000" />
+      <workItem from="1577729187705" duration="3333000" />
+      <workItem from="1577790202842" duration="6019000" />
+      <workItem from="1580377427493" duration="21000" />
+      <workItem from="1582562869897" duration="1194000" />
+      <workItem from="1582610296086" duration="4912000" />
+      <workItem from="1582618014501" duration="4026000" />
+      <workItem from="1582712476211" duration="4610000" />
+      <workItem from="1582747526441" duration="162000" />
+      <workItem from="1582984009569" duration="877000" />
+      <workItem from="1583001387248" duration="150000" />
+      <workItem from="1583077718776" duration="2329000" />
+      <workItem from="1583093045649" duration="8032000" />
+      <workItem from="1583143206271" duration="1344000" />
+      <workItem from="1583160609265" duration="5490000" />
+      <workItem from="1583169855884" duration="3216000" />
+      <workItem from="1583187058245" duration="1336000" />
+      <workItem from="1583227642107" duration="6041000" />
+      <workItem from="1583247380572" duration="2645000" />
+      <workItem from="1583255825205" duration="52000" />
+      <workItem from="1583256288219" duration="3310000" />
+      <workItem from="1583431213173" duration="140000" />
+      <workItem from="1583611560645" duration="4840000" />
+      <workItem from="1583619807891" duration="3045000" />
+      <workItem from="1583665177250" duration="1326000" />
+      <workItem from="1583686523083" duration="1119000" />
+      <workItem from="1583737582331" duration="3711000" />
+      <workItem from="1583823939342" duration="57000" />
+      <workItem from="1584211958333" duration="11953000" />
+      <workItem from="1584299203059" duration="1461000" />
+      <workItem from="1584381960058" duration="3032000" />
+      <workItem from="1584523008728" duration="8995000" />
+      <workItem from="1584610240152" duration="14226000" />
+      <workItem from="1584955314866" duration="4640000" />
+      <workItem from="1585088491110" duration="550000" />
+      <workItem from="1585198374628" duration="5902000" />
+      <workItem from="1585564372601" duration="191000" />
+      <workItem from="1585574933629" duration="691000" />
+      <workItem from="1585664424303" duration="608000" />
+      <workItem from="1585738348290" duration="7469000" />
+      <workItem from="1585759432599" duration="17361000" />
+      <workItem from="1585827496785" duration="976000" />
+      <workItem from="1585911737817" duration="840000" />
+      <workItem from="1585913858635" duration="11081000" />
+      <workItem from="1585935089363" duration="4801000" />
+      <workItem from="1586031721716" duration="358000" />
+      <workItem from="1586438770339" duration="1710000" />
+      <workItem from="1586442074511" duration="713000" />
+      <workItem from="1586576063680" duration="2082000" />
+      <workItem from="1586907728481" duration="1631000" />
+      <workItem from="1586910391945" duration="234000" />
+      <workItem from="1586912958967" duration="55000" />
+      <workItem from="1589371589772" duration="275000" />
+      <workItem from="1589468257759" duration="54000" />
+      <workItem from="1590576041303" duration="1906000" />
+      <workItem from="1591706407524" duration="707000" />
+      <workItem from="1591707461340" duration="323000" />
+      <workItem from="1593422639122" duration="630000" />
+      <workItem from="1595482939566" duration="9400000" />
+      <workItem from="1595779625525" duration="204000" />
+      <workItem from="1595780212859" duration="639000" />
+      <workItem from="1597051214144" duration="6706000" />
+      <workItem from="1597227483479" duration="9486000" />
+      <workItem from="1597298206518" duration="8148000" />
+      <workItem from="1597482217475" duration="6021000" />
+      <workItem from="1597566586121" duration="7025000" />
+      <workItem from="1597653540226" duration="4674000" />
+      <workItem from="1597693492375" duration="623000" />
+      <workItem from="1597694727399" duration="2329000" />
+      <workItem from="1597793846770" duration="1696000" />
+      <workItem from="1597796094507" duration="606000" />
+      <workItem from="1597814967688" duration="2325000" />
+      <workItem from="1597826338833" duration="3583000" />
+      <workItem from="1597901982087" duration="29000" />
+      <workItem from="1597902043361" duration="1370000" />
+      <workItem from="1597995662881" duration="1799000" />
+      <workItem from="1598159736859" duration="1490000" />
+      <workItem from="1598185120491" duration="594000" />
+      <workItem from="1598245802932" duration="2682000" />
+      <workItem from="1598332065899" duration="597000" />
+      <workItem from="1598418960939" duration="1342000" />
+      <workItem from="1598433929671" duration="1135000" />
+      <workItem from="1598498256932" duration="3628000" />
+      <workItem from="1598632630350" duration="6399000" />
+      <workItem from="1598646226128" duration="6091000" />
+      <workItem from="1598683986446" duration="2163000" />
+      <workItem from="1598688799088" duration="511000" />
+      <workItem from="1598720315396" duration="8363000" />
+      <workItem from="1598735198502" duration="3237000" />
+      <workItem from="1598738858632" duration="410000" />
+      <workItem from="1598771053968" duration="2329000" />
+      <workItem from="1598783877627" duration="12398000" />
+      <workItem from="1598866673501" duration="17043000" />
+      <workItem from="1598947446879" duration="3291000" />
+      <workItem from="1599054431776" duration="639000" />
+      <workItem from="1599124947734" duration="4561000" />
+      <workItem from="1599298963570" duration="589000" />
+      <workItem from="1599512870691" duration="4832000" />
+      <workItem from="1599546235939" duration="1193000" />
+      <workItem from="1599665360516" duration="20000" />
+      <workItem from="1604864874210" duration="1512000" />
+      <workItem from="1604925154710" duration="1908000" />
+      <workItem from="1719506962045" duration="4219000" />
+      <workItem from="1719519716040" duration="103020000" />
+      <workItem from="1720108152173" duration="578000" />
+      <workItem from="1721454851405" duration="1226000" />
+      <workItem from="1721457142271" duration="14722000" />
+      <workItem from="1721726806602" duration="5070000" />
+      <workItem from="1721739462910" duration="2673000" />
+      <workItem from="1721743672093" duration="14904000" />
+      <workItem from="1721805873643" duration="15081000" />
+      <workItem from="1722674881285" duration="51592000" />
+      <workItem from="1723836261462" duration="40339000" />
+      <workItem from="1723962628720" duration="863000" />
+      <workItem from="1723989074715" duration="1591000" />
+      <workItem from="1724096226138" duration="2149000" />
+      <workItem from="1724241368659" duration="948000" />
+      <workItem from="1735837131318" duration="19059000" />
+      <workItem from="1735999000639" duration="2157000" />
+      <workItem from="1736001243493" duration="61000" />
+      <workItem from="1736001996522" duration="898000" />
+      <workItem from="1736002918759" duration="2660000" />
+      <workItem from="1736005721901" duration="160000" />
+      <workItem from="1736005912482" duration="3637000" />
+      <workItem from="1736031872663" duration="1413000" />
+      <workItem from="1736090999515" duration="3264000" />
+      <workItem from="1736165841649" duration="8064000" />
+      <workItem from="1736185762615" duration="314000" />
+      <workItem from="1736186236940" duration="1101000" />
+      <workItem from="1736187380550" duration="241000" />
+      <workItem from="1736187637884" duration="643000" />
+      <workItem from="1736188314892" duration="681000" />
+      <workItem from="1736189031563" duration="462000" />
+      <workItem from="1736189513051" duration="413000" />
+      <workItem from="1736189952285" duration="13000" />
+      <workItem from="1736190405431" duration="445000" />
+      <workItem from="1736190873091" duration="1216000" />
+      <workItem from="1736518893723" duration="2009000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/strategy/SidecarStrategy.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/strategy/SidecarStrategy.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/strategy/SidecarStrategy.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/strategy/PipesAndFilterStrategy.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/graphics/codes/Display.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/TracingFileGenerator.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((Microservice)this).URI" custom="data_structure.Microservice" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Generator$Main.ic" NAME="Main Coverage Results" MODIFIED="1582614104934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.*</FILTER>
+    </SUITE>
+  </component>
+</project>

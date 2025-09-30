@@ -1,0 +1,2 @@
+{serviveId:13,serviceName:Client7,serviceRole:ServiceDiscovery_Client,serviceCreationTime:13,cpu load:,0.0,Process CPU load:,8.980101818549644,
+

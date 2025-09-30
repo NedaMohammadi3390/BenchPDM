@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>DispatcherService0</MicroserviceName>
+<URI>http://localhost:9010/api/DispatcherService0</URI>
+<ConnectionType>POST </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>PriorityQueue</Pattern>
+<Role>DispatcherService</Role>
+<ConnectedURIs>POST http://localhost:9013/api/ExternalService0 PUT http://localhost:9013/api/ExternalService0 GET http://localhost:9013/api/ExternalService0 DELETE http://localhost:9013/api/ExternalService0 </ConnectedURIs>
+</row>
+<row index="1">
+<MicroserviceName>ClientService0</MicroserviceName>
+<URI>http://localhost:9011/api/ClientService0</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>PriorityQueue</Pattern>
+<Role>ClientService</Role>
+<ConnectedURIs>POST http://localhost:9010/api/DispatcherService0 PUT http://localhost:9010/api/DispatcherService0 GET http://localhost:9010/api/DispatcherService0 DELETE http://localhost:9010/api/DispatcherService0 </ConnectedURIs>
+</row>
+<row index="2">
+<MicroserviceName>ClientService1</MicroserviceName>
+<URI>http://localhost:9012/api/ClientService1</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>PriorityQueue</Pattern>
+<Role>ClientService</Role>
+<ConnectedURIs>POST http://localhost:9010/api/DispatcherService0 PUT http://localhost:9010/api/DispatcherService0 GET http://localhost:9010/api/DispatcherService0 DELETE http://localhost:9010/api/DispatcherService0 </ConnectedURIs>
+</row>
+<row index="3">
+<MicroserviceName>ExternalService0</MicroserviceName>
+<URI>http://localhost:9013/api/ExternalService0</URI>
+<ConnectionType>POST </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>3</CreationTime>
+<Pattern>PriorityQueue</Pattern>
+<Role>ExternalService</Role>
+<ConnectedURIs/>
+</row>
+</graph>

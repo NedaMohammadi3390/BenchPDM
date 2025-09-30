@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>ApiGateway0</MicroserviceName>
+<URI>http://localhost:9010/api/ApiGateway0</URI>
+<ConnectionType>GET POST PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>PipesAndFilters</Pattern>
+<Role>ApiGateway</Role>
+<ConnectedURIs>TO http://localhost:9013/api/Filter0 TO http://localhost:9014/api/Filter1 </ConnectedURIs>
+</row>
+<row index="1">
+<MicroserviceName>Client0</MicroserviceName>
+<URI>http://localhost:9011/api/Client0</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>PipesAndFilters</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/ApiGateway0 POST http://localhost:9010/api/ApiGateway0 PUT http://localhost:9010/api/ApiGateway0 DELETE http://localhost:9010/api/ApiGateway0 </ConnectedURIs>
+</row>
+<row index="2">
+<MicroserviceName>Client1</MicroserviceName>
+<URI>http://localhost:9012/api/Client1</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>PipesAndFilters</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>GET http://localhost:9010/api/ApiGateway0 POST http://localhost:9010/api/ApiGateway0 PUT http://localhost:9010/api/ApiGateway0 DELETE http://localhost:9010/api/ApiGateway0 </ConnectedURIs>
+</row>
+<row index="3">
+<MicroserviceName>Filter0</MicroserviceName>
+<URI>http://localhost:9013/api/Filter0</URI>
+<ConnectionType>GET POST PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>3</CreationTime>
+<Pattern>PipesAndFilters</Pattern>
+<Role>Filter</Role>
+<ConnectedURIs/>
+</row>
+<row index="4">
+<MicroserviceName>Filter1</MicroserviceName>
+<URI>http://localhost:9014/api/Filter1</URI>
+<ConnectionType>GET POST PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>4</CreationTime>
+<Pattern>PipesAndFilters</Pattern>
+<Role>Filter</Role>
+<ConnectedURIs/>
+</row>
+</graph>

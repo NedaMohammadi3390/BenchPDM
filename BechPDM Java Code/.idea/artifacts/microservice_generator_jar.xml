@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="microservice-generator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/microservice_generator_jar</output-path>
+    <root id="archive" name="microservice-generator.jar">
+      <element id="module-output" name="microservice-generator" />
+    </root>
+  </artifact>
+</component>

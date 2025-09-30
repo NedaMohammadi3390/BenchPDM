@@ -1,0 +1,5 @@
+{traceId:1,{serviveId:0,serviceName:Payment0,serviceRole:Saga_Payment,serviceuri:http://localhost:9010/api/Payment0,serviceCreationTime:0,duplicate:false,annotations:[{endpoint:{destinationServiceURI:http://localhost:9011/api/Order0,timeStamp:1640779180274300,typeRequest:POST,},]},
+{traceId:2,{serviveId:1,serviceName:Order0,serviceRole:Saga_Order,serviceuri:http://localhost:9011/api/Order0,serviceCreationTime:1,duplicate:false,annotations:[{endpoint:{destinationServiceURI:http://localhost:9010/api/Payment0,timeStamp:1640779180345000,typeRequest:POST,},]},
+{traceId:3,{serviveId:1,serviceName:Order0,serviceRole:Saga_Order,serviceuri:http://localhost:9011/api/Order0,serviceCreationTime:1,duplicate:false,annotations:[{endpoint:{destinationServiceURI:http://localhost:9012/api/Shipping0,timeStamp:1640779180349200,typeRequest:POST,},]},
+{traceId:4,{serviveId:2,serviceName:Shipping0,serviceRole:Saga_Shipping,serviceuri:http://localhost:9012/api/Shipping0,serviceCreationTime:2,duplicate:false,annotations:[{endpoint:{destinationServiceURI:http://localhost:9011/api/Order0,timeStamp:1640779180382000,typeRequest:POST,},]},
+

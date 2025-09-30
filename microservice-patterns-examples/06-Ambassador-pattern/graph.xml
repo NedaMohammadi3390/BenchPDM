@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>Client0</MicroserviceName>
+<URI>http://localhost:9010/api/Client0</URI>
+<ConnectionType/>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>Ambassador</Pattern>
+<Role>Client</Role>
+<ConnectedURIs>POST http://localhost:9011/api/Ambassador0 GET http://localhost:9011/api/Ambassador0 PUT http://localhost:9011/api/Ambassador0 DELETE http://localhost:9011/api/Ambassador0 POST http://localhost:9013/api/Ambassador1 GET http://localhost:9013/api/Ambassador1 PUT http://localhost:9013/api/Ambassador1 DELETE http://localhost:9013/api/Ambassador1 </ConnectedURIs>
+</row>
+<row index="1">
+<MicroserviceName>Ambassador0</MicroserviceName>
+<URI>http://localhost:9011/api/Ambassador0</URI>
+<ConnectionType>POST GET PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>Ambassador</Pattern>
+<Role>Ambassador</Role>
+<ConnectedURIs>POST http://localhost:9012/api/ExternalService0 GET http://localhost:9012/api/ExternalService0 PUT http://localhost:9012/api/ExternalService0 DELETE http://localhost:9012/api/ExternalService0 </ConnectedURIs>
+</row>
+<row index="2">
+<MicroserviceName>ExternalService0</MicroserviceName>
+<URI>http://localhost:9012/api/ExternalService0</URI>
+<ConnectionType>POST GET PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>Ambassador</Pattern>
+<Role>ExternalService</Role>
+<ConnectedURIs/>
+</row>
+<row index="3">
+<MicroserviceName>Ambassador1</MicroserviceName>
+<URI>http://localhost:9013/api/Ambassador1</URI>
+<ConnectionType>POST GET PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>3</CreationTime>
+<Pattern>Ambassador</Pattern>
+<Role>Ambassador</Role>
+<ConnectedURIs>POST http://localhost:9014/api/ExternalService1 GET http://localhost:9014/api/ExternalService1 PUT http://localhost:9014/api/ExternalService1 DELETE http://localhost:9014/api/ExternalService1 </ConnectedURIs>
+</row>
+<row index="4">
+<MicroserviceName>ExternalService1</MicroserviceName>
+<URI>http://localhost:9014/api/ExternalService1</URI>
+<ConnectionType>POST GET PUT DELETE </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>4</CreationTime>
+<Pattern>Ambassador</Pattern>
+<Role>ExternalService</Role>
+<ConnectedURIs/>
+</row>
+</graph>

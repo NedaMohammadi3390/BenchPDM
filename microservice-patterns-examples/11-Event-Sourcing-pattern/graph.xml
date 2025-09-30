@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>OrderService0</MicroserviceName>
+<URI>http://localhost:9010/api/OrderService0</URI>
+<ConnectionType>POST DELETE POST GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>EventSourcing</Pattern>
+<Role>EventOrderService</Role>
+<ConnectedURIs/>
+</row>
+<row index="1">
+<MicroserviceName>ShippingService0</MicroserviceName>
+<URI>http://localhost:9011/api/ShippingService0</URI>
+<ConnectionType>POST GET </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>EventSourcing</Pattern>
+<Role>EventShippingService</Role>
+<ConnectedURIs/>
+</row>
+</graph>

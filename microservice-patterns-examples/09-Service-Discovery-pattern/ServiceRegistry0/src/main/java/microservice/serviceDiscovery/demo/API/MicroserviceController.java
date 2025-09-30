@@ -1,0 +1,45 @@
+package microservice.serviceDiscovery.demo.API;
+
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RequestMapping("api/v1/ServiceRegistry0")
+@RestController
+public class MicroserviceController  {
+
+public MicroserviceController() {
+connections = new ArrayList<String>();
+
+}
+
+private int id;
+private ArrayList<String> connections;
+private ArrayList<String> database;
+@GetMapping(path = "/service_address")
+public Object getServiceAddress( String info) {
+return null ;
+
+}
+
+@PostMapping(path = "/register_service")
+public Object registerService( String id) {
+return null ;
+
+}
+
+@DeleteMapping(path = "/destroy_service")
+public Object destroyService( String id) {
+return null ;
+
+}
+
+@PutMapping(path = "/update_service")
+public Object updateService( String id) {
+return null ;
+
+}
+
+
+}
+

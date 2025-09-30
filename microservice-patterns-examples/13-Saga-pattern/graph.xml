@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<row index="0">
+<MicroserviceName>Payment0</MicroserviceName>
+<URI>http://localhost:9010/api/Payment0</URI>
+<ConnectionType>POST </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>0</CreationTime>
+<Pattern>Saga</Pattern>
+<Role>Payment</Role>
+<ConnectedURIs>POST http://localhost:9011/api/Order0 </ConnectedURIs>
+</row>
+<row index="1">
+<MicroserviceName>Order0</MicroserviceName>
+<URI>http://localhost:9011/api/Order0</URI>
+<ConnectionType>POST </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>1</CreationTime>
+<Pattern>Saga</Pattern>
+<Role>Order</Role>
+<ConnectedURIs>POST http://localhost:9010/api/Payment0 POST http://localhost:9012/api/Shipping0 </ConnectedURIs>
+</row>
+<row index="2">
+<MicroserviceName>Shipping0</MicroserviceName>
+<URI>http://localhost:9012/api/Shipping0</URI>
+<ConnectionType>POST </ConnectionType>
+<Duplicate>false</Duplicate>
+<CreationTime>2</CreationTime>
+<Pattern>Saga</Pattern>
+<Role>Shipping</Role>
+<ConnectedURIs>POST http://localhost:9011/api/Order0 </ConnectedURIs>
+</row>
+</graph>
