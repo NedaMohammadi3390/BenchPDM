@@ -1,0 +1,5 @@
+${PACKAGE}
+
+public enum ${SERVICE-NAME}Status {
+    CREATED, SHIPPED, REJECTED
+}

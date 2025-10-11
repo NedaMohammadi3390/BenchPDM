@@ -18,8 +18,10 @@ class PackageFileGenerator {
     String createPackage(String projectName, String... paths) {
         if (Corrections.isInvalid(projectName)) return null;
         String newDefaultPath = defaultPath + "\\" + projectName + "\\src\\main\\java";
+        String newDefaultPath2 = defaultPath + "\\" + projectName + "\\src\\main\\resources";
 
         new File(newDefaultPath).mkdirs();
+        new File(newDefaultPath2).mkdirs();
         for (String path : paths) {
             if (Corrections.isInvalid(path)) return null;
             if (path.contains("."))

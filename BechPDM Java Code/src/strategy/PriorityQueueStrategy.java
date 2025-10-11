@@ -2,26 +2,24 @@ package strategy;
 
 import content_generation.Builder;
 import content_generation.Constants;
-import content_generation.generator.BodyGenerator;
-import content_generation.generator.ClassGenerator;
-import content_generation.generator.ConstructorGenerator;
-import content_generation.generator.VariableGenerator;
+import content_generation.generator.*;
+import content_generation.generator.CustomizedCodeFileGenerator.priorityQueu.ClientGeneration;
+import content_generation.generator.CustomizedCodeFileGenerator.priorityQueu.DispatcherGeneration;
+import content_generation.generator.CustomizedCodeFileGenerator.priorityQueu.ExternalGeneration;
 import data_structure.Microservice;
 import javafx.util.Pair;
+import main.Main;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class PriorityQueueStrategy extends Strategy {
-    public static int publisherCounter = 0;
-    public static int busCounter = 0;
-    public static int workerCounter = 0;
-    String publisherRole = "Publisher";
-    String busRole = "Bus";
-    String workerRole = "Worker";
+    public static int ClientServiceCounter = 0;
+    public static int DispatcherServiceCounter = 0;
+    public static int ExternalServiceCounter = 0;
+    String clientRole = "ClientService";
+    String dispatcherRole = "DispatcherService";
+    String externalRole = "ExternalService";
     public static Pair<Microservice.ConnectionType, String>[] connectionTypes;
     public  int i = 1;
     public int j=1;
@@ -31,6 +29,8 @@ public class PriorityQueueStrategy extends Strategy {
     ArrayList<Pair<Pair<String, String>, String>> Postlist = new ArrayList<>();
     ArrayList<Pair<Pair<String, String>, String>> Deletelist = new ArrayList<>();
 
+    private static List<Integer> providersPorts = new ArrayList<>();
+    private static int dispatchPort;
 
     public void initialConnected(String[] connection, Microservice.ConnectionType connectionType) {
 
@@ -59,141 +59,118 @@ public class PriorityQueueStrategy extends Strategy {
                 strcon = str;
                 list.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + i, "restTemplate.exchange"), strcon));
                 i = i + 1;
-            }//            Microservice.ConnectionType type = pair.getKey();
+            }
         }
     }
     @Override
     public ArrayList<Microservice> matrixFiller( ) {
         ArrayList<Microservice> matrices = new ArrayList<>();
-        int busNumber = random.nextInt(3) + 1;
-        boolean isQueuePrioritize = busNumber == 1;
-
         String microserviceName;
-        microserviceName = publisherRole + publisherCounter++;
-        Microservice publisher = null;
+        String URI;
+        int port;
+        Microservice dispatcher = null;
+        microserviceName = dispatcherRole + DispatcherServiceCounter++;
+
+        URI = URIGenerator(microserviceName);
+        port = getPort();
+        dispatchPort=port;
+//        providersPorts.add(port);
         try {
-            publisher = new Microservice(
+            dispatcher = new Microservice(
+                    port,
                     id++,
                     microserviceName,
-                    URIGenerator(microserviceName),
-                    new Pair[]{},
+                    URI,
+                    new Pair[]{
+                            new Pair<>(Microservice.ConnectionType.POST, ""),
+
+                    },
                     false,
                     creationTime(),
-                    new Pair<>(Microservice.Pattern.PriorityQueue.toString(), Microservice.Role.Publisher.toString()),
+                    new Pair<>(Microservice.Pattern.PriorityQueue.toString(), Microservice.Role.DispatcherService.toString()),
                     new PriorityQueueStrategy()
             );
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        matrices.add(publisher);
+        matrices.add(dispatcher);
 
-        if (isQueuePrioritize) {
-            microserviceName = busRole + busCounter++;
-            Microservice bus = null;
+        ////////////////////////////////////////////////
+        int clientNumber = random.nextInt(5) + 2;
+        for (int i = 0; i < clientNumber; i++) {
+            microserviceName = clientRole + ClientServiceCounter++;
+            Microservice client = null;
+            URI = URIGenerator(microserviceName);
+            port = getPort();
             try {
-                bus = new Microservice(
+                client = new Microservice(
+                        port,
                         id++,
                         microserviceName,
-                        URIGenerator(microserviceName),
-                        new Pair[]{
-                                new Pair<>(Microservice.ConnectionType.POST, "")
-                        },
+                        URI,
+                        new Pair[]{},
                         false,
                         creationTime(),
-                        new Pair<>(Microservice.Pattern.PriorityQueue.toString(), Microservice.Role.Bus.toString()),
+                        new Pair<>(Microservice.Pattern.PriorityQueue.toString(), Microservice.Role.ClientService.toString()),
                         new PriorityQueueStrategy()
                 );
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            matrices.add(bus);
-            publisher.setConnections(new Pair<>(Microservice.ConnectionType.POST, bus.getURI()));
-            publisher.setConnections(new Pair<>(Microservice.ConnectionType.GET, bus.getURI()));
-            publisher.setUsageMemory();
+            matrices.add(client);
 
-            int workerNumber = random.nextInt(4) + 2;
-            for (int i = 0; i < workerNumber; i++) {
-                microserviceName = workerRole + workerCounter++;
-                Microservice worker = null;
-                try {
-                    worker = new Microservice(
-                            id++,
-                            microserviceName,
-                            URIGenerator(microserviceName),
-                            new Pair[]{
-                                    new Pair<>(Microservice.ConnectionType.POST, ""),
-                                    new Pair<>(Microservice.ConnectionType.GET, "")
-                            },
-                            false,
-                            creationTime(),
-                            new Pair<>(Microservice.Pattern.PriorityQueue.toString(), Microservice.Role.Worker.toString()),
-                            new PriorityQueueStrategy()
-                    );
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                matrices.add(worker);
-                bus.setConnections(new Pair<>(Microservice.ConnectionType.POST, worker.getURI()));
-                bus.setConnections(new Pair<>(Microservice.ConnectionType.GET, worker.getURI()));
-                bus.setUsageMemory();
-            }
-            return matrices;
-        } else {
-            Microservice bus = null;
-            for (int i = 0; i < busNumber; i++) {
-                microserviceName = busRole + busCounter++;
 
-                try {
-                    bus = new Microservice(
-                            id++,
-                            microserviceName,
-                            URIGenerator(microserviceName),
-                            new Pair[]{
-                                    new Pair<>(Microservice.ConnectionType.POST, "")
-                            },
-                            false,
-                            creationTime(),
-                            new Pair<>(Microservice.Pattern.PriorityQueue.toString(), Microservice.Role.Bus.toString()),
-                            new PriorityQueueStrategy()
-                    );
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                matrices.add(bus);
-                publisher.setConnections(new Pair<>(Microservice.ConnectionType.POST, bus.getURI()));
-                publisher.setUsageMemory();
+            client.setConnections(new Pair<>(Microservice.ConnectionType.POST, dispatcher.getURI()));
+            client.setConnections(new Pair<>(Microservice.ConnectionType.PUT, dispatcher.getURI()));
+            client.setConnections(new Pair<>(Microservice.ConnectionType.GET, dispatcher.getURI()));
+            client.setConnections(new Pair<>(Microservice.ConnectionType.DELETE, dispatcher.getURI()));
+            client.setUsageMemory();
 
-                microserviceName = workerRole + workerCounter++;
-                Microservice worker = null;
-                try {
-                    worker = new Microservice(
-                            id++,
-                            microserviceName,
-                            URIGenerator(microserviceName),
-                            new Pair[]{
-                                    new Pair<>(Microservice.ConnectionType.POST, ""),
-                                    new Pair<>(Microservice.ConnectionType.GET, "")
-                            },
-                            false,
-                            creationTime(),
-                            new Pair<>(Microservice.Pattern.PriorityQueue.toString(), Microservice.Role.Worker.toString()),
-                            new PriorityQueueStrategy()
-                    );
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                matrices.add(worker);
-                bus.setConnections(new Pair<>(Microservice.ConnectionType.POST, worker.getURI()));
-                bus.setConnections(new Pair<>(Microservice.ConnectionType.GET, worker.getURI()));
-                bus.setUsageMemory();
-            }
-            bus.setUsageCPU();
-            return matrices;
         }
+            int externalNumber = random.nextInt(3) + 1;
+            for (int ii = 0; ii < externalNumber; ii++) {
+        microserviceName = externalRole + ExternalServiceCounter++;
+        Microservice external = null;
+        URI = URIGenerator(microserviceName);
+        port = getPort();
+        providersPorts.add(port);
+        try {
+            external = new Microservice(
+                    port,
+                    id++,
+                    microserviceName,
+                    URI,
+                    new Pair[]{
+                            new Pair<>(Microservice.ConnectionType.POST, ""),
+
+                    },
+                    false,
+                    creationTime(),
+                    new Pair<>(Microservice.Pattern.PriorityQueue.toString(), Microservice.Role.ExternalService.toString()),
+                    new PriorityQueueStrategy()
+            );
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        matrices.add(external);
+        dispatcher.setConnections(new Pair<>(Microservice.ConnectionType.POST, external.getURI()));
+                dispatcher.setConnections(new Pair<>(Microservice.ConnectionType.PUT, external.getURI()));
+                dispatcher.setConnections(new Pair<>(Microservice.ConnectionType.GET, external.getURI()));
+                dispatcher.setConnections(new Pair<>(Microservice.ConnectionType.DELETE, external.getURI()));
+        dispatcher.setUsageMemory();
+
+        dispatcher.setUsageCPU();}
+        return matrices;
+
     }
 
     @Override
-    public Builder fileFiller(String role, String microserviceName, String[] connections, Pair<Microservice.ConnectionType, String>[] connectionTypes) {
+    public Builder[] fileFiller(Microservice microservice,
+                                String role,
+                                String microserviceName,
+                                String[] connections,
+                                Pair<Microservice.ConnectionType, String>[] connectionTypes)
+    {
         String[] uniqueArray = Arrays.stream(connections)
                 .distinct()
                 .toArray(String[]::new);
@@ -209,233 +186,87 @@ public class PriorityQueueStrategy extends Strategy {
         } else{ initialConnected(uniqueArray,null);
         }
 
-        Builder builder = new Builder();
+        int n = 1; // تعداد Builderها
+        Builder[] builders = new Builder[n];
         switch (role) {
-            case "Publisher":
-                builder = publisherClass(microserviceName);
+            case "ClientService":
+                builders[0] = GenerationClass(microservice, microserviceName, connections, 0);
                 break;
-            case "Bus":
-                builder = busClass(microserviceName, connections);
-                setBusMethods(builder);
+
+            case "DispatcherService":
+                builders[0] = GenerationClass(microservice, microserviceName, connections, 1);
                 break;
-            case "Worker":
-                builder = workerClass(microserviceName, connections);
-                setWorkerMethods(builder);
+//
+            case "ExternalService":
+                builders[0] = GenerationClass(microservice, microserviceName, connections, 2);
                 break;
         }
-        return builder;
+        return builders;
+    }
+    /*******************************************************************
+     * ******************************************************************
+     * *******************************************************************/
+    private Builder GenerationClass(Microservice microservice,
+                                    String microserviceName,
+                                    String[] connections, int id)
+    {
+        if (id == 0) {
+            Builder builder = new Builder("microservice." + "priorityQueue" + ".demo.API");
+            builder.setContent(new POMGenerator(
+                    microserviceName, Main.getPath2(),"priority-queue"));
+
+            builder.setContent(new ConfigFileGenerator(
+                    microserviceName,
+                    Main.getPath2(),
+                    microservice.getPort(),
+                    "priority-queue"));
+
+            builder.setContent(new ClientGeneration(
+                    microserviceName,
+                    microserviceName+"Scheduler",
+                    Main.getPath2(),
+                    "priority-queue",
+                    "/src/main/java/microservice/priorityQueue/demo/API", builder.getPackageName(),dispatchPort));
+
+            return builder;}
+
+        else if (id==1){
+            Builder builder = new Builder("microservice." + "priorityQueue" + ".demo.API");
+            builder.setContent(new POMGenerator(
+                            microserviceName, Main.getPath2(),"priority-queue"));
+            builder.setContent(new ConfigFileGenerator(
+                            microserviceName,
+                            Main.getPath2(),
+                            microservice.getPort(),
+                            "priority-queue"));
+            builder.setContent(
+                            new DispatcherGeneration(
+                                    microserviceName,
+                                    microserviceName+"Listener",
+                                    Main.getPath2(),
+                                    "priority-queue",
+                                    providersPorts,
+                                    "/src/main/java/microservice/priorityQueue/demo/API",builder.getPackageName()));
+            return builder;
+        }
+        else if (id==2){
+            Builder builder = new Builder("microservice." + "priorityQueue" + ".demo.API")
+            .setContent(new POMGenerator(
+                            microserviceName, Main.getPath2(),"priority-queue"));
+            builder.setContent(new ConfigFileGenerator(
+                            microserviceName,
+                            Main.getPath2(),
+                            microservice.getPort(),
+                            "priority-queue"));
+            builder.setContent(
+                            new ExternalGeneration(
+                                    microserviceName,
+                                    Main.getPath2(),
+                                    "priority-queue",
+                                    "/src/main/java/microservice/priorityQueue/demo/API",builder.getPackageName()));
+            return builder;
+        }
+        else {return null;}
     }
 
-    private void setBusMethods(Builder builder) {
-        setMethodContent(
-                builder,
-                Constants.AccessLevel.PUBLIC,
-                false,
-                false,
-                new Pair(Constants.ReturnType.BOOLEAN, "setProcess"),
-                new Pair[]{
-                        new Pair<>(Constants.VariableTypeRequestBody.AddNewType("Object[]"), "objects")
-                },
-                new Pair[]{
-                        new Pair(Constants.Annotations.PostMapping, "")
-                },
-                Constants.Keywords.TRUE.toString(),
-                Postlist
-        );
-        setMethodContent(
-                builder,
-                Constants.AccessLevel.PUBLIC,
-                false,
-                false,
-                new Pair(Constants.ReturnType.BOOLEAN, "setProcess"),
-                new Pair[]{
-                        new Pair<>(Constants.VariableTypeRequestBody.AddNewType("Object[]"), "objects")
-                },
-                new Pair[]{
-                        new Pair(Constants.Annotations.GetMapping, "")
-                },
-                "response",
-                Getlist
-        );
-    }
-
-    private void setWorkerMethods(Builder builder) {
-        setMethodContent(
-                builder,
-                Constants.AccessLevel.PUBLIC,
-                false,
-                false,
-                new Pair(Constants.ReturnType.AddNewType("ArrayList<Pair<String, Integer>>"), "getProperties"),
-                null,
-                new Pair[]{
-                        new Pair(Constants.Annotations.GetMapping, "")
-                },
-                Constants.Keywords.NULL.toString(),
-                Getlist
-        );
-        setMethodContent(
-                builder,
-                Constants.AccessLevel.PUBLIC,
-                false,
-                false,
-                new Pair(Constants.ReturnType.BOOLEAN, "doService"),
-                new Pair[]{
-                        new Pair<>(Constants.VariableTypeRequestBody.AddNewType("Object[]"), "objects")
-                },
-                new Pair[]{
-                        new Pair(Constants.Annotations.PostMapping, "")
-                },
-                Constants.Keywords.TRUE.toString(),
-                Postlist
-        );
-    }
-
-    private Builder publisherClass(String microserviceName) {
-        return new Builder("microservice." + "priorityqueue" + ".demo.API")
-                .setContent(
-                        new ClassGenerator(
-                                Constants.AccessLevel.PUBLIC,
-                                "MicroserviceController",
-                                null,
-                                "",
-                                new ConstructorGenerator[]{
-                                        new ConstructorGenerator(
-                                                Constants.AccessLevel.PUBLIC,
-                                                "MicroserviceController",
-                                                null,
-                                                null,
-                                                null,
-                                                new ArrayList<Pair<String, String>>() {{
-                                                    add(new Pair<>("busConnections", "ArrayList<String>"));
-                                                    add(new Pair<>("collectingConnections", "ArrayList<String>"));
-                                                }})
-                                },
-                                new Pair[]{
-                                        new Pair<>(Constants.Annotations.RequestMapping, "api/v1/" + microserviceName),
-                                        new Pair<>(Constants.Annotations.RestController, "")
-                                }
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        false,
-                                        false,
-                                        new Pair<>(Constants.VariableType.INT, "id"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        true,
-                                        true,
-                                        new Pair<>(Constants.VariableType.AddNewType("ArrayList<String>"), "busConnections"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        false,
-                                        false,
-                                        new Pair<>(Constants.VariableType.AddNewType("ArrayList<String>"), "collectingConnections"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        ).setContent(
-                                new BodyGenerator(
-                                        new Pair[]{ new Pair<>(Constants.Annotations.Autowired, "")},
-                                        new ArrayList<Pair<String, String>>() {{
-                                            add(new Pair<>("RestTemplate restTemplate", "RestTemplate"));
-                                        }},
-                                        list
-
-                                )
-                        )
-                );
-    }
-
-    private Builder busClass(String microserviceName, String[] connections) {
-        return new Builder("microservice." + "priorityqueue" + ".demo.API")
-                .setContent(
-                        new ClassGenerator(
-                                Constants.AccessLevel.PUBLIC,
-                                "MicroserviceController",
-                                null,
-                                "",
-                                new ConstructorGenerator[]{
-                                        new ConstructorGenerator(
-                                                Constants.AccessLevel.PUBLIC,
-                                                "MicroserviceController",
-                                                null,
-                                                null,
-                                                null,
-                                                new ArrayList<Pair<String, String>>() {{
-                                                    add(new Pair<>("connections", "ArrayList<String>"));
-                                                }})
-                                },
-                                new Pair[]{
-                                        new Pair<>(Constants.Annotations.RequestMapping, "api/v1/" + microserviceName),
-                                        new Pair<>(Constants.Annotations.RestController, "")
-                                }
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        false,
-                                        false,
-                                        new Pair<>(Constants.VariableType.INT, "id"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        false,
-                                        false,
-                                        new Pair<>(Constants.VariableType.AddNewType("ArrayList<String>"), "connections"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        )
-                );
-    }
-
-    private Builder workerClass(String microserviceName, String[] connections) {
-        return new Builder("microservice." + "priorityqueue" + ".demo.API")
-                .setContent(
-                        new ClassGenerator(
-                                Constants.AccessLevel.PUBLIC,
-                                "MicroserviceController",
-                                null,
-                                "",
-                                new ConstructorGenerator[]{
-                                        new ConstructorGenerator(
-                                                Constants.AccessLevel.PUBLIC,
-                                                "MicroserviceController",
-                                                null,
-                                                null,
-                                                null,
-                                                null)
-                                },
-                                new Pair[]{
-                                        new Pair<>(Constants.Annotations.RequestMapping, "api/v1/" + microserviceName),
-                                        new Pair<>(Constants.Annotations.RestController, "")
-                                }
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        false,
-                                        false,
-                                        new Pair<>(Constants.VariableType.INT, "id"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        )
-                );
-    }
 }

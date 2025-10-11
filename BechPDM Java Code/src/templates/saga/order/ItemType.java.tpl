@@ -1,0 +1,6 @@
+${PACKAGE}
+
+public enum ${SERVICE-NAME}Type {
+
+    LAPTOP, HEADPHONE, SMARTPHONE
+}

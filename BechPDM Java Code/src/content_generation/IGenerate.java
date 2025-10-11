@@ -1,5 +1,7 @@
 package content_generation;
 
+import java.io.IOException;
+
 public interface IGenerate {
-    String generate();
+    String generate() throws IOException;
 }

@@ -11,6 +11,8 @@ import java.util.Random;
 
 public abstract class Strategy {
     public static int id = 0;
+
+
     private static int port = 9010;
     private static int time = -1;
     public Random random = new Random();
@@ -20,10 +22,7 @@ public abstract class Strategy {
 
     public abstract ArrayList<Microservice> matrixFiller();
 
-    public abstract Builder fileFiller(String role,
-                                       String microserviceName,
-                                       String[] connections,
-                                       Pair<Microservice.ConnectionType, String>[] connectionTypes);
+
 
     protected String URIGenerator(String microserviceName) {
         String uri = "http://localhost:" + port + "/api/" + microserviceName;
@@ -31,13 +30,12 @@ public abstract class Strategy {
         return uri;
     }
 
+    public static int getPort() {
+        return port;
+    }
     protected String creationTime( ) {
 
-//        if (firsttime==0)  time=-1;
-
         time++;
-//        firsttime=1;
-//      //  System.out.println("creation time is: "+ String.valueOf(time));
         return String.valueOf(time);
     }
 
@@ -63,4 +61,10 @@ public abstract class Strategy {
                         bodyMethod
                 ));
     }
+
+    public abstract Builder[] fileFiller(Microservice microservice,
+                                         String role,
+                                       String microserviceName,
+                                       String[] connections,
+                                       Pair<Microservice.ConnectionType, String>[] connectionTypes);
 }

@@ -7,6 +7,7 @@ import javafx.scene.text.Text;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+
 public class VisualMicroservice {
     private ArrayList<Pair<VisualConnection, Boolean>> lines;
     private final String URI;
@@ -21,22 +22,17 @@ public class VisualMicroservice {
 
 
     private static final int START_X = 25;
-
     private static final int START_Y = 25;
-
 
     private static int boundaryY = START_Y;
     private static int boundaryX = START_X;
     private final int constantLayerY = 90;
     private final int constantX = 90;
-
     private static int rowCounter = 0;
     private final int constantY = 375;
 
 
     static int layer = 0;
-
-
     public VisualMicroservice(String info,
                               String URI,
                               ArrayList<Pair<Microservice.ConnectionType, String>> connections,
@@ -86,7 +82,6 @@ public class VisualMicroservice {
         imageView.setFitWidth(size);
         imageView.setPreserveRatio(true);
 
-
         imageView.setOnMousePressed(event -> {
             lastX = event.getX();
             lastY = event.getY();
@@ -102,7 +97,6 @@ public class VisualMicroservice {
 
             info.setX(x);
             info.setY(y);
-
 
             this.lastX = x;
             this.lastY = y;

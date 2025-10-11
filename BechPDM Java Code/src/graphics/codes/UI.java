@@ -107,18 +107,18 @@ public class UI {
     }
 
     @FXML
-    private void saveToBtnLogic() {
+    private void saveToBtnLogic() { // text="Click to Set Target Directory for Contents Generated"
         DirectoryChooser directoryChooser = new DirectoryChooser();
         Stage stage = (Stage) saveToBtn.getScene().getWindow();
         File selectedFile = directoryChooser.showDialog(stage);
         if (selectedFile == null) return;
         pathTxt.setText("Your Project will be Saved on: " + selectedFile.getAbsolutePath());
-        pathTxt.setFill(Color.BLACK);
+        pathTxt.setFill(Color.BLUE);
         path = selectedFile.getAbsolutePath();
     }
 
     @FXML
-    private void doneBtnLogic() throws IOException {
+    private void doneBtnLogic() throws IOException { // text="Generate"
         List<Pair<Pair<Microservice.Pattern, Integer>, Strategy>> userSelectedPatterns = new ArrayList<>();
         Main main = new Main();
         Stage stage = (Stage) doneBtn.getScene().getWindow();
@@ -131,7 +131,6 @@ public class UI {
         }
 
         connectedURIs.removeAll(microURIs);
-
 
         main.startGenerator(matrices, userSelectedPatterns, path, stage);
 
@@ -148,12 +147,12 @@ public class UI {
 
         System.out.println("startTime milisecondes:"+System.currentTimeMillis());
 
-        if (processOnInput(userSelectedPatterns, new LoadBalancingStrategy(), Microservice.Pattern.Consolidation, consolidationTxt)) return false;
+        if (processOnInput(userSelectedPatterns, new LoadBalancerStrategy(), Microservice.Pattern.LoadBalanceing, consolidationTxt)) return false;
         if (processOnInput(userSelectedPatterns, new SidecarStrategy(), Microservice.Pattern.Sidecar, sidecarTxt)) return false;
         if (processOnInput(userSelectedPatterns, new PriorityQueueStrategy(), Microservice.Pattern.PriorityQueue, priorityqTxt)) return false;
-        if (processOnInput(userSelectedPatterns, new CacheASideStrategy(), Microservice.Pattern.CacheASide, cahceasideTxt)) return false;
+        if (processOnInput(userSelectedPatterns, new CacheAsideStrategy(), Microservice.Pattern.CacheASide, cahceasideTxt)) return false;
         if (processOnInput(userSelectedPatterns, new AggregatorStrategy(), Microservice.Pattern.Aggregator, aggregatorTxt)) return false;
-        if (processOnInput(userSelectedPatterns, new ContentPerHostStrategy(), Microservice.Pattern.StaticContentHost, staticContentHostTxt)) return false;
+        if (processOnInput(userSelectedPatterns, new ServicePerContainer(), Microservice.Pattern.StaticContentHost, staticContentHostTxt)) return false;
         if (processOnInput(userSelectedPatterns, new AmbassadorStrategy(), Microservice.Pattern.Ambassador, ambassadorTxt)) return false;
         if (processOnInput(userSelectedPatterns, new LeaderElectionStrategy(), Microservice.Pattern.LeaderElection, leaderElectionTxt)) return false;
         if (processOnInput(userSelectedPatterns, new PipesAndFilterStrategy(), Microservice.Pattern.PipesAndFilters, pipesAndFiltersTxt)) return false;
@@ -172,8 +171,8 @@ public class UI {
         try {
             Pair<Microservice.Pattern, Integer> patternIntegerPair = new Pair<>(patternName, Integer.parseInt(textField.getText()));
             userSelectedPatterns.add(new Pair<>(patternIntegerPair, strategy));
-          //  Pair<Microservice.Pattern, Integer> patternIntegerPair2 = new Pair<>(Microservice.Pattern.NoPattern, Integer.parseInt(textField.getText()));
             Pair<Microservice.Pattern, Integer> patternIntegerPair2 = new Pair<>(Microservice.Pattern.NoPattern, Integer.parseInt(textField.getText()));
+//            Pair<Microservice.Pattern, Integer> patternIntegerPair2 = new Pair<>(Microservice.Pattern.NoPattern, Integer.parseInt(textField.getText()));
 
             userSelectedPatterns.add(new Pair<>(patternIntegerPair2, new NoPatternStrategy()));
 
@@ -185,6 +184,7 @@ public class UI {
         return !isValid;
     }
 
+    //*****************************************************************************************************
 
     @FXML
     private void submitBtn() throws IOException {
@@ -193,14 +193,12 @@ public class UI {
             addColumn();
 
         }
-
     }
 
     private boolean allFilled() {
         return !microserviceTxt.getText().isEmpty()
                 && !uriTxt.getText().isEmpty();
     }
-
 
     private void addColumn() throws IOException {
         tableView.getItems().add(new MatrixView(
@@ -214,10 +212,12 @@ public class UI {
         ));
 
         microURIs.add(uriTxt.getText());
-        Microservice microservice = new Microservice(Strategy.id++, microserviceTxt.getText(), uriTxt.getText(),
+
+        Microservice microservice = new Microservice(0,Strategy.id++, microserviceTxt.getText(), uriTxt.getText(),
                 implementedConnections(), false, String.valueOf(creationTime),
-                new Pair<>(patternNameTxt.getText(), roleTxt.getText()), new CustomStrategy()
+                new Pair<>(patternNameTxt.getText(), roleTxt.getText()),null
         );
+
         creationTime++;
         connectedMicroservices(microservice);
         matrices.add(microservice);
@@ -235,14 +235,11 @@ public class UI {
             Microservice.ConnectionType connectionType = Microservice.ConnectionType.valueOf(value.toString());
             String connectURI = ((TextField) textfieldList.get(i)).getText();
             microservice.setConnections(new Pair<>(connectionType, connectURI));
-            //microservice.setUsageMemory();
+
 
                 connectedURIs.add(connectURI);
         }
     }
-
-
-
 
     private Pair<Microservice.ConnectionType, String>[] implementedConnections() {
         List<Pair<Microservice.ConnectionType, String>> list = new ArrayList<>(20);
@@ -253,10 +250,8 @@ public class UI {
             Microservice.ConnectionType connectionType = Microservice.ConnectionType.valueOf(value.toString());
             list.add(new Pair<>(connectionType, ""));
         }
-
         return list.toArray(new Pair[0]);
     }
-
 
     private String implementedConnectionTypeToString() {
         StringBuilder builder = new StringBuilder();
@@ -267,7 +262,6 @@ public class UI {
         }
         return builder.toString();
     }
-
 
     private String connectedToToString() {
 
@@ -287,7 +281,6 @@ public class UI {
         return builder.toString();
     }
 
-
     @FXML
     private void tableViewLogic() {
         tableView.setOnMouseClicked(mouseEvent -> {
@@ -301,6 +294,7 @@ public class UI {
             }
         });
     }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public void connectedToAdd(KeyEvent keyEvent) {
 
@@ -328,25 +322,22 @@ public class UI {
 
         textfieldVBox.getChildren().add(textField1);
         choiceBoxVBox.getChildren().add(choiceBox);
-
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public void connectionTypeAdd(MouseEvent mouseEvent) {
-        //WHY?
+
         int len = connectionTypeVBox.getChildren().size();
         if (len > 2 && ((ChoiceBox) connectionTypeVBox.getChildren().get(len - 2)).getValue() == null) {
             connectionTypeVBox.getChildren().remove(len - 1);
             connectionTypeCB = (ChoiceBox) connectionTypeVBox.getChildren().get(len - 2);
         }
 
-
         if (mouseEvent.getSource() != connectionTypeCB) return;
-
         ChoiceBox<String> choiceBox = new ChoiceBox<>(FXCollections.observableArrayList("POST", "PUT", "GET", "DELETE", ""));
 
-
         connectionTypeCB = choiceBox;
-
         choiceBox.setOnMouseClicked(this::connectionTypeAdd);
 
         connectionTypeVBox.getChildren().add(choiceBox);

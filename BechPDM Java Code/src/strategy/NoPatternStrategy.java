@@ -66,7 +66,7 @@ public class NoPatternStrategy extends Strategy {
                 strcon = str;
                 list.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + i, "restTemplate.exchange"), strcon));
                 i = i + 1;
-            }//            Microservice.ConnectionType type = pair.getKey();
+            }
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -79,8 +79,8 @@ public class NoPatternStrategy extends Strategy {
         Random random = new Random();
 
         // Generate a random index within the bounds of the array
-        //int randomIndex = random.nextInt(numbers.length);
-        int randomIndex = 2;
+        int randomIndex = random.nextInt(numbers.length);
+//        int randomIndex = 2;
         // Retrieve the number at the random index
         int randomNumber = numbers[randomIndex];
         if (randomNumber == 2) {
@@ -139,6 +139,7 @@ public class NoPatternStrategy extends Strategy {
             conworker1 = generatePair();
             try {
                 worker1 = new Microservice(
+                        getPort(),
                         id++,
                         microserviceName,
                         URIGenerator(microserviceName),
@@ -161,6 +162,7 @@ public class NoPatternStrategy extends Strategy {
             conclient=generatePair();
             try {
                 client = new Microservice(
+                        getPort(),
                         id++,
                         microserviceName,
                         URIGenerator(microserviceName),
@@ -261,7 +263,8 @@ public class NoPatternStrategy extends Strategy {
 
 
     @Override
-    public Builder fileFiller(String role, String microserviceName, String[] connections, Pair<Microservice.ConnectionType, String>[] connectionTypes) {
+    public Builder[] fileFiller(Microservice microservice,
+                                String role, String microserviceName, String[] connections, Pair<Microservice.ConnectionType, String>[] connectionTypes) {
         String[] uniqueArray = Arrays.stream(connections)
                 .distinct()
                 .toArray(String[]::new);
@@ -276,9 +279,10 @@ public class NoPatternStrategy extends Strategy {
             }
         } else{ initialConnected(uniqueArray,null);
         }
-
-        Builder  builder = createClass(microserviceName);
-        setMethods(builder,connectionTypes);
+        int n=1;
+        Builder[] builder = new Builder[n];
+          builder[0] = createClass(microserviceName);
+        setMethods(builder[0],connectionTypes);
 
         return builder;
     }
@@ -289,6 +293,7 @@ public class NoPatternStrategy extends Strategy {
                 .setContent(
                         new ClassGenerator(
                                 Constants.AccessLevel.PUBLIC,
+                                Constants.ElementType.CLASS,
                                 "MicroserviceController",
                                 null,
                                 "",
@@ -304,7 +309,7 @@ public class NoPatternStrategy extends Strategy {
                                 new Pair[]{
                                         new Pair<>(Constants.Annotations.RequestMapping, "api/v1/" + microserviceName),
                                         new Pair<>(Constants.Annotations.RestController, "")
-                                }
+                                },new String[]{"import org.springframework.web.bind.annotation.PostMapping;"}
                         ).setContent(
                                 new VariableGenerator(
                                         Constants.AccessLevel.PRIVATE,

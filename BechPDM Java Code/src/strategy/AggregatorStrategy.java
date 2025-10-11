@@ -14,15 +14,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-
 public class AggregatorStrategy extends Strategy {
     public static int aggregatorCounter = 0;
     public static int workerCounter = 0;
     String aggregatorRole = "Aggregator";
     String workerRole = "Worker";
     public static Pair<Microservice.ConnectionType, String>[] connectionTypes;
-    public  int i = 1;
-    public int j=1;
+    public int i = 1;
+    public int j = 1;
     ArrayList<Pair<Pair<String, String>, String>> list = new ArrayList<>();
     ArrayList<Pair<Pair<String, String>, String>> Getlist = new ArrayList<>();
     ArrayList<Pair<Pair<String, String>, String>> Putlist = new ArrayList<>();
@@ -32,53 +31,51 @@ public class AggregatorStrategy extends Strategy {
 
     public void initialConnected(String[] connection, Microservice.ConnectionType connectionType) {
 
-        String  strcon;
+        String strcon;
 
         for (String str : connection) {
 
-            if (connectionType!= null){
+            if (connectionType != null) {
                 strcon = str + "/" + connectionType.toString().toLowerCase() + ","
                         + "HTTP." + connectionType + "," + "entity" + "," + "String.class";
 
-                if (connectionType.equals(Microservice.ConnectionType.GET)){
-                    Getlist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));}
+                if (connectionType.equals(Microservice.ConnectionType.GET)) {
+                    Getlist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));
+                } else if (connectionType.equals(Microservice.ConnectionType.POST)) {
+                    Postlist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));
+                } else if (connectionType.equals(Microservice.ConnectionType.PUT)) {
+                    Putlist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));
+                } else if (connectionType.equals(Microservice.ConnectionType.DELETE)) {
+                    Deletelist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));
+                }
 
-                else if (connectionType.equals(Microservice.ConnectionType.POST)){
-                    Postlist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));}
-
-                else if (connectionType.equals(Microservice.ConnectionType.PUT)){
-                    Putlist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));}
-
-                else  if (connectionType.equals(Microservice.ConnectionType.DELETE)){
-                    Deletelist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));}
-
-                j=j+1;
+                j = j + 1;
             } else {
                 strcon = str;
                 list.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + i, "restTemplate.exchange"), strcon));
                 i = i + 1;
-            }//            Microservice.ConnectionType type = pair.getKey();
+            }
         }
     }
 
-
-    // درون متد matrixFiler مشخص میشه که چه میکروسرویسهاییی به چه تعداد وجود دارد و هر یک چه access point هایی درون خودشون تعریف کردند و یا اینکه به چه میکروسرویس هایی وصل هستند. و هر میکروسرویس را به matrices اضافه میکنیم.
     @Override
-    public ArrayList<Microservice> matrixFiller( ) {
+    public ArrayList<Microservice> matrixFiller() {
 
         ArrayList<Microservice> matrices = new ArrayList<>();
-        int workerNumber = random.nextInt(5) + 2;// تعداد ورکرها را به صورت تصادفی تعیین میکنیم. یک عدد تصادفی بین ۲ تا ۶ تولید می شود.
+        int workerNumber = random.nextInt(5) + 2;
 
-        String microserviceName = aggregatorRole + aggregatorCounter++;// ایجاد یک نام متمایز برای aggregator تا در صورتی که از این الگو بیشتر از یکی خواستیم تولید کنیم هدها نام های متمایزی داشته باشند.
+        String microserviceName = aggregatorRole + aggregatorCounter++;
+
         Microservice aggregator = null;
         try {
             aggregator = new Microservice(
+                    getPort(),
                     id++,
                     microserviceName,
                     URIGenerator(microserviceName),
                     new Pair[]{},
                     false,
-                    creationTime(),// برای ما creationTime مایکروسرویس های درون یک الگو مهم هست.
+                    creationTime(),
                     new Pair<>(Microservice.Pattern.Aggregator.toString(), Microservice.Role.Aggregator.toString()),
                     new AggregatorStrategy()
             );
@@ -86,25 +83,30 @@ public class AggregatorStrategy extends Strategy {
             throw new RuntimeException(e);
         }
         matrices.add(aggregator);
-        /////////////////////////////////////////////////////
-// در اینجا میخواهیم تک تک میکروسرویس های ورکر را به matrics اضافه کنیم.
+
         for (int i = 0; i < workerNumber; i++) {
-            microserviceName = workerRole + workerCounter++;// یک اسم متمایز را برای ورکر تولید میکنه.
-            int linksNumber = random.nextInt(6) + 1;// در اینجا بصورت رندوم مشخص میکنیم که چند تا api درون مایکروسرویس worker وجود داره. در واقع تعداد access point ها به این مایکروسرویس ورکر رو تعیین میکنیم.
-            Pair[] links = new Pair[linksNumber];// به تعداد access point ها، جفت مقدار تعریف میکنیم.
-            for (int j = 0; j < links.length; j++) {
-//                تمامی access point های درون ورکر از نوع GET هستند
-                links[j] = new Pair(Microservice.ConnectionType.GET, String.valueOf(j));
+            microserviceName = workerRole + workerCounter++;
+            int linksNumber = random.nextInt(2) + 1;
+
+            Pair[] links = new Pair[linksNumber * 4];
+            int jj = 0;
+            while (jj < links.length) {
+
+                links[jj] = new Pair(Microservice.ConnectionType.GET, String.valueOf(jj));
+                links[jj + 1] = new Pair(Microservice.ConnectionType.POST, String.valueOf(jj + 1));
+                links[jj + 2] = new Pair(Microservice.ConnectionType.PUT, String.valueOf(jj + 2));
+                links[jj + 3] = new Pair(Microservice.ConnectionType.DELETE, String.valueOf(jj + 3));
+                jj = jj + 4;
             }
-            // (int id, String microserviceName, String URI, Pair<ConnectionType, String>[] connectionTypes,
-            //                        boolean duplicate, String creationTime, Pair<String, String> role, Strategy strategy)
+
             Microservice worker = null;
             try {
                 worker = new Microservice(
+                        getPort(),
                         id++,
                         microserviceName,
                         URIGenerator(microserviceName),
-                        links, // تمامی access point های میکروسرویس ورکر رو معرفی میکنیم. در اینجا چندین GET
+                        links,
                         false,
                         creationTime(),
                         new Pair<>(Microservice.Pattern.Aggregator.toString(), Microservice.Role.Worker.toString()),
@@ -113,27 +115,29 @@ public class AggregatorStrategy extends Strategy {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            for (int j = 0; j < links.length; j++) {// تنها aggregator به access point های درون یک worker میتونه وصل شود.
-                // بنابراین در اینجا به تعداد لینک ها (access point) هایی که درون ورکر تعریف کردیم، برای aggregator، setConnection تعریف میکنیم و میگیم که agg به این ورکر وصل هست.
-                aggregator.setConnections(new Pair<>(Microservice.ConnectionType.GET, worker.getURI()));
-                aggregator.setConnections(new Pair<>(Microservice.ConnectionType.POST, worker.getURI()));
-                aggregator.setConnections(new Pair<>(Microservice.ConnectionType.PUT, worker.getURI()));
-                aggregator.setConnections(new Pair<>(Microservice.ConnectionType.DELETE, worker.getURI()));
-                aggregator.setUsageMemory();
 
-            }
+            aggregator.setConnections(new Pair<>(Microservice.ConnectionType.GET, worker.getURI()));
+            aggregator.setConnections(new Pair<>(Microservice.ConnectionType.POST, worker.getURI()));
+            aggregator.setConnections(new Pair<>(Microservice.ConnectionType.PUT, worker.getURI()));
+            aggregator.setConnections(new Pair<>(Microservice.ConnectionType.DELETE, worker.getURI()));
+            aggregator.setUsageMemory();
+
+//            }
             matrices.add(worker);
         }
         aggregator.setUsageCPU();
         return matrices;
     }
+
     //**************************************************************************************************************************************
     @Override
-    public Builder fileFiller(String role,
-                              String microserviceName,
-                              String[] connections, //اینجا uri میکروسرویس های ورکر که درون aggregator فراخوانی میشوند رو میاره. توجه داشته باش که هر ورکر به تعداد api GET که درون خودش داره در اینجا ادرسش میاد
-                              // بنابراین اگر ۴ تا ورکر داشته باشیم که هر کدوم مثالا دو تا api GET درونشون باشه، ۸ تا uri باید درونن aggregator تعریف شود.
-                              Pair<Microservice.ConnectionType, String>[] connectionTypes) {// یعنی چه api هایی درون خودش داره
+    public Builder[] fileFiller(Microservice microservice,
+                                String role,
+                                String microserviceName,
+                                String[] connections,
+
+                                Pair<Microservice.ConnectionType, String>[] connectionTypes) {
+
         String[] uniqueArray = Arrays.stream(connections)
                 .distinct()
                 .toArray(String[]::new);
@@ -142,31 +146,33 @@ public class AggregatorStrategy extends Strategy {
         for (Pair<Microservice.ConnectionType, String> entry : connectionTypes) {
             uniqueSet.add(entry);
         }
-        if (!uniqueSet.isEmpty()){
+        if (!uniqueSet.isEmpty()) {
             for (Pair<Microservice.ConnectionType, String> up : uniqueSet) {
                 initialConnected(uniqueArray, up.getKey());
             }
-        } else{ initialConnected(uniqueArray,null);
+        } else {
+            initialConnected(uniqueArray, null);
         }
-
-        Builder builder = new Builder();
+        int n = 1;
+        Builder[] builder = new Builder[n];
         switch (role) {
             case "Aggregator":
-                builder = aggregatorClass(microserviceName);
+                builder[0] = aggregatorClass(microserviceName);
                 break;
             case "Worker":
-                builder = workerClass(microserviceName, connections);
-                setMethods(builder, connectionTypes);
+                builder[0] = workerClass(microserviceName, connections);
+                setMethods(builder[0], connectionTypes);
                 break;
         }
         return builder;
     }
 
-    private Builder aggregatorClass(String microserviceName) {// در اینجا علاوه بر نام میکروسرویس باید connections رو هم به عنوان ورودی پاس بده.
+    private Builder aggregatorClass(String microserviceName) {
         return new Builder("microservice." + "aggregator" + ".demo.API")
                 .setContent(
                         new ClassGenerator(
                                 Constants.AccessLevel.PUBLIC,
+                                Constants.ElementType.CLASS,
                                 "MicroserviceController",
                                 null,
                                 "",
@@ -184,7 +190,8 @@ public class AggregatorStrategy extends Strategy {
                                 new Pair[]{
                                         new Pair<>(Constants.Annotations.RequestMapping, "api/v1/" + microserviceName),
                                         new Pair<>(Constants.Annotations.RestController, "")
-                                }
+                                }, new String[]{"import org.springframework.web.bind.annotation.PostMapping;",
+                                "import org.springframework.web.bind.annotation.RestController;"}
                         ).setContent(
                                 new VariableGenerator(
                                         Constants.AccessLevel.PRIVATE,
@@ -193,7 +200,7 @@ public class AggregatorStrategy extends Strategy {
                                         new Pair<>(Constants.VariableType.INT, "id"),
                                         "",
                                         null,
-                                        false,// میتونیم براشون getter و setter  رو فعال کنیم.
+                                        false,
                                         false)
                         ).setContent(
                                 new VariableGenerator(
@@ -207,7 +214,7 @@ public class AggregatorStrategy extends Strategy {
                                         false)
                         ).setContent(
                                 new BodyGenerator(
-                                        new Pair[]{ new Pair<>(Constants.Annotations.Autowired, "")},
+                                        new Pair[]{new Pair<>(Constants.Annotations.Autowired, "")},
                                         new ArrayList<Pair<String, String>>() {{
                                             add(new Pair<>("RestTemplate restTemplate", "RestTemplate"));
                                         }},
@@ -223,6 +230,7 @@ public class AggregatorStrategy extends Strategy {
                 .setContent(
                         new ClassGenerator(
                                 Constants.AccessLevel.PUBLIC,
+                                Constants.ElementType.CLASS,
                                 "MicroserviceController",
                                 null,
                                 "",
@@ -238,7 +246,8 @@ public class AggregatorStrategy extends Strategy {
                                 new Pair[]{
                                         new Pair<>(Constants.Annotations.RequestMapping, "api/v1/" + microserviceName),
                                         new Pair<>(Constants.Annotations.RestController, "")
-                                }
+                                }, new String[]{"import org.springframework.web.bind.annotation.PostMapping;",
+                                "import org.springframework.web.bind.annotation.RestController;"}
                         ).setContent(
                                 new VariableGenerator(
                                         Constants.AccessLevel.PRIVATE,
@@ -254,59 +263,59 @@ public class AggregatorStrategy extends Strategy {
     }
 
     private void setMethods(Builder builder, Pair<Microservice.ConnectionType, String>[] connectionTypes) {
-//        for (int i = 0; i < connectionTypes.length; i++) {
-            setMethodContent(
-                    builder,
-                    Constants.AccessLevel.PUBLIC,
-                    false,
-                    false,
-                    new Pair(Constants.ReturnType.AddNewType("Object[]"), "getProperties"),
-                    null,
-                    new Pair[]{
-                            new Pair(Constants.Annotations.GetMapping, ("/getting-data"))
-                    },
-                    Constants.Keywords.NULL.toString(),
-                    Getlist
-            );
-            setMethodContent(
-                    builder,
-                    Constants.AccessLevel.PUBLIC,
-                    false,
-                    false,
-                    new Pair(Constants.ReturnType.AddNewType("Object[]"), "getProperties"),
-                    null,
-                    new Pair[]{
-                            new Pair(Constants.Annotations.PostMapping, ("/inserting-data"))
-                    },
-                    Constants.Keywords.NULL.toString(),
-                    Postlist
-            );
-            setMethodContent(
-                    builder,
-                    Constants.AccessLevel.PUBLIC,
-                    false,
-                    false,
-                    new Pair(Constants.ReturnType.AddNewType("Object[]"), "getProperties"),
-                    null,
-                    new Pair[]{
-                            new Pair(Constants.Annotations.PutMapping, ("/updating-info"))
-                    },
-                    Constants.Keywords.NULL.toString(),
-                    Putlist
-            );
-            setMethodContent(
-                    builder,
-                    Constants.AccessLevel.PUBLIC,
-                    false,
-                    false,
-                    new Pair(Constants.ReturnType.AddNewType("Object[]"), "getProperties"),
-                    null,
-                    new Pair[]{
-                            new Pair(Constants.Annotations.DeleteMapping, ("/deleting-info"))
-                    },
-                    Constants.Keywords.NULL.toString(),
-                    Deletelist
-            );
+
+        setMethodContent(
+                builder,
+                Constants.AccessLevel.PUBLIC,
+                false,
+                false,
+                new Pair(Constants.ReturnType.AddNewType("Object[]"), "getProperties"),
+                null,
+                new Pair[]{
+                        new Pair(Constants.Annotations.GetMapping, ("/getting-data"))
+                },
+                Constants.Keywords.NULL.toString(),
+                Getlist
+        );
+        setMethodContent(
+                builder,
+                Constants.AccessLevel.PUBLIC,
+                false,
+                false,
+                new Pair(Constants.ReturnType.AddNewType("Object[]"), "getProperties"),
+                null,
+                new Pair[]{
+                        new Pair(Constants.Annotations.PostMapping, ("/inserting-data"))
+                },
+                Constants.Keywords.NULL.toString(),
+                Postlist
+        );
+        setMethodContent(
+                builder,
+                Constants.AccessLevel.PUBLIC,
+                false,
+                false,
+                new Pair(Constants.ReturnType.AddNewType("Object[]"), "getProperties"),
+                null,
+                new Pair[]{
+                        new Pair(Constants.Annotations.PutMapping, ("/updating-info"))
+                },
+                Constants.Keywords.NULL.toString(),
+                Putlist
+        );
+        setMethodContent(
+                builder,
+                Constants.AccessLevel.PUBLIC,
+                false,
+                false,
+                new Pair(Constants.ReturnType.AddNewType("Object[]"), "getProperties"),
+                null,
+                new Pair[]{
+                        new Pair(Constants.Annotations.DeleteMapping, ("/deleting-info"))
+                },
+                Constants.Keywords.NULL.toString(),
+                Deletelist
+        );
 
     }
 }

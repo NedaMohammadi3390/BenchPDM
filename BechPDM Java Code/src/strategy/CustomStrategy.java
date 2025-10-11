@@ -65,7 +65,7 @@ public class CustomStrategy extends Strategy {
     }
 
     @Override
-    public Builder fileFiller(String role, String microserviceName, String[] connections, Pair<Microservice.ConnectionType, String>[] connectionTypes) {
+    public Builder[] fileFiller(Microservice microservice,String role, String microserviceName, String[] connections, Pair<Microservice.ConnectionType, String>[] connectionTypes) {
         String[] uniqueArray = Arrays.stream(connections)
                 .distinct()
                 .toArray(String[]::new);
@@ -80,21 +80,22 @@ public class CustomStrategy extends Strategy {
             }
         } else{ initialConnected(uniqueArray,null);
         }
-
-        Builder builder = baseClass(microserviceName);
+        int n = 1;
+        Builder[] builder = new Builder[n];
+         builder[0] = baseClass(microserviceName);
         for (Pair connectionType : connectionTypes) {
             switch ((Microservice.ConnectionType) connectionType.getKey()) {
                 case POST:
-                    postMethod(builder);
+                    postMethod(builder[0]);
                     break;
                 case GET:
-                    getMethod(builder);
+                    getMethod(builder[0]);
                     break;
                 case PUT:
-                    putMethod(builder);
+                    putMethod(builder[0]);
                     break;
                 case DELETE:
-                    deleteMethod(builder);
+                    deleteMethod(builder[0]);
                     break;
                 default:
                     System.err.println("Not Supported");
@@ -109,6 +110,7 @@ public class CustomStrategy extends Strategy {
                 .setContent(
                         new ClassGenerator(
                                 Constants.AccessLevel.PUBLIC,
+                                Constants.ElementType.CLASS,
                                 "MicroserviceController",
                                 null,
                                 "",
@@ -125,7 +127,7 @@ public class CustomStrategy extends Strategy {
                                 new Pair[]{
                                         new Pair<>(Constants.Annotations.RequestMapping, "api/v1/" + microserviceName),
                                         new Pair<>(Constants.Annotations.RestController, "")
-                                }
+                                },new String[]{"import org.springframework.web.bind.annotation.PostMapping;"}
                         ).setContent(
                                 new VariableGenerator(Constants.AccessLevel.PRIVATE,
                                         false,
@@ -165,7 +167,7 @@ public class CustomStrategy extends Strategy {
                 false,
                 new Pair(Constants.ReturnType.AddNewType("Object"), "GetMethod" + getCounter++),
                 new Pair[]{
-                        new Pair<>(Constants.VariableTypeRequestBody.AddNewType("int"), "id")
+                        new Pair<>(Constants.VariableTypeRequestBody.AddNewType("int",""), "id")
                 },
                 new Pair[]{
                         new Pair(Constants.Annotations.GetMapping, "/get" + getCounter)

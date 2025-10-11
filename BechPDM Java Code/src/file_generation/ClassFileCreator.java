@@ -2,6 +2,7 @@ package file_generation;
 
 import content_generation.Builder;
 import content_generation.generator.PackageSignatureGenerator;
+import exception.ClassFileCreationException;
 import utils.Corrections;
 
 import java.io.BufferedWriter;
@@ -11,20 +12,24 @@ import java.io.IOException;
 
 public class ClassFileCreator {
 
-    public void createClassFile(String localPath, String packagePath, String className, Builder builder) {
+        public void createClassFile(String localPath, String packagePath, String className, Builder builder)
+    {
         if (!Corrections.isCorrectPackage(localPath)) return;
         if (Corrections.isInvalid(className)) return;
 
         File file = new File(localPath + "\\" + className + ".java");
 
         try {
-            file.createNewFile();
-            writeClassContent(file, packagePath, builder);
+            if (file.createNewFile()) {
+                writeClassContent(file, packagePath, builder);
+            } else {
+                throw new ClassFileCreationException("File already exists: " + file.getAbsolutePath(), null);
+            }
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new ClassFileCreationException("Failed to create class file at " + file.getAbsolutePath(), e);
         }
-    }
 
+    }
     private void writeClassContent(File file, String packageName, Builder builder) {
         PackageSignatureGenerator packageSignatureGenerator = new PackageSignatureGenerator(packageName);
         BufferedWriter writer;

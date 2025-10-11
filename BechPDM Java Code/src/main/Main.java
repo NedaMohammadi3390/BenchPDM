@@ -30,8 +30,8 @@ public class Main extends Application {
                                List<Pair<Pair<Microservice.Pattern, Integer>, Strategy>> userSelectedPatterns,
                                String path,
                                Stage stage ) throws IOException {
-        //stage.setScene(null);
-       this.path2=path;
+
+       this.path2 = path;
         ProjectFileGenerator.defaultPath = path;
 
         ArrayList<Microservice> microserviceArrayList = new ArrayList<>();
@@ -40,6 +40,7 @@ public class Main extends Application {
         matrixFiller(microserviceArrayList, userSelectedPatterns);
 
         String log = logMatrix(microserviceArrayList);
+        System.out.println(log);
 
         //code output
         PatternGenerator patternGenerator = new PatternGenerator();
@@ -58,7 +59,7 @@ public class Main extends Application {
         CSVGenerator csvGenerator = new CSVGenerator(path);
         csvGenerator.saveCSV(microserviceArrayList);
 
-        TracingFileGenerator tracingGenerator = new TracingFileGenerator(path,"\\TracingFil50e");
+        TracingFileGenerator tracingGenerator = new TracingFileGenerator(path,"\\TracingFile");
         tracingGenerator.tracesSaving(strtrace);
         tracingGenerator.closeFile();
 
@@ -71,28 +72,30 @@ public class Main extends Application {
         usageCPUGenerator.closeFile();
         System.out.println("writing in files is finished!!");
 
-
-
-        //System.out.println(strtrace);
-        //visual
-//        ArrayList<VisualMicroservice> arrayList = GUI(microserviceArrayList);
-//        Display display = new Display();
-//        Stage stage2 =new Stage();
-//        stage2.setTitle("Microservice dependency Graph (MDP)");
-//        stage2.setMaximized(true);
-//        try {
-//            display.start(stage2, arrayList, path);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        ArrayList<VisualMicroservice> arrayList = GUI(microserviceArrayList);
+        Display display = new Display();
+        Stage stage2 =new Stage();
+        stage2.setTitle("Microservice dependency Graph (MDP)");
+        stage2.setMaximized(true);
+        try {
+            display.start(stage2, arrayList, path);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
-    private void matrixFiller(
+
+    public static String getPath2() {
+        return path2;
+    }
+        private void matrixFiller(
             ArrayList<Microservice> microserviceArrayList,
             List<Pair<Pair<Microservice.Pattern, Integer>, Strategy>> userSelectedPatterns)
+
     {
         for (Pair<Pair<Microservice.Pattern, Integer>, Strategy> userInput : userSelectedPatterns) {
+
             int times = userInput.getKey().getValue();
             for (int i = 0; i < times; i++) {
 

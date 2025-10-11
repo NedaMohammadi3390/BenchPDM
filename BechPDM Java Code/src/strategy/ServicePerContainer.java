@@ -2,20 +2,18 @@ package strategy;
 
 import content_generation.Builder;
 import content_generation.Constants;
-import content_generation.generator.BodyGenerator;
-import content_generation.generator.ClassGenerator;
-import content_generation.generator.ConstructorGenerator;
-import content_generation.generator.VariableGenerator;
+import content_generation.generator.*;
 import data_structure.Microservice;
 import javafx.util.Pair;
-
+import main.Main;
+import content_generation.generator.CustomizedCodeFileGenerator.DockerfileGenerator;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ContentPerHostStrategy extends Strategy {
+public class ServicePerContainer extends Strategy {
     public static int clientUserCounter = 0;
     public static int clientAdminCounter = 0;
     public static int storageCounter = 0;
@@ -77,6 +75,7 @@ public class ContentPerHostStrategy extends Strategy {
             Microservice storage = null;
             try {
                 storage = new Microservice(
+                        getPort(),
                         id++,
                         microserviceName,
                         URIGenerator(microserviceName),
@@ -87,7 +86,7 @@ public class ContentPerHostStrategy extends Strategy {
                         false,
                         creationTime(),
                         new Pair<>(Microservice.Pattern.StaticContentHost.toString(), Microservice.Role.Storage.toString()),
-                        new ContentPerHostStrategy()
+                        new ServicePerContainer()
                 );
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -101,6 +100,7 @@ public class ContentPerHostStrategy extends Strategy {
                 Microservice admin = null;
                 try {
                     admin = new Microservice(
+                            getPort(),
                             id++,
                             microserviceName,
                             URIGenerator(microserviceName),
@@ -108,7 +108,7 @@ public class ContentPerHostStrategy extends Strategy {
                             false,
                             creationTime(),
                             new Pair<>(Microservice.Pattern.StaticContentHost.toString(), Microservice.Role.Client.toString()),
-                            new ContentPerHostStrategy()
+                            new ServicePerContainer()
                     );
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -124,6 +124,7 @@ public class ContentPerHostStrategy extends Strategy {
 
                 try {
                     client = new Microservice(
+                            getPort(),
                             id++,
                             microserviceName,
                             URIGenerator(microserviceName),
@@ -131,7 +132,7 @@ public class ContentPerHostStrategy extends Strategy {
                             false,
                             creationTime(),
                             new Pair<>(Microservice.Pattern.StaticContentHost.toString(), Microservice.Role.Client.toString()),
-                            new ContentPerHostStrategy()
+                            new ServicePerContainer()
                     );
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -179,7 +180,7 @@ public class ContentPerHostStrategy extends Strategy {
     }
 
     @Override
-    public Builder fileFiller(String role, String microserviceName, String[] connections, Pair<Microservice.ConnectionType, String>[] connectionTypes) {
+    public Builder[] fileFiller(Microservice microservice,String role, String microserviceName, String[] connections, Pair<Microservice.ConnectionType, String>[] connectionTypes) {
         String[] uniqueArray = Arrays.stream(connections)
                 .distinct()
                 .toArray(String[]::new);
@@ -195,24 +196,27 @@ public class ContentPerHostStrategy extends Strategy {
         } else{ initialConnected(uniqueArray,null);
         }
 
-        Builder builder = new Builder();
+        int n = 1;
+        Builder[] builder = new Builder[n];
         switch (role) {
             case "Client":
-                builder = clientClass();
+                builder[0] = clientClass(microserviceName);
                 break;
             case "Storage":
-                builder = storageClass(microserviceName, connections);
-                setMethods(builder);
+                builder[0] = storageClass(microserviceName, connections);
+                setMethods(builder[0]);
                 break;
         }
         return builder;
     }
 
-    private Builder clientClass() {
-        return new Builder("microservice." + "staticcontenthost" + ".demo.API")
-                .setContent(
+    private Builder clientClass(String microserviceName) {
+        Builder builder = new Builder("microservice." + "staticcontenthost" + ".demo.API");
+
+        builder.setContent(
                         new ClassGenerator(
                                 Constants.AccessLevel.PUBLIC,
+                                Constants.ElementType.CLASS,
                                 "MicroserviceController",
                                 null,
                                 "",
@@ -227,7 +231,7 @@ public class ContentPerHostStrategy extends Strategy {
                                                     add(new Pair<>("connections", "ArrayList<String>"));
                                                 }})
                                 },
-                                new Pair[]{}
+                                new Pair[]{},new String[]{"import org.springframework.web.bind.annotation.PostMapping;"}
                         ).setContent(
                                 new VariableGenerator(
                                         Constants.AccessLevel.PRIVATE,
@@ -269,13 +273,19 @@ public class ContentPerHostStrategy extends Strategy {
                                 )
                         )
                 );
+        builder.setContent(new DockerfileGenerator(microserviceName, Main.getPath2(), "ServicePerContainer"));
+        builder.setContent(new POMGenerator(
+                microserviceName, Main.getPath2(), "ServicePerContainer"));
+        return builder;
     }
 
     private Builder storageClass(String microserviceName, String[] connections) {
-        return new Builder("microservice." + "staticcontenthost" + ".demo.API")
-                .setContent(
+        Builder builder = new Builder("microservice." + "staticcontenthost" + ".demo.API");
+
+                builder.setContent(
                         new ClassGenerator(
                                 Constants.AccessLevel.PUBLIC,
+                                Constants.ElementType.CLASS,
                                 "MicroserviceController",
                                 null,
                                 "",
@@ -291,7 +301,7 @@ public class ContentPerHostStrategy extends Strategy {
                                 new Pair[]{
                                         new Pair<>(Constants.Annotations.RequestMapping, "api/v1/" + microserviceName),
                                         new Pair<>(Constants.Annotations.RestController, "")
-                                }
+                                },new String[]{"import org.springframework.web.bind.annotation.PostMapping;"}
                         ).setContent(
                                 new VariableGenerator(
                                         Constants.AccessLevel.PRIVATE,
@@ -304,6 +314,10 @@ public class ContentPerHostStrategy extends Strategy {
                                         false)
                         )
                 );
+                builder.setContent(new DockerfileGenerator(microserviceName, Main.getPath2(), "ServicePerContainer"));
+        builder.setContent(new POMGenerator(
+                microserviceName, Main.getPath2(), "ServicePerContainer"));
+     return builder;
     }
 
     private void setMethods(Builder builder) {
@@ -314,7 +328,7 @@ public class ContentPerHostStrategy extends Strategy {
                 false,
                 new Pair(Constants.ReturnType.AddNewType("Object"), "returnData"),
                 new Pair[]{
-                        new Pair<>(Constants.VariableTypeRequestBody.AddNewType("int"), "identifier")
+                        new Pair<>(Constants.VariableTypeRequestBody.AddNewType("int",""), "identifier")
                 },
                 new Pair[]{
                         new Pair(Constants.Annotations.GetMapping, "")
@@ -329,7 +343,7 @@ public class ContentPerHostStrategy extends Strategy {
                 false,
                 new Pair(Constants.ReturnType.BOOLEAN, "putData"),
                 new Pair[]{
-                        new Pair<>(Constants.VariableTypeRequestBody.AddNewType("Object[]"), "objects")
+                        new Pair<>(Constants.VariableTypeRequestBody.AddNewType("Object[]",""), "objects")
                 },
                 new Pair[]{
                         new Pair(Constants.Annotations.PostMapping, "")

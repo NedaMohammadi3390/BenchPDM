@@ -1,5 +1,6 @@
 package content_generation;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Builder extends Constants {
@@ -35,7 +36,11 @@ public class Builder extends Constants {
         if (order != null) {
             for (Object build : order) {
 
-                classContent.append(((IGenerate) build).generate());
+                try {
+                    classContent.append(((IGenerate) build).generate());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
 

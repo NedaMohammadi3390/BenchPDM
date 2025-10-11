@@ -13,32 +13,78 @@ public abstract class Constants {
     public static final String equalSymbol = space + "=" + space;
     public static final String comma = "," + space;
 
+
     public enum Keywords {
         FOR, IF, WHILE, DO, THROWS, RETURN, IMPLEMENTS, EXTENDS, TRUE, FALSE, NULL;
 
+        public static String AddNewType(String newType) {
+            return newType + space;
+        }
+
         @Override
         public String toString() {
             return super.toString().toLowerCase() + space;
         }
     }
-
+//#########################################################################
     public enum ElementType {
-        PACKAGE, CLASS, INTERFACE;
+        PACKAGE, CLASS, INTERFACE,ENUM;
 
         @Override
         public String toString() {
             return super.toString().toLowerCase() + space;
         }
     }
-
+//###############################################################################
     public enum AccessLevel {
-        PRIVATE, PUBLIC, PACKAGE_PRIVATE;
+        PRIVATE("private "),
+        PUBLIC("public "),
+        PACKAGE_PRIVATE("package-private "),
+        CUSTOM("");
+
+        private final String label;
+
+        AccessLevel(String label) {
+            this.label = label;
+        }
+
+    public static String AddNewType(String newType) {
+        return newType + space;
+    }
+        @Override
+        public String toString() {
+            System.out.println("label is:"+ label);
+            return  super.toString().toLowerCase() + " " ;
+        }
+    }
+
+    //###########################################################################
+    public enum ReturnType {
+        INT("int"),
+        FLOAT("float"),
+        DOUBLE("double"),
+        BOOLEAN("boolean"),
+        VOID("void"),
+        CONSTRUCTOR("constructor"),
+        CUSTOM("custom");
+
+        private String label;
+        ReturnType(String label) {
+            this.label = label;
+        }
+
+        public static String AddNewType(String newType) {
+            return newType + space;
+        }
 
         @Override
         public String toString() {
-            return super.toString().toLowerCase() + space;
+            return label + " " + super.toString().toLowerCase() + " " ;
         }
+
     }
+
+    //##############################################################################
 
     public enum VariableType {
         BOOLEAN, BYTE, CHAR, SHORT, INT, LONG, FLOAT, DOUBLE;
@@ -53,16 +99,33 @@ public abstract class Constants {
         }
     }
 
+    static String annotate = "";
     public enum VariableTypeRequestBody{
         Object, String;
 
-        public static String AddNewType(String newType) {
-            return "@RequestBody" + space + newType.toLowerCase() + space;
+
+        public static String AddNewType(String annotation, String newType) {
+            annotate = annotation;
+            return annotation + space + newType.toLowerCase() + space;
+
         }
 
         @Override
         public String toString() {
-            return "@RequestBody" + space + super.toString() + space;
+            return annotate + space + super.toString() + space;
+        }
+    }
+
+    public enum VariableTypeRequestBody2{
+        Object, String;
+
+        public static String AddNewType(String newType) {
+            return newType.toLowerCase();
+        }
+
+        @Override
+        public String toString() {
+            return super.toString();
         }
     }
 
@@ -78,20 +141,6 @@ public abstract class Constants {
             return "@RequestParam" + space + super.toString() + space;
         }
     }
-
-    public enum ReturnType {
-        INT, FLOAT, DOUBLE, BOOLEAN, VOID, CONSTRUCTOR;
-
-        public static String AddNewType(String newType) {
-            return newType + space;
-        }
-
-        @Override
-        public String toString() {
-            return super.toString().toLowerCase().equals("constructor") ? "" : super.toString().toLowerCase() + space;
-        }
-    }
-
     public enum Exceptions {
         Exception;
 
@@ -104,14 +153,17 @@ public abstract class Constants {
 
     public enum Annotations {
         RequestMapping, RestController, Autowired, GetMapping, JsonProperty, DeleteMapping,
-        Service, Repository, Override, SpringBootApplication ,PostMapping, PutMapping;
+        Service, Repository, Override, SpringBootApplication ,PostMapping, PutMapping,
+       EnableDiscoveryClient, EnableZuulProxy,Component, EnableEurekaServer, Slf4j,Data, Getter, Setter, EnableCaching,
+       Configuration, Value, AllArgsConstructor,NoArgsConstructor,Document, Id, Bean, LoadBalanced ;
+
 
         String content = "";
 
 
-        public Annotations setContent(String content) {
-            this.content = content;
-            return this;
+        public  static String setContent(String content) {
+
+            return content;
         }
 
 
@@ -119,6 +171,10 @@ public abstract class Constants {
         public String toString() {
             return "@" + super.toString();
         }
+
+       public String toShortString() {
+           return  super.toString();
+       }
     }
 
 }

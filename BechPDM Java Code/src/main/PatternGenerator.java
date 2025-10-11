@@ -11,17 +11,21 @@ public class PatternGenerator {
     public void generate(ArrayList<Microservice> matrices) {
         for (Microservice microservice : matrices) {
             Strategy strategy = microservice.getStrategy();
-            Builder builder = strategy.fileFiller(
+            Builder[] builder = strategy.fileFiller(
+                    microservice,
                     microservice.getRoleInPattern(),
                     microservice.getMicroserviceName(),
                     microservice.getConnections(),
-                    microservice.getConnectionTypes()
-            );
 
-            new ProjectFileGenerator(
-                    microservice.getMicroserviceName(),
-                    builder
+                    microservice.getConnectionTypes()
+
             );
+            for (Builder b : builder) {
+                new ProjectFileGenerator(
+                        microservice.getMicroserviceName(),
+                        b
+                );
+            }
         }
     }
 }

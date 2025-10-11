@@ -12,25 +12,18 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Corrections {
-
     public static boolean isCorrectPackage(String path) {
         if (!(new File(path).exists())) {
             throw new IllegalCharsetNameException("This package does not exists: \"" + path + "\"");
         }
         return true;
     }
-
-
     public static String correctPath(String path) {
-
         String[] paths = path.split("\\.");
-
         StringBuilder finalPath = new StringBuilder(paths[0] + "\\");
-
         for (int i = 1; i < paths.length; i++) {
             finalPath.append(paths[i]).append("\\");
         }
-
         return finalPath.toString();
     }
 
@@ -39,7 +32,6 @@ public class Corrections {
         String space = " ";
         String comma = "," + space;
         if (params != null) {
-
             for (Pair p : params) {
                 parameter.append(p.getKey().toString())
                         .append(p.getValue().toString()).append(comma);
@@ -51,14 +43,12 @@ public class Corrections {
         return parameter.toString();
     }
 
-
     public static String initiate(String name) {
         String semicolon = ";";
         String emptyLine = "\n";
         String space = " ";
         return "this." + name + space + "=" + space + name + semicolon + emptyLine;
     }
-
 
     public static String newsStatement(ArrayList<Pair<String, String>>  newsStatement){
         if (newsStatement == null) return "";
@@ -71,27 +61,26 @@ public class Corrections {
         return sb.toString();
     }
 
-
+    ///////////////////////////////////////////*******************
 public static String createBodyMethod(ArrayList<Pair<Pair<String,String>,String>> newbody ){
     if (newbody == null) return "";
     StringBuilder sb = new StringBuilder();
     for (Pair<Pair<String,String>,String> input : newbody) {
-        String s = input.getKey().getKey() + " = "+input.getKey().getValue()+ "(" + input.getValue()+")";
+        String s = input.getKey().getKey()+""+input.getKey().getValue()+ "" + input.getValue()+"";
         sb.append(s).append("\n");
     }
     return sb.toString();
 }
-
+    //////////////////////////////////////////////////////********************
 
     public static String createConnections(String[] connections) {
         if (connections == null || connections.length == 0) return "";
         StringBuilder URIs = new StringBuilder();
 
         Arrays.stream(connections).forEach(s -> URIs.append("connections.add(\"").append(s).append("\");\n"));
-        // Finally, the string created by the StringBuilder is converted to a string and returned as the output of the function.
+
         return URIs.toString();
     }
-
 
     public static String initiate(Pair[] pairs) {
 
@@ -107,7 +96,6 @@ public static String createBodyMethod(ArrayList<Pair<Pair<String,String>,String>
         return init.toString();
     }
 
-
     public static boolean isInvalid(String name) {
         if (containSpace(name)) {
             throw new IllegalCharsetNameException("Name must not contains space: \"" + name + "\"");
@@ -116,7 +104,6 @@ public static String createBodyMethod(ArrayList<Pair<Pair<String,String>,String>
         }
         return false;
     }
-
 
     public static String annotationCreator(Pair<Constants.Annotations, String>[] annotationsContentPair) {
         if (annotationsContentPair == null) return "";
@@ -131,7 +118,6 @@ public static String createBodyMethod(ArrayList<Pair<Pair<String,String>,String>
         }
         return annotation.toString();
     }
-
 
     public static String classAnnotationCreator(Pair<Constants.Annotations, String>[] annotationsContentPair) {
         if (annotationsContentPair == null) return "";
@@ -155,11 +141,9 @@ public static String createBodyMethod(ArrayList<Pair<Pair<String,String>,String>
         return tab.toString();
     }
 
-
     private static boolean containSpace(String name) {
         return name.contains(" ");
     }
-
 
     private static boolean startWithNumber(String name) {
 
@@ -178,7 +162,6 @@ public static String createBodyMethod(ArrayList<Pair<Pair<String,String>,String>
         return String.valueOf(name.charAt(0)).matches("-?\\d+(\\.\\d+)?");
 
     }
-
 
     public static String randomString() {
         int leftLimit = 97; // letter 'a'

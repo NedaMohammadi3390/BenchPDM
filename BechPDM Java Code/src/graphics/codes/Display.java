@@ -48,8 +48,6 @@ public class Display {
         scrollPane.setPadding(new Insets(20,20,20,20));
         Scene scene = new Scene(scrollPane);
 
-
-
         stage.setScene(scene);
         stage.show();
         WritableImage writableImage = root.snapshot(new SnapshotParameters(), null);

@@ -1,101 +1,42 @@
 package strategy;
 
 import content_generation.Builder;
-import content_generation.Constants;
-import content_generation.generator.BodyGenerator;
-import content_generation.generator.ClassGenerator;
-import content_generation.generator.ConstructorGenerator;
-import content_generation.generator.VariableGenerator;
+import content_generation.generator.*;
+import content_generation.generator.CustomizedCodeFileGenerator.sidecar.*;
 import data_structure.Microservice;
 import javafx.util.Pair;
+import main.Main;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.HashSet;
-import java.util.Set;
+
 public class SidecarStrategy extends Strategy {
-    public static int clientCounter = 0;
+    public static int externalServiceCounter = 0;
     public static int sidecarCounter = 0;
-    public static int workerCounter = 0;
-    String clientRole = "Client";
+    public static int mainServiceCounter = 0;
+    public static int zuulCounter = 0;
+    public static int eurekaCounter = 0;
+    String externalServiceRole = "ExternalService";
     String sidecarRole = "Sidecar";
-    String workerRole = "Worker";
+    String mainServiceRole = "MainService";
+    String zuulRole = "ApiGateway";
+    String eurekaRole = "ServiceRegistry";
     public static Pair<Microservice.ConnectionType, String>[] connectionTypes;
-    public  int i = 1;
-    public int j=1;
-    ArrayList<Pair<Pair<String, String>, String>> list = new ArrayList<>();
-    ArrayList<Pair<Pair<String, String>, String>> Getlist = new ArrayList<>();
-    ArrayList<Pair<Pair<String, String>, String>> Putlist = new ArrayList<>();
-    ArrayList<Pair<Pair<String, String>, String>> Postlist = new ArrayList<>();
-    ArrayList<Pair<Pair<String, String>, String>> Deletelist = new ArrayList<>();
 
 
-    public void initialConnected(String[] connection, Microservice.ConnectionType connectionType) {
-
-        String  strcon;
-
-        for (String str : connection) {
-
-            if (connectionType!= null){
-                strcon = str + "/" + connectionType.toString().toLowerCase() + ","
-                        + "HTTP." + connectionType + "," + "entity" + "," + "String.class";
-
-                if (connectionType.equals(Microservice.ConnectionType.GET)){
-                Getlist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));}
-
-                else if (connectionType.equals(Microservice.ConnectionType.POST)){
-                    Postlist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));}
-
-                else if (connectionType.equals(Microservice.ConnectionType.PUT)){
-                    Putlist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));}
-
-               else  if (connectionType.equals(Microservice.ConnectionType.DELETE)){
-                    Deletelist.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + j, "restTemplate.exchange"), strcon));}
-
-                j=j+1;
-            } else {
-                strcon = str;
-                list.add(new Pair<>(new Pair<>("ResponseEntity<String> response" + i, "restTemplate.exchange"), strcon));
-                i = i + 1;
-            }//            Microservice.ConnectionType type = pair.getKey();
-        }
-    }
-
-
+    //**********************************************************
     @Override
     public ArrayList<Microservice> matrixFiller() {
         ArrayList<Microservice> matrices = new ArrayList<>();
-        int clientNumber = random.nextInt(3) + 1;
-        int sidecarAndWorkerNumber = random.nextInt(4) + 2;
-//        int sidecarAndWorkerNumber = 1;
+        int externalServiceNumber = random.nextInt(3) + 3;
         String microserviceName;
-        ArrayList<Microservice> localClients = new ArrayList<>();
-        for (int i = 0; i < clientNumber; i++) {
-            microserviceName = clientRole + clientCounter++;
-            Microservice client = null;
-            try {
-                client = new Microservice(
-                        id++,
-                        microserviceName,
-                        URIGenerator(microserviceName),
-                        new Pair[]{},
-                        false,
-                        creationTime(),
-                        new Pair<>(Microservice.Pattern.Sidecar.toString(), Microservice.Role.Client.toString()),
-                        new SidecarStrategy()
-                );
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            localClients.add(client);
-            matrices.add(client);
-        }
-        Microservice sidecar = null;
-        for (int i = 0; i < sidecarAndWorkerNumber; i++) {
-            microserviceName = sidecarRole + sidecarCounter++;
 
+        //sidecar service
+        Microservice sidecar = null;
+            microserviceName = sidecarRole + sidecarCounter++;
             try {
                 sidecar = new Microservice(
+                        getPort(),
                         id++,
                         microserviceName,
                         URIGenerator(microserviceName),
@@ -114,10 +55,14 @@ public class SidecarStrategy extends Strategy {
                 throw new RuntimeException(e);
             }
             matrices.add(sidecar);
-            microserviceName = workerRole + workerCounter++;
-            Microservice worker = null;
+
+            // external service
+        for (int i=1; i<externalServiceNumber; i++){
+            Microservice external = null;
+            microserviceName = externalServiceRole + externalServiceCounter++;
             try {
-                worker = new Microservice(
+                external = new Microservice(
+                        getPort(),
                         id++,
                         microserviceName,
                         URIGenerator(microserviceName),
@@ -129,272 +74,254 @@ public class SidecarStrategy extends Strategy {
                         },
                         false,
                         creationTime(),
-                        new Pair<>(Microservice.Pattern.Sidecar.toString(), Microservice.Role.Worker.toString()),
+                        new Pair<>(Microservice.Pattern.Sidecar.toString(), Microservice.Role.ExternalService.toString()),
                         new SidecarStrategy()
                 );
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            matrices.add(worker);
-            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.POST, worker.getURI()));
-            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.GET, worker.getURI()));
-            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.PUT, worker.getURI()));
-            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.DELETE, worker.getURI()));
-            sidecar.setUsageMemory();
-            for (Microservice microservice :
-                    localClients) {
-                microservice.setConnections(new Pair<>(Microservice.ConnectionType.POST, sidecar.getURI()));
-                microservice.setConnections(new Pair<>(Microservice.ConnectionType.GET, sidecar.getURI()));
-                microservice.setConnections(new Pair<>(Microservice.ConnectionType.PUT, sidecar.getURI()));
-                microservice.setConnections(new Pair<>(Microservice.ConnectionType.DELETE, sidecar.getURI()));
-               microservice .setUsageMemory();
-            }
+            matrices.add(external);
+            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.POST, external.getURI()));
+            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.PUT, external.getURI()));
+            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.GET, external.getURI()));
+            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.DELETE, external.getURI()));
+
+            external.setConnections(new Pair<>(Microservice.ConnectionType.POST, sidecar.getURI()));
+            external.setConnections(new Pair<>(Microservice.ConnectionType.PUT, sidecar.getURI()));
+            external.setConnections(new Pair<>(Microservice.ConnectionType.GET, sidecar.getURI()));
+            external.setConnections(new Pair<>(Microservice.ConnectionType.DELETE, sidecar.getURI()));
         }
-        sidecar.setUsageCPU();
+        //*******************************************************
+        //mainService
+        int mainServiceRoleNumber = random.nextInt(4) + 2;
+        for (int ii=1; ii<mainServiceRoleNumber; ii++){
+            Microservice mainS = null;
+            microserviceName = mainServiceRole + mainServiceCounter++;
+            try {
+                mainS = new Microservice(
+                        getPort(),
+                        id++,
+                        microserviceName,
+                        URIGenerator(microserviceName),
+                        new Pair[]{
+                                new Pair<>(Microservice.ConnectionType.POST, ""),
+                                new Pair<>(Microservice.ConnectionType.GET, ""),
+                                new Pair<>(Microservice.ConnectionType.PUT, ""),
+                                new Pair<>(Microservice.ConnectionType.DELETE, "")
+                        },
+                        false,
+                        creationTime(),
+                        new Pair<>(Microservice.Pattern.Sidecar.toString(), Microservice.Role.MainService.toString()),
+                        new SidecarStrategy()
+                );
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            matrices.add(mainS);
+            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.POST, mainS.getURI()));
+            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.PUT, mainS.getURI()));
+            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.GET, mainS.getURI()));
+            sidecar.setConnections(new Pair<>(Microservice.ConnectionType.DELETE, mainS.getURI()));
+
+            mainS.setConnections(new Pair<>(Microservice.ConnectionType.POST, sidecar.getURI()));
+            mainS.setConnections(new Pair<>(Microservice.ConnectionType.PUT, sidecar.getURI()));
+            mainS.setConnections(new Pair<>(Microservice.ConnectionType.GET, sidecar.getURI()));
+            mainS.setConnections(new Pair<>(Microservice.ConnectionType.DELETE, sidecar.getURI()));
+
+        }
+        //zuul service
+        Microservice zuul = null;
+        microserviceName = zuulRole + zuulCounter++;
+        try {
+            zuul = new Microservice(
+                    getPort(),
+                    id++,
+                    microserviceName,
+                    URIGenerator(microserviceName),
+                    new Pair[]{
+                            new Pair<>(Microservice.ConnectionType.POST, ""),
+                            new Pair<>(Microservice.ConnectionType.GET, ""),
+                            new Pair<>(Microservice.ConnectionType.PUT, ""),
+                            new Pair<>(Microservice.ConnectionType.DELETE, "")
+                    },
+                    false,
+                    creationTime(),
+                    new Pair<>(Microservice.Pattern.Sidecar.toString(), Microservice.Role.ApiGateway.toString()),
+                    new SidecarStrategy()
+            );
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        matrices.add(zuul);
+
+        //eureka Service
+        Microservice eureka = null;
+        microserviceName = eurekaRole + eurekaCounter++;
+        try {
+            eureka = new Microservice(
+                    getPort(),
+                    id++,
+                    microserviceName,
+                    URIGenerator(microserviceName),
+                    new Pair[]{},
+                    false,
+                    creationTime(),
+                    new Pair<>(Microservice.Pattern.Sidecar.toString(), Microservice.Role.ServiceRegistry.toString()),
+                    new SidecarStrategy()
+            );
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        matrices.add(eureka);
         return matrices;
     }
 
     @Override
-    public Builder fileFiller(String role, String microserviceName, String[] connections, Pair<Microservice.ConnectionType, String>[] connectionTypes) {
-        String[] uniqueArray = Arrays.stream(connections)
-                .distinct()
-                .toArray(String[]::new);
-
-        Set<Pair<Microservice.ConnectionType, String>> uniqueSet = new HashSet<>();
-        for (Pair<Microservice.ConnectionType, String> entry : connectionTypes) {
-            uniqueSet.add(entry);
-        }
-        if (!uniqueSet.isEmpty()){
-            for (Pair<Microservice.ConnectionType, String> up : uniqueSet) {
-                initialConnected(uniqueArray, up.getKey());
-            }
-        } else{ initialConnected(uniqueArray,null);
-        }
-
-        Builder builder = new Builder();
+    public Builder[] fileFiller(Microservice microservice,
+                                String role,
+                                String microserviceName,
+                                String[] connections,
+                                Pair<Microservice.ConnectionType, String>[] connectionTypes)
+    {
+        int n = 1;
+        Builder[] builders = new Builder[n];
         switch (role) {
-            case "Client":
-                builder = clientClass();
-//                setMethods(builder);
+            case "ExternalService":
+                builders[0] = GenerationClass(microservice, microserviceName, connections, 0);
                 break;
+
             case "Sidecar":
-                builder = sidecarClass(microserviceName, connections);
-                setMethods(builder);
+                builders[0] = GenerationClass(microservice, microserviceName, connections, 1);
                 break;
-            case "Worker":
-                builder = workerClass(microserviceName, connections);
-                setMethods(builder);
+
+            case "MainService":
+                builders[0] = GenerationClass(microservice, microserviceName, connections, 2);
+                break;
+
+            case "ApiGateway":
+                builders[0] = GenerationClass(microservice, microserviceName, connections, 3);
+                break;
+
+            case "ServiceRegistry":
+                builders[0] = GenerationClass(microservice, microserviceName, connections, 4);
                 break;
         }
-        return builder;
+        return builders;
     }
 
-    private void setMethods(Builder builder) {
-        setMethodContent(
-                builder,
-                Constants.AccessLevel.PUBLIC,
-                false,
-                false,
-                new Pair(Constants.ReturnType.AddNewType("Object"), "getData"),
-                new Pair[]{
-                        new Pair<>(Constants.VariableTypeRequestBody.AddNewType("int"), "identifier")
-                },
-                new Pair[]{
-                        new Pair(Constants.Annotations.GetMapping, "")
-                },
-                Constants.Keywords.NULL.toString(),
-                Getlist
-        );
-        setMethodContent(
-                builder,
-                Constants.AccessLevel.PUBLIC,
-                false,
-                false,
-                new Pair(Constants.ReturnType.BOOLEAN, "setData"),
-                new Pair[]{
-                        new Pair<>(Constants.VariableTypeRequestBody.Object, "object")
-                },
-                new Pair[]{
-                        new Pair(Constants.Annotations.PostMapping, "")
-                },
-                Constants.Keywords.FALSE.toString(),
-                Postlist
-        );
-        setMethodContent(
-                builder,
-                Constants.AccessLevel.PUBLIC,
-                false,
-                false,
-                new Pair(Constants.ReturnType.BOOLEAN, "putData"),
-                new Pair[]{
-                        new Pair<>(Constants.VariableTypeRequestBody.Object, "object")
-                },
-                new Pair[]{
-                        new Pair(Constants.Annotations.PutMapping, "")
-                },
-                Constants.Keywords.FALSE.toString(),
-                Putlist
-        );
-        setMethodContent(
-                builder,
-                Constants.AccessLevel.PUBLIC,
-                false,
-                false,
-                new Pair(Constants.ReturnType.BOOLEAN, "deleteData"),
-                new Pair[]{
-                        new Pair<>(Constants.VariableTypeRequestBody.Object, "object")
-                },
-                new Pair[]{
-                        new Pair(Constants.Annotations.DeleteMapping, "")
-                },
-                Constants.Keywords.FALSE.toString(),
-                Deletelist
-        );
+    /*******************************************************************
+     * ******************************************************************
+     * *******************************************************************/
+    private Builder GenerationClass(Microservice microservice,
+                                    String microserviceName,
+                                    String[] connections, int id) {
+        //ExternalService service
+        if (id == 0) {
+            Builder builder = new Builder("microservice." + "sidecar.externalService" + ".demo.API");
+            builder.setContent(new POMGenerator(
+                    microserviceName, Main.getPath2(), "sidecar/external-service"));
+
+            builder.setContent(new ConfigFileGenerator(
+                    microserviceName,
+                    Main.getPath2(),
+                    microservice.getPort(),
+                    "sidecar/external-service"));
+
+            builder.setContent(new ExternalServiceGeneration(
+                    microserviceName,
+                    Main.getPath2(),
+                    "sidecar/external-service",
+                    "/src/main/java/microservice/sidecar/externalService/demo/API", builder.getPackageName()));
+
+            return builder;
+        }
+        //Sidecar service
+        if (id == 1) {
+            Builder builder = new Builder("microservice." + "sidecar"+".SidecarService" + ".demo.API");
+            builder.setContent(new POMGenerator(
+                    microserviceName, Main.getPath2(), "sidecar/sid"));
+
+            builder.setContent(new ConfigFileGenerator(
+                    microserviceName,
+                    Main.getPath2(),
+                    microservice.getPort(),
+                    "sidecar/sid"));
+
+            builder.setContent(new SidecarGeneration(
+                    microserviceName,
+                    Main.getPath2(),
+                    "sidecar/sid",
+                    "/src/main/java/microservice/sidecar/SidecarService/demo/API",
+                    builder.getPackageName()));
+
+            return builder;
+        }
+        // MainService
+        if (id == 2) {
+            Builder builder = new Builder("microservice." + "sidecar.MainService" + ".demo.API");
+            builder.setContent(new POMGenerator(
+                    microserviceName, Main.getPath2(), "sidecar/main-service"));
+
+            builder.setContent(new ConfigFileGenerator(
+                    microserviceName,
+                    Main.getPath2(),
+                    microservice.getPort(),
+                    "sidecar/main-service"));
+
+            builder.setContent(new MainServiceGeneration(
+                    microserviceName,
+                    Main.getPath2(),
+                    "sidecar/main-service",
+                    "/src/main/java/microservice/sidecar/MainService/demo/API",
+                    builder.getPackageName()));
+
+            return builder;
+        }
+        //ApiGateway
+        if (id == 3) {
+            Builder builder = new Builder("microservice." + "sidecar.zuulService" + ".demo.API");
+            builder.setContent(new POMGenerator(
+                    microserviceName, Main.getPath2(), "sidecar/zuul"));
+
+            builder.setContent(new ConfigFileGenerator(
+                    microserviceName,
+                    Main.getPath2(),
+                    microservice.getPort(),
+                    "sidecar/zuul"));
+
+            builder.setContent(new ZuulGeneration(
+                    microserviceName,
+                    Main.getPath2(),
+                    "sidecar/zuul",
+                    "/src/main/java/microservice/sidecar/zuulService/demo/API",
+                    builder.getPackageName()));
+
+            return builder;
+        }
+        //ServiceRegistry
+        if (id == 4) {
+            Builder builder = new Builder("microservice." + "sidecar.EurekaService" + ".demo.API");
+            builder.setContent(new POMGenerator(
+                    microserviceName, Main.getPath2(), "sidecar/eureka"));
+
+            builder.setContent(new ConfigFileGenerator(
+                    microserviceName,
+                    Main.getPath2(),
+                    microservice.getPort(),
+                    "sidecar/eureka"));
+
+            builder.setContent(new EurekaGeneration(
+                    microserviceName,
+                    Main.getPath2(),
+                    "sidecar/eureka",
+                    "/src/main/java/microservice/sidecar/EurekaService/demo/API",
+                    builder.getPackageName()));
+
+            return builder;
+        }
+        else {
+            return null;
+        }
+
     }
-
-    private Builder clientClass() {
-        return new Builder("microservice." + "sidecar" + ".demo.API")
-                .setContent(
-                        new ClassGenerator(
-                                Constants.AccessLevel.PUBLIC,
-                                "MicroserviceController",
-                                null,
-                                "",
-                                new ConstructorGenerator[]{
-                                        new ConstructorGenerator(
-                                                Constants.AccessLevel.PUBLIC,
-                                                "MicroserviceController",
-                                                null,
-                                                null,
-                                                null,
-                                                new ArrayList<Pair<String, String>>() {{
-                                                    add(new Pair<>("connections", "ArrayList<String>"));
-                                                }})
-                                },
-                                new Pair[]{}
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        false,
-                                        false,
-                                        new Pair<>(Constants.VariableType.INT, "id"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        true,
-                                        true,
-                                        new Pair<>(Constants.VariableType.INT, "hostId"),
-                                        "0",
-                                        null,
-                                        false,
-                                        false)
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        false,
-                                        false,
-                                        new Pair<>(Constants.VariableType.AddNewType("ArrayList<String>"), "connections"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        ).setContent(
-                                new BodyGenerator(
-                                        new Pair[]{ new Pair<>(Constants.Annotations.Autowired, "")},
-                                        new ArrayList<Pair<String, String>>() {{
-                                            add(new Pair<>("RestTemplate restTemplate", "RestTemplate"));
-                                        }},
-                                        list
-
-                                )
-                        )
-                );
-    }
-
-    private Builder sidecarClass(String microserviceName, String[] connections) {
-        return new Builder("microservice." + "sidecar" + ".demo.API")
-                .setContent(
-                        new ClassGenerator(
-                                Constants.AccessLevel.PUBLIC,
-                                "MicroserviceController",
-                                null,
-                                "",
-                                new ConstructorGenerator[]{
-                                        new ConstructorGenerator(
-                                                Constants.AccessLevel.PUBLIC,
-                                                "MicroserviceController",
-                                                null,
-                                                null,
-                                                null,
-                                                new ArrayList<Pair<String, String>>() {{
-                                                    add(new Pair<>("connection", "String"));
-                                                }})
-                                },
-                                new Pair[]{
-                                        new Pair<>(Constants.Annotations.RequestMapping, "api/v1/" + microserviceName),
-                                        new Pair<>(Constants.Annotations.RestController, "")
-                                }
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        false,
-                                        false,
-                                        new Pair<>(Constants.VariableType.INT, "id"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        false,
-                                        false,
-                                        new Pair<>(Constants.VariableType.AddNewType("String"), "connection"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        )
-                );
-    }
-
-    private Builder workerClass(String microserviceName, String[] connections) {
-        return new Builder("microservice." + "sidecar" + ".demo.API")
-                .setContent(
-                        new ClassGenerator(
-                                Constants.AccessLevel.PUBLIC,
-                                "MicroserviceController",
-                                null,
-                                "",
-                                new ConstructorGenerator[]{
-                                        new ConstructorGenerator(
-                                                Constants.AccessLevel.PUBLIC,
-                                                "MicroserviceController",
-                                                null,
-                                                null,
-                                                null,
-                                                null)
-                                },
-                                new Pair[]{
-                                        new Pair<>(Constants.Annotations.RequestMapping, "api/v1/" + microserviceName),
-                                        new Pair<>(Constants.Annotations.RestController, "")
-                                }
-                        ).setContent(
-                                new VariableGenerator(
-                                        Constants.AccessLevel.PRIVATE,
-                                        false,
-                                        false,
-                                        new Pair<>(Constants.VariableType.INT, "id"),
-                                        "",
-                                        null,
-                                        false,
-                                        false)
-                        )
-                );
-    }
-
 }

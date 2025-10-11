@@ -26,16 +26,18 @@ public class Microservice {
     private final boolean duplicate;
     private final String creationTime;
     private final Pair<String, String> role;
+    private final int port;
+
     private final ArrayList<Pair<ConnectionType, String>> connections;
 
     private final ArrayList<Pair<Long, Long>> usageMemory;
     private final ArrayList<Pair<Double, Double>> usageCPU;
     private final Strategy strategy;
     private static int traceId=1;
-    public enum ConnectionType {POST, DELETE, PUT, GET}
+    public enum ConnectionType {POST, DELETE, PUT, GET, FROM, TO}
 
     public enum Pattern {
-        Consolidation, Sidecar, Aggregator, PipesAndFilters, LeaderElection,
+        LoadBalanceing, Sidecar, Aggregator, PipesAndFilters, LeaderElection,
         PriorityQueue, CacheASide, StaticContentHost, Ambassador, ApiGateway,
         Saga, ServiceDiscovery, EventSourcing, NoPattern,CustomPattern
     }
@@ -44,23 +46,25 @@ public class Microservice {
         Head, Worker, Leader, Filter, Client,Point,
         Sidecar, Publisher, Bus, Cache, Aggregator,
         Storage, Ambassador, ApiGateway, LoadBalancer, ServiceRegistry,
-        EventManager, EventDatabaseManager
+        EventOrderService, EventShippingService, LoadBalancingService, ProviderService,ClientService
+        , DispatcherService, ExternalService, Shipping, Payment, Order, MainService;
     }
 
-    public Microservice(int id, String microserviceName, String URI, Pair<ConnectionType, String>[] connectionTypes,
+    public Microservice(int port, int id, String microserviceName, String URI, Pair<ConnectionType, String>[] connectionTypes,
                         boolean duplicate, String creationTime, Pair<String, String> role, Strategy strategy) throws IOException {
+        this.port = port;
         this.id = id;
         this.microserviceName = microserviceName;
         this.URI = URI;
         this.connectionTypes = connectionTypes;
         this.duplicate = duplicate;
         this.creationTime = creationTime;
-        //System.out.println("creation time is: "+ String.valueOf(creationTime));
+
         this.role = role;
         this.strategy = strategy;
         connections = new ArrayList<>();
         usageMemory = new ArrayList<>();
-        usageCPU = new ArrayList<>();;
+        usageCPU = new ArrayList<>();
     }
 
     public ArrayList<Pair<ConnectionType, String>> getConnectionsPair() {
@@ -83,8 +87,13 @@ public class Microservice {
 
     public void setUsageMemory() {
         Runtime runtime = Runtime.getRuntime();
-        usageMemory.add(new Pair<>(System.currentTimeMillis(), (runtime.totalMemory() - runtime.freeMemory()) / (1024 * 1024) ));//یعنی این میکروسرویس با چه api به میکروسرویس های دیگه وصل است.
+        usageMemory.add(new Pair<>(System.currentTimeMillis(), (runtime.totalMemory() - runtime.freeMemory()) / (1024 * 1024) ));
 
+
+    }
+
+    public int getPort() {
+        return port;
     }
 
     public void setUsageCPU() {
@@ -140,9 +149,6 @@ public class Microservice {
                     append("typeRequest:").append(p.getKey()).append(",").append("},").append("]},").append(System.lineSeparator());
 
             traceId=traceId+1;
-            //return traceId;
-           // System.out.println(traceId);
-
 
         }
 

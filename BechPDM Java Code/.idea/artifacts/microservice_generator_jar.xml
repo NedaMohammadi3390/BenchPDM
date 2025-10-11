@@ -3,6 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/microservice_generator_jar</output-path>
     <root id="archive" name="microservice-generator.jar">
       <element id="module-output" name="microservice-generator" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
