@@ -1,0 +1,323 @@
+node_id,node_name,service,node_type
+0,ts-assurance-service-AssuranceController.createNewAssurance,ts-assurance-service,api
+1,ts-assurance-service-AssuranceRepository.findByOrderId,ts-assurance-service,api
+2,ts-assurance-service-AssuranceRepository.save,ts-assurance-service,api
+3,ts-assurance-service-HTTP GET/api/v1/assuranceservice/assurances/{typeIndex}/{orderId},ts-assurance-service,api
+4,ts-assurance-service-INSERT ts.assurance,ts-assurance-service,api
+5,ts-assurance-service-SELECT Assurance,ts-assurance-service,api
+6,ts-assurance-service-SELECT ts.assurance,ts-assurance-service,api
+7,ts-assurance-service-Session.merge assurance.entity.Assurance,ts-assurance-service,api
+8,ts-assurance-service-Transaction.commit,ts-assurance-service,api
+9,ts-auth-service-BasicErrorController.error,ts-auth-service,api
+10,ts-auth-service-HTTP GET/api/v1/verifycode/verify/{verifyCode},ts-auth-service,api
+11,ts-auth-service-HTTP POST/api/v1/users/login,ts-auth-service,api
+12,ts-auth-service-SELECT User,ts-auth-service,api
+13,ts-auth-service-SELECT ts.auth_user,ts-auth-service,api
+14,ts-auth-service-SELECT ts.user_roles,ts-auth-service,api
+15,ts-auth-service-UserController.getToken,ts-auth-service,api
+16,ts-auth-service-UserRepository.findByUsername,ts-auth-service,api
+17,ts-basic-service-BasicController.queryForTravel,ts-basic-service,api
+18,ts-basic-service-BasicController.queryForTravels,ts-basic-service,api
+19,ts-basic-service-BasicErrorController.error,ts-basic-service,api
+20,ts-basic-service-HTTP GET/api/v1/priceservice/prices/{routeId}/{trainType},ts-basic-service,api
+21,ts-basic-service-HTTP GET/api/v1/routeservice/routes/{routeId},ts-basic-service,api
+22,ts-basic-service-HTTP GET/api/v1/stationservice/stations/id/{stationNameForId},ts-basic-service,api
+23,ts-basic-service-HTTP GET/api/v1/trainservice/trains/byName/{name},ts-basic-service,api
+24,ts-basic-service-HTTP POST/api/v1/basicservice/basic/travel,ts-basic-service,api
+25,ts-basic-service-HTTP POST/api/v1/basicservice/basic/travels,ts-basic-service,api
+26,ts-basic-service-HTTP POST/api/v1/priceservice/prices/byRouteIdsAndTrainTypes,ts-basic-service,api
+27,ts-basic-service-HTTP POST/api/v1/routeservice/routes/byIds/,ts-basic-service,api
+28,ts-basic-service-HTTP POST/api/v1/stationservice/stations/idlist,ts-basic-service,api
+29,ts-basic-service-HTTP POST/api/v1/trainservice/trains/byNames,ts-basic-service,api
+30,ts-cancel-service-CancelController.cancelTicket,ts-cancel-service,api
+31,ts-cancel-service-HTTP GET/api/v1/cancelservice/cancel/{orderId}/{loginId},ts-cancel-service,api
+32,ts-cancel-service-HTTP GET/api/v1/inside_pay_service/inside_payment/drawback/{userId}/{money},ts-cancel-service,api
+33,ts-cancel-service-HTTP GET/api/v1/orderOtherService/orderOther/{orderId},ts-cancel-service,api
+34,ts-cancel-service-HTTP GET/api/v1/orderservice/order/{orderId},ts-cancel-service,api
+35,ts-cancel-service-HTTP GET/api/v1/userservice/users/id/{userId},ts-cancel-service,api
+36,ts-cancel-service-HTTP PUT/api/v1/orderOtherService/orderOther,ts-cancel-service,api
+37,ts-cancel-service-HTTP PUT/api/v1/orderservice/order,ts-cancel-service,api
+38,ts-config-service-ConfigController.retrieve,ts-config-service,api
+39,ts-config-service-ConfigRepository.findByName,ts-config-service,api
+40,ts-config-service-HTTP GET/api/v1/configservice/configs/{configName},ts-config-service,api
+41,ts-config-service-SELECT Config,ts-config-service,api
+42,ts-config-service-SELECT ts.config,ts-config-service,api
+43,ts-contacts-service-ContactsController.getContactsByContactsId,ts-contacts-service,api
+44,ts-contacts-service-ContactsRepository.findById,ts-contacts-service,api
+45,ts-contacts-service-HTTP GET/api/v1/contactservice/contacts/{id},ts-contacts-service,api
+46,ts-contacts-service-SELECT ts.contacts,ts-contacts-service,api
+47,ts-contacts-service-Session.find contacts.entity.Contacts,ts-contacts-service,api
+48,ts-contacts-service-Transaction.commit,ts-contacts-service,api
+49,ts-delivery-service-DeliveryRepository.save,ts-delivery-service,api
+50,ts-delivery-service-INSERT ts.delivery,ts-delivery-service,api
+51,ts-delivery-service-SELECT ts.delivery,ts-delivery-service,api
+52,ts-delivery-service-Session.merge delivery.entity.Delivery,ts-delivery-service,api
+53,ts-delivery-service-Transaction.commit,ts-delivery-service,api
+54,ts-delivery-service-food_delivery process,ts-delivery-service,api
+55,ts-execute-service-BasicErrorController.error,ts-execute-service,api
+56,ts-execute-service-ExecuteControlller.collectTicket,ts-execute-service,api
+57,ts-execute-service-ExecuteControlller.executeTicket,ts-execute-service,api
+58,ts-execute-service-HTTP GET/api/v1/executeservice/execute/collected/{orderId},ts-execute-service,api
+59,ts-execute-service-HTTP GET/api/v1/executeservice/execute/execute/{orderId},ts-execute-service,api
+60,ts-execute-service-HTTP GET/api/v1/orderOtherService/orderOther/status/{orderId}/{status},ts-execute-service,api
+61,ts-execute-service-HTTP GET/api/v1/orderOtherService/orderOther/{orderId},ts-execute-service,api
+62,ts-execute-service-HTTP GET/api/v1/orderservice/order/status/{orderId}/{status},ts-execute-service,api
+63,ts-execute-service-HTTP GET/api/v1/orderservice/order/{orderId},ts-execute-service,api
+64,ts-food-service-<default> send,ts-food-service,api
+65,ts-food-service-BasicErrorController.error,ts-food-service,api
+66,ts-food-service-FoodController.createFoodOrder,ts-food-service,api
+67,ts-food-service-FoodController.getAllFood,ts-food-service,api
+68,ts-food-service-FoodOrderRepository.findByOrderId,ts-food-service,api
+69,ts-food-service-FoodOrderRepository.save,ts-food-service,api
+70,ts-food-service-HTTP GET/api/v1/foodservice/foods/{date}/{startStation}/{endStation}/{tripId},ts-food-service,api
+71,ts-food-service-HTTP GET/api/v1/trainfoodservice/trainfoods/{tripId},ts-food-service,api
+72,ts-food-service-HTTP GET/api/v1/travelservice/routes/{tripId},ts-food-service,api
+73,ts-food-service-HTTP POST/api/v1/foodservice/orders,ts-food-service,api
+74,ts-food-service-HTTP POST/api/v1/stationfoodservice/stationfoodstores,ts-food-service,api
+75,ts-food-service-INSERT ts.food_order,ts-food-service,api
+76,ts-food-service-SELECT FoodOrder,ts-food-service,api
+77,ts-food-service-SELECT ts.food_order,ts-food-service,api
+78,ts-food-service-Session.merge foodsearch.entity.FoodOrder,ts-food-service,api
+79,ts-food-service-Transaction.commit,ts-food-service,api
+80,ts-gateway-service-/*,ts-gateway-service,api
+81,ts-gateway-service-FilteringWebHandler.handle,ts-gateway-service,api
+82,ts-gateway-service-HTTP GET/api/v1/cancelservice/cancel/{orderId}/{loginId},ts-gateway-service,api
+83,ts-gateway-service-HTTP GET/api/v1/executeservice/execute/collected/{orderId},ts-gateway-service,api
+84,ts-gateway-service-HTTP GET/api/v1/executeservice/execute/execute/{orderId},ts-gateway-service,api
+85,ts-gateway-service-HTTP GET/api/v1/foodservice/foods/{date}/{startStation}/{endStation}/{tripId},ts-gateway-service,api
+86,ts-gateway-service-HTTP POST/api/v1/inside_pay_service/inside_payment,ts-gateway-service,api
+87,ts-gateway-service-HTTP POST/api/v1/preserveotherservice/preserveOther,ts-gateway-service,api
+88,ts-gateway-service-HTTP POST/api/v1/preserveservice/preserve,ts-gateway-service,api
+89,ts-gateway-service-HTTP POST/api/v1/travel2service/trips/left,ts-gateway-service,api
+90,ts-gateway-service-HTTP POST/api/v1/travelservice/trips/left,ts-gateway-service,api
+91,ts-gateway-service-HTTP POST/api/v1/users/login,ts-gateway-service,api
+92,ts-inside-payment-service-AddMoneyRepository.findByUserId,ts-inside-payment-service,api
+93,ts-inside-payment-service-AddMoneyRepository.save,ts-inside-payment-service,api
+94,ts-inside-payment-service-BasicErrorController.error,ts-inside-payment-service,api
+95,ts-inside-payment-service-HTTP GET/api/v1/inside_pay_service/inside_payment/drawback/{userId}/{money},ts-inside-payment-service,api
+96,ts-inside-payment-service-HTTP GET/api/v1/orderOtherService/orderOther/status/{orderId}/{status},ts-inside-payment-service,api
+97,ts-inside-payment-service-HTTP GET/api/v1/orderOtherService/orderOther/{orderId},ts-inside-payment-service,api
+98,ts-inside-payment-service-HTTP GET/api/v1/orderservice/order/status/{orderId}/{status},ts-inside-payment-service,api
+99,ts-inside-payment-service-HTTP GET/api/v1/orderservice/order/{orderId},ts-inside-payment-service,api
+100,ts-inside-payment-service-HTTP POST/api/v1/inside_pay_service/inside_payment,ts-inside-payment-service,api
+101,ts-inside-payment-service-HTTP POST/api/v1/paymentservice/payment,ts-inside-payment-service,api
+102,ts-inside-payment-service-INSERT ts.inside_money,ts-inside-payment-service,api
+103,ts-inside-payment-service-INSERT ts.inside_payment,ts-inside-payment-service,api
+104,ts-inside-payment-service-InsidePaymentController.drawBack,ts-inside-payment-service,api
+105,ts-inside-payment-service-InsidePaymentController.pay,ts-inside-payment-service,api
+106,ts-inside-payment-service-PaymentRepository.findByUserId,ts-inside-payment-service,api
+107,ts-inside-payment-service-PaymentRepository.save,ts-inside-payment-service,api
+108,ts-inside-payment-service-SELECT Money,ts-inside-payment-service,api
+109,ts-inside-payment-service-SELECT Payment,ts-inside-payment-service,api
+110,ts-inside-payment-service-SELECT ts.inside_money,ts-inside-payment-service,api
+111,ts-inside-payment-service-SELECT ts.inside_payment,ts-inside-payment-service,api
+112,ts-inside-payment-service-Session.persist inside_payment.entity.Money,ts-inside-payment-service,api
+113,ts-inside-payment-service-Session.persist inside_payment.entity.Payment,ts-inside-payment-service,api
+114,ts-inside-payment-service-Transaction.commit,ts-inside-payment-service,api
+115,ts-order-other-service-HTTP GET/api/v1/orderOtherService/orderOther/security/{checkDate}/{accountId},ts-order-other-service,api
+116,ts-order-other-service-HTTP GET/api/v1/orderOtherService/orderOther/status/{orderId}/{status},ts-order-other-service,api
+117,ts-order-other-service-HTTP GET/api/v1/orderOtherService/orderOther/{orderId},ts-order-other-service,api
+118,ts-order-other-service-HTTP POST/api/v1/orderOtherService/orderOther,ts-order-other-service,api
+119,ts-order-other-service-HTTP POST/api/v1/orderOtherService/orderOther/tickets,ts-order-other-service,api
+120,ts-order-other-service-HTTP PUT/api/v1/orderOtherService/orderOther,ts-order-other-service,api
+121,ts-order-other-service-INSERT ts.orders_other,ts-order-other-service,api
+122,ts-order-other-service-OrderOtherController.createNewOrder,ts-order-other-service,api
+123,ts-order-other-service-OrderOtherController.getOrderById,ts-order-other-service,api
+124,ts-order-other-service-OrderOtherController.getTicketListByDateAndTripId,ts-order-other-service,api
+125,ts-order-other-service-OrderOtherController.modifyOrder,ts-order-other-service,api
+126,ts-order-other-service-OrderOtherController.saveOrderInfo,ts-order-other-service,api
+127,ts-order-other-service-OrderOtherController.securityInfoCheck,ts-order-other-service,api
+128,ts-order-other-service-OrderOtherRepository.findByAccountId,ts-order-other-service,api
+129,ts-order-other-service-OrderOtherRepository.findById,ts-order-other-service,api
+130,ts-order-other-service-OrderOtherRepository.findByTravelDateAndTrainNumber,ts-order-other-service,api
+131,ts-order-other-service-OrderOtherRepository.save,ts-order-other-service,api
+132,ts-order-other-service-SELECT Order,ts-order-other-service,api
+133,ts-order-other-service-SELECT ts.orders_other,ts-order-other-service,api
+134,ts-order-other-service-Session.find other.entity.Order,ts-order-other-service,api
+135,ts-order-other-service-Session.merge other.entity.Order,ts-order-other-service,api
+136,ts-order-other-service-Transaction.commit,ts-order-other-service,api
+137,ts-order-other-service-UPDATE ts.orders_other,ts-order-other-service,api
+138,ts-order-service-HTTP GET/api/v1/orderservice/order/security/{checkDate}/{accountId},ts-order-service,api
+139,ts-order-service-HTTP GET/api/v1/orderservice/order/status/{orderId}/{status},ts-order-service,api
+140,ts-order-service-HTTP GET/api/v1/orderservice/order/{orderId},ts-order-service,api
+141,ts-order-service-HTTP POST/api/v1/orderservice/order,ts-order-service,api
+142,ts-order-service-HTTP POST/api/v1/orderservice/order/tickets,ts-order-service,api
+143,ts-order-service-HTTP PUT/api/v1/orderservice/order,ts-order-service,api
+144,ts-order-service-INSERT ts.orders,ts-order-service,api
+145,ts-order-service-OrderController.createNewOrder,ts-order-service,api
+146,ts-order-service-OrderController.getOrderById,ts-order-service,api
+147,ts-order-service-OrderController.getTicketListByDateAndTripId,ts-order-service,api
+148,ts-order-service-OrderController.modifyOrder,ts-order-service,api
+149,ts-order-service-OrderController.saveOrderInfo,ts-order-service,api
+150,ts-order-service-OrderController.securityInfoCheck,ts-order-service,api
+151,ts-order-service-OrderRepository.findByAccountId,ts-order-service,api
+152,ts-order-service-OrderRepository.findById,ts-order-service,api
+153,ts-order-service-OrderRepository.findByTravelDateAndTrainNumber,ts-order-service,api
+154,ts-order-service-OrderRepository.save,ts-order-service,api
+155,ts-order-service-SELECT Order,ts-order-service,api
+156,ts-order-service-SELECT ts.orders,ts-order-service,api
+157,ts-order-service-Session.find order.entity.Order,ts-order-service,api
+158,ts-order-service-Session.merge order.entity.Order,ts-order-service,api
+159,ts-order-service-Transaction.commit,ts-order-service,api
+160,ts-order-service-UPDATE ts.orders,ts-order-service,api
+161,ts-payment-service-HTTP POST/api/v1/paymentservice/payment,ts-payment-service,api
+162,ts-payment-service-INSERT ts.payment,ts-payment-service,api
+163,ts-payment-service-PaymentController.pay,ts-payment-service,api
+164,ts-payment-service-PaymentRepository.findByOrderId,ts-payment-service,api
+165,ts-payment-service-PaymentRepository.save,ts-payment-service,api
+166,ts-payment-service-SELECT Payment,ts-payment-service,api
+167,ts-payment-service-SELECT ts.payment,ts-payment-service,api
+168,ts-payment-service-Session.merge com.trainticket.entity.Payment,ts-payment-service,api
+169,ts-payment-service-Transaction.commit,ts-payment-service,api
+170,ts-preserve-other-service-BasicErrorController.error,ts-preserve-other-service,api
+171,ts-preserve-other-service-HTTP GET/api/v1/assuranceservice/assurances/{typeIndex}/{orderId},ts-preserve-other-service,api
+172,ts-preserve-other-service-HTTP GET/api/v1/contactservice/contacts/{id},ts-preserve-other-service,api
+173,ts-preserve-other-service-HTTP GET/api/v1/securityservice/securityConfigs/{accountId},ts-preserve-other-service,api
+174,ts-preserve-other-service-HTTP GET/api/v1/userservice/users/id/{userId},ts-preserve-other-service,api
+175,ts-preserve-other-service-HTTP POST/api/v1/basicservice/basic/travel,ts-preserve-other-service,api
+176,ts-preserve-other-service-HTTP POST/api/v1/foodservice/orders,ts-preserve-other-service,api
+177,ts-preserve-other-service-HTTP POST/api/v1/orderOtherService/orderOther,ts-preserve-other-service,api
+178,ts-preserve-other-service-HTTP POST/api/v1/preserveotherservice/preserveOther,ts-preserve-other-service,api
+179,ts-preserve-other-service-HTTP POST/api/v1/seatservice/seats,ts-preserve-other-service,api
+180,ts-preserve-other-service-HTTP POST/api/v1/travel2service/trip_detail,ts-preserve-other-service,api
+181,ts-preserve-other-service-PreserveOtherController.preserve,ts-preserve-other-service,api
+182,ts-preserve-service-BasicErrorController.error,ts-preserve-service,api
+183,ts-preserve-service-HTTP GET/api/v1/assuranceservice/assurances/{typeIndex}/{orderId},ts-preserve-service,api
+184,ts-preserve-service-HTTP GET/api/v1/contactservice/contacts/{id},ts-preserve-service,api
+185,ts-preserve-service-HTTP GET/api/v1/securityservice/securityConfigs/{accountId},ts-preserve-service,api
+186,ts-preserve-service-HTTP GET/api/v1/userservice/users/id/{userId},ts-preserve-service,api
+187,ts-preserve-service-HTTP POST/api/v1/basicservice/basic/travel,ts-preserve-service,api
+188,ts-preserve-service-HTTP POST/api/v1/foodservice/orders,ts-preserve-service,api
+189,ts-preserve-service-HTTP POST/api/v1/orderservice/order,ts-preserve-service,api
+190,ts-preserve-service-HTTP POST/api/v1/preserveservice/preserve,ts-preserve-service,api
+191,ts-preserve-service-HTTP POST/api/v1/seatservice/seats,ts-preserve-service,api
+192,ts-preserve-service-HTTP POST/api/v1/travelservice/trip_detail,ts-preserve-service,api
+193,ts-preserve-service-PreserveController.preserve,ts-preserve-service,api
+194,ts-price-service-HTTP GET/api/v1/priceservice/prices/{routeId}/{trainType},ts-price-service,api
+195,ts-price-service-HTTP POST/api/v1/priceservice/prices/byRouteIdsAndTrainTypes,ts-price-service,api
+196,ts-price-service-PriceConfigRepository.findByRouteIdAndTrainType,ts-price-service,api
+197,ts-price-service-PriceConfigRepository.findByRouteIdsAndTrainTypes,ts-price-service,api
+198,ts-price-service-PriceController.query,ts-price-service,api
+199,ts-price-service-SELECT PriceConfig,ts-price-service,api
+200,ts-price-service-SELECT price_config,ts-price-service,api
+201,ts-price-service-SELECT ts.price_config,ts-price-service,api
+202,ts-route-service-HTTP GET/api/v1/routeservice/routes/{routeId},ts-route-service,api
+203,ts-route-service-HTTP POST/api/v1/routeservice/routes/byIds/,ts-route-service,api
+204,ts-route-service-RouteController.queryById,ts-route-service,api
+205,ts-route-service-RouteController.queryByIds,ts-route-service,api
+206,ts-route-service-RouteRepository.findById,ts-route-service,api
+207,ts-route-service-RouteRepository.findByIds,ts-route-service,api
+208,ts-route-service-SELECT route,ts-route-service,api
+209,ts-route-service-SELECT ts.route,ts-route-service,api
+210,ts-route-service-SELECT ts.route_distances,ts-route-service,api
+211,ts-route-service-SELECT ts.route_stations,ts-route-service,api
+212,ts-route-service-Session.find route.entity.Route,ts-route-service,api
+213,ts-route-service-Transaction.commit,ts-route-service,api
+214,ts-seat-service-BasicErrorController.error,ts-seat-service,api
+215,ts-seat-service-HTTP GET/api/v1/configservice/configs/{configName},ts-seat-service,api
+216,ts-seat-service-HTTP POST/api/v1/orderOtherService/orderOther/tickets,ts-seat-service,api
+217,ts-seat-service-HTTP POST/api/v1/orderservice/order/tickets,ts-seat-service,api
+218,ts-seat-service-HTTP POST/api/v1/seatservice/seats,ts-seat-service,api
+219,ts-seat-service-HTTP POST/api/v1/seatservice/seats/left_tickets,ts-seat-service,api
+220,ts-seat-service-SeatController.create,ts-seat-service,api
+221,ts-seat-service-SeatController.getLeftTicketOfInterval,ts-seat-service,api
+222,ts-security-service-BasicErrorController.error,ts-security-service,api
+223,ts-security-service-HTTP GET/api/v1/orderOtherService/orderOther/security/{checkDate}/{accountId},ts-security-service,api
+224,ts-security-service-HTTP GET/api/v1/orderservice/order/security/{checkDate}/{accountId},ts-security-service,api
+225,ts-security-service-HTTP GET/api/v1/securityservice/securityConfigs/{accountId},ts-security-service,api
+226,ts-security-service-SELECT SecurityConfig,ts-security-service,api
+227,ts-security-service-SELECT ts.security_config,ts-security-service,api
+228,ts-security-service-SecurityController.check,ts-security-service,api
+229,ts-security-service-SecurityRepository.findByName,ts-security-service,api
+230,ts-station-food-service-HTTP POST/api/v1/stationfoodservice/stationfoodstores,ts-station-food-service,api
+231,ts-station-food-service-SELECT StationFoodStore,ts-station-food-service,api
+232,ts-station-food-service-SELECT ts.station_food_store,ts-station-food-service,api
+233,ts-station-food-service-StationFoodController.getFoodStoresByStationNames,ts-station-food-service,api
+234,ts-station-food-service-StationFoodRepository.findByStationNameIn,ts-station-food-service,api
+235,ts-station-service-HTTP GET/api/v1/stationservice/stations/id/{stationNameForId},ts-station-service,api
+236,ts-station-service-HTTP POST/api/v1/stationservice/stations/idlist,ts-station-service,api
+237,ts-station-service-SELECT Station,ts-station-service,api
+238,ts-station-service-SELECT station,ts-station-service,api
+239,ts-station-service-SELECT ts.station,ts-station-service,api
+240,ts-station-service-StationController.queryForIdBatch,ts-station-service,api
+241,ts-station-service-StationController.queryForStationId,ts-station-service,api
+242,ts-station-service-StationRepository.findByName,ts-station-service,api
+243,ts-station-service-StationRepository.findByNames,ts-station-service,api
+244,ts-train-food-service-HTTP GET/api/v1/trainfoodservice/trainfoods/{tripId},ts-train-food-service,api
+245,ts-train-food-service-SELECT TrainFood,ts-train-food-service,api
+246,ts-train-food-service-SELECT ts.train_food,ts-train-food-service,api
+247,ts-train-food-service-SELECT ts.train_food_list,ts-train-food-service,api
+248,ts-train-food-service-TrainFoodController.getTrainFoodOfTrip,ts-train-food-service,api
+249,ts-train-food-service-TrainFoodRepository.findByTripId,ts-train-food-service,api
+250,ts-train-service-HTTP GET/api/v1/trainservice/trains/byName/{name},ts-train-service,api
+251,ts-train-service-HTTP POST/api/v1/trainservice/trains/byNames,ts-train-service,api
+252,ts-train-service-SELECT TrainType,ts-train-service,api
+253,ts-train-service-SELECT train_type,ts-train-service,api
+254,ts-train-service-SELECT ts.train_type,ts-train-service,api
+255,ts-train-service-TrainController.retrieveByName,ts-train-service,api
+256,ts-train-service-TrainTypeRepository.findByName,ts-train-service,api
+257,ts-train-service-TrainTypeRepository.findByNames,ts-train-service,api
+258,ts-travel-service-BasicErrorController.error,ts-travel-service,api
+259,ts-travel-service-HTTP GET/api/v1/routeservice/routes/{routeId},ts-travel-service,api
+260,ts-travel-service-HTTP GET/api/v1/travelservice/routes/{tripId},ts-travel-service,api
+261,ts-travel-service-HTTP POST/api/v1/basicservice/basic/travel,ts-travel-service,api
+262,ts-travel-service-HTTP POST/api/v1/basicservice/basic/travels,ts-travel-service,api
+263,ts-travel-service-HTTP POST/api/v1/seatservice/seats/left_tickets,ts-travel-service,api
+264,ts-travel-service-HTTP POST/api/v1/travelservice/trip_detail,ts-travel-service,api
+265,ts-travel-service-HTTP POST/api/v1/travelservice/trips/left,ts-travel-service,api
+266,ts-travel-service-SELECT Trip,ts-travel-service,api
+267,ts-travel-service-SELECT ts.trip,ts-travel-service,api
+268,ts-travel-service-Transaction.commit,ts-travel-service,api
+269,ts-travel-service-TravelController.getRouteByTripId,ts-travel-service,api
+270,ts-travel-service-TravelController.getTripAllDetailInfo,ts-travel-service,api
+271,ts-travel-service-TravelController.queryInfo,ts-travel-service,api
+272,ts-travel-service-TripRepository.findAll,ts-travel-service,api
+273,ts-travel-service-TripRepository.findByTripId,ts-travel-service,api
+274,ts-travel2-service-BasicErrorController.error,ts-travel2-service,api
+275,ts-travel2-service-HTTP POST/api/v1/basicservice/basic/travel,ts-travel2-service,api
+276,ts-travel2-service-HTTP POST/api/v1/basicservice/basic/travels,ts-travel2-service,api
+277,ts-travel2-service-HTTP POST/api/v1/seatservice/seats/left_tickets,ts-travel2-service,api
+278,ts-travel2-service-HTTP POST/api/v1/travel2service/trip_detail,ts-travel2-service,api
+279,ts-travel2-service-HTTP POST/api/v1/travel2service/trips/left,ts-travel2-service,api
+280,ts-travel2-service-SELECT Trip,ts-travel2-service,api
+281,ts-travel2-service-SELECT ts.trip2,ts-travel2-service,api
+282,ts-travel2-service-Transaction.commit,ts-travel2-service,api
+283,ts-travel2-service-Travel2Controller.getTripAllDetailInfo,ts-travel2-service,api
+284,ts-travel2-service-Travel2Controller.queryInfo,ts-travel2-service,api
+285,ts-travel2-service-TripRepository.findAll,ts-travel2-service,api
+286,ts-travel2-service-TripRepository.findByTripId,ts-travel2-service,api
+287,ts-user-service-HTTP GET/api/v1/userservice/users/id/{userId},ts-user-service,api
+288,ts-user-service-SELECT User,ts-user-service,api
+289,ts-user-service-SELECT ts.user,ts-user-service,api
+290,ts-user-service-UserController.getUserByUserId,ts-user-service,api
+291,ts-user-service-UserRepository.findByUserId,ts-user-service,api
+292,ts-verification-code-service-HTTP GET/api/v1/verifycode/verify/{verifyCode},ts-verification-code-service,api
+293,ts-verification-code-service-VerifyCodeController.verifyCode,ts-verification-code-service,api
+0,ts-assurance-service-69876c9868-tsp2m,ts-assurance-service,pod
+1,ts-auth-service-7f8d7d756d-vx7bh,ts-auth-service,pod
+2,ts-basic-service-5dc8d4f9fd-58xkn,ts-basic-service,pod
+3,ts-cancel-service-756f6c4675-n8l65,ts-cancel-service,pod
+4,ts-config-service-5fcd447d84-f8khv,ts-config-service,pod
+5,ts-contacts-service-866bd68c97-b6rfg,ts-contacts-service,pod
+6,ts-delivery-service-7d97b69596-jngz4,ts-delivery-service,pod
+7,ts-execute-service-775f544d9-xhnd8,ts-execute-service,pod
+8,ts-food-service-f5756978c-55kmn,ts-food-service,pod
+9,ts-gateway-service-6f6cfc45b-m2jwn,ts-gateway-service,pod
+10,ts-inside-payment-service-6f94c49ccd-ql78t,ts-inside-payment-service,pod
+11,ts-order-other-service-6cdbf9b4cc-r5dxl,ts-order-other-service,pod
+12,ts-order-service-5b67c48447-4d4rx,ts-order-service,pod
+13,ts-payment-service-7fc6f5476f-bfkj9,ts-payment-service,pod
+14,ts-preserve-other-service-66646bdb5b-sd2p8,ts-preserve-other-service,pod
+15,ts-preserve-service-b5ccf8557-cn5km,ts-preserve-service,pod
+16,ts-price-service-76846864d9-shjpl,ts-price-service,pod
+17,ts-route-service-b6c59fb57-4tcvp,ts-route-service,pod
+18,ts-seat-service-5c95b49cff-j7jvt,ts-seat-service,pod
+19,ts-security-service-cb9788d56-v24jq,ts-security-service,pod
+20,ts-station-food-service-dc4d75dd-vsjjg,ts-station-food-service,pod
+21,ts-station-service-7f4f5f6f77-ssgjb,ts-station-service,pod
+22,ts-train-food-service-59bbbdd99b-dvkgz,ts-train-food-service,pod
+23,ts-train-service-86f5f97bc9-f7687,ts-train-service,pod
+24,ts-travel-service-64469b5b48-zbwtm,ts-travel-service,pod
+25,ts-travel2-service-5c66d57d58-klvkm,ts-travel2-service,pod
+26,ts-user-service-687d654649-vr6qt,ts-user-service,pod
+27,ts-verification-code-service-7b6dc75c45-pf5xk,ts-verification-code-service,pod
