@@ -1,0 +1,510 @@
+{
+    "system_information": {
+        "number_of_microservices": 18,
+        "total_lines_of_code": 113206,
+        "total_number_of_files": 514,
+        "average_locs_per_service": 16745,
+        "average_files_per_service": 77
+    },
+    "wrong_cuts": [],
+    "circular_dependencies": [],
+    "mega_services": {},
+    "nano_services": {
+        "eureka-server": {
+            "locs": "140",
+            "nbFiles": "5",
+            "requiredLocs": 5227,
+            "requiredFiles": 24
+        },
+        "microsec-common": {
+            "locs": "474",
+            "nbFiles": "12",
+            "requiredLocs": 8372,
+            "requiredFiles": 38
+        },
+        "microsec-customer-portal": {
+            "locs": "368",
+            "nbFiles": "8",
+            "requiredLocs": 8372,
+            "requiredFiles": 38
+        },
+        "microsec-eureka-server": {
+            "locs": "36",
+            "nbFiles": "3",
+            "requiredLocs": 8372,
+            "requiredFiles": 38
+        },
+        "microsec-menu-service": {
+            "locs": "186",
+            "nbFiles": "5",
+            "requiredLocs": 8372,
+            "requiredFiles": 38
+        },
+        "microsec-order-service": {
+            "locs": "353",
+            "nbFiles": "7",
+            "requiredLocs": 8372,
+            "requiredFiles": 38
+        }
+    },
+    "shared_dependencies": {
+        "microsec-common": "microsec-admin-portal\nmicrosec-customer-portal\nmicrosec-menu-service\nmicrosec-order-service",
+        "microsec-test": "microsec-admin-portal\nmicrosec-customer-portal\nmicrosec-menu-service\nmicrosec-order-service"
+    },
+    "hardcoded_endpoints": {
+        "customer-core": {
+            "hasServiceDiscoveryTool": true,
+            "FoundUrls": "http://localhost:8110/customers?limit=2&offset=2, http://localhost:8110/customers?limit=2&offset=2&fields=, http://localhost:8110/customers?limit=2&offset=0&fields=, http://localhost:8110/customers?limit=2&offset=4&fields=, http://localhost:8110/customers/ce4btlyluu,rgpp0wkpec, http://localhost:8110/customers/ce4btlyluu,rgpp0wkpec?fields=, http://localhost:8110/customers/ce4btlyluu,rgpp0wkpec?fields=firstname,lastname, http://localhost:8110/customers/ce4btlyluu,rgpp0wkpec?fields=, http://localhost:8110/ws/customers, http://localhost:8110/ws, http://localhost:9000, http://localhost:8761/eureka, http://app_servers;"
+        },
+        "customer-management-backend": {
+            "hasServiceDiscoveryTool": true,
+            "FoundUrls": "http://localhost:8110, http://localhost:9000, http://customer-core, http://localhost:8761/eureka"
+        },
+        "customer-self-service-backend": {
+            "hasServiceDiscoveryTool": true,
+            "FoundUrls": "http://localhost:8080/customers, http://localhost:8110, http://localhost:9000, http://customer-core, http://localhost:8761/eureka"
+        },
+        "policy-management-backend": {
+            "hasServiceDiscoveryTool": true,
+            "FoundUrls": "http://localhost:8090/customers/rgpp0wkpec, http://localhost:8090/customers/123, http://localhost:8090/policies/h3riovf4xq/, http://localhost:8090/policies/h3riovf4xq/?expand=customer, http://localhost:8090/v2/api-docs), http://localhost:8110, http://localhost:9000, http://customer-core, http://localhost:8761/eureka"
+        },
+        "spring-boot-admin": {
+            "hasServiceDiscoveryTool": true,
+            "FoundUrls": "http://localhost:8761/eureka"
+        },
+        "system": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://eureka-server:8761/eureka, http://eureka-server:8761/eureka, http://customer-management-backend:8100, http://eureka-server:8761/eureka, http://customer-self-service-backend:8080, http://policy-management-backend:8090, http://customer-management-backend:8100, http://eureka-server:8761/eureka, http://policy-management-backend:8090, http://eureka-server:8761/eureka, http://spring-boot-admin:9000, http://customer-core:8110, http://spring-boot-admin:9000, http://customer-core:8110, http://spring-boot-admin:9000, http://customer-core:8110, http://spring-boot-admin:9000, http://spring-boot-admin:9000, http://customer-core:8110, http://spring-boot-admin:9000, http://customer-core:8110, http://spring-boot-admin:9000, http://customer-core:8110, http://spring-boot-admin:9000"
+        },
+        "microsec-common": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://localhost:8080/uaa"
+        },
+        "microsec-custom-registry": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://localhost:8081/oauth/token"
+        },
+        "microsec-customer-portal": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://localhost:8080/uaa/oauth/token, http://localhost:8080/uaa/oauth/authorize, http://localhost:8080/uaa/token_key"
+        }
+    },
+    "manual_configuration": {
+        "customer-core": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\LakesideMutual/customer-core\\src\\main\\resources\\application-default.properties, ..\\projects\\LakesideMutual/customer-core\\src\\main\\resources\\application-eureka.properties, ..\\projects\\LakesideMutual/customer-core\\src\\main\\resources\\application.properties, ..\\projects\\LakesideMutual/customer-core\\nginx-loadbalancing\\nginx\\nginx.conf, ..\\projects\\LakesideMutual/customer-core\\nginx-loadbalancing\\docker-compose.yml"
+        },
+        "customer-management-backend": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\LakesideMutual/customer-management-backend\\src\\main\\resources\\application-default.properties, ..\\projects\\LakesideMutual/customer-management-backend\\src\\main\\resources\\application-eureka.properties, ..\\projects\\LakesideMutual/customer-management-backend\\src\\main\\resources\\application.properties"
+        },
+        "customer-management-frontend": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\LakesideMutual/customer-management-frontend\\nginx.vh.default.conf"
+        },
+        "customer-self-service-backend": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\LakesideMutual/customer-self-service-backend\\src\\main\\resources\\application-default.properties, ..\\projects\\LakesideMutual/customer-self-service-backend\\src\\main\\resources\\application-eureka.properties, ..\\projects\\LakesideMutual/customer-self-service-backend\\src\\main\\resources\\application.properties"
+        },
+        "customer-self-service-frontend": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\LakesideMutual/customer-self-service-frontend\\nginx.vh.default.conf"
+        },
+        "eureka-server": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\LakesideMutual/eureka-server\\src\\main\\resources\\application.properties"
+        },
+        "policy-management-backend": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\LakesideMutual/policy-management-backend\\src\\main\\resources\\application-default.properties, ..\\projects\\LakesideMutual/policy-management-backend\\src\\main\\resources\\application-eureka.properties, ..\\projects\\LakesideMutual/policy-management-backend\\src\\main\\resources\\application.properties, ..\\projects\\LakesideMutual/policy-management-backend\\src\\main\\resources\\quartz.properties"
+        },
+        "policy-management-frontend": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\LakesideMutual/policy-management-frontend\\nginx.vh.default.conf"
+        },
+        "spring-boot-admin": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\LakesideMutual/spring-boot-admin\\src\\main\\resources\\application-default.properties, ..\\projects\\LakesideMutual/spring-boot-admin\\src\\main\\resources\\application-eureka.properties, ..\\projects\\LakesideMutual/spring-boot-admin\\src\\main\\resources\\application.properties"
+        },
+        "microsec-admin-portal": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\freddys-bbq-master/microsec-admin-portal\\src\\main\\resources\\application.yml"
+        },
+        "microsec-common": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\freddys-bbq-master/microsec-common\\src\\main\\resources\\config\\application.yml"
+        },
+        "microsec-custom-registry": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\freddys-bbq-master/microsec-custom-registry\\src\\main\\resources\\application.yml"
+        },
+        "microsec-customer-portal": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\freddys-bbq-master/microsec-customer-portal\\src\\main\\resources\\application.yml"
+        },
+        "microsec-eureka-server": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\freddys-bbq-master/microsec-eureka-server\\src\\main\\resources\\application.yml"
+        },
+        "microsec-hystrix-dashboard": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\freddys-bbq-master/microsec-hystrix-dashboard\\src\\main\\resources\\application.yml"
+        },
+        "microsec-menu-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\freddys-bbq-master/microsec-menu-service\\src\\main\\resources\\application.yml"
+        },
+        "microsec-order-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\freddys-bbq-master/microsec-order-service\\src\\main\\resources\\application.yml"
+        },
+        "system": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\freddys-bbq-master\\manifest.yml"
+        }
+    },
+    "no_cicd": {
+        "customer-core": {
+            "hasCiCdTools": false
+        },
+        "customer-management-backend": {
+            "hasCiCdTools": false
+        },
+        "customer-management-frontend": {
+            "hasCiCdTools": false
+        },
+        "customer-self-service-backend": {
+            "hasCiCdTools": false
+        },
+        "customer-self-service-frontend": {
+            "hasCiCdTools": false
+        },
+        "eureka-server": {
+            "hasCiCdTools": false
+        },
+        "policy-management-backend": {
+            "hasCiCdTools": false
+        },
+        "policy-management-frontend": {
+            "hasCiCdTools": false
+        },
+        "spring-boot-admin": {
+            "hasCiCdTools": false
+        },
+        "microsec-admin-portal": {
+            "hasCiCdTools": false
+        },
+        "microsec-common": {
+            "hasCiCdTools": false
+        },
+        "microsec-custom-registry": {
+            "hasCiCdTools": false
+        },
+        "microsec-customer-portal": {
+            "hasCiCdTools": false
+        },
+        "microsec-eureka-server": {
+            "hasCiCdTools": false
+        },
+        "microsec-hystrix-dashboard": {
+            "hasCiCdTools": false
+        },
+        "microsec-menu-service": {
+            "hasCiCdTools": false
+        },
+        "microsec-order-service": {
+            "hasCiCdTools": false
+        },
+        "microsec-test": {
+            "hasCiCdTools": false
+        }
+    },
+    "no_api_gateway": {
+        "customer-core": {
+            "hasApiGatewayTool": false
+        },
+        "customer-management-backend": {
+            "hasApiGatewayTool": false
+        },
+        "customer-management-frontend": {
+            "hasApiGatewayTool": false
+        },
+        "customer-self-service-backend": {
+            "hasApiGatewayTool": false
+        },
+        "customer-self-service-frontend": {
+            "hasApiGatewayTool": false
+        },
+        "eureka-server": {
+            "hasApiGatewayTool": false
+        },
+        "policy-management-backend": {
+            "hasApiGatewayTool": false
+        },
+        "policy-management-frontend": {
+            "hasApiGatewayTool": false
+        },
+        "spring-boot-admin": {
+            "hasApiGatewayTool": false
+        },
+        "microsec-admin-portal": {
+            "hasApiGatewayTool": false
+        },
+        "microsec-common": {
+            "hasApiGatewayTool": false
+        },
+        "microsec-custom-registry": {
+            "hasApiGatewayTool": false
+        },
+        "microsec-customer-portal": {
+            "hasApiGatewayTool": false
+        },
+        "microsec-eureka-server": {
+            "hasApiGatewayTool": false
+        },
+        "microsec-hystrix-dashboard": {
+            "hasApiGatewayTool": false
+        },
+        "microsec-menu-service": {
+            "hasApiGatewayTool": false
+        },
+        "microsec-order-service": {
+            "hasApiGatewayTool": false
+        },
+        "microsec-test": {
+            "hasApiGatewayTool": false
+        },
+        "system": {
+            "hasApiGatewayTool": false
+        }
+    },
+    "timeouts": {
+        "microsec-customer-portal": {
+            "hasCircuitBreakerTool": false,
+            "hasTOMethods": false,
+            "hasTOImports": false,
+            "hasFBMethods": true
+        },
+        "system": {
+            "hasCircuitBreaker": false
+        }
+    },
+    "multiple_instances_per_host": {
+        "docker_directory": {
+            "existence": false
+        },
+        "system": {
+            "systemHasCompose": false
+        },
+        "microsec-admin-portal": {
+            "hasDockerFile": false
+        },
+        "microsec-common": {
+            "hasDockerFile": false
+        },
+        "microsec-custom-registry": {
+            "hasDockerFile": false
+        },
+        "microsec-customer-portal": {
+            "hasDockerFile": false
+        },
+        "microsec-eureka-server": {
+            "hasDockerFile": false
+        },
+        "microsec-hystrix-dashboard": {
+            "hasDockerFile": false
+        },
+        "microsec-menu-service": {
+            "hasDockerFile": false
+        },
+        "microsec-order-service": {
+            "hasDockerFile": false
+        },
+        "microsec-test": {
+            "hasDockerFile": false
+        }
+    },
+    "shared_databases": {},
+    "no_api_versioning": {
+        "customer-core": {
+            "hasApiVersioning": false
+        },
+        "customer-management-backend": {
+            "hasApiVersioning": false
+        },
+        "customer-management-frontend": {
+            "hasApiVersioning": false
+        },
+        "customer-self-service-backend": {
+            "hasApiVersioning": false
+        },
+        "customer-self-service-frontend": {
+            "hasApiVersioning": false
+        },
+        "eureka-server": {
+            "hasApiVersioning": false
+        },
+        "policy-management-backend": {
+            "hasApiVersioning": false
+        },
+        "policy-management-frontend": {
+            "hasApiVersioning": false
+        },
+        "spring-boot-admin": {
+            "hasApiVersioning": false
+        },
+        "system": {
+            "hasApiVersioning": false
+        },
+        "microsec-admin-portal": {
+            "hasApiVersioning": false
+        },
+        "microsec-common": {
+            "hasApiVersioning": false
+        },
+        "microsec-custom-registry": {
+            "hasApiVersioning": false
+        },
+        "microsec-customer-portal": {
+            "hasApiVersioning": false
+        },
+        "microsec-eureka-server": {
+            "hasApiVersioning": false
+        },
+        "microsec-hystrix-dashboard": {
+            "hasApiVersioning": false
+        },
+        "microsec-menu-service": {
+            "hasApiVersioning": false
+        },
+        "microsec-order-service": {
+            "hasApiVersioning": false
+        }
+    },
+    "no_healthcheck": {
+        "microsec-admin-portal": {
+            "hasHealthcheckTools": false
+        },
+        "microsec-common": {
+            "hasHealthcheckTools": false
+        },
+        "microsec-custom-registry": {
+            "hasHealthcheckTools": false
+        },
+        "microsec-customer-portal": {
+            "hasHealthcheckTools": false
+        },
+        "microsec-eureka-server": {
+            "hasHealthcheckTools": false
+        },
+        "system": {
+            "hasHealthcheckTools": false
+        }
+    },
+    "local_logging": {
+        "customer-core": {
+            "hasLoggingTool": false
+        },
+        "customer-management-backend": {
+            "hasLoggingTool": false
+        },
+        "customer-management-frontend": {
+            "hasLoggingTool": false
+        },
+        "customer-self-service-backend": {
+            "hasLoggingTool": false
+        },
+        "customer-self-service-frontend": {
+            "hasLoggingTool": false
+        },
+        "eureka-server": {
+            "hasLoggingTool": false
+        },
+        "policy-management-backend": {
+            "hasLoggingTool": false
+        },
+        "policy-management-frontend": {
+            "hasLoggingTool": false
+        },
+        "spring-boot-admin": {
+            "hasLoggingTool": false
+        },
+        "microsec-admin-portal": {
+            "hasLoggingTool": false
+        },
+        "microsec-common": {
+            "hasLoggingTool": false
+        },
+        "microsec-custom-registry": {
+            "hasLoggingTool": false
+        },
+        "microsec-customer-portal": {
+            "hasLoggingTool": false
+        },
+        "microsec-eureka-server": {
+            "hasLoggingTool": false
+        },
+        "microsec-hystrix-dashboard": {
+            "hasLoggingTool": false
+        },
+        "microsec-menu-service": {
+            "hasLoggingTool": false
+        },
+        "microsec-order-service": {
+            "hasLoggingTool": false
+        },
+        "microsec-test": {
+            "hasLoggingTool": false
+        },
+        "system": {
+            "hasLoggingTool": false
+        }
+    },
+    "insufficient_monitoring": {
+        "customer-core": {
+            "hasMonitoringTools": false
+        },
+        "customer-management-backend": {
+            "hasMonitoringTools": false
+        },
+        "customer-management-frontend": {
+            "hasMonitoringTools": false
+        },
+        "customer-self-service-backend": {
+            "hasMonitoringTools": false
+        },
+        "customer-self-service-frontend": {
+            "hasMonitoringTools": false
+        },
+        "eureka-server": {
+            "hasMonitoringTools": false
+        },
+        "policy-management-backend": {
+            "hasMonitoringTools": false
+        },
+        "policy-management-frontend": {
+            "hasMonitoringTools": false
+        },
+        "spring-boot-admin": {
+            "hasMonitoringTools": false
+        },
+        "system": {
+            "hasMonitoringTools": true
+        },
+        "microsec-admin-portal": {
+            "hasMonitoringTools": false
+        },
+        "microsec-common": {
+            "hasMonitoringTools": false
+        },
+        "microsec-custom-registry": {
+            "hasMonitoringTools": false
+        },
+        "microsec-customer-portal": {
+            "hasMonitoringTools": false
+        },
+        "microsec-eureka-server": {
+            "hasMonitoringTools": false
+        }
+    }
+}

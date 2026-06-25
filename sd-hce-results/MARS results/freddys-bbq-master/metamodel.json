@@ -1,0 +1,976 @@
+{
+    "system": {
+        "folders": [],
+        "dependencies": [
+            "spring-cloud-services-dependencies",
+            "spring-cloud-dependencies"
+        ],
+        "language": "",
+        "config_files": [
+            "..\\projects\\freddys-bbq-master\\manifest.yml"
+        ],
+        "http": [],
+        "microservices": [
+            {
+                "name": "microsec-admin-portal",
+                "language": "unknown",
+                "nb_files": "8",
+                "locs": "434",
+                "dependencies": [
+                    "microsec-common",
+                    "microsec-test",
+                    "spring-boot-starter-thymeleaf",
+                    "spring-boot-starter-hateoas",
+                    "spring-cloud-starter-oauth2",
+                    "spring-cloud-services-starter-config-client",
+                    "spring-cloud-services-starter-service-registry",
+                    "spring-cloud-services-starter-circuit-breaker"
+                ],
+                "code": {
+                    "imports": [
+                        "java.security.Principal",
+                        "org.springframework.beans.factory.annotation.Autowired",
+                        "org.springframework.beans.factory.annotation.Qualifier",
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.boot.autoconfigure.security.SecurityProperties",
+                        "org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso",
+                        "org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker",
+                        "org.springframework.cloud.client.discovery.EnableDiscoveryClient",
+                        "org.springframework.cloud.client.loadbalancer.LoadBalanced",
+                        "org.springframework.context.annotation.Bean",
+                        "org.springframework.context.annotation.Import",
+                        "org.springframework.core.ParameterizedTypeReference",
+                        "org.springframework.hateoas.PagedResources",
+                        "org.springframework.hateoas.Resource",
+                        "org.springframework.http.HttpMethod",
+                        "org.springframework.security.config.annotation.web.builders.HttpSecurity",
+                        "org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter",
+                        "org.springframework.security.oauth2.client.OAuth2ClientContext",
+                        "org.springframework.security.oauth2.client.OAuth2RestTemplate",
+                        "org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails",
+                        "org.springframework.security.oauth2.provider.expression.OAuth2WebSecurityExpressionHandler",
+                        "org.springframework.stereotype.Controller",
+                        "org.springframework.ui.Model",
+                        "org.springframework.web.bind.annotation.ModelAttribute",
+                        "org.springframework.web.bind.annotation.PathVariable",
+                        "org.springframework.web.bind.annotation.RequestMapping",
+                        "org.springframework.web.bind.annotation.RequestMethod",
+                        "com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand",
+                        "microsec.common.Branding",
+                        "microsec.common.DumpTokenEndpointConfig",
+                        "microsec.freddysbbq.menu.model.v1.MenuItem",
+                        "microsec.freddysbbq.order.model.v1.Order"
+                    ],
+                    "annotations": [
+                        "SpringBootApplication",
+                        "Controller",
+                        "EnableOAuth2Sso",
+                        "EnableDiscoveryClient",
+                        "EnableCircuitBreaker",
+                        "Import",
+                        "Autowired",
+                        "Override",
+                        "Qualifier",
+                        "Bean",
+                        "LoadBalanced",
+                        "RequestMapping",
+                        "HystrixCommand",
+                        "ModelAttribute",
+                        "PathVariable"
+                    ],
+                    "methods": [
+                        "main",
+                        "configure",
+                        "branding",
+                        "loadBalancedOauth2RestTemplate",
+                        "index",
+                        "menu",
+                        "newMenuItem",
+                        "saveNewMenuItem",
+                        "viewMenuItem",
+                        "saveMenuItem",
+                        "deleteMenuItem",
+                        "viewOrders",
+                        "deleteOrder"
+                    ],
+                    "http": [],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "AdminApplication.java",
+                        "application.yml",
+                        "access.png",
+                        "menu.png",
+                        "orders.png",
+                        "index.html",
+                        "menu.html",
+                        "menuItem.html",
+                        "orders.html",
+                        "AdminApplicationSecurityTests.java"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\freddys-bbq-master/microsec-admin-portal\\src\\main\\resources\\application.yml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "microsec-common",
+                "language": "unknown",
+                "nb_files": "12",
+                "locs": "474",
+                "dependencies": [
+                    "spring-security-oauth2",
+                    "commons-codec",
+                    "spring-boot-starter-web",
+                    "hibernate-jpa-2.1-api",
+                    "spring-boot-configuration-processor",
+                    "spring-cloud-sso-connector",
+                    "cloudfoundry-certificate-truster"
+                ],
+                "code": {
+                    "imports": [
+                        "org.springframework.boot.context.properties.ConfigurationProperties",
+                        "org.springframework.beans.factory.annotation.Autowired",
+                        "org.springframework.boot.autoconfigure.condition.ConditionalOnBean",
+                        "org.springframework.context.annotation.Bean",
+                        "org.springframework.context.annotation.Configuration",
+                        "org.springframework.security.oauth2.client.OAuth2ClientContext",
+                        "org.springframework.stereotype.Controller",
+                        "org.springframework.ui.Model",
+                        "org.springframework.web.bind.annotation.RequestMapping",
+                        "java.util.List",
+                        "microsec.freddysbbq.menu.model.v1.MenuItem",
+                        "org.springframework.security.core.Authentication",
+                        "org.springframework.security.core.context.SecurityContextHolder",
+                        "org.springframework.security.oauth2.client.DefaultOAuth2ClientContext",
+                        "org.springframework.security.oauth2.client.OAuth2RestTemplate",
+                        "org.springframework.security.oauth2.client.resource.BaseOAuth2ProtectedResourceDetails",
+                        "org.springframework.security.oauth2.common.DefaultOAuth2AccessToken",
+                        "org.springframework.security.oauth2.common.OAuth2AccessToken",
+                        "org.springframework.security.oauth2.provider.OAuth2Authentication",
+                        "org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails",
+                        "java.util.Map",
+                        "org.apache.commons.codec.binary.Base64",
+                        "com.fasterxml.jackson.core.type.TypeReference",
+                        "com.fasterxml.jackson.databind.ObjectMapper",
+                        "java.math.BigDecimal",
+                        "javax.persistence.Entity",
+                        "javax.persistence.GeneratedValue",
+                        "javax.persistence.GenerationType",
+                        "javax.persistence.Id",
+                        "java.util.Date",
+                        "java.util.Set",
+                        "javax.persistence.CascadeType",
+                        "javax.persistence.JoinColumn",
+                        "javax.persistence.OneToMany",
+                        "javax.persistence.Table",
+                        "javax.persistence.Column",
+                        "javax.persistence.ManyToOne",
+                        "javax.persistence.UniqueConstraint",
+                        "com.fasterxml.jackson.annotation.JsonIgnore",
+                        "com.fasterxml.jackson.databind.PropertyNamingStrategy.SnakeCaseStrategy",
+                        "com.fasterxml.jackson.databind.annotation.JsonNaming"
+                    ],
+                    "annotations": [
+                        "ConfigurationProperties",
+                        "Configuration",
+                        "Bean",
+                        "Controller",
+                        "ConditionalOnBean",
+                        "Autowired",
+                        "RequestMapping",
+                        "Override",
+                        "Entity",
+                        "Id",
+                        "GeneratedValue",
+                        "Table",
+                        "OneToMany",
+                        "JoinColumn",
+                        "UniqueConstraint",
+                        "ManyToOne",
+                        "JsonIgnore",
+                        "Column",
+                        "JsonNaming"
+                    ],
+                    "methods": [
+                        "getRestaurantName",
+                        "setRestaurantName",
+                        "getMenuTitle",
+                        "setMenuTitle",
+                        "dumpTokenController",
+                        "dumpToken",
+                        "getItems",
+                        "setItems",
+                        "getAccessToken",
+                        "toPrettyJsonString",
+                        "getToken",
+                        "getId",
+                        "setId",
+                        "getName",
+                        "setName",
+                        "getPrice",
+                        "setPrice",
+                        "getCustomerId",
+                        "setCustomerId",
+                        "getFirstName",
+                        "setFirstName",
+                        "getLastName",
+                        "setLastName",
+                        "getEmail",
+                        "setEmail",
+                        "getPlaced",
+                        "setPlaced",
+                        "getTotal",
+                        "setTotal",
+                        "getOrderItems",
+                        "setOrderItems",
+                        "hashCode",
+                        "equals",
+                        "getOrder",
+                        "setOrder",
+                        "getMenuItemId",
+                        "setMenuItemId",
+                        "getQuantity",
+                        "setQuantity",
+                        "getUserId",
+                        "setUserId",
+                        "getUserName",
+                        "setUserName",
+                        "getGivenName",
+                        "setGivenName",
+                        "getFamilyName",
+                        "setFamilyName"
+                    ],
+                    "http": [
+                        "http://localhost:8080/uaa"
+                    ],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "Branding.java",
+                        "DumpTokenEndpointConfig.java",
+                        "MenuBootstrap.java",
+                        "TokenRelayingRestTemplate.java",
+                        "Utils.java",
+                        "MenuItem.java",
+                        "Order.java",
+                        "OrderItem.java",
+                        "UserInfo.java",
+                        "application.yml",
+                        "dump_token.html"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\freddys-bbq-master/microsec-common\\src\\main\\resources\\config\\application.yml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "microsec-custom-registry",
+                "language": "unknown",
+                "nb_files": "28",
+                "locs": "16858",
+                "dependencies": [
+                    "jackson-databind",
+                    "spring-boot-starter-thymeleaf",
+                    "spring-boot-starter-web",
+                    "spring-cloud-starter-oauth2",
+                    "spring-boot-starter-test",
+                    "spring-boot-configuration-processor"
+                ],
+                "code": {
+                    "imports": [
+                        "java.util.Arrays",
+                        "org.springframework.beans.factory.annotation.Autowired",
+                        "org.springframework.beans.factory.annotation.Qualifier",
+                        "org.springframework.context.annotation.Bean",
+                        "org.springframework.context.annotation.Configuration",
+                        "org.springframework.security.authentication.AuthenticationManager",
+                        "org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer",
+                        "org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter",
+                        "org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer",
+                        "org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer",
+                        "org.springframework.security.oauth2.provider.token.TokenEnhancerChain",
+                        "org.springframework.security.oauth2.provider.token.TokenStore",
+                        "org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter",
+                        "org.springframework.security.oauth2.provider.token.store.JwtTokenStore",
+                        "microsec.freddysbbq.customregistry.openid.IdTokenEhnancer",
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.security.config.annotation.web.configuration.EnableWebSecurity",
+                        "org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer",
+                        "org.springframework.boot.context.properties.ConfigurationProperties",
+                        "org.springframework.stereotype.Component",
+                        "org.springframework.stereotype.Controller",
+                        "org.springframework.ui.Model",
+                        "org.springframework.web.bind.annotation.RequestMapping",
+                        "microsec.freddysbbq.customregistry.provider.AuthenticatedMainframeUser",
+                        "microsec.freddysbbq.customregistry.util.JacksonUtils",
+                        "org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder",
+                        "org.springframework.security.config.annotation.web.builders.HttpSecurity",
+                        "org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter",
+                        "microsec.freddysbbq.customregistry.mainframe.MainframeUserService",
+                        "microsec.freddysbbq.customregistry.provider.MainframeAuthenticationProvider",
+                        "java.util.Optional",
+                        "java.util.HashMap",
+                        "java.util.Map",
+                        "javax.annotation.PostConstruct",
+                        "org.springframework.stereotype.Service",
+                        "java.util.List",
+                        "com.fasterxml.jackson.annotation.JsonProperty",
+                        "java.util.stream.Collectors.toList",
+                        "java.time.Instant",
+                        "org.springframework.security.jwt.Jwt",
+                        "org.springframework.security.jwt.JwtHelper",
+                        "org.springframework.security.jwt.crypto.sign.RsaSigner",
+                        "org.springframework.security.oauth2.common.DefaultOAuth2AccessToken",
+                        "org.springframework.security.oauth2.common.OAuth2AccessToken",
+                        "org.springframework.security.oauth2.provider.OAuth2Authentication",
+                        "org.springframework.security.oauth2.provider.token.TokenEnhancer",
+                        "com.fasterxml.jackson.core.JsonProcessingException",
+                        "com.fasterxml.jackson.databind.ObjectMapper",
+                        "microsec.freddysbbq.customregistry.JwtTokenKeys",
+                        "java.util.ArrayList",
+                        "java.util.Collection",
+                        "java.util.Collections",
+                        "org.springframework.security.core.Authentication",
+                        "org.springframework.security.core.GrantedAuthority",
+                        "org.springframework.security.core.authority.SimpleGrantedAuthority",
+                        "microsec.freddysbbq.customregistry.mainframe.MainframeUser",
+                        "org.springframework.security.authentication.AuthenticationProvider",
+                        "org.springframework.security.authentication.BadCredentialsException",
+                        "org.springframework.security.authentication.UsernamePasswordAuthenticationToken",
+                        "org.springframework.security.core.AuthenticationException",
+                        "org.springframework.security.core.userdetails.UsernameNotFoundException",
+                        "java.io.IOException",
+                        "java.text.DateFormat",
+                        "com.fasterxml.jackson.databind.SerializationFeature",
+                        "org.springframework.security.authentication.AuthenticationTrustResolver",
+                        "org.springframework.security.authentication.AuthenticationTrustResolverImpl",
+                        "org.springframework.security.core.context.SecurityContextHolder",
+                        "org.springframework.security.core.userdetails.UserDetails"
+                    ],
+                    "annotations": [
+                        "Configuration",
+                        "Autowired",
+                        "Qualifier",
+                        "Bean",
+                        "Override",
+                        "SpringBootApplication",
+                        "EnableAuthorizationServer",
+                        "EnableWebSecurity",
+                        "Component",
+                        "ConfigurationProperties",
+                        "Controller",
+                        "RequestMapping",
+                        "Service",
+                        "PostConstruct",
+                        "JsonProperty"
+                    ],
+                    "methods": [
+                        "accessTokenConverter",
+                        "configure",
+                        "tokenStore",
+                        "main",
+                        "getVerificationKey",
+                        "setVerificationKey",
+                        "getSigningKey",
+                        "setSigningKey",
+                        "login",
+                        "root",
+                        "configureGlobal",
+                        "authenticationManagerBean",
+                        "getUsername",
+                        "setUsername",
+                        "getFirstName",
+                        "setFirstName",
+                        "getLastName",
+                        "setLastName",
+                        "getEmail",
+                        "setEmail",
+                        "isEmployee",
+                        "setEmployee",
+                        "getPassword",
+                        "setPassword",
+                        "getUserDetails",
+                        "init",
+                        "getIssuer",
+                        "setIssuer",
+                        "getSubject",
+                        "setSubject",
+                        "getAudience",
+                        "setAudience",
+                        "getExpireAt",
+                        "setExpireAt",
+                        "getIssuedAt",
+                        "setIssuedAt",
+                        "getName",
+                        "setName",
+                        "getScope",
+                        "setScope",
+                        "getGivenName",
+                        "setGivenName",
+                        "getFamilyName",
+                        "setFamilyName",
+                        "enhance",
+                        "createIdToken",
+                        "signToken",
+                        "addIdToken",
+                        "toJson",
+                        "getPrincipal",
+                        "getAuthorities",
+                        "getDetails",
+                        "isAuthenticated",
+                        "getCredentials",
+                        "setAuthenticated",
+                        "authenticate",
+                        "validatePassword",
+                        "getUser",
+                        "supports",
+                        "fromJSON",
+                        "toJSON",
+                        "isFullyAuthenticated",
+                        "getCurrentUserDetails"
+                    ],
+                    "http": [
+                        "http://localhost:8081/oauth/token"
+                    ],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "AuthorizationServerConfiguration.java",
+                        "CustomRegistryApplication.java",
+                        "JwtTokenKeys.java",
+                        "PageControllers.java",
+                        "SecurityConfig.java",
+                        "MainframeUser.java",
+                        "MainframeUserService.java",
+                        "MockMainframeService.java",
+                        "IdToken.java",
+                        "IdTokenEhnancer.java",
+                        "AuthenticatedMainframeUser.java",
+                        "MainframeAuthenticationProvider.java",
+                        "JacksonUtils.java",
+                        "SpringSecurityUtils.java",
+                        "application.yml",
+                        "jquery-2.1.1.js",
+                        "lodash.js",
+                        "bootstrap-theme.css",
+                        "bootstrap-theme.css.map",
+                        "bootstrap-theme.min.css",
+                        "bootstrap.css",
+                        "bootstrap.css.map",
+                        "bootstrap.min.css",
+                        "glyphicons-halflings-regular.eot",
+                        "glyphicons-halflings-regular.svg",
+                        "glyphicons-halflings-regular.ttf",
+                        "glyphicons-halflings-regular.woff",
+                        "bootstrap.js",
+                        "bootstrap.min.js",
+                        "home.html",
+                        "login.html",
+                        "CustomRegistryApplicationTests.java"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\freddys-bbq-master/microsec-custom-registry\\src\\main\\resources\\application.yml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "microsec-customer-portal",
+                "language": "unknown",
+                "nb_files": "8",
+                "locs": "368",
+                "dependencies": [
+                    "microsec-common",
+                    "microsec-test",
+                    "spring-cloud-starter-oauth2",
+                    "spring-boot-starter-thymeleaf",
+                    "spring-boot-starter-hateoas",
+                    "spring-cloud-services-starter-config-client",
+                    "spring-cloud-services-starter-service-registry",
+                    "spring-cloud-services-starter-circuit-breaker"
+                ],
+                "code": {
+                    "imports": [
+                        "java.util.Arrays",
+                        "org.springframework.beans.factory.annotation.Autowired",
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.boot.autoconfigure.security.SecurityProperties",
+                        "org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso",
+                        "org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker",
+                        "org.springframework.cloud.client.discovery.EnableDiscoveryClient",
+                        "org.springframework.cloud.client.loadbalancer.LoadBalanced",
+                        "org.springframework.context.annotation.Bean",
+                        "org.springframework.context.annotation.Import",
+                        "org.springframework.hateoas.hal.Jackson2HalModule",
+                        "org.springframework.http.MediaType",
+                        "org.springframework.http.converter.json.MappingJackson2HttpMessageConverter",
+                        "org.springframework.security.config.annotation.web.builders.HttpSecurity",
+                        "org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter",
+                        "org.springframework.security.oauth2.client.OAuth2ClientContext",
+                        "org.springframework.security.oauth2.client.OAuth2RestTemplate",
+                        "org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails",
+                        "com.fasterxml.jackson.databind.DeserializationFeature",
+                        "com.fasterxml.jackson.databind.ObjectMapper",
+                        "microsec.common.Branding",
+                        "microsec.common.DumpTokenEndpointConfig",
+                        "microsec.common.MenuBootstrap",
+                        "java.security.Principal",
+                        "java.util.Collection",
+                        "java.util.Collections",
+                        "java.util.LinkedHashMap",
+                        "org.springframework.beans.factory.annotation.Qualifier",
+                        "org.springframework.core.ParameterizedTypeReference",
+                        "org.springframework.hateoas.PagedResources",
+                        "org.springframework.http.HttpMethod",
+                        "org.springframework.stereotype.Controller",
+                        "org.springframework.ui.Model",
+                        "org.springframework.web.bind.annotation.ModelAttribute",
+                        "org.springframework.web.bind.annotation.RequestMapping",
+                        "org.springframework.web.bind.annotation.RequestMethod",
+                        "com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand",
+                        "microsec.freddysbbq.menu.model.v1.MenuItem",
+                        "microsec.freddysbbq.order.model.v1.Order"
+                    ],
+                    "annotations": [
+                        "SpringBootApplication",
+                        "EnableOAuth2Sso",
+                        "EnableDiscoveryClient",
+                        "EnableCircuitBreaker",
+                        "Import",
+                        "Autowired",
+                        "Override",
+                        "Bean",
+                        "LoadBalanced",
+                        "Controller",
+                        "Qualifier",
+                        "RequestMapping",
+                        "HystrixCommand",
+                        "ModelAttribute"
+                    ],
+                    "methods": [
+                        "main",
+                        "configure",
+                        "branding",
+                        "menuBootstrap",
+                        "loadBalancedOauth2RestTemplate",
+                        "index",
+                        "menu",
+                        "menuFallback",
+                        "myOrders",
+                        "myOrdersFallback",
+                        "placeOrder",
+                        "placeOrderFallback",
+                        "getOrder",
+                        "setOrder"
+                    ],
+                    "http": [
+                        "http://localhost:8080/uaa/oauth/token",
+                        "http://localhost:8080/uaa/oauth/authorize",
+                        "http://localhost:8080/uaa/token_key"
+                    ],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "CustomerApplication.java",
+                        "CustomerController.java",
+                        "application.yml",
+                        "access.png",
+                        "menu.png",
+                        "orders.png",
+                        "index.html",
+                        "menu.html",
+                        "myorders.html",
+                        "CustomerApplicationSecurityTests.java"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\freddys-bbq-master/microsec-customer-portal\\src\\main\\resources\\application.yml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "microsec-eureka-server",
+                "language": "unknown",
+                "nb_files": "3",
+                "locs": "36",
+                "dependencies": [
+                    "spring-cloud-starter-eureka-server"
+                ],
+                "code": {
+                    "imports": [
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"
+                    ],
+                    "annotations": [
+                        "SpringBootApplication",
+                        "EnableEurekaServer"
+                    ],
+                    "methods": [
+                        "main"
+                    ],
+                    "http": [],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "EurekaServer.java",
+                        "application.yml"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\freddys-bbq-master/microsec-eureka-server\\src\\main\\resources\\application.yml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "microsec-hystrix-dashboard",
+                "language": "unknown",
+                "nb_files": "3",
+                "locs": "30",
+                "dependencies": [
+                    "spring-cloud-starter-hystrix-dashboard"
+                ],
+                "code": {
+                    "imports": [
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard"
+                    ],
+                    "annotations": [
+                        "SpringBootApplication",
+                        "EnableHystrixDashboard"
+                    ],
+                    "methods": [
+                        "main"
+                    ],
+                    "http": [],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "HystrixDashboard.java",
+                        "application.yml"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\freddys-bbq-master/microsec-hystrix-dashboard\\src\\main\\resources\\application.yml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "microsec-menu-service",
+                "language": "unknown",
+                "nb_files": "5",
+                "locs": "186",
+                "dependencies": [
+                    "microsec-common",
+                    "microsec-test",
+                    "spring-cloud-starter-oauth2",
+                    "spring-boot-starter-data-rest",
+                    "spring-boot-starter-data-jpa",
+                    "h2",
+                    "spring-cloud-services-starter-config-client",
+                    "spring-cloud-services-starter-service-registry"
+                ],
+                "code": {
+                    "imports": [
+                        "javax.annotation.PostConstruct",
+                        "org.springframework.beans.factory.annotation.Autowired",
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.boot.autoconfigure.domain.EntityScan",
+                        "org.springframework.boot.autoconfigure.security.SecurityProperties",
+                        "org.springframework.cloud.client.discovery.EnableDiscoveryClient",
+                        "org.springframework.context.annotation.Bean",
+                        "org.springframework.context.annotation.Configuration",
+                        "org.springframework.data.rest.core.config.RepositoryRestConfiguration",
+                        "org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter",
+                        "org.springframework.http.HttpMethod",
+                        "org.springframework.security.config.annotation.web.builders.HttpSecurity",
+                        "org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer",
+                        "org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurer",
+                        "org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter",
+                        "org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer",
+                        "microsec.common.MenuBootstrap",
+                        "microsec.freddysbbq.menu.model.v1.MenuItem",
+                        "org.springframework.data.repository.PagingAndSortingRepository"
+                    ],
+                    "annotations": [
+                        "SpringBootApplication",
+                        "EntityScan",
+                        "EnableResourceServer",
+                        "EnableDiscoveryClient",
+                        "Autowired",
+                        "Bean",
+                        "PostConstruct",
+                        "Configuration",
+                        "Override"
+                    ],
+                    "methods": [
+                        "main",
+                        "menuBootstrap",
+                        "bootstrap",
+                        "configureRepositoryRestConfiguration",
+                        "resourceServer",
+                        "configure"
+                    ],
+                    "http": [],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "MenuApplication.java",
+                        "MenuItemRepository.java",
+                        "application.yml",
+                        "MenuApplicationSecurityTests.java"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\freddys-bbq-master/microsec-menu-service\\src\\main\\resources\\application.yml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "microsec-order-service",
+                "language": "unknown",
+                "nb_files": "7",
+                "locs": "353",
+                "dependencies": [
+                    "microsec-common",
+                    "microsec-test",
+                    "spring-boot-starter-data-rest",
+                    "spring-boot-starter-data-jpa",
+                    "h2",
+                    "spring-cloud-starter-oauth2",
+                    "spring-cloud-services-starter-service-registry"
+                ],
+                "code": {
+                    "imports": [
+                        "java.math.BigDecimal",
+                        "java.security.Principal",
+                        "java.util.Collection",
+                        "java.util.Date",
+                        "java.util.LinkedHashSet",
+                        "java.util.Map",
+                        "java.util.Map.Entry",
+                        "java.util.Set",
+                        "org.springframework.beans.factory.annotation.Autowired",
+                        "org.springframework.beans.factory.annotation.Qualifier",
+                        "org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties",
+                        "org.springframework.http.HttpStatus",
+                        "org.springframework.http.ResponseEntity",
+                        "org.springframework.security.access.prepost.PreAuthorize",
+                        "org.springframework.security.oauth2.client.OAuth2RestTemplate",
+                        "org.springframework.web.bind.annotation.RequestBody",
+                        "org.springframework.web.bind.annotation.RequestMapping",
+                        "org.springframework.web.bind.annotation.RequestMethod",
+                        "org.springframework.web.bind.annotation.RestController",
+                        "org.springframework.web.client.HttpClientErrorException",
+                        "microsec.common.TokenRelayingRestTemplate",
+                        "microsec.freddysbbq.menu.model.v1.MenuItem",
+                        "microsec.freddysbbq.order.model.v1.Order",
+                        "microsec.freddysbbq.order.model.v1.OrderItem",
+                        "microsec.uaa.model.v2.UserInfo",
+                        "org.springframework.context.annotation.Configuration",
+                        "org.springframework.security.access.expression.method.MethodSecurityExpressionHandler",
+                        "org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity",
+                        "org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration",
+                        "org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler",
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.boot.autoconfigure.domain.EntityScan",
+                        "org.springframework.boot.autoconfigure.security.SecurityProperties",
+                        "org.springframework.cloud.client.discovery.EnableDiscoveryClient",
+                        "org.springframework.cloud.client.loadbalancer.LoadBalanced",
+                        "org.springframework.context.annotation.Bean",
+                        "org.springframework.data.rest.core.config.RepositoryRestConfiguration",
+                        "org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter",
+                        "org.springframework.security.config.annotation.web.builders.HttpSecurity",
+                        "org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer",
+                        "org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurer",
+                        "org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter",
+                        "org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer",
+                        "org.springframework.data.repository.PagingAndSortingRepository",
+                        "org.springframework.data.repository.query.Param"
+                    ],
+                    "annotations": [
+                        "RestController",
+                        "Autowired",
+                        "Qualifier",
+                        "PreAuthorize",
+                        "RequestMapping",
+                        "RequestBody",
+                        "Configuration",
+                        "EnableGlobalMethodSecurity",
+                        "Override",
+                        "SpringBootApplication",
+                        "EntityScan",
+                        "EnableResourceServer",
+                        "EnableDiscoveryClient",
+                        "Bean",
+                        "LoadBalanced",
+                        "Param"
+                    ],
+                    "methods": [
+                        "getMyOrders",
+                        "placeOrder",
+                        "setLoadBalancedTokenRelayingRestTemplate",
+                        "setTokenRelayingRestTemplate",
+                        "createExpressionHandler",
+                        "main",
+                        "configureRepositoryRestConfiguration",
+                        "resourceServer",
+                        "configure",
+                        "loadBalancedTokenRelayingRestTemplate",
+                        "findByCustomerId"
+                    ],
+                    "http": [],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "CustomerOrderController.java",
+                        "MethodSecurityConfig.java",
+                        "OrderApplication.java",
+                        "OrderRepository.java",
+                        "application.yml",
+                        "OrderApplicationSecurityTests.java"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\freddys-bbq-master/microsec-order-service\\src\\main\\resources\\application.yml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "microsec-test",
+                "language": "unknown",
+                "nb_files": "3",
+                "locs": "364",
+                "dependencies": [
+                    "spring-boot-starter-web",
+                    "spring-boot-starter-test",
+                    "httpclient",
+                    "spring-security-jwt"
+                ],
+                "code": {
+                    "imports": [],
+                    "annotations": [],
+                    "methods": [],
+                    "http": [],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "SecurityIntegrationTest.java",
+                        "UaaJwtToken.java"
+                    ]
+                },
+                "config": {
+                    "config_files": []
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            }
+        ],
+        "GitRepository": "NAN"
+    }
+}

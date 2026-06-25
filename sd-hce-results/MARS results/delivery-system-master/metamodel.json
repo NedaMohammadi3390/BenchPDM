@@ -1,0 +1,383 @@
+{
+    "system": {
+        "folders": [],
+        "dependencies": [],
+        "language": "",
+        "config_files": [],
+        "http": [],
+        "microservices": [
+            {
+                "name": "config-service",
+                "language": "unknown",
+                "nb_files": "4",
+                "locs": "77",
+                "dependencies": [
+                    "spring-cloud-config-server",
+                    "spring-boot-starter-test",
+                    "spring-cloud-dependencies"
+                ],
+                "code": {
+                    "imports": [
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.cloud.config.server.EnableConfigServer"
+                    ],
+                    "annotations": [
+                        "EnableConfigServer",
+                        "SpringBootApplication"
+                    ],
+                    "methods": [
+                        "main"
+                    ],
+                    "http": [],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "ConfigServiceApplication.java",
+                        "application.properties",
+                        "ConfigServiceApplicationTests.java"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\delivery-system-master/config-service\\src\\main\\resources\\application.properties"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "delivery-service",
+                "language": "unknown",
+                "nb_files": "15",
+                "locs": "9019",
+                "dependencies": [
+                    "spring-cloud-starter-eureka",
+                    "spring-boot-starter-actuator",
+                    "spring-cloud-starter-config",
+                    "spring-cloud-starter-zipkin",
+                    "spring-cloud-starter-stream-rabbit",
+                    "spring-boot-starter-web",
+                    "spring-boot-starter-websocket",
+                    "spring-boot-starter-data-rest",
+                    "spring-boot-starter-data-jpa",
+                    "spring-boot-devtools",
+                    "h2",
+                    "spring-boot-starter-test",
+                    "spring-cloud-dependencies"
+                ],
+                "code": {
+                    "imports": [
+                        "io.mattslater.messaging.DeliveryServiceChannels",
+                        "io.mattslater.model.Delivery",
+                        "io.mattslater.repos.DeliveryRepository",
+                        "org.springframework.boot.CommandLineRunner",
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.cloud.netflix.eureka.EnableEurekaClient",
+                        "org.springframework.cloud.stream.annotation.EnableBinding",
+                        "org.springframework.cloud.stream.messaging.Sink",
+                        "org.springframework.context.annotation.Bean",
+                        "java.util.Arrays",
+                        "org.springframework.context.annotation.Configuration",
+                        "org.springframework.messaging.simp.config.MessageBrokerRegistry",
+                        "org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer",
+                        "org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker",
+                        "org.springframework.web.socket.config.annotation.StompEndpointRegistry",
+                        "org.springframework.beans.factory.annotation.Autowired",
+                        "org.springframework.beans.factory.annotation.Value",
+                        "org.springframework.messaging.simp.SimpMessagingTemplate",
+                        "org.springframework.web.bind.annotation",
+                        "java.util.List",
+                        "io.mattslater.model.SubmittedDelivery",
+                        "org.springframework.integration.annotation.MessageEndpoint",
+                        "org.springframework.integration.annotation.ServiceActivator",
+                        "org.springframework.messaging.Message",
+                        "org.springframework.cloud.stream.annotation.Input",
+                        "org.springframework.messaging.SubscribableChannel",
+                        "javax.persistence.Entity",
+                        "javax.persistence.GeneratedValue",
+                        "javax.persistence.GenerationType",
+                        "javax.persistence.Id",
+                        "java.io.Serializable",
+                        "org.springframework.data.repository.PagingAndSortingRepository",
+                        "org.springframework.data.rest.core.annotation.RepositoryRestResource",
+                        "org.springframework.data.rest.core.annotation.RestResource",
+                        "org.springframework.stereotype.Repository"
+                    ],
+                    "annotations": [
+                        "EnableBinding",
+                        "EnableEurekaClient",
+                        "SpringBootApplication",
+                        "Bean",
+                        "Configuration",
+                        "EnableWebSocketMessageBroker",
+                        "Override",
+                        "RestController",
+                        "Value",
+                        "Autowired",
+                        "RequestMapping",
+                        "ResponseBody",
+                        "RequestBody",
+                        "PathVariable",
+                        "MessageEndpoint",
+                        "ServiceActivator",
+                        "Input",
+                        "Entity",
+                        "Id",
+                        "GeneratedValue",
+                        "RepositoryRestResource",
+                        "RestResource"
+                    ],
+                    "methods": [
+                        "runner",
+                        "main",
+                        "configureMessageBroker",
+                        "registerStompEndpoints",
+                        "updateListandBroadcast",
+                        "message",
+                        "getOpenDeliveries",
+                        "newDelivery",
+                        "delete",
+                        "update",
+                        "get",
+                        "onNewDelivery",
+                        "input",
+                        "getOrigin",
+                        "setOrigin",
+                        "getDestination",
+                        "setDestination",
+                        "isDelivered",
+                        "setDelivered",
+                        "getId",
+                        "setId",
+                        "toString",
+                        "findByDeliveredFalse"
+                    ],
+                    "http": [
+                        "http://localhost:3000",
+                        "http://localhost:7272"
+                    ],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        ".gitignore",
+                        "pom.xml",
+                        "DeliveryServiceApplication.java",
+                        "WebSocketConfig.java",
+                        "DeliveryController.java",
+                        "DeliveryProcessor.java",
+                        "DeliveryServiceChannels.java",
+                        "Delivery.java",
+                        "SubmittedDelivery.java",
+                        "DeliveryRepository.java",
+                        "bootstrap.properties",
+                        "index.html",
+                        "jquery-3.0.0.js",
+                        "sockjs-0.3.4.js",
+                        "stomp.js",
+                        "DeliveryServiceApplicationTests.java"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\resources\\bootstrap.properties"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "edge-service",
+                "language": "unknown",
+                "nb_files": "10",
+                "locs": "252",
+                "dependencies": [
+                    "spring-cloud-starter-feign",
+                    "spring-cloud-starter-config",
+                    "spring-cloud-starter-eureka",
+                    "spring-cloud-starter-hystrix",
+                    "spring-cloud-starter-zipkin",
+                    "spring-cloud-starter-stream-rabbit",
+                    "spring-cloud-starter-zuul",
+                    "spring-boot-starter-data-rest",
+                    "spring-boot-starter-web",
+                    "spring-boot-starter-test",
+                    "spring-cloud-dependencies"
+                ],
+                "code": {
+                    "imports": [
+                        "io.mattslater.messaging.EdgeServiceChannels",
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker",
+                        "org.springframework.cloud.client.loadbalancer.LoadBalanced",
+                        "org.springframework.cloud.netflix.eureka.EnableEurekaClient",
+                        "org.springframework.cloud.netflix.feign.EnableFeignClients",
+                        "org.springframework.cloud.netflix.zuul.EnableZuulProxy",
+                        "org.springframework.cloud.stream.annotation.EnableBinding",
+                        "org.springframework.context.annotation.Bean",
+                        "org.springframework.integration.annotation.IntegrationComponentScan",
+                        "org.springframework.web.client.RestTemplate",
+                        "com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand",
+                        "io.mattslater.model.Delivery",
+                        "io.mattslater.model.SubmittedDelivery",
+                        "org.springframework.beans.factory.annotation.Autowired",
+                        "org.springframework.core.ParameterizedTypeReference",
+                        "org.springframework.hateoas.Resources",
+                        "org.springframework.http.HttpMethod",
+                        "org.springframework.http.ResponseEntity",
+                        "org.springframework.integration.support.MessageBuilder",
+                        "org.springframework.messaging.Message",
+                        "org.springframework.messaging.MessageChannel",
+                        "org.springframework.web.bind.annotation.RequestBody",
+                        "org.springframework.web.bind.annotation.RequestMapping",
+                        "org.springframework.web.bind.annotation.RequestMethod",
+                        "org.springframework.web.bind.annotation.RestController",
+                        "java.util.ArrayList",
+                        "java.util.Collection",
+                        "java.util.stream.Collectors",
+                        "org.springframework.cloud.netflix.feign.FeignClient",
+                        "org.springframework.integration.annotation.Gateway",
+                        "org.springframework.integration.annotation.MessagingGateway",
+                        "org.springframework.cloud.stream.annotation.Output",
+                        "java.io.Serializable"
+                    ],
+                    "annotations": [
+                        "IntegrationComponentScan",
+                        "EnableBinding",
+                        "EnableCircuitBreaker",
+                        "EnableZuulProxy",
+                        "EnableEurekaClient",
+                        "SpringBootApplication",
+                        "EnableFeignClients",
+                        "Bean",
+                        "LoadBalanced",
+                        "RestController",
+                        "RequestMapping",
+                        "Autowired",
+                        "HystrixCommand",
+                        "RequestBody",
+                        "FeignClient",
+                        "MessagingGateway",
+                        "Gateway",
+                        "Output"
+                    ],
+                    "methods": [
+                        "restTemplate",
+                        "main",
+                        "deliveries",
+                        "fallback",
+                        "write",
+                        "read",
+                        "output",
+                        "getOrigin",
+                        "setOrigin",
+                        "getDestination",
+                        "setDestination",
+                        "isDelivered",
+                        "setDelivered"
+                    ],
+                    "http": [
+                        "http://localhost:7272"
+                    ],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "EdgeServiceApplication.java",
+                        "DeliveriesApiGatewayRestController.java",
+                        "DeliveryReader.java",
+                        "DeliveryWriter.java",
+                        "EdgeServiceChannels.java",
+                        "Delivery.java",
+                        "SubmittedDelivery.java",
+                        "bootstrap.properties",
+                        "EdgeServiceApplicationTests.java"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\resources\\bootstrap.properties"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "eureka-service",
+                "language": "unknown",
+                "nb_files": "4",
+                "locs": "81",
+                "dependencies": [
+                    "spring-cloud-starter-config",
+                    "spring-cloud-starter-eureka-server",
+                    "spring-boot-starter-test",
+                    "spring-cloud-dependencies"
+                ],
+                "code": {
+                    "imports": [
+                        "org.springframework.boot.SpringApplication",
+                        "org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"
+                    ],
+                    "annotations": [
+                        "EnableEurekaServer",
+                        "SpringBootApplication"
+                    ],
+                    "methods": [
+                        "main"
+                    ],
+                    "http": [
+                        "http://localhost:7272"
+                    ],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "pom.xml",
+                        "EurekaServiceApplication.java",
+                        "bootstrap.properties",
+                        "EurekaServiceApplicationTests.java"
+                    ]
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\main\\resources\\bootstrap.properties"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            }
+        ],
+        "GitRepository": "NAN"
+    }
+}

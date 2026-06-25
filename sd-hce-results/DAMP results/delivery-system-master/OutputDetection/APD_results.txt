@@ -1,0 +1,269 @@
+=========================  General Information of System  =============================
+
+number of microservices : 4
+Total lines of code (LOCs) : 9429
+Total number of files : 33
+Avg LOCs per service : 2357.25
+Avg Files per service : 8.25
+
+total number of apis: 9
+
+name of services:
+
+name: config-service
+name: delivery-service
+name: edge-service
+name: eureka-service
+#1
+Anti-Pattern Name: Wrong Cuts
+
+| Anti-Pattern | Status       |
+|--------------|--------------|
+| Wrong Cuts   | Not detected |
+
+===================================================================================
+
+#2
+Anti-Pattern Name: Mega Services
+
+| Anti-Pattern    | Status       |
+|-----------------|--------------|
+| Mega Services   | Detected     |
+
+### Characteristics of Detected Mega Services:
+
+Service Name            LOCs   LOC Threshold    #LOCs in system    #APIs  API Ratio   Total APIs
+------------------------------------------------------------------------------------------------
+delivery-service        9019         3677.31               9429        6       0.67        9
+
+===================================================================================
+
+#3
+Anti-Pattern Name: Nano Services
+
+| Anti-Pattern    | Status       |
+|-----------------|--------------|
+| Nano Services   | Detected     |
+
+### Characteristics of Detected Nano Services:
+
+Service Name            LOCs   LOC Threshold    #LOCs in system    #APIs  API Ratio   Total APIs
+------------------------------------------------------------------------------------------------
+eureka-service            81          471.00               9429        0       0.00        9
+
+===================================================================================
+
+#4
+Anti-Pattern Name: Shared Libraries
+
+| Anti-Pattern     | Status       |
+|------------------|--------------|
+| Shared Libraries | Detected     |
+
+### Characteristics of Detected Shared Libraries:
+
+
+*** Shared Libraries in dependencies (Maven or Gradle files) were found:
+
+Dependency                               Used By Services                                            
+----------------------------------------------------------------------------------------------------
+spring-cloud-dependencies                config-service, delivery-service, edge-service, eureka-service
+spring-cloud-starter-eureka              delivery-service, edge-service                              
+spring-cloud-starter-stream-rabbit       delivery-service, edge-service                              
+spring-boot-starter-data-rest            delivery-service, edge-service                              
+----------------------------------------------------------------------------------------------------
+
+
+===================================================================================
+
+#5
+Anti-Pattern Name: Hardcoded Endpoints
+
+| Anti-Pattern        | Status   |
+|---------------------|----------|
+| Hardcoded Endpoints | ======== |
+
+- Service `delivery-service` has hardcoded HTTP URLs:
+  - http://localhost:3000, path: ..\projects\delivery-system-master/delivery-service\src\main\java\io\mattslater\controller\DeliveryController.java
+
+- Service `delivery-service` has hardcoded HTTP URLs:
+  - http://localhost:7272, path: ..\projects\delivery-system-master/delivery-service\src\main\resources\bootstrap.properties
+
+- Service `edge-service` has hardcoded HTTP URLs:
+  - http://localhost:7272, path: ..\projects\delivery-system-master/edge-service\src\main\resources\bootstrap.properties
+
+- Service `eureka-service` has hardcoded HTTP URLs:
+  - http://localhost:7272, path: ..\projects\delivery-system-master/eureka-service\src\main\resources\bootstrap.properties
+
+ **Service-level Tools**:
+
+- `delivery-service`:
+  - spring-cloud-starter-eureka
+
+- `delivery-service`:
+  - spring-cloud-starter-eureka
+
+- `edge-service`:
+  - spring-cloud-starter-eureka
+
+- `eureka-service`:
+  - spring-cloud-starter-eureka
+  - spring-cloud-starter-eureka-server
+
+
+===================================================================================
+
+#6
+Anti-Pattern Name: Manual Configuration
+
+| Anti-Pattern         | Status       |
+|----------------------|--------------|
+| Manual Configuration | Not detected |
+
+
+ Auto-configuration tools have been detected in the system; therefore, the Manual Configuration anti-pattern does not exist.
+
+
+
+### Characteristics of Auto Configuration:
+
+ **Service-level Tools**:
+
+- `config-service`:
+  - spring-cloud-config-server
+
+- `delivery-service`:
+  - spring-cloud-starter-config
+
+- `edge-service`:
+  - spring-cloud-starter-config
+
+- `eureka-service`:
+  - spring-cloud-starter-config
+
+
+===================================================================================
+
+#7
+Anti-Pattern Name: NoCICD (Missing CI/CD Pipeline)
+
+| Anti-Pattern | Status   |
+|--------------|----------|
+| NoCICD       | Detected |
+
+
+ - The system lacks any CI/CD pipeline tools.
+
+===================================================================================
+
+#8
+Anti-Pattern Name: No API Gateway (NAG)
+
+| Anti-Pattern         | Status       |
+|----------------------|--------------|
+| No API Gateway (NAG) | Not detected |
+
+
+ The code contains API Gateway tools.
+
+
+
+### Characteristics of API Gateway:
+
+ **Service-level Tools**:
+
+- `edge-service`:
+  - spring-cloud-starter-zuul
+
+
+===================================================================================
+
+#9
+Anti-Pattern Name: Timeouts (TO)
+
+| Anti-Pattern         | Status       |
+|----------------------|--------------|
+| Timeouts (TO)        | Not detected |
+
+===================================================================================
+
+#10
+Anti-Pattern Name: Multiple Services Per Host (MSPH)
+
+| Anti-Pattern                     | Status       |
+|----------------------------------|--------------|
+| Multiple Services Per Host (MSPH)| Detected     |
+- No docker-compose file or Dockerfile was found in the system.
+
+
+===================================================================================
+
+#11
+Anti-Pattern Name: Shared Persistence
+
+| Anti-Pattern         | Status       |
+|----------------------|--------------|
+| Shared Persistence   | Not detected |
+
+
+- No shared databases were found among the microservices.
+===================================================================================
+
+#12
+Anti-Pattern Name: No API Versioning
+
+| Anti-Pattern         | Status       |
+|----------------------|--------------|
+| No API Versioning    | Detected     |
+
+
+No API versioning tool was found.
+
+
+===================================================================================
+
+#13
+Anti-Pattern Name: No Health Check
+
+| Anti-Pattern     | Status       |
+|------------------|--------------|
+| No Health Check  | Not detected |
+
+
+- In service delivery-service, Health Check was observed in the  ['spring-boot-starter-actuator'].
+
+
+===================================================================================
+
+#14
+Anti-Pattern Name: Local Logging (LL)
+
+| Anti-Pattern        | Status       |
+|---------------------|--------------|
+| Local Logging (LL)  | Not detected |
+
+
+
+- Centralized Logging tool in the service level was detected.
+    ** In service delivery-service, Centralized Logging was observed in the ['spring-cloud-starter-zipkin', 'zipkin'].
+    ** In service edge-service, Centralized Logging was observed in the ['spring-cloud-starter-zipkin', 'zipkin'].
+
+
+ *****************Aditional Information****************
+===================================================================================
+
+#15
+Anti-Pattern Name: Insufficient Monitoring
+
+| Anti-Pattern            | Status       |
+|-------------------------|--------------|
+| Insufficient Monitoring | Not detected |
+
+
+
+- Monitoring tool in the service level was detected.
+    ** In service delivery-service, Monitoring was observed in the ['spring-boot-starter-actuator', 'spring-cloud-starter-zipkin', 'zipkin'].
+    ** In service edge-service, Monitoring was observed in the ['spring-cloud-starter-zipkin', 'zipkin'].
+
+===================================================================================
+

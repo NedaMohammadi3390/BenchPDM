@@ -1,0 +1,930 @@
+{
+    "system_information": {
+        "number_of_microservices": 40,
+        "total_lines_of_code": 32983,
+        "total_number_of_files": 740,
+        "average_locs_per_service": 824,
+        "average_files_per_service": 18
+    },
+    "wrong_cuts": [],
+    "circular_dependencies": [],
+    "mega_services": {},
+    "nano_services": {
+        "ts-common": {
+            "locs": "268",
+            "nbFiles": "8",
+            "requiredLocs": 412,
+            "requiredFiles": 9
+        },
+        "ts-delivery-service": {
+            "locs": "173",
+            "nbFiles": "8",
+            "requiredLocs": 412,
+            "requiredFiles": 9
+        },
+        "ts-news-service": {
+            "locs": "37",
+            "nbFiles": "4",
+            "requiredLocs": 412,
+            "requiredFiles": 9
+        }
+    },
+    "shared_dependencies": {
+        "ts-common": "ts-admin-order-service\nts-admin-route-service\nts-admin-travel-service\nts-admin-user-service\nts-basic-service\nts-cancel-service\nts-execute-service\nts-preserve-other-service\nts-preserve-service\nts-rebook-service\nts-route-plan-service\nts-seat-service\nts-ticketinfo-service\nts-travel-plan-service\nts-verification-code-service"
+    },
+    "hardcoded_endpoints": {
+        "ts-admin-basic-info-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-station-service:12345/api/v1/stationservice/stations, http://ts-train-service:14567/api/v1/trainservice/trains, http://ts-config-service:15679/api/v1/configservice/configs, http://ts-price-service:16579/api/v1/priceservice/prices, http://ts-contacts-service:12347/api/v1/contactservice/contacts, http://ts-contacts-service:12347/api/v1/contactservice/contacts/, http://ts-contacts-service:12347/api/v1/contactservice/contacts, http://ts-contacts-service:12347/api/v1/contactservice/contacts/admin, http://ts-train-service:14567/api/v1/trainservice/trains/, http://ts-config-service:15679/api/v1/configservice/configs/"
+        },
+        "ts-admin-order-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-order-service:12031/api/v1/orderservice/order, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther, http://ts-order-service:12031/api/v1/orderservice/order/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, http://ts-order-service:12031/api/v1/orderservice/order/admin, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/admin, http://ts-order-service:12031/api/v1/orderservice/order/admin, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/admin"
+        },
+        "ts-admin-route-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-route-service:11178/api/v1/routeservice/routes, http://ts-route-service:11178/api/v1/routeservice/routes, http://ts-route-service:11178/api/v1/routeservice/routes/"
+        },
+        "ts-admin-travel-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-travel-service:12346/api/v1/travelservice/admin_trip, http://ts-travel2-service:16346/api/v1/travel2service/admin_trip, http://ts-travel-service:12346/api/v1/travelservice/trips, http://ts-travel2-service:16346/api/v1/travel2service/trips, http://ts-travel-service:12346/api/v1/travelservice/trips, http://ts-travel2-service:16346/api/v1/travel2service/trips, http://ts-travel-service:12346/api/v1/travelservice/trips/, http://ts-travel2-service:16346/api/v1/travel2service/trips/"
+        },
+        "ts-admin-user-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-user-service:12342/api/v1/userservice/users"
+        },
+        "ts-auth-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-verification-code-service:15678/api/v1/verifycode/verify/"
+        },
+        "ts-basic-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-station-service:12345/api/v1/stationservice/stations/id/, http://ts-station-service:12345/api/v1/stationservice/stations/id/, http://ts-train-service:14567/api/v1/trainservice/trains/, http://ts-route-service:11178/api/v1/routeservice/routes/, http://ts-price-service:16579/api/v1/priceservice/prices/"
+        },
+        "ts-cancel-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-notification-service:17853/api/v1/notifyservice/notification/order_cancel_success, http://ts-order-service:12031/api/v1/orderservice/order, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther, http://ts-inside-payment-service:18673/api/v1/inside_pay_service/inside_payment/drawback/, http://ts-user-service:12342/api/v1/userservice/users/id/, http://ts-order-service:12031/api/v1/orderservice/order/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/"
+        },
+        "ts-consign-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-consign-price-service:16110/api/v1/consignpriceservice/consignprice/, http://ts-consign-price-service:16110/api/v1/consignpriceservice/consignprice/"
+        },
+        "ts-execute-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-order-service:12031/api/v1/orderservice/order/status/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/status/, http://ts-order-service:12031/api/v1/orderservice/order/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/"
+        },
+        "ts-food-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-food-map-service:18855/api/v1/foodmapservice/trainfoods/, http://ts-travel-service:12346/api/v1/travelservice/routes/, http://ts-station-service:12345/api/v1/stationservice/stations/id/, http://ts-station-service:12345/api/v1/stationservice/stations/id/, http://ts-food-map-service:18855/api/v1/foodmapservice/foodstores"
+        },
+        "ts-inside-payment-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://rest-service-external:16100/greet, http://ts-order-service:12031/api/v1/orderservice/order/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, http://ts-payment-service:19001/api/v1/paymentservice/payment, http://ts-payment-service:19001/api/v1/paymentservice/payment, http://ts-order-service:12031/api/v1/orderservice/order/status/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/status/"
+        },
+        "ts-order-other-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-station-service:12345/api/v1/stationservice/stations/namelist"
+        },
+        "ts-order-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-station-service:12345/api/v1/stationservice/stations/namelist"
+        },
+        "ts-preserve-other-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo, http://ts-seat-service:18898/api/v1/seatservice/seats, http://ts-user-service:12342/api/v1/userservice/users/id/, http://ts-assurance-service:18888/api/v1/assuranceservice/assurances/, http://ts-station-service:12345/api/v1/stationservice/stations/id/, http://ts-security-service:11188/api/v1/securityservice/securityConfigs/, http://ts-travel2-service:16346/api/v1/travel2service/trip_detail, http://ts-contacts-service:12347/api/v1/contactservice/contacts/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther, http://ts-food-service:18856/api/v1/foodservice/orders, http://ts-consign-service:16111/api/v1/consignservice/consigns"
+        },
+        "ts-preserve-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo, http://ts-seat-service:18898/api/v1/seatservice/seats, http://ts-user-service:12342/api/v1/userservice/users/id/, http://ts-assurance-service:18888/api/v1/assuranceservice/assurances/, http://ts-station-service:12345/api/v1/stationservice/stations/id/, http://ts-security-service:11188/api/v1/securityservice/securityConfigs/, http://ts-travel-service:12346/api/v1/travelservice/trip_detail, http://ts-contacts-service:12347/api/v1/contactservice/contacts/, http://ts-order-service:12031/api/v1/orderservice/order, http://ts-food-service:18856/api/v1/foodservice/orders, http://ts-consign-service:16111/api/v1/consignservice/consigns"
+        },
+        "ts-rebook-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-seat-service:18898/api/v1/seatservice/seats, http://ts-travel-service:12346/api/v1/travelservice/trip_detail, http://ts-travel2-service:16346/api/v1/travel2service/trip_detail, http://ts-order-service:12031/api/v1/orderservice/order, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther, http://ts-order-service:12031/api/v1/orderservice/order, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther, http://ts-order-service:12031/api/v1/orderservice/order/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, http://ts-order-service:12031/api/v1/orderservice/order/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, http://ts-station-service:12345/api/v1/stationservice/stations/name/, http://ts-inside-payment-service:18673/api/v1/inside_pay_service/inside_payment/difference, http://ts-inside-payment-service:18673/api/v1/inside_pay_service/inside_payment/drawback/"
+        },
+        "ts-route-plan-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-route-service:11178/api/v1/routeservice/routes/, http://ts-travel-service:12346/api/v1/travelservice/trips/routes, http://ts-travel2-service:16346/api/v1/travel2service/trips/routes, http://ts-travel-service:12346/api/v1/travelservice/trip_detail, http://ts-travel2-service:16346/api/v1/travel2service/trip_detail, http://ts-station-service:12345/api/v1/stationservice/stations/id/, http://ts-route-service:11178/api/v1/routeservice/routes/, http://ts-travel-service:12346/api/v1/travelservice/trips/left, http://ts-travel2-service:16346/api/v1/travel2service/trips/left, http://ts-travel-service:12346/api/v1/travelservice/routes/, http://ts-travel2-service:16346/api/v1/travel2service/routes/"
+        },
+        "ts-seat-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-travel-service:12346/api/v1/travelservice/routes/, http://ts-order-service:12031/api/v1/orderservice/order/tickets, http://ts-travel-service:12346/api/v1/travelservice/train_types/, http://ts-travel2-service:16346/api/v1/travel2service/routes/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/tickets, http://ts-travel2-service:16346/api/v1/travel2service/train_types/, http://ts-travel-service:12346/api/v1/travelservice/routes/, http://ts-order-service:12031/api/v1/orderservice/order/tickets, http://ts-travel-service:12346/api/v1/travelservice/train_types/, http://ts-travel2-service:16346/api/v1/travel2service/routes/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/tickets, http://ts-travel2-service:16346/api/v1/travel2service/train_types/, http://ts-config-service:15679/api/v1/configservice/configs/"
+        },
+        "ts-security-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-order-service:12031/api/v1/orderservice/order/security/, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/security/"
+        },
+        "ts-ticketinfo-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-basic-service:15680/api/v1/basicservice/basic/travel, http://ts-basic-service:15680/api/v1/basicservice/basic/"
+        },
+        "ts-travel-plan-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-seat-service:18898/api/v1/seatservice/seats/left_tickets, http://ts-route-plan-service:14578/api/v1/routeplanservice/routePlan/cheapestRoute, http://ts-route-plan-service:14578/api/v1/routeplanservice/routePlan/quickestRoute, http://ts-route-plan-service:14578/api/v1/routeplanservice/routePlan/minStopStations, http://ts-travel-service:12346/api/v1/travelservice/trips/left, http://ts-travel2-service:16346/api/v1/travel2service/trips/left, http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo/, http://ts-station-service:12345/api/v1/stationservice/stations/namelist"
+        },
+        "ts-travel-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo, http://ts-order-service:12031/api/v1/orderservice/order/, http://ts-train-service:14567/api/v1/trainservice/trains/, http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo/, http://ts-route-service:11178/api/v1/routeservice/routes/, http://ts-seat-service:18898/api/v1/seatservice/seats/left_tickets"
+        },
+        "ts-travel2-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo, http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, http://ts-train-service:14567/api/v1/trainservice/trains/, http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo/, http://ts-route-service:11178/api/v1/routeservice/routes/, http://ts-seat-service:18898/api/v1/seatservice/seats/left_tickets"
+        },
+        "ts-user-service": {
+            "hasServiceDiscoveryTool": false,
+            "FoundUrls": "http://ts-auth-service:12340/api/v1, http://ts-auth-service:12340/api/v1/auth"
+        }
+    },
+    "manual_configuration": {
+        "ts-admin-basic-info-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-admin-basic-info-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-admin-order-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-admin-order-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-admin-route-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-admin-route-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-admin-travel-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-admin-travel-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-admin-user-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-admin-user-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-assurance-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-assurance-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-auth-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-auth-service\\src\\main\\resources\\application.yaml"
+        },
+        "ts-basic-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-basic-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-cancel-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-cancel-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-config-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-config-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-consign-price-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-consign-price-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-consign-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-consign-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-contacts-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-contacts-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-delivery-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-delivery-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-execute-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-execute-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-food-map-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-food-map-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-food-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-food-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-inside-payment-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-inside-payment-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-notification-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-notification-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-order-other-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-order-other-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-order-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-order-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-payment-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-payment-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-preserve-other-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-preserve-other-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-preserve-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-preserve-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-price-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-price-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-rebook-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-rebook-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-route-plan-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-route-plan-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-route-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-route-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-seat-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-seat-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-security-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-security-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-station-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-station-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-ticketinfo-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-ticketinfo-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-train-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-train-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-travel-plan-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-travel-plan-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-travel-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-travel-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-travel2-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-travel2-service\\src\\main\\resources\\application.yml"
+        },
+        "ts-user-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-user-service\\src\\main\\resources\\application.yaml"
+        },
+        "ts-verification-code-service": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0/ts-verification-code-service\\src\\main\\resources\\application.yml"
+        },
+        "system": {
+            "hasConfigurationTool": false,
+            "FoundConfigFiles": "..\\projects\\train-ticket-0.2.0\\docker-compose.yml"
+        }
+    },
+    "no_cicd": {
+        "ts-admin-basic-info-service": {
+            "hasCiCdTools": false
+        },
+        "ts-admin-order-service": {
+            "hasCiCdTools": false
+        },
+        "ts-admin-route-service": {
+            "hasCiCdTools": false
+        },
+        "ts-admin-travel-service": {
+            "hasCiCdTools": false
+        },
+        "ts-admin-user-service": {
+            "hasCiCdTools": false
+        },
+        "ts-assurance-service": {
+            "hasCiCdTools": false
+        },
+        "ts-auth-service": {
+            "hasCiCdTools": false
+        },
+        "ts-basic-service": {
+            "hasCiCdTools": false
+        },
+        "ts-cancel-service": {
+            "hasCiCdTools": false
+        },
+        "ts-common": {
+            "hasCiCdTools": false
+        },
+        "ts-config-service": {
+            "hasCiCdTools": false
+        },
+        "ts-consign-price-service": {
+            "hasCiCdTools": false
+        },
+        "ts-consign-service": {
+            "hasCiCdTools": false
+        },
+        "ts-contacts-service": {
+            "hasCiCdTools": false
+        },
+        "ts-delivery-service": {
+            "hasCiCdTools": false
+        },
+        "ts-execute-service": {
+            "hasCiCdTools": false
+        },
+        "ts-food-map-service": {
+            "hasCiCdTools": false
+        },
+        "ts-food-service": {
+            "hasCiCdTools": false
+        },
+        "ts-inside-payment-service": {
+            "hasCiCdTools": false
+        },
+        "ts-news-service": {
+            "hasCiCdTools": false
+        },
+        "ts-notification-service": {
+            "hasCiCdTools": false
+        },
+        "ts-order-other-service": {
+            "hasCiCdTools": false
+        },
+        "ts-order-service": {
+            "hasCiCdTools": false
+        },
+        "ts-payment-service": {
+            "hasCiCdTools": false
+        },
+        "ts-preserve-other-service": {
+            "hasCiCdTools": false
+        },
+        "ts-preserve-service": {
+            "hasCiCdTools": false
+        },
+        "ts-price-service": {
+            "hasCiCdTools": false
+        },
+        "ts-rebook-service": {
+            "hasCiCdTools": false
+        },
+        "ts-route-plan-service": {
+            "hasCiCdTools": false
+        },
+        "ts-route-service": {
+            "hasCiCdTools": false
+        },
+        "ts-seat-service": {
+            "hasCiCdTools": false
+        },
+        "ts-security-service": {
+            "hasCiCdTools": false
+        },
+        "ts-station-service": {
+            "hasCiCdTools": false
+        },
+        "ts-ticketinfo-service": {
+            "hasCiCdTools": false
+        },
+        "ts-train-service": {
+            "hasCiCdTools": false
+        },
+        "ts-travel-plan-service": {
+            "hasCiCdTools": false
+        },
+        "ts-travel-service": {
+            "hasCiCdTools": false
+        },
+        "ts-travel2-service": {
+            "hasCiCdTools": false
+        },
+        "ts-user-service": {
+            "hasCiCdTools": false
+        },
+        "ts-verification-code-service": {
+            "hasCiCdTools": false
+        }
+    },
+    "no_api_gateway": {
+        "ts-admin-basic-info-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-admin-order-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-admin-route-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-admin-travel-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-admin-user-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-assurance-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-auth-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-basic-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-cancel-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-common": {
+            "hasApiGatewayTool": false
+        },
+        "ts-config-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-consign-price-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-consign-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-contacts-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-delivery-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-execute-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-food-map-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-food-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-inside-payment-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-news-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-notification-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-order-other-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-order-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-payment-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-preserve-other-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-preserve-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-price-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-rebook-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-route-plan-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-route-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-seat-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-security-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-station-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-ticketinfo-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-train-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-travel-plan-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-travel-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-travel2-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-user-service": {
+            "hasApiGatewayTool": false
+        },
+        "ts-verification-code-service": {
+            "hasApiGatewayTool": false
+        },
+        "system": {
+            "hasApiGatewayTool": false
+        }
+    },
+    "timeouts": {
+        "system": {
+            "hasCircuitBreaker": false
+        }
+    },
+    "multiple_instances_per_host": {
+        "docker_directory": {
+            "existence": false
+        },
+        "ts-common": {
+            "hasDockerFile": false
+        },
+        "system": {
+            "systemHasCompose": true
+        }
+    },
+    "shared_databases": {},
+    "no_api_versioning": {
+        "ts-admin-basic-info-service": {
+            "hasApiVersioning": false
+        },
+        "ts-admin-order-service": {
+            "hasApiVersioning": false
+        },
+        "ts-admin-route-service": {
+            "hasApiVersioning": false
+        },
+        "ts-admin-travel-service": {
+            "hasApiVersioning": false
+        },
+        "ts-admin-user-service": {
+            "hasApiVersioning": false
+        },
+        "ts-assurance-service": {
+            "hasApiVersioning": false
+        },
+        "ts-auth-service": {
+            "hasApiVersioning": false
+        },
+        "ts-basic-service": {
+            "hasApiVersioning": false
+        },
+        "ts-cancel-service": {
+            "hasApiVersioning": false
+        },
+        "ts-config-service": {
+            "hasApiVersioning": false
+        },
+        "ts-consign-price-service": {
+            "hasApiVersioning": false
+        },
+        "ts-consign-service": {
+            "hasApiVersioning": false
+        },
+        "ts-contacts-service": {
+            "hasApiVersioning": false
+        },
+        "ts-delivery-service": {
+            "hasApiVersioning": false
+        },
+        "ts-execute-service": {
+            "hasApiVersioning": false
+        },
+        "ts-food-map-service": {
+            "hasApiVersioning": false
+        },
+        "ts-food-service": {
+            "hasApiVersioning": false
+        },
+        "ts-inside-payment-service": {
+            "hasApiVersioning": false
+        },
+        "ts-notification-service": {
+            "hasApiVersioning": false
+        },
+        "ts-order-other-service": {
+            "hasApiVersioning": false
+        },
+        "ts-order-service": {
+            "hasApiVersioning": false
+        },
+        "ts-payment-service": {
+            "hasApiVersioning": false
+        },
+        "ts-preserve-other-service": {
+            "hasApiVersioning": false
+        },
+        "ts-preserve-service": {
+            "hasApiVersioning": false
+        },
+        "ts-price-service": {
+            "hasApiVersioning": false
+        },
+        "ts-rebook-service": {
+            "hasApiVersioning": false
+        },
+        "ts-route-plan-service": {
+            "hasApiVersioning": false
+        },
+        "ts-route-service": {
+            "hasApiVersioning": false
+        },
+        "ts-seat-service": {
+            "hasApiVersioning": false
+        },
+        "ts-security-service": {
+            "hasApiVersioning": false
+        },
+        "ts-station-service": {
+            "hasApiVersioning": false
+        },
+        "ts-ticketinfo-service": {
+            "hasApiVersioning": false
+        },
+        "ts-train-service": {
+            "hasApiVersioning": false
+        },
+        "ts-travel-plan-service": {
+            "hasApiVersioning": false
+        },
+        "ts-travel-service": {
+            "hasApiVersioning": false
+        },
+        "ts-travel2-service": {
+            "hasApiVersioning": false
+        },
+        "ts-user-service": {
+            "hasApiVersioning": false
+        },
+        "ts-verification-code-service": {
+            "hasApiVersioning": false
+        },
+        "system": {
+            "hasApiVersioning": false
+        }
+    },
+    "no_healthcheck": {
+        "system": {
+            "hasHealthcheckTools": false
+        }
+    },
+    "local_logging": {
+        "ts-admin-basic-info-service": {
+            "hasLoggingTool": false
+        },
+        "ts-admin-order-service": {
+            "hasLoggingTool": false
+        },
+        "ts-admin-route-service": {
+            "hasLoggingTool": false
+        },
+        "ts-admin-travel-service": {
+            "hasLoggingTool": false
+        },
+        "ts-admin-user-service": {
+            "hasLoggingTool": false
+        },
+        "ts-assurance-service": {
+            "hasLoggingTool": false
+        },
+        "ts-auth-service": {
+            "hasLoggingTool": false
+        },
+        "ts-basic-service": {
+            "hasLoggingTool": false
+        },
+        "ts-cancel-service": {
+            "hasLoggingTool": false
+        },
+        "ts-common": {
+            "hasLoggingTool": false
+        },
+        "ts-config-service": {
+            "hasLoggingTool": false
+        },
+        "ts-consign-price-service": {
+            "hasLoggingTool": false
+        },
+        "ts-consign-service": {
+            "hasLoggingTool": false
+        },
+        "ts-contacts-service": {
+            "hasLoggingTool": false
+        },
+        "ts-delivery-service": {
+            "hasLoggingTool": false
+        },
+        "ts-execute-service": {
+            "hasLoggingTool": false
+        },
+        "ts-food-map-service": {
+            "hasLoggingTool": false
+        },
+        "ts-food-service": {
+            "hasLoggingTool": false
+        },
+        "ts-inside-payment-service": {
+            "hasLoggingTool": false
+        },
+        "ts-news-service": {
+            "hasLoggingTool": false
+        },
+        "ts-notification-service": {
+            "hasLoggingTool": false
+        },
+        "ts-order-other-service": {
+            "hasLoggingTool": false
+        },
+        "ts-order-service": {
+            "hasLoggingTool": false
+        },
+        "ts-payment-service": {
+            "hasLoggingTool": false
+        },
+        "ts-preserve-other-service": {
+            "hasLoggingTool": false
+        },
+        "ts-preserve-service": {
+            "hasLoggingTool": false
+        },
+        "ts-price-service": {
+            "hasLoggingTool": false
+        },
+        "ts-rebook-service": {
+            "hasLoggingTool": false
+        },
+        "ts-route-plan-service": {
+            "hasLoggingTool": false
+        },
+        "ts-route-service": {
+            "hasLoggingTool": false
+        },
+        "ts-seat-service": {
+            "hasLoggingTool": false
+        },
+        "ts-security-service": {
+            "hasLoggingTool": false
+        },
+        "ts-station-service": {
+            "hasLoggingTool": false
+        },
+        "ts-ticketinfo-service": {
+            "hasLoggingTool": false
+        },
+        "ts-train-service": {
+            "hasLoggingTool": false
+        },
+        "ts-travel-plan-service": {
+            "hasLoggingTool": false
+        },
+        "ts-travel-service": {
+            "hasLoggingTool": false
+        },
+        "ts-travel2-service": {
+            "hasLoggingTool": false
+        },
+        "ts-user-service": {
+            "hasLoggingTool": false
+        },
+        "system": {
+            "hasLoggingTool": false
+        }
+    },
+    "insufficient_monitoring": {
+        "system": {
+            "hasMonitoringTools": false
+        },
+        "ts-admin-basic-info-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-admin-order-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-admin-route-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-admin-travel-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-admin-user-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-assurance-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-auth-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-basic-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-cancel-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-common": {
+            "hasMonitoringTools": false
+        },
+        "ts-config-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-consign-price-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-consign-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-contacts-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-delivery-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-execute-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-food-map-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-food-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-inside-payment-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-news-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-notification-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-order-other-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-order-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-payment-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-preserve-other-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-preserve-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-price-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-rebook-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-route-plan-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-route-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-seat-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-security-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-station-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-ticketinfo-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-train-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-travel-plan-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-travel-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-travel2-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-user-service": {
+            "hasMonitoringTools": false
+        },
+        "ts-verification-code-service": {
+            "hasMonitoringTools": false
+        }
+    }
+}

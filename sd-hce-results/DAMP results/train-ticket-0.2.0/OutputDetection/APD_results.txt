@@ -1,0 +1,1049 @@
+=========================  General Information of System  =============================
+
+number of microservices : 40
+Total lines of code (LOCs) : 32983
+Total number of files : 740
+Avg LOCs per service : 824.575
+Avg Files per service : 18.5
+
+total number of apis: 244
+
+name of services:
+
+name: ts-admin-basic-info-service
+name: ts-admin-order-service
+name: ts-admin-route-service
+name: ts-admin-travel-service
+name: ts-admin-user-service
+name: ts-assurance-service
+name: ts-auth-service
+name: ts-basic-service
+name: ts-cancel-service
+name: ts-common
+name: ts-config-service
+name: ts-consign-price-service
+name: ts-consign-service
+name: ts-contacts-service
+name: ts-delivery-service
+name: ts-execute-service
+name: ts-food-map-service
+name: ts-food-service
+name: ts-inside-payment-service
+name: ts-news-service
+name: ts-notification-service
+name: ts-order-other-service
+name: ts-order-service
+name: ts-payment-service
+name: ts-preserve-other-service
+name: ts-preserve-service
+name: ts-price-service
+name: ts-rebook-service
+name: ts-route-plan-service
+name: ts-route-service
+name: ts-seat-service
+name: ts-security-service
+name: ts-station-service
+name: ts-ticketinfo-service
+name: ts-train-service
+name: ts-travel-plan-service
+name: ts-travel-service
+name: ts-travel2-service
+name: ts-user-service
+name: ts-verification-code-service
+#1
+Anti-Pattern Name: Wrong Cuts
+
+| Anti-Pattern | Status       |
+|--------------|--------------|
+| Wrong Cuts   | Not detected |
+
+===================================================================================
+
+#2
+Anti-Pattern Name: Mega Services
+
+| Anti-Pattern    | Status       |
+|-----------------|--------------|
+| Mega Services   | Not detected |
+
+===================================================================================
+
+#3
+Anti-Pattern Name: Nano Services
+
+| Anti-Pattern    | Status       |
+|-----------------|--------------|
+| Nano Services   | Detected     |
+
+### Characteristics of Detected Nano Services:
+
+Service Name            LOCs   LOC Threshold    #LOCs in system    #APIs  API Ratio   Total APIs
+------------------------------------------------------------------------------------------------
+ts-news-service           37          164.00              32983        0       0.00      244
+
+===================================================================================
+
+#4
+Anti-Pattern Name: Shared Libraries
+
+| Anti-Pattern     | Status       |
+|------------------|--------------|
+| Shared Libraries | Detected     |
+
+### Characteristics of Detected Shared Libraries:
+
+
+*** Shared Libraries in dependencies (Maven or Gradle files) were found:
+
+Dependency                               Used By Services                                            
+----------------------------------------------------------------------------------------------------
+ts-common                                ts-admin-basic-info-service, ts-admin-order-service, ts-admin-route-service, ts-admin-travel-service, ts-admin-user-service, ts-assurance-service, ts-auth-service, ts-basic-service, ts-cancel-service, ts-config-service, ts-consign-price-service, ts-consign-service, ts-contacts-service, ts-delivery-service, ts-execute-service, ts-food-map-service, ts-food-service, ts-inside-payment-service, ts-notification-service, ts-order-other-service, ts-order-service, ts-payment-service, ts-preserve-other-service, ts-preserve-service, ts-price-service, ts-rebook-service, ts-route-plan-service, ts-route-service, ts-seat-service, ts-security-service, ts-station-service, ts-ticketinfo-service, ts-train-service, ts-travel-plan-service, ts-travel-service, ts-travel2-service, ts-user-service, ts-verification-code-service
+jjwt                                     ts-auth-service, ts-common                                  
+spring-boot-starter-amqp                 ts-delivery-service, ts-food-service, ts-notification-service, ts-preserve-other-service, ts-preserve-service
+----------------------------------------------------------------------------------------------------
+
+
+===================================================================================
+
+#5
+Anti-Pattern Name: Hardcoded Endpoints
+
+| Anti-Pattern        | Status   |
+|---------------------|----------|
+| Hardcoded Endpoints | ======== |
+
+- Service `ts-admin-basic-info-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations, path: ..\projects\train-ticket-0.2.0/ts-admin-basic-info-service\src\main\java\adminbasic\service\AdminBasicInfoServiceImpl.java
+
+- Service `ts-admin-basic-info-service` has hardcoded HTTP URLs:
+  - http://ts-train-service:14567/api/v1/trainservice/trains, path: ..\projects\train-ticket-0.2.0/ts-admin-basic-info-service\src\main\java\adminbasic\service\AdminBasicInfoServiceImpl.java
+
+- Service `ts-admin-basic-info-service` has hardcoded HTTP URLs:
+  - http://ts-config-service:15679/api/v1/configservice/configs, path: ..\projects\train-ticket-0.2.0/ts-admin-basic-info-service\src\main\java\adminbasic\service\AdminBasicInfoServiceImpl.java
+
+- Service `ts-admin-basic-info-service` has hardcoded HTTP URLs:
+  - http://ts-price-service:16579/api/v1/priceservice/prices, path: ..\projects\train-ticket-0.2.0/ts-admin-basic-info-service\src\main\java\adminbasic\service\AdminBasicInfoServiceImpl.java
+
+- Service `ts-admin-basic-info-service` has hardcoded HTTP URLs:
+  - http://ts-contacts-service:12347/api/v1/contactservice/contacts, path: ..\projects\train-ticket-0.2.0/ts-admin-basic-info-service\src\main\java\adminbasic\service\AdminBasicInfoServiceImpl.java
+
+- Service `ts-admin-basic-info-service` has hardcoded HTTP URLs:
+  - http://ts-contacts-service:12347/api/v1/contactservice/contacts/, path: ..\projects\train-ticket-0.2.0/ts-admin-basic-info-service\src\main\java\adminbasic\service\AdminBasicInfoServiceImpl.java
+
+- Service `ts-admin-basic-info-service` has hardcoded HTTP URLs:
+  - http://ts-contacts-service:12347/api/v1/contactservice/contacts, path: ..\projects\train-ticket-0.2.0/ts-admin-basic-info-service\src\main\java\adminbasic\service\AdminBasicInfoServiceImpl.java
+
+- Service `ts-admin-basic-info-service` has hardcoded HTTP URLs:
+  - http://ts-contacts-service:12347/api/v1/contactservice/contacts/admin, path: ..\projects\train-ticket-0.2.0/ts-admin-basic-info-service\src\main\java\adminbasic\service\AdminBasicInfoServiceImpl.java
+
+- Service `ts-admin-basic-info-service` has hardcoded HTTP URLs:
+  - http://ts-train-service:14567/api/v1/trainservice/trains/, path: ..\projects\train-ticket-0.2.0/ts-admin-basic-info-service\src\main\java\adminbasic\service\AdminBasicInfoServiceImpl.java
+
+- Service `ts-admin-basic-info-service` has hardcoded HTTP URLs:
+  - http://ts-config-service:15679/api/v1/configservice/configs/, path: ..\projects\train-ticket-0.2.0/ts-admin-basic-info-service\src\main\java\adminbasic\service\AdminBasicInfoServiceImpl.java
+
+- Service `ts-admin-order-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order, path: ..\projects\train-ticket-0.2.0/ts-admin-order-service\src\main\java\adminorder\service\AdminOrderServiceImpl.java
+
+- Service `ts-admin-order-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther, path: ..\projects\train-ticket-0.2.0/ts-admin-order-service\src\main\java\adminorder\service\AdminOrderServiceImpl.java
+
+- Service `ts-admin-order-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/, path: ..\projects\train-ticket-0.2.0/ts-admin-order-service\src\main\java\adminorder\service\AdminOrderServiceImpl.java
+
+- Service `ts-admin-order-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, path: ..\projects\train-ticket-0.2.0/ts-admin-order-service\src\main\java\adminorder\service\AdminOrderServiceImpl.java
+
+- Service `ts-admin-order-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/admin, path: ..\projects\train-ticket-0.2.0/ts-admin-order-service\src\main\java\adminorder\service\AdminOrderServiceImpl.java
+
+- Service `ts-admin-order-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/admin, path: ..\projects\train-ticket-0.2.0/ts-admin-order-service\src\main\java\adminorder\service\AdminOrderServiceImpl.java
+
+- Service `ts-admin-order-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/admin, path: ..\projects\train-ticket-0.2.0/ts-admin-order-service\src\main\java\adminorder\service\AdminOrderServiceImpl.java
+
+- Service `ts-admin-order-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/admin, path: ..\projects\train-ticket-0.2.0/ts-admin-order-service\src\main\java\adminorder\service\AdminOrderServiceImpl.java
+
+- Service `ts-admin-route-service` has hardcoded HTTP URLs:
+  - http://ts-route-service:11178/api/v1/routeservice/routes, path: ..\projects\train-ticket-0.2.0/ts-admin-route-service\src\main\java\adminroute\service\AdminRouteServiceImpl.java
+
+- Service `ts-admin-route-service` has hardcoded HTTP URLs:
+  - http://ts-route-service:11178/api/v1/routeservice/routes, path: ..\projects\train-ticket-0.2.0/ts-admin-route-service\src\main\java\adminroute\service\AdminRouteServiceImpl.java
+
+- Service `ts-admin-route-service` has hardcoded HTTP URLs:
+  - http://ts-route-service:11178/api/v1/routeservice/routes/, path: ..\projects\train-ticket-0.2.0/ts-admin-route-service\src\main\java\adminroute\service\AdminRouteServiceImpl.java
+
+- Service `ts-admin-travel-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/admin_trip, path: ..\projects\train-ticket-0.2.0/ts-admin-travel-service\src\main\java\admintravel\service\AdminTravelServiceImpl.java
+
+- Service `ts-admin-travel-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/admin_trip, path: ..\projects\train-ticket-0.2.0/ts-admin-travel-service\src\main\java\admintravel\service\AdminTravelServiceImpl.java
+
+- Service `ts-admin-travel-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/trips, path: ..\projects\train-ticket-0.2.0/ts-admin-travel-service\src\main\java\admintravel\service\AdminTravelServiceImpl.java
+
+- Service `ts-admin-travel-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/trips, path: ..\projects\train-ticket-0.2.0/ts-admin-travel-service\src\main\java\admintravel\service\AdminTravelServiceImpl.java
+
+- Service `ts-admin-travel-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/trips, path: ..\projects\train-ticket-0.2.0/ts-admin-travel-service\src\main\java\admintravel\service\AdminTravelServiceImpl.java
+
+- Service `ts-admin-travel-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/trips, path: ..\projects\train-ticket-0.2.0/ts-admin-travel-service\src\main\java\admintravel\service\AdminTravelServiceImpl.java
+
+- Service `ts-admin-travel-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/trips/, path: ..\projects\train-ticket-0.2.0/ts-admin-travel-service\src\main\java\admintravel\service\AdminTravelServiceImpl.java
+
+- Service `ts-admin-travel-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/trips/, path: ..\projects\train-ticket-0.2.0/ts-admin-travel-service\src\main\java\admintravel\service\AdminTravelServiceImpl.java
+
+- Service `ts-admin-user-service` has hardcoded HTTP URLs:
+  - http://ts-user-service:12342/api/v1/userservice/users, path: ..\projects\train-ticket-0.2.0/ts-admin-user-service\src\main\java\adminuser\service\AdminUserServiceImpl.java
+
+- Service `ts-auth-service` has hardcoded HTTP URLs:
+  - http://ts-verification-code-service:15678/api/v1/verifycode/verify/, path: ..\projects\train-ticket-0.2.0/ts-auth-service\src\main\java\auth\service\impl\TokenServiceImpl.java
+
+- Service `ts-basic-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/id/, path: ..\projects\train-ticket-0.2.0/ts-basic-service\src\main\java\fdse\microservice\service\BasicServiceImpl.java
+
+- Service `ts-basic-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/id/, path: ..\projects\train-ticket-0.2.0/ts-basic-service\src\main\java\fdse\microservice\service\BasicServiceImpl.java
+
+- Service `ts-basic-service` has hardcoded HTTP URLs:
+  - http://ts-train-service:14567/api/v1/trainservice/trains/, path: ..\projects\train-ticket-0.2.0/ts-basic-service\src\main\java\fdse\microservice\service\BasicServiceImpl.java
+
+- Service `ts-basic-service` has hardcoded HTTP URLs:
+  - http://ts-route-service:11178/api/v1/routeservice/routes/, path: ..\projects\train-ticket-0.2.0/ts-basic-service\src\main\java\fdse\microservice\service\BasicServiceImpl.java
+
+- Service `ts-basic-service` has hardcoded HTTP URLs:
+  - http://ts-price-service:16579/api/v1/priceservice/prices/, path: ..\projects\train-ticket-0.2.0/ts-basic-service\src\main\java\fdse\microservice\service\BasicServiceImpl.java
+
+- Service `ts-cancel-service` has hardcoded HTTP URLs:
+  - http://ts-notification-service:17853/api/v1/notifyservice/notification/order_cancel_success, path: ..\projects\train-ticket-0.2.0/ts-cancel-service\src\main\java\cancel\service\CancelServiceImpl.java
+
+- Service `ts-cancel-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order, path: ..\projects\train-ticket-0.2.0/ts-cancel-service\src\main\java\cancel\service\CancelServiceImpl.java
+
+- Service `ts-cancel-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther, path: ..\projects\train-ticket-0.2.0/ts-cancel-service\src\main\java\cancel\service\CancelServiceImpl.java
+
+- Service `ts-cancel-service` has hardcoded HTTP URLs:
+  - http://ts-inside-payment-service:18673/api/v1/inside_pay_service/inside_payment/drawback/, path: ..\projects\train-ticket-0.2.0/ts-cancel-service\src\main\java\cancel\service\CancelServiceImpl.java
+
+- Service `ts-cancel-service` has hardcoded HTTP URLs:
+  - http://ts-user-service:12342/api/v1/userservice/users/id/, path: ..\projects\train-ticket-0.2.0/ts-cancel-service\src\main\java\cancel\service\CancelServiceImpl.java
+
+- Service `ts-cancel-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/, path: ..\projects\train-ticket-0.2.0/ts-cancel-service\src\main\java\cancel\service\CancelServiceImpl.java
+
+- Service `ts-cancel-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, path: ..\projects\train-ticket-0.2.0/ts-cancel-service\src\main\java\cancel\service\CancelServiceImpl.java
+
+- Service `ts-consign-service` has hardcoded HTTP URLs:
+  - http://ts-consign-price-service:16110/api/v1/consignpriceservice/consignprice/, path: ..\projects\train-ticket-0.2.0/ts-consign-service\src\main\java\consign\service\ConsignServiceImpl.java
+
+- Service `ts-consign-service` has hardcoded HTTP URLs:
+  - http://ts-consign-price-service:16110/api/v1/consignpriceservice/consignprice/, path: ..\projects\train-ticket-0.2.0/ts-consign-service\src\main\java\consign\service\ConsignServiceImpl.java
+
+- Service `ts-execute-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/status/, path: ..\projects\train-ticket-0.2.0/ts-execute-service\src\main\java\execute\serivce\ExecuteServiceImpl.java
+
+- Service `ts-execute-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/status/, path: ..\projects\train-ticket-0.2.0/ts-execute-service\src\main\java\execute\serivce\ExecuteServiceImpl.java
+
+- Service `ts-execute-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/, path: ..\projects\train-ticket-0.2.0/ts-execute-service\src\main\java\execute\serivce\ExecuteServiceImpl.java
+
+- Service `ts-execute-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, path: ..\projects\train-ticket-0.2.0/ts-execute-service\src\main\java\execute\serivce\ExecuteServiceImpl.java
+
+- Service `ts-food-service` has hardcoded HTTP URLs:
+  - http://ts-food-map-service:18855/api/v1/foodmapservice/trainfoods/, path: ..\projects\train-ticket-0.2.0/ts-food-service\src\main\java\foodsearch\service\FoodServiceImpl.java
+
+- Service `ts-food-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/routes/, path: ..\projects\train-ticket-0.2.0/ts-food-service\src\main\java\foodsearch\service\FoodServiceImpl.java
+
+- Service `ts-food-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/id/, path: ..\projects\train-ticket-0.2.0/ts-food-service\src\main\java\foodsearch\service\FoodServiceImpl.java
+
+- Service `ts-food-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/id/, path: ..\projects\train-ticket-0.2.0/ts-food-service\src\main\java\foodsearch\service\FoodServiceImpl.java
+
+- Service `ts-food-service` has hardcoded HTTP URLs:
+  - http://ts-food-map-service:18855/api/v1/foodmapservice/foodstores, path: ..\projects\train-ticket-0.2.0/ts-food-service\src\main\java\foodsearch\service\FoodServiceImpl.java
+
+- Service `ts-inside-payment-service` has hardcoded HTTP URLs:
+  - http://rest-service-external:16100/greet, path: ..\projects\train-ticket-0.2.0/ts-inside-payment-service\src\main\java\inside_payment\async\AsyncTask.java
+
+- Service `ts-inside-payment-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/, path: ..\projects\train-ticket-0.2.0/ts-inside-payment-service\src\main\java\inside_payment\service\InsidePaymentServiceImpl.java
+
+- Service `ts-inside-payment-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, path: ..\projects\train-ticket-0.2.0/ts-inside-payment-service\src\main\java\inside_payment\service\InsidePaymentServiceImpl.java
+
+- Service `ts-inside-payment-service` has hardcoded HTTP URLs:
+  - http://ts-payment-service:19001/api/v1/paymentservice/payment, path: ..\projects\train-ticket-0.2.0/ts-inside-payment-service\src\main\java\inside_payment\service\InsidePaymentServiceImpl.java
+
+- Service `ts-inside-payment-service` has hardcoded HTTP URLs:
+  - http://ts-payment-service:19001/api/v1/paymentservice/payment, path: ..\projects\train-ticket-0.2.0/ts-inside-payment-service\src\main\java\inside_payment\service\InsidePaymentServiceImpl.java
+
+- Service `ts-inside-payment-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/status/, path: ..\projects\train-ticket-0.2.0/ts-inside-payment-service\src\main\java\inside_payment\service\InsidePaymentServiceImpl.java
+
+- Service `ts-inside-payment-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/status/, path: ..\projects\train-ticket-0.2.0/ts-inside-payment-service\src\main\java\inside_payment\service\InsidePaymentServiceImpl.java
+
+- Service `ts-order-other-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/namelist, path: ..\projects\train-ticket-0.2.0/ts-order-other-service\src\main\java\other\service\OrderOtherServiceImpl.java
+
+- Service `ts-order-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/namelist, path: ..\projects\train-ticket-0.2.0/ts-order-service\src\main\java\order\service\OrderServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-seat-service:18898/api/v1/seatservice/seats, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-user-service:12342/api/v1/userservice/users/id/, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-assurance-service:18888/api/v1/assuranceservice/assurances/, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/id/, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-security-service:11188/api/v1/securityservice/securityConfigs/, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/trip_detail, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-contacts-service:12347/api/v1/contactservice/contacts/, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-food-service:18856/api/v1/foodservice/orders, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-other-service` has hardcoded HTTP URLs:
+  - http://ts-consign-service:16111/api/v1/consignservice/consigns, path: ..\projects\train-ticket-0.2.0/ts-preserve-other-service\src\main\java\preserveOther\service\PreserveOtherServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-seat-service:18898/api/v1/seatservice/seats, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-user-service:12342/api/v1/userservice/users/id/, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-assurance-service:18888/api/v1/assuranceservice/assurances/, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/id/, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-security-service:11188/api/v1/securityservice/securityConfigs/, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/trip_detail, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-contacts-service:12347/api/v1/contactservice/contacts/, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-food-service:18856/api/v1/foodservice/orders, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-preserve-service` has hardcoded HTTP URLs:
+  - http://ts-consign-service:16111/api/v1/consignservice/consigns, path: ..\projects\train-ticket-0.2.0/ts-preserve-service\src\main\java\preserve\service\PreserveServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-seat-service:18898/api/v1/seatservice/seats, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/trip_detail, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/trip_detail, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/name/, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-inside-payment-service:18673/api/v1/inside_pay_service/inside_payment/difference, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-rebook-service` has hardcoded HTTP URLs:
+  - http://ts-inside-payment-service:18673/api/v1/inside_pay_service/inside_payment/drawback/, path: ..\projects\train-ticket-0.2.0/ts-rebook-service\src\main\java\rebook\service\RebookServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-route-service:11178/api/v1/routeservice/routes/, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/trips/routes, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/trips/routes, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/trip_detail, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/trip_detail, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/id/, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-route-service:11178/api/v1/routeservice/routes/, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/trips/left, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/trips/left, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/routes/, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-route-plan-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/routes/, path: ..\projects\train-ticket-0.2.0/ts-route-plan-service\src\main\java\plan\service\RoutePlanServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/routes/, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/tickets, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/train_types/, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/routes/, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/tickets, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/train_types/, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/routes/, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/tickets, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/train_types/, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/routes/, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/tickets, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/train_types/, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-seat-service` has hardcoded HTTP URLs:
+  - http://ts-config-service:15679/api/v1/configservice/configs/, path: ..\projects\train-ticket-0.2.0/ts-seat-service\src\main\java\seat\service\SeatServiceImpl.java
+
+- Service `ts-security-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/security/, path: ..\projects\train-ticket-0.2.0/ts-security-service\src\main\java\security\service\SecurityServiceImpl.java
+
+- Service `ts-security-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/security/, path: ..\projects\train-ticket-0.2.0/ts-security-service\src\main\java\security\service\SecurityServiceImpl.java
+
+- Service `ts-ticketinfo-service` has hardcoded HTTP URLs:
+  - http://ts-basic-service:15680/api/v1/basicservice/basic/travel, path: ..\projects\train-ticket-0.2.0/ts-ticketinfo-service\src\main\java\ticketinfo\service\TicketInfoServiceImpl.java
+
+- Service `ts-ticketinfo-service` has hardcoded HTTP URLs:
+  - http://ts-basic-service:15680/api/v1/basicservice/basic/, path: ..\projects\train-ticket-0.2.0/ts-ticketinfo-service\src\main\java\ticketinfo\service\TicketInfoServiceImpl.java
+
+- Service `ts-travel-plan-service` has hardcoded HTTP URLs:
+  - http://ts-seat-service:18898/api/v1/seatservice/seats/left_tickets, path: ..\projects\train-ticket-0.2.0/ts-travel-plan-service\src\main\java\travelplan\service\TravelPlanServiceImpl.java
+
+- Service `ts-travel-plan-service` has hardcoded HTTP URLs:
+  - http://ts-route-plan-service:14578/api/v1/routeplanservice/routePlan/cheapestRoute, path: ..\projects\train-ticket-0.2.0/ts-travel-plan-service\src\main\java\travelplan\service\TravelPlanServiceImpl.java
+
+- Service `ts-travel-plan-service` has hardcoded HTTP URLs:
+  - http://ts-route-plan-service:14578/api/v1/routeplanservice/routePlan/quickestRoute, path: ..\projects\train-ticket-0.2.0/ts-travel-plan-service\src\main\java\travelplan\service\TravelPlanServiceImpl.java
+
+- Service `ts-travel-plan-service` has hardcoded HTTP URLs:
+  - http://ts-route-plan-service:14578/api/v1/routeplanservice/routePlan/minStopStations, path: ..\projects\train-ticket-0.2.0/ts-travel-plan-service\src\main\java\travelplan\service\TravelPlanServiceImpl.java
+
+- Service `ts-travel-plan-service` has hardcoded HTTP URLs:
+  - http://ts-travel-service:12346/api/v1/travelservice/trips/left, path: ..\projects\train-ticket-0.2.0/ts-travel-plan-service\src\main\java\travelplan\service\TravelPlanServiceImpl.java
+
+- Service `ts-travel-plan-service` has hardcoded HTTP URLs:
+  - http://ts-travel2-service:16346/api/v1/travel2service/trips/left, path: ..\projects\train-ticket-0.2.0/ts-travel-plan-service\src\main\java\travelplan\service\TravelPlanServiceImpl.java
+
+- Service `ts-travel-plan-service` has hardcoded HTTP URLs:
+  - http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo/, path: ..\projects\train-ticket-0.2.0/ts-travel-plan-service\src\main\java\travelplan\service\TravelPlanServiceImpl.java
+
+- Service `ts-travel-plan-service` has hardcoded HTTP URLs:
+  - http://ts-station-service:12345/api/v1/stationservice/stations/namelist, path: ..\projects\train-ticket-0.2.0/ts-travel-plan-service\src\main\java\travelplan\service\TravelPlanServiceImpl.java
+
+- Service `ts-travel-service` has hardcoded HTTP URLs:
+  - http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo, path: ..\projects\train-ticket-0.2.0/ts-travel-service\src\main\java\travel\service\TravelServiceImpl.java
+
+- Service `ts-travel-service` has hardcoded HTTP URLs:
+  - http://ts-order-service:12031/api/v1/orderservice/order/, path: ..\projects\train-ticket-0.2.0/ts-travel-service\src\main\java\travel\service\TravelServiceImpl.java
+
+- Service `ts-travel-service` has hardcoded HTTP URLs:
+  - http://ts-train-service:14567/api/v1/trainservice/trains/, path: ..\projects\train-ticket-0.2.0/ts-travel-service\src\main\java\travel\service\TravelServiceImpl.java
+
+- Service `ts-travel-service` has hardcoded HTTP URLs:
+  - http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo/, path: ..\projects\train-ticket-0.2.0/ts-travel-service\src\main\java\travel\service\TravelServiceImpl.java
+
+- Service `ts-travel-service` has hardcoded HTTP URLs:
+  - http://ts-route-service:11178/api/v1/routeservice/routes/, path: ..\projects\train-ticket-0.2.0/ts-travel-service\src\main\java\travel\service\TravelServiceImpl.java
+
+- Service `ts-travel-service` has hardcoded HTTP URLs:
+  - http://ts-seat-service:18898/api/v1/seatservice/seats/left_tickets, path: ..\projects\train-ticket-0.2.0/ts-travel-service\src\main\java\travel\service\TravelServiceImpl.java
+
+- Service `ts-travel2-service` has hardcoded HTTP URLs:
+  - http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo, path: ..\projects\train-ticket-0.2.0/ts-travel2-service\src\main\java\travel2\service\Travel2ServiceImpl.java
+
+- Service `ts-travel2-service` has hardcoded HTTP URLs:
+  - http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/, path: ..\projects\train-ticket-0.2.0/ts-travel2-service\src\main\java\travel2\service\Travel2ServiceImpl.java
+
+- Service `ts-travel2-service` has hardcoded HTTP URLs:
+  - http://ts-train-service:14567/api/v1/trainservice/trains/, path: ..\projects\train-ticket-0.2.0/ts-travel2-service\src\main\java\travel2\service\Travel2ServiceImpl.java
+
+- Service `ts-travel2-service` has hardcoded HTTP URLs:
+  - http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo/, path: ..\projects\train-ticket-0.2.0/ts-travel2-service\src\main\java\travel2\service\Travel2ServiceImpl.java
+
+- Service `ts-travel2-service` has hardcoded HTTP URLs:
+  - http://ts-route-service:11178/api/v1/routeservice/routes/, path: ..\projects\train-ticket-0.2.0/ts-travel2-service\src\main\java\travel2\service\Travel2ServiceImpl.java
+
+- Service `ts-travel2-service` has hardcoded HTTP URLs:
+  - http://ts-seat-service:18898/api/v1/seatservice/seats/left_tickets, path: ..\projects\train-ticket-0.2.0/ts-travel2-service\src\main\java\travel2\service\Travel2ServiceImpl.java
+
+- Service `ts-user-service` has hardcoded HTTP URLs:
+  - http://ts-auth-service:12340/api/v1, path: ..\projects\train-ticket-0.2.0/ts-user-service\src\main\java\user\service\impl\UserServiceImpl.java
+
+- Service `ts-user-service` has hardcoded HTTP URLs:
+  - http://ts-auth-service:12340/api/v1/auth, path: ..\projects\train-ticket-0.2.0/ts-user-service\src\main\java\user\service\impl\UserServiceImpl.java
+
+- System has hardcoded HTTP URLs:
+
+  - http://elasticsearch-logging:9200/_search?pretty, path: 
+  - http://elasticsearch-logging:9200, path: 
+  - http://ts-travel-service:12346;, path: 
+  - http://ts-travel2-service:16346;, path: 
+  - http://ts-user-service:12342;, path: 
+  - http://ts-auth-service:12340;, path: 
+  - http://ts-auth-service:12340;, path: 
+  - http://ts-verification-code-service:15678;, path: 
+  - http://ts-station-service:12345;, path: 
+  - http://ts-train-service:14567;, path: 
+  - http://ts-config-service:15679;, path: 
+  - http://ts-security-service:11188;, path: 
+  - http://ts-execute-service:12386;, path: 
+  - http://ts-execute-service:12386;, path: 
+  - http://ts-contacts-service:12347;, path: 
+  - http://ts-contacts-service:12347;, path: 
+  - http://ts-order-service:12031;, path: 
+  - http://ts-order-other-service:12032;, path: 
+  - http://ts-preserve-service:14568;, path: 
+  - http://ts-preserve-other-service:14569;, path: 
+  - http://ts-price-service:16579;, path: 
+  - http://ts-price-service:16579;, path: 
+  - http://ts-price-service:16579;, path: 
+  - http://ts-price-service:16579;, path: 
+  - http://ts-price-service:16579;, path: 
+  - http://ts-basic-service:15680;, path: 
+  - http://ts-ticketinfo-service:15681;, path: 
+  - http://ts-notification-service:17853;, path: 
+  - http://ts-notification-service:17853;, path: 
+  - http://ts-notification-service:17853;, path: 
+  - http://ts-inside-payment-service:18673;, path: 
+  - http://ts-payment-service:19001;, path: 
+  - http://ts-payment-service:19001;, path: 
+  - http://ts-payment-service:19001;, path: 
+  - http://ts-rebook-service:18886;, path: 
+  - http://ts-cancel-service:18885;, path: 
+  - http://ts-cancel-service:18885;, path: 
+  - http://ts-station-service:12345;, path: 
+  - http://ts-rebook-service:18886;, path: 
+  - http://ts-rebook-service:18886;, path: 
+  - http://ts-route-service:11178;, path: 
+  - http://ts-route-service:11178;, path: 
+  - http://ts-route-service:11178;, path: 
+  - http://ts-route-service:11178;, path: 
+  - http://ts-route-service:11178;, path: 
+  - http://ts-assurance-service:18888;, path: 
+  - http://ts-assurance-service:18888;, path: 
+  - http://ts-assurance-service:18888;, path: 
+  - http://ts-assurance-service:18888;, path: 
+  - http://ts-assurance-service:18888;, path: 
+  - http://ts-assurance-service:18888;, path: 
+  - http://ts-assurance-service:18888;, path: 
+  - http://ts-assurance-service:18888;, path: 
+  - http://ts-ticket-office-service:16108;, path: 
+  - http://ts-ticket-office-service:16108;, path: 
+  - http://ts-ticket-office-service:16108;, path: 
+  - http://ts-ticket-office-service:16108;, path: 
+  - http://ts-ticket-office-service:16108;, path: 
+  - http://ts-ticket-office-service:16108;, path: 
+  - http://ts-travel-plan-service:14322;, path: 
+  - http://ts-travel-plan-service:14322;, path: 
+  - http://ts-travel-plan-service:14322;, path: 
+  - http://ts-travel-plan-service:14322;, path: 
+  - http://ts-consign-service:16111;, path: 
+  - http://ts-consign-service:16111;, path: 
+  - http://ts-voucher-service:16101;, path: 
+  - http://ts-route-plan-service:14578;, path: 
+  - http://ts-route-plan-service:14578;, path: 
+  - http://ts-route-plan-service:14578;, path: 
+  - http://ts-food-service:18856;, path: 
+  - http://ts-food-service:18856;, path: 
+  - http://ts-food-service:18856;, path: 
+  - http://ts-food-service:18856;, path: 
+  - http://ts-food-service:18856;, path: 
+  - http://ts-food-service:18856;, path: 
+  - http://ts-news-service:12862;, path: 
+  - http://ts-admin-basic-info-service:18767;, path: 
+  - http://ts-admin-basic-info-service:18767;, path: 
+  - http://ts-admin-basic-info-service:18767;, path: 
+  - http://ts-admin-basic-info-service:18767;, path: 
+  - http://ts-admin-basic-info-service:18767;, path: 
+  - http://ts-admin-order-service:16112;, path: 
+  - http://ts-admin-route-service:16113;, path: 
+  - http://ts-admin-travel-service:16114;, path: 
+  - http://ts-admin-user-service:16115;, path: 
+  - http://ts-avatar-service:17001;, path: 
+
+
+===================================================================================
+
+
+===================================================================================
+
+#6
+Anti-Pattern Name: Manual Configuration
+
+| Anti-Pattern         | Status       |
+|----------------------|--------------|
+| Manual Configuration | Detected     |
+
+===================================================================================
+
+#7
+Anti-Pattern Name: NoCICD (Missing CI/CD Pipeline)
+
+| Anti-Pattern | Status       |
+|--------------|--------------|
+| NoCICD       | Not detected |
+
+## CI/CD Pipeline has been found.
+
+---------- Detection Details in the System Level ---------- 
+- Detected CI/CD Keywords in config files: [['jenkins', 'docker build']]
+
+===================================================================================
+
+#8
+Anti-Pattern Name: No API Gateway (NAG)
+
+| Anti-Pattern         | Status       |
+|----------------------|--------------|
+| No API Gateway (NAG) | Detected     |
+
+
+No API Gateway tools were detected in the system
+
+
+===================================================================================
+
+#9
+Anti-Pattern Name: Timeouts (TO)
+
+| Anti-Pattern         | Status       |
+|----------------------|--------------|
+| Timeouts (TO)        | Not detected |
+
+===================================================================================
+
+#10
+Anti-Pattern Name: Multiple Services Per Host (MSPH)
+
+| Anti-Pattern                     | Status       |
+|----------------------------------|--------------|
+| Multiple Services Per Host (MSPH)| Not detected |
+
+
+- The system includes a docker-compose file.
+- service ts-admin-basic-info-service has a Dockerfile
+- service ts-admin-order-service has a Dockerfile
+- service ts-admin-route-service has a Dockerfile
+- service ts-admin-travel-service has a Dockerfile
+- service ts-admin-user-service has a Dockerfile
+- service ts-assurance-service has a Dockerfile
+- service ts-auth-service has a Dockerfile
+- service ts-basic-service has a Dockerfile
+- service ts-cancel-service has a Dockerfile
+- service ts-config-service has a Dockerfile
+- service ts-consign-price-service has a Dockerfile
+- service ts-consign-service has a Dockerfile
+- service ts-contacts-service has a Dockerfile
+- service ts-delivery-service has a Dockerfile
+- service ts-execute-service has a Dockerfile
+- service ts-food-map-service has a Dockerfile
+- service ts-food-service has a Dockerfile
+- service ts-inside-payment-service has a Dockerfile
+- service ts-news-service has a Dockerfile
+- service ts-notification-service has a Dockerfile
+- service ts-order-other-service has a Dockerfile
+- service ts-order-service has a Dockerfile
+- service ts-payment-service has a Dockerfile
+- service ts-preserve-other-service has a Dockerfile
+- service ts-preserve-service has a Dockerfile
+- service ts-price-service has a Dockerfile
+- service ts-rebook-service has a Dockerfile
+- service ts-route-plan-service has a Dockerfile
+- service ts-route-service has a Dockerfile
+- service ts-seat-service has a Dockerfile
+- service ts-security-service has a Dockerfile
+- service ts-station-service has a Dockerfile
+- service ts-ticketinfo-service has a Dockerfile
+- service ts-train-service has a Dockerfile
+- service ts-travel-plan-service has a Dockerfile
+- service ts-travel-service has a Dockerfile
+- service ts-travel2-service has a Dockerfile
+- service ts-user-service has a Dockerfile
+- service ts-verification-code-service has a Dockerfile
+
+===================================================================================
+
+#11
+Anti-Pattern Name: Shared Persistence
+
+| Anti-Pattern         | Status       |
+|----------------------|--------------|
+| Shared Persistence   | Not detected |
+
+
+- No shared databases were found among the microservices.
+===================================================================================
+
+#12
+Anti-Pattern Name: No API Versioning
+
+| Anti-Pattern         | Status       |
+|----------------------|--------------|
+| No API Versioning    | Not detected |
+
+
+- The API versioning tool in the system level was detected.
+
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\fault-inject-deployment\destination-rule-fault.yaml as apiVersion: networking.istio.io/v1alpha3
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\fault-inject-deployment\fault-inject-deployment.yaml as apiVersion: extensions/v1beta1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\fault-inject-deployment\virtual-services-fault.yaml as apiVersion: networking.istio.io/v1alpha3
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\efk-deployment\es-service.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\efk-deployment\es-statefulset.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\efk-deployment\es-statefulset.yaml as apiVersion: rbac.authorization.k8s.io/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\efk-deployment\es-statefulset.yaml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\efk-deployment\fluentd-es-configmap.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\efk-deployment\fluentd-es-ds.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\efk-deployment\fluentd-es-ds.yaml as apiVersion: rbac.authorization.k8s.io/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\efk-deployment\fluentd-es-ds.yaml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\efk-deployment\kibana-deployment.yaml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\efk-deployment\kibana-service.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-istio\trainticket-gateway.yaml as apiVersion: networking.istio.io/v1alpha3
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-istio\ts-deployment-part1.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-istio\ts-deployment-part1.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-istio\ts-deployment-part2.yml as # apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-istio\ts-deployment-part2.yml as # apiVersion: extensions/v1beta1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-istio\ts-deployment-part2.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-istio\ts-deployment-part2.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-istio\ts-deployment-part3.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-istio\ts-deployment-part3.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-jaeger\ts-deployment-part1.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-jaeger\ts-deployment-part1.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-jaeger\ts-deployment-part2.yml as # apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-jaeger\ts-deployment-part2.yml as # apiVersion: extensions/v1beta1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-jaeger\ts-deployment-part2.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-jaeger\ts-deployment-part2.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-jaeger\ts-deployment-part3.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\k8s-with-jaeger\ts-deployment-part3.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\configmap.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\grafana.yaml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\grafana.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\kube-state-metrics.yaml as apiVersion: rbac.authorization.k8s.io/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\kube-state-metrics.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\kube-state-metrics.yaml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\node-exporter.yaml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\node-exporter.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\prometheus.yaml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\prometheus.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\rbac.yaml as apiVersion: rbac.authorization.k8s.io/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\prometheus-deployment\rbac.yaml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s\quickstart-ts-deployment-part1.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s\quickstart-ts-deployment-part1.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s\quickstart-ts-deployment-part2.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s\quickstart-ts-deployment-part2.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s\quickstart-ts-deployment-part3.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s\quickstart-ts-deployment-part3.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s-pvc-nfs\quickstart-ts-deployment-part1.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s-pvc-nfs\quickstart-ts-deployment-part1.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s-pvc-nfs\quickstart-ts-deployment-part2.yml as # apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s-pvc-nfs\quickstart-ts-deployment-part2.yml as # apiVersion: extensions/v1beta1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s-pvc-nfs\quickstart-ts-deployment-part2.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s-pvc-nfs\quickstart-ts-deployment-part2.yml as apiVersion: v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s-pvc-nfs\quickstart-ts-deployment-part3.yml as apiVersion: apps/v1
+ API Version found in ..\projects\train-ticket-0.2.0\deployment\kubernetes-manifests\quickstart-k8s-pvc-nfs\quickstart-ts-deployment-part3.yml as apiVersion: v1
+- The uri versioning in the system level was detected.
+
+ uri Version found in /api/v1/users
+
+===================================================================================
+
+#13
+Anti-Pattern Name: No Health Check
+
+| Anti-Pattern     | Status       |
+|------------------|--------------|
+| No Health Check  | Not detected |
+
+
+- Health Check tool in the system level was detected.
+
+ Health Check tool found in spring-boot-starter-actuator.
+- In service ts-admin-basic-info-service, Health Check was observed in the  ['spring-boot-starter-actuator'].
+
+- In service ts-food-map-service, Health Check was observed in the  ['spring-boot-starter-actuator'].
+
+- In service ts-food-service, Health Check was observed in the  ['spring-boot-starter-actuator'].
+
+
+===================================================================================
+
+#14
+Anti-Pattern Name: Local Logging (LL)
+
+| Anti-Pattern        | Status       |
+|---------------------|--------------|
+| Local Logging (LL)  | Not detected |
+
+
+
+- Centralized Logging tool in the service level was detected.
+    ** In service ts-verification-code-service, Centralized Logging was observed in the ['guava'].
+
+
+ *****************Aditional Information****************- Local Logging antipattern in the system level was detected.
+    ** Local Logging tool found in logback-classic.
+
+- Local Logging tool in the service level was detected.
+    ** In service ts-admin-basic-info-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-admin-order-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-admin-route-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-admin-travel-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-admin-user-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-assurance-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-auth-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-basic-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-cancel-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-common:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-config-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-consign-price-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-consign-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-contacts-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-delivery-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-execute-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-food-map-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-food-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-inside-payment-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-notification-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-order-other-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-order-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-payment-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-preserve-other-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-preserve-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-price-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-rebook-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-route-plan-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-route-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-seat-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-security-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-station-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-ticketinfo-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-train-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-travel-plan-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-travel-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-travel2-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-user-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+    ** In service ts-verification-code-service:
+         -Local Logging was observed in the ['org.slf4j.Logger', 'org.slf4j.LoggerFactory'] imports.
+
+
+
+===================================================================================
+
+#15
+Anti-Pattern Name: Insufficient Monitoring
+
+| Anti-Pattern            | Status       |
+|-------------------------|--------------|
+| Insufficient Monitoring | Not detected |
+
+
+- Monitoring tool in the system level was detected.
+    ** Monitoring tool found in spring-boot-starter-actuator.
+
+- Monitoring tool in the service level was detected.
+    ** In service ts-admin-basic-info-service, Monitoring was observed in the ['spring-boot-starter-actuator'].
+    ** In service ts-food-map-service, Monitoring was observed in the ['spring-boot-starter-actuator'].
+    ** In service ts-food-service, Monitoring was observed in the ['spring-boot-starter-actuator'].
+
+===================================================================================
+

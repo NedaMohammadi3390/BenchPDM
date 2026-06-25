@@ -1,0 +1,1498 @@
+{
+    "system": {
+        "folders": [
+            "config-service",
+            "delivery-client",
+            "delivery-service",
+            "edge-service",
+            "eureka-service"
+        ],
+        "dependencies": [],
+        "language": "",
+        "config_files": [],
+        "http": [],
+        "microservices": [
+            {
+                "name": "config-service",
+                "language": {
+                    "Type": "java",
+                    "Percentage": "100.00"
+                },
+                "nb_files": "4",
+                "locs": "77",
+                "dependencies": [
+                    "spring-cloud-config-server",
+                    "spring-boot-starter-test",
+                    "spring-cloud-dependencies"
+                ],
+                "code": {
+                    "file uris": [
+                        [
+                            {
+                                "service name": "config-service",
+                                "files": [
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\config-service\\src\\main\\java\\io\\mattslater\\ConfigServiceApplication.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    }
+                                ]
+                            }
+                        ]
+                    ],
+                    "class": [
+                        [
+                            "ConfigServiceApplication",
+                            "src.main.io.mattslater.ConfigServiceApplication"
+                        ],
+                        [
+                            "ConfigServiceApplicationTests",
+                            "src.test.io.mattslater.ConfigServiceApplicationTests"
+                        ]
+                    ],
+                    "imports": [
+                        "..\\projects\\delivery-system-master/config-service\\src\\main\\java\\io\\mattslater\\ConfigServiceApplication.java/org.springframework.boot.SpringApplication",
+                        "..\\projects\\delivery-system-master/config-service\\src\\main\\java\\io\\mattslater\\ConfigServiceApplication.java/org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "..\\projects\\delivery-system-master/config-service\\src\\main\\java\\io\\mattslater\\ConfigServiceApplication.java/org.springframework.cloud.config.server.EnableConfigServer"
+                    ],
+                    "annotations": [
+                        "..\\projects\\delivery-system-master/config-service\\src\\main\\java\\io\\mattslater\\ConfigServiceApplication.java/EnableConfigServer",
+                        "..\\projects\\delivery-system-master/config-service\\src\\main\\java\\io\\mattslater\\ConfigServiceApplication.java/SpringBootApplication"
+                    ],
+                    "declared_annotations": [],
+                    "methods": [
+                        "..\\projects\\delivery-system-master/config-service\\src\\main\\java\\io\\mattslater\\ConfigServiceApplication.java/main"
+                    ],
+                    "Fields": [],
+                    "Local Variables": [],
+                    "Method Parameters": [
+                        {
+                            "name": "args",
+                            "type": "String"
+                        }
+                    ],
+                    "http": [],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "..\\projects\\delivery-system-master/config-service\\pom.xml",
+                        "..\\projects\\delivery-system-master/config-service\\src\\main\\java\\io\\mattslater\\ConfigServiceApplication.java",
+                        "..\\projects\\delivery-system-master/config-service\\src\\main\\resources\\application.properties",
+                        "..\\projects\\delivery-system-master/config-service\\src\\test\\java\\io\\mattslater\\ConfigServiceApplicationTests.java"
+                    ],
+                    "APIs": {
+                        "number": 0,
+                        "apis": []
+                    },
+                    "feature_method": {
+                        "methodReturnType": [
+                            {
+                                "fileName": "ConfigServiceApplication.java",
+                                "className": "ConfigServiceApplication",
+                                "methodName": "main",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "ConfigServiceApplicationTests.java",
+                                "className": "ConfigServiceApplicationTests",
+                                "methodName": "contextLoads",
+                                "returnType": "void"
+                            }
+                        ],
+                        "methodGenericReturnType": [],
+                        "methodParamType": [
+                            {
+                                "fileName": "ConfigServiceApplication.java",
+                                "className": "ConfigServiceApplication",
+                                "methodName": "main",
+                                "param_types": [
+                                    "String"
+                                ]
+                            }
+                        ],
+                        "methodLocalType": []
+                    }
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\delivery-system-master/config-service\\src\\main\\resources\\application.properties",
+                        "..\\projects\\delivery-system-master/config-service\\pom.xml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "delivery-service",
+                "language": {
+                    "Type": "javascript",
+                    "Percentage": "96.86"
+                },
+                "nb_files": "15",
+                "locs": "9019",
+                "dependencies": [
+                    "spring-cloud-starter-eureka",
+                    "spring-boot-starter-actuator",
+                    "spring-cloud-starter-config",
+                    "spring-cloud-starter-zipkin",
+                    "spring-cloud-starter-stream-rabbit",
+                    "spring-boot-starter-web",
+                    "spring-boot-starter-websocket",
+                    "spring-boot-starter-data-rest",
+                    "spring-boot-starter-data-jpa",
+                    "spring-boot-devtools",
+                    "h2",
+                    "spring-boot-starter-test",
+                    "spring-cloud-dependencies"
+                ],
+                "code": {
+                    "file uris": [
+                        [
+                            {
+                                "service name": "delivery-service",
+                                "files": [
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": [
+                                            {
+                                                "method_type": "-",
+                                                "@RequestMapping": "",
+                                                "uri": "/message",
+                                                "method_name": "message"
+                                            },
+                                            {
+                                                "method_type": "-",
+                                                "@RequestMapping": "",
+                                                "uri": "/opendeliveries",
+                                                "method_name": "getOpenDeliveries"
+                                            },
+                                            {
+                                                "method_type": "-",
+                                                "@RequestMapping": "",
+                                                "uri": "/new",
+                                                "method_name": "newDelivery"
+                                            },
+                                            {
+                                                "method_type": "-",
+                                                "@RequestMapping": "",
+                                                "uri": "/del/{id}",
+                                                "method_name": "delete"
+                                            },
+                                            {
+                                                "method_type": "-",
+                                                "@RequestMapping": "",
+                                                "uri": "/del/{id}",
+                                                "method_name": "update"
+                                            },
+                                            {
+                                                "method_type": "-",
+                                                "@RequestMapping": "",
+                                                "uri": "/del/{id}",
+                                                "method_name": "get"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryServiceChannels.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\delivery-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    }
+                                ]
+                            }
+                        ]
+                    ],
+                    "class": [
+                        [
+                            "DeliveryServiceApplication",
+                            "src.main.io.mattslater.DeliveryServiceApplication"
+                        ],
+                        [
+                            "WebSocketConfig",
+                            "src.main.io.mattslater.config.WebSocketConfig"
+                        ],
+                        [
+                            "DeliveryController",
+                            "src.main.io.mattslater.controller.DeliveryController"
+                        ],
+                        [
+                            "DeliveryProcessor",
+                            "src.main.io.mattslater.messaging.DeliveryProcessor"
+                        ],
+                        [
+                            "Delivery",
+                            "src.main.io.mattslater.model.Delivery"
+                        ],
+                        [
+                            "SubmittedDelivery",
+                            "src.main.io.mattslater.model.SubmittedDelivery"
+                        ],
+                        [
+                            "DeliveryServiceApplicationTests",
+                            "src.test.io.mattslater.DeliveryServiceApplicationTests"
+                        ]
+                    ],
+                    "imports": [
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/io.mattslater.messaging.DeliveryServiceChannels",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/io.mattslater.model.Delivery",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/io.mattslater.repos.DeliveryRepository",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/org.springframework.boot.CommandLineRunner",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/org.springframework.boot.SpringApplication",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/org.springframework.cloud.netflix.eureka.EnableEurekaClient",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/org.springframework.cloud.stream.annotation.EnableBinding",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/org.springframework.cloud.stream.messaging.Sink",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/org.springframework.context.annotation.Bean",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/java.util.Arrays",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java/org.springframework.context.annotation.Configuration",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java/org.springframework.messaging.simp.config.MessageBrokerRegistry",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java/org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java/org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java/org.springframework.web.socket.config.annotation.StompEndpointRegistry",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/io.mattslater.model.Delivery",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/io.mattslater.repos.DeliveryRepository",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/org.springframework.beans.factory.annotation.Autowired",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/org.springframework.beans.factory.annotation.Value",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/org.springframework.messaging.simp.SimpMessagingTemplate",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/org.springframework.web.bind.annotation",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/java.util.List",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/io.mattslater.model.Delivery",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/io.mattslater.model.SubmittedDelivery",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/io.mattslater.repos.DeliveryRepository",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/org.springframework.beans.factory.annotation.Autowired",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/org.springframework.cloud.stream.messaging.Sink",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/org.springframework.integration.annotation.MessageEndpoint",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/org.springframework.integration.annotation.ServiceActivator",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/org.springframework.messaging.Message",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryServiceChannels.java/org.springframework.cloud.stream.annotation.Input",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryServiceChannels.java/org.springframework.messaging.SubscribableChannel",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/javax.persistence.Entity",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/javax.persistence.GeneratedValue",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/javax.persistence.GenerationType",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/javax.persistence.Id",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/java.io.Serializable",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java/io.mattslater.model.Delivery",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java/org.springframework.data.repository.PagingAndSortingRepository",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java/org.springframework.data.rest.core.annotation.RepositoryRestResource",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java/org.springframework.data.rest.core.annotation.RestResource",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java/org.springframework.stereotype.Repository",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java/java.util.List"
+                    ],
+                    "annotations": [
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/EnableBinding",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/EnableEurekaClient",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/SpringBootApplication",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/Bean",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java/Configuration",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java/EnableWebSocketMessageBroker",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java/Override",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/RestController",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/Value",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/Autowired",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/RequestMapping",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/ResponseBody",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/RequestBody",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/PathVariable",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/MessageEndpoint",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/Autowired",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/ServiceActivator",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryServiceChannels.java/Input",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/Entity",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/Id",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/GeneratedValue",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/Override",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java/RepositoryRestResource",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java/RestResource"
+                    ],
+                    "declared_annotations": [],
+                    "methods": [
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/runner",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java/main",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java/configureMessageBroker",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java/registerStompEndpoints",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/updateListandBroadcast",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/message",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/getOpenDeliveries",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/newDelivery",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/delete",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/update",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java/get",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java/onNewDelivery",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryServiceChannels.java/input",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/getOrigin",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/setOrigin",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/getDestination",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/setDestination",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/isDelivered",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/setDelivered",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/getId",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/setId",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/toString",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java/getOrigin",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java/setOrigin",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java/getDestination",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java/setDestination",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java/findByDeliveredFalse"
+                    ],
+                    "Fields": [
+                        {
+                            "name": "message",
+                            "type": "String"
+                        },
+                        {
+                            "name": "repository",
+                            "type": "DeliveryRepository"
+                        },
+                        {
+                            "name": "template",
+                            "type": "SimpMessagingTemplate"
+                        },
+                        {
+                            "name": "deliveryRepository",
+                            "type": "DeliveryRepository"
+                        },
+                        {
+                            "name": "id",
+                            "type": "long"
+                        },
+                        {
+                            "name": "origin",
+                            "type": "String"
+                        },
+                        {
+                            "name": "destination",
+                            "type": "String"
+                        },
+                        {
+                            "name": "delivered",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "origin",
+                            "type": "String"
+                        },
+                        {
+                            "name": "destination",
+                            "type": "String"
+                        }
+                    ],
+                    "Local Variables": [
+                        {
+                            "name": "d",
+                            "type": "Delivery"
+                        },
+                        {
+                            "name": "update",
+                            "type": "Delivery"
+                        },
+                        {
+                            "name": "d",
+                            "type": "SubmittedDelivery"
+                        }
+                    ],
+                    "Method Parameters": [
+                        {
+                            "name": "dr",
+                            "type": "DeliveryRepository"
+                        },
+                        {
+                            "name": "args",
+                            "type": "String"
+                        },
+                        {
+                            "name": "config",
+                            "type": "MessageBrokerRegistry"
+                        },
+                        {
+                            "name": "registry",
+                            "type": "StompEndpointRegistry"
+                        },
+                        {
+                            "name": "delivery",
+                            "type": "Delivery"
+                        },
+                        {
+                            "name": "id",
+                            "type": "String"
+                        },
+                        {
+                            "name": "id",
+                            "type": "String"
+                        },
+                        {
+                            "name": "d",
+                            "type": "Delivery"
+                        },
+                        {
+                            "name": "id",
+                            "type": "String"
+                        },
+                        {
+                            "name": "msg",
+                            "type": "Message<SubmittedDelivery>"
+                        },
+                        {
+                            "name": "origin",
+                            "type": "String"
+                        },
+                        {
+                            "name": "destination",
+                            "type": "String"
+                        },
+                        {
+                            "name": "delivered",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "id",
+                            "type": "long"
+                        },
+                        {
+                            "name": "origin",
+                            "type": "String"
+                        },
+                        {
+                            "name": "destination",
+                            "type": "String"
+                        }
+                    ],
+                    "http": [
+                        {
+                            "url": "http://localhost:3000",
+                            "url path": "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java"
+                        },
+                        {
+                            "url": "http://localhost:7272",
+                            "url path": "..\\projects\\delivery-system-master/delivery-service\\src\\main\\resources\\bootstrap.properties"
+                        }
+                    ],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "..\\projects\\delivery-system-master/delivery-service\\.gitignore",
+                        "..\\projects\\delivery-system-master/delivery-service\\pom.xml",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\DeliveryServiceApplication.java",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\config\\WebSocketConfig.java",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryProcessor.java",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\messaging\\DeliveryServiceChannels.java",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\repos\\DeliveryRepository.java",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\resources\\bootstrap.properties",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\resources\\static\\index.html",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\resources\\static\\jquery-3.0.0.js",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\resources\\static\\sockjs-0.3.4.js",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\resources\\static\\stomp.js",
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\test\\java\\io\\mattslater\\DeliveryServiceApplicationTests.java"
+                    ],
+                    "APIs": {
+                        "number": 6,
+                        "apis": [
+                            {
+                                "file": "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java",
+                                "line": 33,
+                                "method": "GET",
+                                "code": "@RequestMapping(value=\"/message\", method=RequestMethod.GET)"
+                            },
+                            {
+                                "file": "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java",
+                                "line": 39,
+                                "method": "GET",
+                                "code": "@RequestMapping(value=\"/opendeliveries\", method=RequestMethod.GET)"
+                            },
+                            {
+                                "file": "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java",
+                                "line": 45,
+                                "method": "POST",
+                                "code": "@RequestMapping(value = \"/new\", method = RequestMethod.POST)"
+                            },
+                            {
+                                "file": "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java",
+                                "line": 53,
+                                "method": "DELETE",
+                                "code": "@RequestMapping(value = \"/del/{id}\", method = RequestMethod.DELETE)"
+                            },
+                            {
+                                "file": "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java",
+                                "line": 59,
+                                "method": "PUT",
+                                "code": "@RequestMapping(value = \"/del/{id}\", method = RequestMethod.PUT)"
+                            },
+                            {
+                                "file": "..\\projects\\delivery-system-master/delivery-service\\src\\main\\java\\io\\mattslater\\controller\\DeliveryController.java",
+                                "line": 67,
+                                "method": "GET",
+                                "code": "@RequestMapping(value = \"/del/{id}\", method = RequestMethod.GET)"
+                            }
+                        ]
+                    },
+                    "feature_method": {
+                        "methodReturnType": [
+                            {
+                                "fileName": "DeliveryServiceApplication.java",
+                                "className": "DeliveryServiceApplication",
+                                "methodName": "runner",
+                                "returnType": "CommandLineRunner"
+                            },
+                            {
+                                "fileName": "DeliveryServiceApplication.java",
+                                "className": "DeliveryServiceApplication",
+                                "methodName": "main",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "WebSocketConfig.java",
+                                "className": "WebSocketConfig",
+                                "methodName": "configureMessageBroker",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "WebSocketConfig.java",
+                                "className": "WebSocketConfig",
+                                "methodName": "registerStompEndpoints",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "updateListandBroadcast",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "message",
+                                "returnType": "String"
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "getOpenDeliveries",
+                                "returnType": "List"
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "newDelivery",
+                                "returnType": "Delivery"
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "delete",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "update",
+                                "returnType": "Delivery"
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "get",
+                                "returnType": "Delivery"
+                            },
+                            {
+                                "fileName": "DeliveryProcessor.java",
+                                "className": "DeliveryProcessor",
+                                "methodName": "onNewDelivery",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "getOrigin",
+                                "returnType": "String"
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "setOrigin",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "getDestination",
+                                "returnType": "String"
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "setDestination",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "getOrigin",
+                                "returnType": "String"
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "setOrigin",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "getDestination",
+                                "returnType": "String"
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "setDestination",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "DeliveryServiceApplicationTests.java",
+                                "className": "DeliveryServiceApplicationTests",
+                                "methodName": "contextLoads",
+                                "returnType": "void"
+                            }
+                        ],
+                        "methodGenericReturnType": [
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "getOpenDeliveries",
+                                "generic_return_types": [
+                                    "Delivery"
+                                ]
+                            }
+                        ],
+                        "methodParamType": [
+                            {
+                                "fileName": "DeliveryServiceApplication.java",
+                                "className": "DeliveryServiceApplication",
+                                "methodName": "runner",
+                                "param_types": [
+                                    "DeliveryRepository"
+                                ]
+                            },
+                            {
+                                "fileName": "DeliveryServiceApplication.java",
+                                "className": "DeliveryServiceApplication",
+                                "methodName": "main",
+                                "param_types": [
+                                    "String"
+                                ]
+                            },
+                            {
+                                "fileName": "WebSocketConfig.java",
+                                "className": "WebSocketConfig",
+                                "methodName": "configureMessageBroker",
+                                "param_types": [
+                                    "MessageBrokerRegistry"
+                                ]
+                            },
+                            {
+                                "fileName": "WebSocketConfig.java",
+                                "className": "WebSocketConfig",
+                                "methodName": "registerStompEndpoints",
+                                "param_types": [
+                                    "StompEndpointRegistry"
+                                ]
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "newDelivery",
+                                "param_types": [
+                                    "Delivery"
+                                ]
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "delete",
+                                "param_types": [
+                                    "String"
+                                ]
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "update",
+                                "param_types": [
+                                    "String",
+                                    "Delivery"
+                                ]
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "get",
+                                "param_types": [
+                                    "String"
+                                ]
+                            },
+                            {
+                                "fileName": "DeliveryProcessor.java",
+                                "className": "DeliveryProcessor",
+                                "methodName": "onNewDelivery",
+                                "param_types": [
+                                    "Message"
+                                ]
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "setOrigin",
+                                "param_types": [
+                                    "String"
+                                ]
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "setDestination",
+                                "param_types": [
+                                    "String"
+                                ]
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "setOrigin",
+                                "param_types": [
+                                    "String"
+                                ]
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "setDestination",
+                                "param_types": [
+                                    "String"
+                                ]
+                            }
+                        ],
+                        "methodLocalType": [
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "newDelivery",
+                                "local_types": [
+                                    "Delivery"
+                                ]
+                            },
+                            {
+                                "fileName": "DeliveryController.java",
+                                "className": "DeliveryController",
+                                "methodName": "update",
+                                "local_types": [
+                                    "Delivery"
+                                ]
+                            },
+                            {
+                                "fileName": "DeliveryProcessor.java",
+                                "className": "DeliveryProcessor",
+                                "methodName": "onNewDelivery",
+                                "local_types": [
+                                    "SubmittedDelivery"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\delivery-system-master/delivery-service\\src\\main\\resources\\bootstrap.properties",
+                        "..\\projects\\delivery-system-master/delivery-service\\pom.xml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "edge-service",
+                "language": {
+                    "Type": "java",
+                    "Percentage": "100.00"
+                },
+                "nb_files": "10",
+                "locs": "252",
+                "dependencies": [
+                    "spring-cloud-starter-feign",
+                    "spring-cloud-starter-config",
+                    "spring-cloud-starter-eureka",
+                    "spring-cloud-starter-hystrix",
+                    "spring-cloud-starter-zipkin",
+                    "spring-cloud-starter-stream-rabbit",
+                    "spring-cloud-starter-zuul",
+                    "spring-boot-starter-data-rest",
+                    "spring-boot-starter-web",
+                    "spring-boot-starter-test",
+                    "spring-cloud-dependencies"
+                ],
+                "code": {
+                    "file uris": [
+                        [
+                            {
+                                "service name": "edge-service",
+                                "files": [
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": [
+                                            {
+                                                "method_type": "-",
+                                                "@RequestMapping": "/deliveries",
+                                                "uri": "/json",
+                                                "method_name": "deliveries"
+                                            },
+                                            {
+                                                "method_type": "POST",
+                                                "@RequestMapping": "/deliveries",
+                                                "uri": "method = RequestMethod.POST",
+                                                "method_name": "write"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java",
+                                        "caller": "edge-service",
+                                        "callee": [
+                                            "delivery-service"
+                                        ],
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryWriter.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\edge-service\\src\\main\\java\\io\\mattslater\\messaging\\EdgeServiceChannels.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\edge-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    },
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\edge-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    }
+                                ]
+                            }
+                        ]
+                    ],
+                    "class": [
+                        [
+                            "EdgeServiceApplication",
+                            "src.main.io.mattslater.EdgeServiceApplication"
+                        ],
+                        [
+                            "DeliveriesApiGatewayRestController",
+                            "src.main.io.mattslater.controllers.DeliveriesApiGatewayRestController"
+                        ],
+                        [
+                            "Delivery",
+                            "src.main.io.mattslater.model.Delivery"
+                        ],
+                        [
+                            "SubmittedDelivery",
+                            "src.main.io.mattslater.model.SubmittedDelivery"
+                        ],
+                        [
+                            "EdgeServiceApplicationTests",
+                            "src.test.io.mattslater.EdgeServiceApplicationTests"
+                        ]
+                    ],
+                    "imports": [
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/io.mattslater.messaging.EdgeServiceChannels",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.boot.SpringApplication",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.cloud.client.loadbalancer.LoadBalanced",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.cloud.netflix.eureka.EnableEurekaClient",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.cloud.netflix.feign.EnableFeignClients",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.cloud.netflix.zuul.EnableZuulProxy",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.cloud.stream.annotation.EnableBinding",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.context.annotation.Bean",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.integration.annotation.IntegrationComponentScan",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/org.springframework.web.client.RestTemplate",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/io.mattslater.messaging.EdgeServiceChannels",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/io.mattslater.model.Delivery",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/io.mattslater.model.SubmittedDelivery",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.beans.factory.annotation.Autowired",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.core.ParameterizedTypeReference",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.hateoas.Resources",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.http.HttpMethod",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.http.ResponseEntity",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.integration.support.MessageBuilder",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.messaging.Message",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.messaging.MessageChannel",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.web.bind.annotation.RequestBody",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.web.bind.annotation.RequestMapping",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.web.bind.annotation.RequestMethod",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.web.bind.annotation.RestController",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/org.springframework.web.client.RestTemplate",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/java.util.ArrayList",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/java.util.Collection",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/java.util.stream.Collectors",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java/io.mattslater.model.Delivery",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java/org.springframework.cloud.netflix.feign.FeignClient",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java/org.springframework.hateoas.Resources",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java/org.springframework.web.bind.annotation.RequestMapping",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java/org.springframework.web.bind.annotation.RequestMethod",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryWriter.java/io.mattslater.model.SubmittedDelivery",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryWriter.java/org.springframework.integration.annotation.Gateway",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryWriter.java/org.springframework.integration.annotation.MessagingGateway",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\messaging\\EdgeServiceChannels.java/org.springframework.cloud.stream.annotation.Output",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\messaging\\EdgeServiceChannels.java/org.springframework.messaging.MessageChannel",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/java.io.Serializable"
+                    ],
+                    "annotations": [
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/IntegrationComponentScan",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/EnableBinding",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/EnableCircuitBreaker",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/EnableZuulProxy",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/EnableEurekaClient",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/SpringBootApplication",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/EnableFeignClients",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/Bean",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/LoadBalanced",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/RestController",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/RequestMapping",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/Autowired",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/HystrixCommand",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/RequestBody",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java/FeignClient",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java/RequestMapping",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryWriter.java/MessagingGateway",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryWriter.java/Gateway",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\messaging\\EdgeServiceChannels.java/Output"
+                    ],
+                    "declared_annotations": [],
+                    "methods": [
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/restTemplate",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java/main",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/deliveries",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/fallback",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java/write",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java/read",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryWriter.java/write",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\messaging\\EdgeServiceChannels.java/output",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/getOrigin",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/setOrigin",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/getDestination",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/setDestination",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/isDelivered",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java/setDelivered",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java/getOrigin",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java/setOrigin",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java/getDestination",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java/setDestination"
+                    ],
+                    "Fields": [
+                        {
+                            "name": "deliveryReader",
+                            "type": "DeliveryReader"
+                        },
+                        {
+                            "name": "deliveryWriter",
+                            "type": "DeliveryWriter"
+                        },
+                        {
+                            "name": "origin",
+                            "type": "String"
+                        },
+                        {
+                            "name": "destination",
+                            "type": "String"
+                        },
+                        {
+                            "name": "delivered",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "origin",
+                            "type": "String"
+                        },
+                        {
+                            "name": "destination",
+                            "type": "String"
+                        }
+                    ],
+                    "Local Variables": [],
+                    "Method Parameters": [
+                        {
+                            "name": "args",
+                            "type": "String"
+                        },
+                        {
+                            "name": "d",
+                            "type": "SubmittedDelivery"
+                        },
+                        {
+                            "name": "sd",
+                            "type": "SubmittedDelivery"
+                        },
+                        {
+                            "name": "origin",
+                            "type": "String"
+                        },
+                        {
+                            "name": "destination",
+                            "type": "String"
+                        },
+                        {
+                            "name": "delivered",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "origin",
+                            "type": "String"
+                        },
+                        {
+                            "name": "destination",
+                            "type": "String"
+                        }
+                    ],
+                    "http": [
+                        {
+                            "url": "http://localhost:7272",
+                            "url path": "..\\projects\\delivery-system-master/edge-service\\src\\main\\resources\\bootstrap.properties"
+                        }
+                    ],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "..\\projects\\delivery-system-master/edge-service\\pom.xml",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\EdgeServiceApplication.java",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryWriter.java",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\messaging\\EdgeServiceChannels.java",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\Delivery.java",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\model\\SubmittedDelivery.java",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\resources\\bootstrap.properties",
+                        "..\\projects\\delivery-system-master/edge-service\\src\\test\\java\\io\\mattslater\\EdgeServiceApplicationTests.java"
+                    ],
+                    "APIs": {
+                        "number": 3,
+                        "apis": [
+                            {
+                                "file": "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java",
+                                "line": 39,
+                                "method": "GET",
+                                "code": "@RequestMapping(value = \"/json\", method = RequestMethod.GET)"
+                            },
+                            {
+                                "file": "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveriesApiGatewayRestController.java",
+                                "line": 54,
+                                "method": "POST",
+                                "code": "@RequestMapping(method = RequestMethod.POST)"
+                            },
+                            {
+                                "file": "..\\projects\\delivery-system-master/edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java",
+                                "line": 15,
+                                "method": "GET",
+                                "code": "@RequestMapping(method = RequestMethod.GET, value =\"/deliveries\")"
+                            }
+                        ]
+                    },
+                    "feature_method": {
+                        "methodReturnType": [
+                            {
+                                "fileName": "EdgeServiceApplication.java",
+                                "className": "EdgeServiceApplication",
+                                "methodName": "restTemplate",
+                                "returnType": "RestTemplate"
+                            },
+                            {
+                                "fileName": "EdgeServiceApplication.java",
+                                "className": "EdgeServiceApplication",
+                                "methodName": "main",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "DeliveriesApiGatewayRestController.java",
+                                "className": "DeliveriesApiGatewayRestController",
+                                "methodName": "deliveries",
+                                "returnType": "Collection"
+                            },
+                            {
+                                "fileName": "DeliveriesApiGatewayRestController.java",
+                                "className": "DeliveriesApiGatewayRestController",
+                                "methodName": "fallback",
+                                "returnType": "Collection"
+                            },
+                            {
+                                "fileName": "DeliveriesApiGatewayRestController.java",
+                                "className": "DeliveriesApiGatewayRestController",
+                                "methodName": "write",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "getOrigin",
+                                "returnType": "String"
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "setOrigin",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "getDestination",
+                                "returnType": "String"
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "setDestination",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "getOrigin",
+                                "returnType": "String"
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "setOrigin",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "getDestination",
+                                "returnType": "String"
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "setDestination",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "EdgeServiceApplicationTests.java",
+                                "className": "EdgeServiceApplicationTests",
+                                "methodName": "contextLoads",
+                                "returnType": "void"
+                            }
+                        ],
+                        "methodGenericReturnType": [
+                            {
+                                "fileName": "DeliveriesApiGatewayRestController.java",
+                                "className": "DeliveriesApiGatewayRestController",
+                                "methodName": "deliveries",
+                                "generic_return_types": [
+                                    "Delivery"
+                                ]
+                            },
+                            {
+                                "fileName": "DeliveriesApiGatewayRestController.java",
+                                "className": "DeliveriesApiGatewayRestController",
+                                "methodName": "fallback",
+                                "generic_return_types": [
+                                    "Delivery"
+                                ]
+                            }
+                        ],
+                        "methodParamType": [
+                            {
+                                "fileName": "EdgeServiceApplication.java",
+                                "className": "EdgeServiceApplication",
+                                "methodName": "main",
+                                "param_types": [
+                                    "String"
+                                ]
+                            },
+                            {
+                                "fileName": "DeliveriesApiGatewayRestController.java",
+                                "className": "DeliveriesApiGatewayRestController",
+                                "methodName": "write",
+                                "param_types": [
+                                    "SubmittedDelivery"
+                                ]
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "setOrigin",
+                                "param_types": [
+                                    "String"
+                                ]
+                            },
+                            {
+                                "fileName": "Delivery.java",
+                                "className": "Delivery",
+                                "methodName": "setDestination",
+                                "param_types": [
+                                    "String"
+                                ]
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "setOrigin",
+                                "param_types": [
+                                    "String"
+                                ]
+                            },
+                            {
+                                "fileName": "SubmittedDelivery.java",
+                                "className": "SubmittedDelivery",
+                                "methodName": "setDestination",
+                                "param_types": [
+                                    "String"
+                                ]
+                            }
+                        ],
+                        "methodLocalType": []
+                    }
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\delivery-system-master/edge-service\\src\\main\\resources\\bootstrap.properties",
+                        "..\\projects\\delivery-system-master/edge-service\\pom.xml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            },
+            {
+                "name": "eureka-service",
+                "language": {
+                    "Type": "java",
+                    "Percentage": "100.00"
+                },
+                "nb_files": "4",
+                "locs": "81",
+                "dependencies": [
+                    "spring-cloud-starter-config",
+                    "spring-cloud-starter-eureka-server",
+                    "spring-boot-starter-test",
+                    "spring-cloud-dependencies"
+                ],
+                "code": {
+                    "file uris": [
+                        [
+                            {
+                                "service name": "eureka-service",
+                                "files": [
+                                    {
+                                        "name": "..\\projects\\delivery-system-master\\eureka-service\\src\\main\\java\\io\\mattslater\\EurekaServiceApplication.java",
+                                        "caller": "",
+                                        "callee": "",
+                                        "requestParam": []
+                                    }
+                                ]
+                            }
+                        ]
+                    ],
+                    "class": [
+                        [
+                            "EurekaServiceApplication",
+                            "src.main.io.mattslater.EurekaServiceApplication"
+                        ],
+                        [
+                            "EurekaServiceApplicationTests",
+                            "src.test.io.mattslater.EurekaServiceApplicationTests"
+                        ]
+                    ],
+                    "imports": [
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\main\\java\\io\\mattslater\\EurekaServiceApplication.java/org.springframework.boot.SpringApplication",
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\main\\java\\io\\mattslater\\EurekaServiceApplication.java/org.springframework.boot.autoconfigure.SpringBootApplication",
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\main\\java\\io\\mattslater\\EurekaServiceApplication.java/org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"
+                    ],
+                    "annotations": [
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\main\\java\\io\\mattslater\\EurekaServiceApplication.java/EnableEurekaServer",
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\main\\java\\io\\mattslater\\EurekaServiceApplication.java/SpringBootApplication"
+                    ],
+                    "declared_annotations": [],
+                    "methods": [
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\main\\java\\io\\mattslater\\EurekaServiceApplication.java/main"
+                    ],
+                    "Fields": [],
+                    "Local Variables": [],
+                    "Method Parameters": [
+                        {
+                            "name": "args",
+                            "type": "String"
+                        }
+                    ],
+                    "http": [
+                        {
+                            "url": "http://localhost:7272",
+                            "url path": "..\\projects\\delivery-system-master/eureka-service\\src\\main\\resources\\bootstrap.properties"
+                        }
+                    ],
+                    "databases": {
+                        "datasources": [],
+                        "create": []
+                    },
+                    "source_files": [
+                        "..\\projects\\delivery-system-master/eureka-service\\pom.xml",
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\main\\java\\io\\mattslater\\EurekaServiceApplication.java",
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\main\\resources\\bootstrap.properties",
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\test\\java\\io\\mattslater\\EurekaServiceApplicationTests.java"
+                    ],
+                    "APIs": {
+                        "number": 0,
+                        "apis": []
+                    },
+                    "feature_method": {
+                        "methodReturnType": [
+                            {
+                                "fileName": "EurekaServiceApplication.java",
+                                "className": "EurekaServiceApplication",
+                                "methodName": "main",
+                                "returnType": "void"
+                            },
+                            {
+                                "fileName": "EurekaServiceApplicationTests.java",
+                                "className": "EurekaServiceApplicationTests",
+                                "methodName": "contextLoads",
+                                "returnType": "void"
+                            }
+                        ],
+                        "methodGenericReturnType": [],
+                        "methodParamType": [
+                            {
+                                "fileName": "EurekaServiceApplication.java",
+                                "className": "EurekaServiceApplication",
+                                "methodName": "main",
+                                "param_types": [
+                                    "String"
+                                ]
+                            }
+                        ],
+                        "methodLocalType": []
+                    }
+                },
+                "config": {
+                    "config_files": [
+                        "..\\projects\\delivery-system-master/eureka-service\\src\\main\\resources\\bootstrap.properties",
+                        "..\\projects\\delivery-system-master/eureka-service\\pom.xml"
+                    ]
+                },
+                "deployment": {
+                    "docker_files": [],
+                    "images": []
+                },
+                "env": {
+                    "env_files": []
+                }
+            }
+        ],
+        "GitRepository": "NAN",
+        "relations": [
+            {
+                "caller": "edge-service",
+                "caller file": "..\\projects\\delivery-system-master\\edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java",
+                "mached uri": "",
+                "callee": "delivery-service",
+                "callee file": "",
+                "callee method type": "feign client"
+            }
+        ],
+        "reducedrelations": [
+            {
+                "caller": "edge-service",
+                "caller file": "..\\projects\\delivery-system-master\\edge-service\\src\\main\\java\\io\\mattslater\\controllers\\DeliveryReader.java",
+                "mached uri": "",
+                "callee": "delivery-service",
+                "callee file": "",
+                "callee method type": "feign client"
+            }
+        ],
+        "candidateMicroservices": [
+            "config-service",
+            "delivery-service",
+            "edge-service",
+            "eureka-service"
+        ]
+    }
+}
