@@ -1,615 +1,66 @@
-=========================  General Information of System  =============================
-
-number of microservices : 28
-Total lines of code (LOCs) : 1546
-Total number of files : 82
-Avg LOCs per service : 55.214285714285715
-Avg Files per service : 2.9285714285714284
-
-total number of apis: 52
-
-name of services:
-
-name: Client0
-name: Client1
-name: Client10
-name: Client11
-name: Client12
-name: Client13
-name: Client14
-name: Client2
-name: Client3
-name: Client4
-name: Client5
-name: Client6
-name: Client7
-name: Client8
-name: Client9
-name: ServiceRegistry0
-name: ServiceRegistry1
-name: ServiceRegistry2
-name: ServiceRegistry3
-name: Worker0
-name: Worker1
-name: Worker2
-name: Worker3
-name: Worker4
-name: Worker5
-name: Worker6
-name: Worker7
-name: Worker8
-
 Anti-Pattern Name: Hardcoded Endpoints
 
 | Anti-Pattern        | Status   |
 |---------------------|----------|
 | Hardcoded Endpoints | Detected |
 
-- Service `Client0` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0, path: ..\projects\System1/Client0\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
 
-- Service `Client0` has hardcoded HTTP URLs:
-  - http://localhost:9012/api/Worker1, path: ..\projects\System1/Client0\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Admin0 has hardcoded HTTP URLs:
+http://localhost:9101/api/Storage0, path: ..\projects\System2\Admin0\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client1` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0, path: ..\projects\System1/Client1\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Admin0 has hardcoded HTTP URLs:
+http://localhost:9102/api/Storage1, path: ..\projects\System2\Admin0\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client1` has hardcoded HTTP URLs:
-  - http://localhost:9012/api/Worker1, path: ..\projects\System1/Client1\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Admin1 has hardcoded HTTP URLs:
+http://localhost:9104/api/Storage3, path: ..\projects\System2\Admin1\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client10` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2, path: ..\projects\System1/Client10\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Admin1 has hardcoded HTTP URLs:
+http://localhost:9105/api/Storage4, path: ..\projects\System2\Admin1\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client10` has hardcoded HTTP URLs:
-  - http://localhost:9026/api/Worker6, path: ..\projects\System1/Client10\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Admin1 has hardcoded HTTP URLs:
+http://localhost:9106/api/Storage5, path: ..\projects\System2\Admin1\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client11` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3, path: ..\projects\System1/Client11\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Admin2 has hardcoded HTTP URLs:
+http://localhost:9101/api/Storage0, path: ..\projects\System2\Admin2\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client11` has hardcoded HTTP URLs:
-  - http://localhost:9033/api/Worker8, path: ..\projects\System1/Client11\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Admin2 has hardcoded HTTP URLs:
+http://localhost:9106/api/Storage5, path: ..\projects\System2\Admin2\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client12` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3, path: ..\projects\System1/Client12\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Admin2 has hardcoded HTTP URLs:
+http://localhost:9108/api/Storage7, path: ..\projects\System2\Admin2\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client12` has hardcoded HTTP URLs:
-  - http://localhost:9033/api/Worker8, path: ..\projects\System1/Client12\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Client0 has hardcoded HTTP URLs:
+http://localhost:9101/api/Storage0, path: ..\projects\System2\Client0\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client13` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3, path: ..\projects\System1/Client13\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Client0 has hardcoded HTTP URLs:
+http://localhost:9104/api/Storage3, path: ..\projects\System2\Client0\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client13` has hardcoded HTTP URLs:
-  - http://localhost:9033/api/Worker8, path: ..\projects\System1/Client13\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Client1 has hardcoded HTTP URLs:
+http://localhost:9102/api/Storage1, path: ..\projects\System2\Client1\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client14` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3, path: ..\projects\System1/Client14\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Client1 has hardcoded HTTP URLs:
+http://localhost:9105/api/Storage4, path: ..\projects\System2\Client1\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client14` has hardcoded HTTP URLs:
-  - http://localhost:9033/api/Worker8, path: ..\projects\System1/Client14\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Client1 has hardcoded HTTP URLs:
+http://localhost:9108/api/Storage7, path: ..\projects\System2\Client1\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client2` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0, path: ..\projects\System1/Client2\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Client2 has hardcoded HTTP URLs:
+http://localhost:9104/api/Storage3, path: ..\projects\System2\Client2\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client2` has hardcoded HTTP URLs:
-  - http://localhost:9012/api/Worker1, path: ..\projects\System1/Client2\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Client2 has hardcoded HTTP URLs:
+http://localhost:9106/api/Storage5, path: ..\projects\System2\Client2\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client3` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0, path: ..\projects\System1/Client3\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service Client2 has hardcoded HTTP URLs:
+http://localhost:9108/api/Storage7, path: ..\projects\System2\Client2\src\main\java\microservice\staticcontenthost\demo\API\MicroserviceController.java
 
-- Service `Client3` has hardcoded HTTP URLs:
-  - http://localhost:9012/api/Worker1, path: ..\projects\System1/Client3\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service ServiceRegistry0 has service discovery URL:
+http://localhost:8761/eureka/, path: ..\projects\System2\ServiceRegistry0\src\main\resources\application.properties
 
-- Service `Client4` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1, path: ..\projects\System1/Client4\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service ServiceRegistry1 has service discovery URL:
+http://localhost:8761/eureka/, path: ..\projects\System2\ServiceRegistry1\src\main\resources\application.properties
 
-- Service `Client4` has hardcoded HTTP URLs:
-  - http://localhost:9020/api/Worker4, path: ..\projects\System1/Client4\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
+Service ServiceRegistry2 has service discovery URL:
+http://localhost:8761/eureka/, path: ..\projects\System2\ServiceRegistry2\src\main\resources\application.properties
 
-- Service `Client5` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1, path: ..\projects\System1/Client5\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
-
-- Service `Client5` has hardcoded HTTP URLs:
-  - http://localhost:9020/api/Worker4, path: ..\projects\System1/Client5\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
-
-- Service `Client6` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1, path: ..\projects\System1/Client6\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
-
-- Service `Client6` has hardcoded HTTP URLs:
-  - http://localhost:9020/api/Worker4, path: ..\projects\System1/Client6\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
-
-- Service `Client7` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2, path: ..\projects\System1/Client7\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
-
-- Service `Client7` has hardcoded HTTP URLs:
-  - http://localhost:9026/api/Worker6, path: ..\projects\System1/Client7\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
-
-- Service `Client8` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2, path: ..\projects\System1/Client8\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
-
-- Service `Client8` has hardcoded HTTP URLs:
-  - http://localhost:9026/api/Worker6, path: ..\projects\System1/Client8\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
-
-- Service `Client9` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2, path: ..\projects\System1/Client9\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
-
-- Service `Client9` has hardcoded HTTP URLs:
-  - http://localhost:9026/api/Worker6, path: ..\projects\System1/Client9\src\main\java\microservice\servicediscovery\demo\API\ClientAPI.java
-
-- Service `ServiceRegistry0` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/ServiceRegistry0\src\main\resources\application.properties
-
-- Service `ServiceRegistry1` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/ServiceRegistry1\src\main\resources\application.properties
-
-- Service `ServiceRegistry2` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/ServiceRegistry2\src\main\resources\application.properties
-
-- Service `ServiceRegistry3` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/ServiceRegistry3\src\main\resources\application.properties
-
-- Service `Worker0` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0/get, path: ..\projects\System1/Worker0\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker0` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0/post, path: ..\projects\System1/Worker0\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker0` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0/delete, path: ..\projects\System1/Worker0\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker0` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0/put, path: ..\projects\System1/Worker0\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker0` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/Worker0\src\main\resources\application.properties
-
-- Service `Worker1` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0/get, path: ..\projects\System1/Worker1\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker1` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0/post, path: ..\projects\System1/Worker1\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker1` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0/delete, path: ..\projects\System1/Worker1\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker1` has hardcoded HTTP URLs:
-  - http://localhost:9010/api/ServiceRegistry0/put, path: ..\projects\System1/Worker1\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker1` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/Worker1\src\main\resources\application.properties
-
-- Service `Worker2` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/get, path: ..\projects\System1/Worker2\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker2` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/post, path: ..\projects\System1/Worker2\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker2` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/delete, path: ..\projects\System1/Worker2\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker2` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/put, path: ..\projects\System1/Worker2\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker2` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/Worker2\src\main\resources\application.properties
-
-- Service `Worker3` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/get, path: ..\projects\System1/Worker3\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker3` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/post, path: ..\projects\System1/Worker3\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker3` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/delete, path: ..\projects\System1/Worker3\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker3` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/put, path: ..\projects\System1/Worker3\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker3` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/Worker3\src\main\resources\application.properties
-
-- Service `Worker4` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/get, path: ..\projects\System1/Worker4\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker4` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/post, path: ..\projects\System1/Worker4\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker4` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/delete, path: ..\projects\System1/Worker4\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker4` has hardcoded HTTP URLs:
-  - http://localhost:9017/api/ServiceRegistry1/put, path: ..\projects\System1/Worker4\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker4` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/Worker4\src\main\resources\application.properties
-
-- Service `Worker5` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2/get, path: ..\projects\System1/Worker5\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker5` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2/post, path: ..\projects\System1/Worker5\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker5` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2/delete, path: ..\projects\System1/Worker5\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker5` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2/put, path: ..\projects\System1/Worker5\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker5` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/Worker5\src\main\resources\application.properties
-
-- Service `Worker6` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2/get, path: ..\projects\System1/Worker6\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker6` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2/post, path: ..\projects\System1/Worker6\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker6` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2/delete, path: ..\projects\System1/Worker6\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker6` has hardcoded HTTP URLs:
-  - http://localhost:9024/api/ServiceRegistry2/put, path: ..\projects\System1/Worker6\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker6` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/Worker6\src\main\resources\application.properties
-
-- Service `Worker7` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3/get, path: ..\projects\System1/Worker7\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker7` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3/post, path: ..\projects\System1/Worker7\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker7` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3/delete, path: ..\projects\System1/Worker7\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker7` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3/put, path: ..\projects\System1/Worker7\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker7` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/Worker7\src\main\resources\application.properties
-
-- Service `Worker8` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3/get, path: ..\projects\System1/Worker8\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker8` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3/post, path: ..\projects\System1/Worker8\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker8` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3/delete, path: ..\projects\System1/Worker8\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker8` has hardcoded HTTP URLs:
-  - http://localhost:9031/api/ServiceRegistry3/put, path: ..\projects\System1/Worker8\src\main\java\microservice\servicediscovery\demo\API\WorkerController.java
-
-- Service `Worker8` has hardcoded HTTP URLs:
-  - http://localhost:8761/eureka/, path: ..\projects\System1/Worker8\src\main\resources\application.properties
-
-- System has hardcoded HTTP URLs:
-
-  - http://localhost:9010/api/ServiceRegistry0</URI, path: 
-  - http://localhost:9011/api/Worker0</URI, path: 
-  - http://localhost:9010/api/ServiceRegistry0, path: 
-  - http://localhost:9010/api/ServiceRegistry0, path: 
-  - http://localhost:9010/api/ServiceRegistry0, path: 
-  - http://localhost:9012/api/Worker1</URI, path: 
-  - http://localhost:9010/api/ServiceRegistry0, path: 
-  - http://localhost:9010/api/ServiceRegistry0, path: 
-  - http://localhost:9010/api/ServiceRegistry0, path: 
-  - http://localhost:9013/api/Client0</URI, path: 
-  - http://localhost:9010/api/ServiceRegistry0, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9014/api/Client1</URI, path: 
-  - http://localhost:9010/api/ServiceRegistry0, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9015/api/Client2</URI, path: 
-  - http://localhost:9010/api/ServiceRegistry0, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9016/api/Client3</URI, path: 
-  - http://localhost:9010/api/ServiceRegistry0, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9012/api/Worker1, path: 
-  - http://localhost:9017/api/ServiceRegistry1</URI, path: 
-  - http://localhost:9018/api/Worker2</URI, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9019/api/Worker3</URI, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9020/api/Worker4</URI, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9021/api/Client4</URI, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9022/api/Client5</URI, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9023/api/Client6</URI, path: 
-  - http://localhost:9017/api/ServiceRegistry1, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9020/api/Worker4, path: 
-  - http://localhost:9024/api/ServiceRegistry2</URI, path: 
-  - http://localhost:9025/api/Worker5</URI, path: 
-  - http://localhost:9024/api/ServiceRegistry2, path: 
-  - http://localhost:9024/api/ServiceRegistry2, path: 
-  - http://localhost:9024/api/ServiceRegistry2, path: 
-  - http://localhost:9026/api/Worker6</URI, path: 
-  - http://localhost:9024/api/ServiceRegistry2, path: 
-  - http://localhost:9024/api/ServiceRegistry2, path: 
-  - http://localhost:9024/api/ServiceRegistry2, path: 
-  - http://localhost:9027/api/Client7</URI, path: 
-  - http://localhost:9024/api/ServiceRegistry2, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9028/api/Client8</URI, path: 
-  - http://localhost:9024/api/ServiceRegistry2, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9029/api/Client9</URI, path: 
-  - http://localhost:9024/api/ServiceRegistry2, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9030/api/Client10</URI, path: 
-  - http://localhost:9024/api/ServiceRegistry2, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9026/api/Worker6, path: 
-  - http://localhost:9031/api/ServiceRegistry3</URI, path: 
-  - http://localhost:9032/api/Worker7</URI, path: 
-  - http://localhost:9031/api/ServiceRegistry3, path: 
-  - http://localhost:9031/api/ServiceRegistry3, path: 
-  - http://localhost:9031/api/ServiceRegistry3, path: 
-  - http://localhost:9033/api/Worker8</URI, path: 
-  - http://localhost:9031/api/ServiceRegistry3, path: 
-  - http://localhost:9031/api/ServiceRegistry3, path: 
-  - http://localhost:9031/api/ServiceRegistry3, path: 
-  - http://localhost:9034/api/Client11</URI, path: 
-  - http://localhost:9031/api/ServiceRegistry3, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9035/api/Client12</URI, path: 
-  - http://localhost:9031/api/ServiceRegistry3, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9036/api/Client13</URI, path: 
-  - http://localhost:9031/api/ServiceRegistry3, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9037/api/Client14</URI, path: 
-  - http://localhost:9031/api/ServiceRegistry3, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-  - http://localhost:9033/api/Worker8, path: 
-
- **Service-level Tools**:
-
-- `ServiceRegistry0`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `ServiceRegistry1`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `ServiceRegistry2`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `ServiceRegistry3`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker0`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker0`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker0`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker0`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker0`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker1`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker1`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker1`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker1`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker1`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker2`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker2`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker2`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker2`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker2`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker3`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker3`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker3`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker3`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker3`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker4`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker4`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker4`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker4`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker4`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker5`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker5`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker5`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker5`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker5`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker6`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker6`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker6`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker6`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker6`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker7`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker7`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker7`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker7`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker7`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker8`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker8`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker8`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker8`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
-- `Worker8`:
-  - eureka-client
-  - spring-cloud-starter-netflix-eureka-client
-
+Service ServiceRegistry3 has service discovery URL:
+http://localhost:8761/eureka/, path: ..\projects\System2\ServiceRegistry3\src\main\resources\application.properties

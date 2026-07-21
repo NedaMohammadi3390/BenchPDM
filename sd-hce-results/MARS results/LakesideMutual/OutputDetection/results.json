@@ -1,45 +1,17 @@
 {
-    "system_information": {
-        "number_of_microservices": 9,
-        "total_lines_of_code": 94103,
-        "total_number_of_files": 437,
-        "average_locs_per_service": 10455,
-        "average_files_per_service": 48
-    },
-    "wrong_cuts": [
-        "customer-management-frontend",
-        "customer-self-service-frontend",
-        "policy-management-frontend"
-    ],
-    "circular_dependencies": [],
-    "mega_services": {},
-    "nano_services": {
-        "eureka-server": {
-            "locs": "140",
-            "nbFiles": "5",
-            "requiredLocs": 5227,
-            "requiredFiles": 24
-        }
-    },
-    "shared_dependencies": {
-        "domaindrivendesign-library": "customer-core\ncustomer-management-backend\ncustomer-self-service-backend\npolicy-management-backend"
-    },
     "hardcoded_endpoints": {
-        "customer-core": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:8110/customers?limit=2&offset=2, http://localhost:8110/customers?limit=2&offset=2&fields=, http://localhost:8110/customers?limit=2&offset=0&fields=, http://localhost:8110/customers?limit=2&offset=4&fields=, http://localhost:8110/customers/ce4btlyluu,rgpp0wkpec, http://localhost:8110/customers/ce4btlyluu,rgpp0wkpec?fields=, http://localhost:8110/customers/ce4btlyluu,rgpp0wkpec?fields=firstname,lastname, http://localhost:8110/customers/ce4btlyluu,rgpp0wkpec?fields=, http://localhost:8110/ws/customers, http://localhost:8110/ws, http://localhost:9000, http://localhost:8761/eureka, http://app_servers;"
-        },
+        
         "customer-management-backend": {
             "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:8110, http://localhost:9000, http://customer-core, http://localhost:8761/eureka"
+            "FoundUrls": "http://localhost:8761/eureka"
         },
         "customer-self-service-backend": {
             "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:8080/customers, http://localhost:8110, http://localhost:9000, http://customer-core, http://localhost:8761/eureka"
+            "FoundUrls": " http://localhost:8761/eureka"
         },
         "policy-management-backend": {
             "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:8090/customers/rgpp0wkpec, http://localhost:8090/customers/123, http://localhost:8090/policies/h3riovf4xq/, http://localhost:8090/policies/h3riovf4xq/?expand=customer, http://localhost:8090/v2/api-docs), http://localhost:8110, http://localhost:9000, http://customer-core, http://localhost:8761/eureka"
+            "FoundUrls": "http://localhost:8761/eureka"
         },
         "spring-boot-admin": {
             "hasServiceDiscoveryTool": true,

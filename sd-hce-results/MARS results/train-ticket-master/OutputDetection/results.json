@@ -1,22 +1,4 @@
 {
-    "system_information": {
-        "number_of_microservices": 43,
-        "total_lines_of_code": 32595,
-        "total_number_of_files": 629,
-        "average_locs_per_service": 758,
-        "average_files_per_service": 14
-    },
-    "wrong_cuts": [],
-    "circular_dependencies": [],
-    "mega_services": {},
-    "nano_services": {
-        "ts-news-service": {
-            "locs": "37",
-            "nbFiles": "4",
-            "requiredLocs": 379,
-            "requiredFiles": 7
-        }
-    },
     "shared_dependencies": {
         "ts-common": "ts-admin-basic-info-service\nts-admin-order-service\nts-admin-route-service\nts-admin-travel-service\nts-admin-user-service\nts-basic-service\nts-cancel-service\nts-execute-service\nts-preserve-other-service\nts-preserve-service\nts-price-service\nts-rebook-service\nts-route-plan-service\nts-seat-service\nts-travel-plan-service\nts-verification-code-service",
         "jakarta.validation-api": "ts-admin-basic-info-service\nts-basic-service\nts-rebook-service\nts-seat-service"

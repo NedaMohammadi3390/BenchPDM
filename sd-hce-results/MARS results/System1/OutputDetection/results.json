@@ -1,127 +1,43 @@
 {
-    "system_information": {
-        "number_of_microservices": 28,
-        "total_lines_of_code": 1546,
-        "total_number_of_files": 82,
-        "average_locs_per_service": 55,
-        "average_files_per_service": 2
-    },
-    "wrong_cuts": [],
-    "circular_dependencies": [],
-    "mega_services": {},
-    "nano_services": {},
-    "shared_dependencies": {},
-    "hardcoded_endpoints": {
-        "Client0": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9010/api/ServiceRegistry0, http://localhost:9012/api/Worker1"
-        },
-        "Client1": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9010/api/ServiceRegistry0, http://localhost:9012/api/Worker1"
-        },
-        "Client10": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9024/api/ServiceRegistry2, http://localhost:9026/api/Worker6"
-        },
-        "Client11": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9031/api/ServiceRegistry3, http://localhost:9033/api/Worker8"
-        },
-        "Client12": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9031/api/ServiceRegistry3, http://localhost:9033/api/Worker8"
-        },
-        "Client13": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9031/api/ServiceRegistry3, http://localhost:9033/api/Worker8"
-        },
-        "Client14": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9031/api/ServiceRegistry3, http://localhost:9033/api/Worker8"
-        },
-        "Client2": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9010/api/ServiceRegistry0, http://localhost:9012/api/Worker1"
-        },
-        "Client3": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9010/api/ServiceRegistry0, http://localhost:9012/api/Worker1"
-        },
-        "Client4": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9017/api/ServiceRegistry1, http://localhost:9020/api/Worker4"
-        },
-        "Client5": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9017/api/ServiceRegistry1, http://localhost:9020/api/Worker4"
-        },
-        "Client6": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9017/api/ServiceRegistry1, http://localhost:9020/api/Worker4"
-        },
-        "Client7": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9024/api/ServiceRegistry2, http://localhost:9026/api/Worker6"
-        },
-        "Client8": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9024/api/ServiceRegistry2, http://localhost:9026/api/Worker6"
-        },
-        "Client9": {
-            "hasServiceDiscoveryTool": false,
-            "FoundUrls": "http://localhost:9024/api/ServiceRegistry2, http://localhost:9026/api/Worker6"
-        },
-        "ServiceRegistry0": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:8761/eureka/"
-        },
-        "ServiceRegistry1": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:8761/eureka/"
-        },
-        "ServiceRegistry2": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:8761/eureka/"
-        },
-        "ServiceRegistry3": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:8761/eureka/"
-        },
-        "Worker0": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:9010/api/ServiceRegistry0/get, http://localhost:9010/api/ServiceRegistry0/post, http://localhost:9010/api/ServiceRegistry0/delete, http://localhost:9010/api/ServiceRegistry0/put, http://localhost:8761/eureka/"
-        },
-        "Worker1": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:9010/api/ServiceRegistry0/get, http://localhost:9010/api/ServiceRegistry0/post, http://localhost:9010/api/ServiceRegistry0/delete, http://localhost:9010/api/ServiceRegistry0/put, http://localhost:8761/eureka/"
-        },
-        "Worker2": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:9017/api/ServiceRegistry1/get, http://localhost:9017/api/ServiceRegistry1/post, http://localhost:9017/api/ServiceRegistry1/delete, http://localhost:9017/api/ServiceRegistry1/put, http://localhost:8761/eureka/"
-        },
-        "Worker3": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:9017/api/ServiceRegistry1/get, http://localhost:9017/api/ServiceRegistry1/post, http://localhost:9017/api/ServiceRegistry1/delete, http://localhost:9017/api/ServiceRegistry1/put, http://localhost:8761/eureka/"
-        },
-        "Worker4": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:9017/api/ServiceRegistry1/get, http://localhost:9017/api/ServiceRegistry1/post, http://localhost:9017/api/ServiceRegistry1/delete, http://localhost:9017/api/ServiceRegistry1/put, http://localhost:8761/eureka/"
-        },
-        "Worker5": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:9024/api/ServiceRegistry2/get, http://localhost:9024/api/ServiceRegistry2/post, http://localhost:9024/api/ServiceRegistry2/delete, http://localhost:9024/api/ServiceRegistry2/put, http://localhost:8761/eureka/"
-        },
-        "Worker6": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:9024/api/ServiceRegistry2/get, http://localhost:9024/api/ServiceRegistry2/post, http://localhost:9024/api/ServiceRegistry2/delete, http://localhost:9024/api/ServiceRegistry2/put, http://localhost:8761/eureka/"
-        },
-        "Worker7": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:9031/api/ServiceRegistry3/get, http://localhost:9031/api/ServiceRegistry3/post, http://localhost:9031/api/ServiceRegistry3/delete, http://localhost:9031/api/ServiceRegistry3/put, http://localhost:8761/eureka/"
-        },
-        "Worker8": {
-            "hasServiceDiscoveryTool": true,
-            "FoundUrls": "http://localhost:9031/api/ServiceRegistry3/get, http://localhost:9031/api/ServiceRegistry3/post, http://localhost:9031/api/ServiceRegistry3/delete, http://localhost:9031/api/ServiceRegistry3/put, http://localhost:8761/eureka/"
-        }
-    }
+"hardcoded_endpoints": {
+"Admin0": {
+"hasServiceDiscoveryTool": false,
+"FoundUrls": "http://localhost:9101/api/Storage0,http://localhost:9102/api/Storage1"
+},
+"Admin1": {
+"hasServiceDiscoveryTool": false,
+"FoundUrls": "http://localhost:9104/api/Storage3,http://localhost:9105/api/Storage4,http://localhost:9106/api/Storage5"
+},
+"Admin2": {
+"hasServiceDiscoveryTool": false,
+"FoundUrls": "http://localhost:9101/api/Storage0,http://localhost:9106/api/Storage5,http://localhost:9108/api/Storage7"
+},
+"Client0": {
+"hasServiceDiscoveryTool": false,
+"FoundUrls": "http://localhost:9101/api/Storage0,http://localhost:9104/api/Storage3"
+},
+"Client1": {
+"hasServiceDiscoveryTool": false,
+"FoundUrls": "http://localhost:9102/api/Storage1,http://localhost:9105/api/Storage4,http://localhost:9108/api/Storage7"
+},
+"Client2": {
+"hasServiceDiscoveryTool": false,
+"FoundUrls": "http://localhost:9104/api/Storage3,http://localhost:9106/api/Storage5,http://localhost:9108/api/Storage7"
+},
+"ServiceRegistry0": {
+"hasServiceDiscoveryTool": true,
+"FoundUrls": "http://localhost:8761/eureka/"
+},
+"ServiceRegistry1": {
+"hasServiceDiscoveryTool": true,
+"FoundUrls": "http://localhost:8761/eureka/"
+},
+"ServiceRegistry2": {
+"hasServiceDiscoveryTool": true,
+"FoundUrls": "http://localhost:8761/eureka/"
+},
+"ServiceRegistry3": {
+"hasServiceDiscoveryTool": true,
+"FoundUrls": "http://localhost:8761/eureka/"
+}
+}

@@ -1,37 +1,4 @@
 {
-    "system_information": {
-        "number_of_microservices": 40,
-        "total_lines_of_code": 32983,
-        "total_number_of_files": 740,
-        "average_locs_per_service": 824,
-        "average_files_per_service": 18
-    },
-    "wrong_cuts": [],
-    "circular_dependencies": [],
-    "mega_services": {},
-    "nano_services": {
-        "ts-common": {
-            "locs": "268",
-            "nbFiles": "8",
-            "requiredLocs": 412,
-            "requiredFiles": 9
-        },
-        "ts-delivery-service": {
-            "locs": "173",
-            "nbFiles": "8",
-            "requiredLocs": 412,
-            "requiredFiles": 9
-        },
-        "ts-news-service": {
-            "locs": "37",
-            "nbFiles": "4",
-            "requiredLocs": 412,
-            "requiredFiles": 9
-        }
-    },
-    "shared_dependencies": {
-        "ts-common": "ts-admin-order-service\nts-admin-route-service\nts-admin-travel-service\nts-admin-user-service\nts-basic-service\nts-cancel-service\nts-execute-service\nts-preserve-other-service\nts-preserve-service\nts-rebook-service\nts-route-plan-service\nts-seat-service\nts-ticketinfo-service\nts-travel-plan-service\nts-verification-code-service"
-    },
     "hardcoded_endpoints": {
         "ts-admin-basic-info-service": {
             "hasServiceDiscoveryTool": false,
